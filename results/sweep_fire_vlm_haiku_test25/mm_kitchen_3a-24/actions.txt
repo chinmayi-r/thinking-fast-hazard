@@ -1,0 +1,20 @@
+step 0 action ('walk_to', '26')
+step 0 action ('walk_to', '26')
+step 0 action ('walk_to', '25')
+step 0 action ('walk_to', '25')
+step 0 action ('walk_to', '25')
+step 0 action ('walk_to', '26')
+step 0 action ('walk_to', '26')
+step 0 action ('pick_up', '26') backpack 16558885
+step 0 action ('drop', None)
+step 0 action ('walk_to', '25')
+step 0 action ('pick_up', '25') hiker_backpack 11348676
+step 0 action ('drop', None)
+step 0 action ('walk_to', '82')
+step 0 action ('pick_up', '82') apple 1506577
+step 0 action ('drop', None)
+step 0 action ('walk_to', '69')
+step 0 action ('walk_to', '69')
+step 0 action ('walk_to', '69')
+step 0 action ('walk_to', '69')
+step 0 action ('walk_to', '69')

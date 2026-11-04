@@ -1,0 +1,187 @@
+2026-10-27 14:56:20,133 - fire_custom_10/27/2026, 14:56:20 - DEBUG - 10826
+2026-10-27 14:56:20,133 - fire_custom_10/27/2026, 14:56:20 - INFO - Environment Created
+2026-10-27 14:56:20,133 - fire_custom_10/27/2026, 14:56:20 - INFO - done
+2026-10-27 14:56:20,134 - fire_custom_10/27/2026, 14:56:20 - INFO - Episode: 1/1
+2026-10-27 14:56:20,134 - fire_custom_10/27/2026, 14:56:20 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-24
+2026-10-27 14:57:27,570 - fire_custom_10/27/2026, 14:56:20 - INFO - Environment Reset. Took 67.43750810623169 secs
+2026-10-27 14:58:07,023 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '26'), finish: fail, because max steps reached
+2026-10-27 14:58:43,384 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '26'), finish: fail, because max steps reached
+2026-10-27 14:59:30,710 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:00:09,734 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '26'), finish: fail, because max steps reached
+2026-10-27 15:00:46,250 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:01:17,267 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:01:52,476 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:02:26,193 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:03:00,974 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '26'), finish: fail, because max steps reached
+2026-10-27 15:03:38,118 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:04:13,825 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:04:42,623 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '25'), finish: fail, because max steps reached
+2026-10-27 15:04:48,956 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '113'), finish: success
+2026-10-27 15:04:49,937 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 14 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:50,829 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 15 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:51,727 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 16 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:52,717 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 17 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:53,723 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 18 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:54,665 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 19 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:55,611 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 20 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:56,484 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 21 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:57,483 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 22 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:58,453 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 23 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:04:59,387 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 24 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:00,308 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 25 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:01,431 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 26 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:02,581 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 27 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:03,510 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 28 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:04,399 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 29 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:05,277 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 30 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:06,245 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 31 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:07,239 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 32 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:08,227 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 33 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:09,321 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 34 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:10,181 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 35 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:11,066 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 36 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:12,016 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 37 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:12,970 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 38 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:13,873 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 39 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:15,163 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 40 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:16,192 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 41 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:17,240 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 42 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:18,291 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 43 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:19,355 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 44 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:20,352 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 45 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:21,445 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 46 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:22,371 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 47 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:23,281 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 48 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:24,174 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 49 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:25,105 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 50 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:25,998 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 51 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:27,177 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 52 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:28,048 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 53 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:29,165 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 54 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:30,196 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 55 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:31,177 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 56 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:32,174 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 57 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:33,114 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 58 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:34,028 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 59 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:34,930 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 60 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:35,883 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 61 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:36,854 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 62 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:37,740 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 63 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:38,786 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 64 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:39,661 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 65 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:40,559 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 66 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:41,943 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 67 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:43,004 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 68 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:43,958 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 69 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:44,883 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 70 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:45,917 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 71 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:47,046 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 72 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:48,141 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 73 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:49,132 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 74 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:50,133 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 75 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:51,171 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 76 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:52,288 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 77 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:53,217 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 78 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:54,168 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 79 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:55,233 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 80 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:56,307 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 81 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:57,379 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 82 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:58,355 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 83 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:05:59,408 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 84 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:00,297 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 85 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:01,270 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 86 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:02,565 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 87 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:03,598 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 88 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:04,821 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 89 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:05,781 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 90 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:06,742 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 91 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:07,811 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 92 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:09,165 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 93 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:10,014 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 94 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:11,302 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 95 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:12,347 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 96 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:13,388 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 97 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:14,370 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 98 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:15,324 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 99 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:16,373 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 100 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:17,371 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 101 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:18,365 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 102 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:19,561 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 103 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:20,639 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 104 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:21,667 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 105 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:22,597 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 106 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:23,581 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 107 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:24,550 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 108 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:25,485 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 109 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:26,438 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 110 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:27,367 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 111 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:28,353 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 112 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:29,275 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 113 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:30,312 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 114 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:31,227 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 115 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:32,271 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 116 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:33,643 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 117 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:34,695 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 118 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:35,644 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 119 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:36,690 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 120 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:37,627 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 121 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:38,925 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 122 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:40,014 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 123 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:40,969 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 124 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:41,865 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 125 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:42,885 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 126 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:43,873 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 127 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:45,098 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 128 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:46,185 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 129 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:47,120 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 130 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:48,365 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 131 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:49,293 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 132 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:50,359 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 133 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:51,284 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 134 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:52,375 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 135 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:53,388 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 136 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:54,480 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 137 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:55,430 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 138 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:56,578 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 139 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:57,621 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 140 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:58,671 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 141 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:06:59,648 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 142 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:00,591 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 143 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:01,571 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 144 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:02,828 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 145 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:03,873 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 146 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:04,957 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 147 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:06,513 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 148 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:07,477 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 149 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:08,370 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 150 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:09,534 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 151 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:10,659 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 152 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:11,605 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 153 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:12,607 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 154 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:13,537 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 155 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:14,480 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 156 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:15,406 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 157 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:16,389 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 158 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:17,449 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 159 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:18,434 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 160 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:19,422 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 161 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:20,724 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 162 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:22,006 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 163 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:23,047 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 164 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:24,174 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 165 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:25,082 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 166 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:26,158 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 167 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:27,081 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 168 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:27,991 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 169 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:28,960 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 170 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:29,965 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 171 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:31,321 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 172 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:32,269 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 173 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:33,221 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 174 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:34,229 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 175 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:35,156 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 176 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:36,223 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 177 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:37,199 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 178 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:38,147 - fire_custom_10/27/2026, 14:56:20 - INFO - Executing step 179 for episode: 0, action: ('pick_up', '113'), finish: fail, because can only pick up target objects
+2026-10-27 15:07:38,157 - fire_custom_10/27/2026, 14:56:20 - INFO - eval done, avg score 0.0, max score 17.0, avg steps 1500.0
+2026-10-27 15:07:38,157 - fire_custom_10/27/2026, 14:56:20 - INFO - time: 678.0239903926849

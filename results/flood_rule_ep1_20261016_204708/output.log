@@ -1,0 +1,33 @@
+2026-10-16 20:47:36,599 - flood_custom_10/16/2026, 20:47:36 - DEBUG - 10826
+2026-10-16 20:47:36,599 - flood_custom_10/16/2026, 20:47:36 - INFO - Environment Created
+2026-10-16 20:47:36,601 - flood_custom_10/16/2026, 20:47:36 - INFO - done
+2026-10-16 20:47:36,601 - flood_custom_10/16/2026, 20:47:36 - INFO - Episode: 1/1
+2026-10-16 20:47:36,601 - flood_custom_10/16/2026, 20:47:36 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 20:48:47,602 - flood_custom_10/16/2026, 20:47:36 - INFO - Environment Reset. Took 70.99989676475525 secs
+2026-10-16 20:49:02,368 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:49:30,590 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+2026-10-16 20:49:56,560 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+2026-10-16 20:50:21,207 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+2026-10-16 20:50:27,065 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '83'), finish: success
+2026-10-16 20:50:40,583 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 6 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:50:53,725 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 7 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:50:55,986 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 8 for episode: 0, action: ('pick_up', 83), finish: success
+2026-10-16 20:51:08,586 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 9 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:51:11,031 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 10 for episode: 0, action: ('drop', None), finish: success
+2026-10-16 20:51:36,784 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '40'), finish: fail, because max steps reached
+2026-10-16 20:52:01,308 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '40'), finish: fail, because max steps reached
+2026-10-16 20:52:26,087 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '40'), finish: fail, because max steps reached
+2026-10-16 20:52:48,535 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '40'), finish: success
+2026-10-16 20:53:00,534 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 15 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:53:12,406 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 16 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:53:24,422 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 17 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:53:29,403 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 18 for episode: 0, action: ('pick_up', 40), finish: success
+2026-10-16 20:53:41,106 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 19 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:53:46,771 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 20 for episode: 0, action: ('drop', None), finish: success
+2026-10-16 20:53:59,328 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 21 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:54:11,719 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 22 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:54:23,388 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 23 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:54:36,071 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 24 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 20:54:59,182 - flood_custom_10/16/2026, 20:47:36 - INFO - Executing step 25 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 20:54:59,185 - flood_custom_10/16/2026, 20:47:36 - INFO - eval done, avg score 3.0, max score 19.0, avg steps 1601.0
+2026-10-16 20:54:59,185 - flood_custom_10/16/2026, 20:47:36 - INFO - time: 442.5838460922241

@@ -1,0 +1,65 @@
+{
+ "sweep_fire_greedy_test25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 25,
+  "rate": 0.17224531024531026,
+  "value_rate": 0.11358612524253972,
+  "step": 458.3888888888889,
+  "damage": 0.2222222222222222
+ },
+ "sweep_fire_llm_haiku_test25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 25,
+  "rate": 0.17581096681096678,
+  "value_rate": 0.17030010691395892,
+  "step": 381.86842105263156,
+  "damage": 0.13157894736842105
+ },
+ "sweep_fire_mcts_test25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 25,
+  "rate": 0.1709350649350649,
+  "value_rate": 0.1508297138240212,
+  "step": 326.3243243243243,
+  "damage": 0.3783783783783784
+ },
+ "sweep_fire_random_test25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 25,
+  "rate": 0.4134403374403374,
+  "value_rate": 0.35599950979270356,
+  "step": 328.25555555555553,
+  "damage": 0.4222222222222222
+ },
+ "sweep_fire_rule_ep25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 2,
+  "rate": 0.17424242424242425,
+  "value_rate": 0.14191729323308272,
+  "step": 758.6666666666666,
+  "damage": 0.3333333333333333
+ },
+ "sweep_fire_rule_test25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 25,
+  "rate": 0.09125541125541126,
+  "value_rate": 0.0748246982486113,
+  "step": 509.1,
+  "damage": 0.35
+ },
+ "sweep_fire_vlm_haiku_test25": {
+  "task": "fire",
+  "exit": 0,
+  "valid": 7,
+  "rate": 0.09064625850340136,
+  "value_rate": 0.06262939958592133,
+  "step": 741.25,
+  "damage": 0.5
+ }
+}

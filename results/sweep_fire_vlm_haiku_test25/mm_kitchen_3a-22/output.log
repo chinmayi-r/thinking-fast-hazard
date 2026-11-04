@@ -1,0 +1,28 @@
+2026-10-27 20:17:38,339 - fire_custom_10/27/2026, 20:17:38 - DEBUG - 10826
+2026-10-27 20:17:38,339 - fire_custom_10/27/2026, 20:17:38 - INFO - Environment Created
+2026-10-27 20:17:38,339 - fire_custom_10/27/2026, 20:17:38 - INFO - done
+2026-10-27 20:17:38,342 - fire_custom_10/27/2026, 20:17:38 - INFO - Episode: 1/1
+2026-10-27 20:17:38,342 - fire_custom_10/27/2026, 20:17:38 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-22
+2026-10-27 20:18:36,730 - fire_custom_10/27/2026, 20:17:38 - INFO - Environment Reset. Took 58.38891386985779 secs
+2026-10-27 20:19:09,662 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '29'), finish: fail, because max steps reached
+2026-10-27 20:19:21,218 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '27'), finish: success
+2026-10-27 20:19:26,473 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 3 for episode: 0, action: ('pick_up', '27'), finish: success
+2026-10-27 20:19:34,072 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 4 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 20:20:03,084 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '29'), finish: fail, because max steps reached
+2026-10-27 20:20:33,391 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '29'), finish: fail, because max steps reached
+2026-10-27 20:21:01,467 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '66'), finish: fail, because max steps reached
+2026-10-27 20:21:19,780 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '66'), finish: success
+2026-10-27 20:21:22,177 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 9 for episode: 0, action: ('pick_up', '66'), finish: success
+2026-10-27 20:21:24,869 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 10 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 20:21:50,229 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 11 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 20:22:29,657 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-27 20:22:38,379 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '85'), finish: fail, because target not in vision or memory
+2026-10-27 20:23:15,041 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '29'), finish: fail, because max steps reached
+2026-10-27 20:23:57,420 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '85'), finish: fail, because max steps reached
+2026-10-27 20:24:40,329 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-27 20:25:24,215 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 17 for episode: 0, action: ('walk_to', '85'), finish: fail, because max steps reached
+2026-10-27 20:25:48,943 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 18 for episode: 0, action: ('walk_to', '85'), finish: fail, because target not in vision or memory
+2026-10-27 20:26:31,034 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 19 for episode: 0, action: ('walk_to', '84'), finish: fail, because max steps reached
+2026-10-27 20:27:09,931 - fire_custom_10/27/2026, 20:17:38 - INFO - Executing step 20 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-27 20:27:09,934 - fire_custom_10/27/2026, 20:17:38 - INFO - eval done, avg score 2.0, max score 6.0, avg steps 1513.0
+2026-10-27 20:27:09,934 - fire_custom_10/27/2026, 20:17:38 - INFO - time: 571.5934648513794

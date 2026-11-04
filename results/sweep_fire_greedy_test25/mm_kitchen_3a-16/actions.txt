@@ -1,0 +1,17 @@
+step 0 action ('walk_to', '71')
+step 0 action ('walk_to', '65')
+step 0 action ('pick_up', '65') basket_18inx18inx12iin_wicker 8286254
+step 0 action ('drop', None)
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('walk_to', '61')
+step 0 action ('pick_up', '61') basket_18inx18inx12iin_plastic_lattice 2699281
+step 0 action ('drop', None)
+step 0 action ('walk_to', '79')
+step 0 action ('walk_to', '79')
+step 0 action ('walk_to', '79')

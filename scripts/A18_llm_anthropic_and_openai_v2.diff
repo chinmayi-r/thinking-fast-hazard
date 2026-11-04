@@ -1,0 +1,214 @@
+diff --git a/src/HAZARD/policy/llm.py b/src/HAZARD/policy/llm.py
+index 2536928..5106e80 100644
+--- a/src/HAZARD/policy/llm.py
++++ b/src/HAZARD/policy/llm.py
+@@ -9,6 +9,24 @@ import random
+ from openai import OpenAIError
+ import backoff
+ import time
++try:  # A18 (iw-thinking-fast, 2026-10-16): Claude via the official Anthropic SDK, as a third `source`
++    import anthropic
++    _ANTHROPIC_ERRORS = (anthropic.APIError,)
++except ImportError:  # the openai / huggingface paths must keep working without the package
++    anthropic = None
++    _ANTHROPIC_ERRORS = ()
++
++# Anthropic list prices, USD per 1M tokens (input, output), cached 2026-10-06; only for the running cost estimate
++_ANTHROPIC_PRICES = {'claude-opus-5-5': (4.0, 20.0), 'claude-sonnet-5-5': (2.0, 10.0), 'claude-haiku-5-5': (0.10, 0.50),
++                     'claude-opus-5': (5.0, 25.0), 'claude-sonnet-5': (2.0, 10.0)}
++
++
++
++def _anthropic_client_for(key):
++    """A18b: build the Anthropic client; an org-level key needs the workspace header (env ANTHROPIC_WORKSPACE_ID)."""
++    ws = os.environ.get('ANTHROPIC_WORKSPACE_ID', '').strip()
++    kwargs = {'default_headers': {'anthropic-workspace-id': ws}} if ws else {}
++    return anthropic.Anthropic(api_key=key, **kwargs) if key else anthropic.Anthropic(**kwargs)
+ 
+ 
+ class SamplingParameters:
+@@ -24,7 +42,7 @@ class SamplingParameters:
+ 
+ class LLM:
+     def __init__(self,
+-                 source,  # 'huggingface' or 'openai'
++                 source,  # 'huggingface', 'openai' or 'anthropic' (A18)
+                  lm_id,
+                  prompt_template_path,
+                  cot,
+@@ -41,8 +59,10 @@ class LLM:
+             self.apikey_list = [api_key]
+         self.model_and_tokenizer_path = model_and_tokenizer_path
+         self.apikey_idx = 0
+-        openai.api_key = self.apikey_list[self.apikey_idx]
++        if source == 'openai':
++            openai.api_key = self.apikey_list[self.apikey_idx]
+         self.agent_type = "llm"
++        self.call_log = []  # A18: per-call wall_s / tokens / stop_reason, for latency accounting
+         self.task = task
+         assert task in ['fire', 'flood', 'wind']
+         self.debug = sampling_parameters.debug
+@@ -53,13 +73,36 @@ class LLM:
+         self.cot = cot
+         self.source = source
+         self.lm_id = lm_id
+-        self.chat = 'gpt-3.5-turbo' in lm_id or 'gpt-4' in lm_id
++        if source == 'anthropic':
++            self.chat = True
++        elif source == 'openai':
++            self.chat = not lm_id.startswith('text-')  # every current OpenAI model is a chat model
++        else:
++            self.chat = 'gpt-3.5-turbo' in lm_id or 'gpt-4' in lm_id
+         self.total_cost = 0
+         self.total_max_tokens = total_max_tokens - sampling_parameters.max_tokens
+ 
+-        if self.source == 'openai':
++        if self.source == 'anthropic':
++            assert anthropic is not None, 'pip install anthropic'
++            # HAZARD's prompt-cutting loop needs a token counter; cl100k_base is only an approximation for Claude
++            # and only guards against absurd prompts (Claude's context is 1M tokens, so the limit is set high)
++            self.tokenizer = tiktoken.get_encoding('cl100k_base')
++            self.total_max_tokens = 100000
++            key = self.apikey_list[self.apikey_idx]
++            self.anthropic_client = _anthropic_client_for(key)  # A18b: key from file, else env / ant auth
++            self.sampling_params = {
++                # Claude 5.5 models reject temperature/top_p; thinking is always on, so give the answer room and keep
++                # the effort low by default (this is the 'fast LLM' baseline). Override with HAZARD_ANTHROPIC_EFFORT.
++                'max_tokens': max(sampling_parameters.max_tokens, 4096),
++                'n': sampling_parameters.n,
++                'effort': os.environ.get('HAZARD_ANTHROPIC_EFFORT', 'low'),
++            }
++        elif self.source == 'openai':
+             tiktoken.get_encoding("cl100k_base")
+-            self.tokenizer = tiktoken.encoding_for_model(self.lm_id)
++            try:
++                self.tokenizer = tiktoken.encoding_for_model(self.lm_id)
++            except KeyError:
++                self.tokenizer = tiktoken.get_encoding('cl100k_base')
+             if self.chat:
+                 self.sampling_params = {
+                     "max_tokens": sampling_parameters.max_tokens,
+@@ -96,50 +139,86 @@ class LLM:
+             raise ValueError("invalid source")
+ 
+         def lm_engine(source, lm_id):
+-            @backoff.on_exception(backoff.expo, OpenAIError)
++            @backoff.on_exception(backoff.expo, (OpenAIError,) + _ANTHROPIC_ERRORS, max_tries=6)
+             def _generate(prompt, sampling_params):
+                 usage = 0
+-                if source == 'openai':
++                if source in ('openai', 'anthropic'):
+                     base_prompt = prompt[0]["content"]
+                     tokens = self.tokenizer.encode(base_prompt)
+                     while len(tokens) >= self.total_max_tokens:
+                         base_prompt = self.cut_prompt(base_prompt)
+                         tokens = self.tokenizer.encode(base_prompt)
+                     prompt[0]["content"] = base_prompt
++                    if source == 'anthropic':
++                        # A18: one Messages API call per sample; HAZARD's prompts are [user] or [user, assistant, user]
++                        generated_samples = []
++                        in_tok = out_tok = 0
++                        for _ in range(sampling_params['n']):
++                            t_call = time.perf_counter()
++                            try:
++                                response = self.anthropic_client.messages.create(
++                                    model=lm_id, max_tokens=sampling_params['max_tokens'], messages=prompt,
++                                    output_config={'effort': sampling_params['effort']})
++                            except _ANTHROPIC_ERRORS as e:
++                                print(e)
++                                print('Anthropic error, retrying...')
++                                self.sleep()
++                                raise e
++                            dt = time.perf_counter() - t_call
++                            text = ''.join(b.text for b in response.content if b.type == 'text')
++                            if response.stop_reason == 'refusal':  # safety classifier declined; parse_answer falls back
++                                print(f'Anthropic refusal: {getattr(response, "stop_details", None)}')
++                                text = ''
++                            generated_samples.append(text)
++                            in_tok += response.usage.input_tokens
++                            out_tok += response.usage.output_tokens
++                            self.call_log.append({'wall_s': round(dt, 4), 'input_tokens': response.usage.input_tokens,
++                                                  'output_tokens': response.usage.output_tokens,
++                                                  'stop_reason': response.stop_reason, 'model': response.model})
++                            if self.debug:
++                                os.makedirs('llm_configs', exist_ok=True)
++                                with open('llm_configs/chat_raw.json', 'a') as f:
++                                    f.write(response.model_dump_json(indent=2))
++                                    f.write('\n')
++                        pin, pout = _ANTHROPIC_PRICES.get(lm_id, (0.0, 0.0))
++                        usage = in_tok * pin / 1e6 + out_tok * pout / 1e6  # USD estimate from the cached price table
++                        return generated_samples, usage
+                     try:
+                         if self.chat:
+-                            response = openai.ChatCompletion.create(
++                            # OpenAI SDK >= 1.0 (A18): module-level client, attribute access on the response
++                            t_call = time.perf_counter()
++                            response = openai.chat.completions.create(
+                                 model=lm_id, messages=prompt, **sampling_params
+                             )
+-                            # print(json.dumps(response, indent=4))
++                            dt = time.perf_counter() - t_call
+                             if self.debug:
+-                                with open(f"llm_configs/chat_raw.json", 'a') as f:
+-                                    f.write(json.dumps(response, indent=4))
++                                os.makedirs('llm_configs', exist_ok=True)
++                                with open('llm_configs/chat_raw.json', 'a') as f:
++                                    f.write(response.model_dump_json(indent=2))
+                                     f.write('\n')
+-                            generated_samples = [response['choices'][i]['message']['content'] for i in
++                            generated_samples = [response.choices[i].message.content or '' for i in
+                                                  range(sampling_params['n'])]
+-                            if 'gpt-4' in self.lm_id:
+-                                usage = response['usage']['prompt_tokens'] * 0.03 / 1000 + response['usage'][
+-                                    'completion_tokens'] * 0.06 / 1000
+-                            elif 'gpt-3.5' in self.lm_id:
+-                                usage = response['usage']['total_tokens'] * 0.002 / 1000
+-                        # mean_log_probs = [np.mean(response['choices'][i]['logprobs']['token_logprobs']) for i in
+-                        # 				  range(sampling_params['n'])]
+-                        elif "text-" in lm_id:
+-                            response = openai.Completion.create(model=lm_id, prompt=prompt, **sampling_params)
+-                            # print(json.dumps(response, indent=4))
++                            if response.usage is not None:
++                                self.call_log.append({'wall_s': round(dt, 4), 'input_tokens': response.usage.prompt_tokens,
++                                                      'output_tokens': response.usage.completion_tokens,
++                                                      'stop_reason': response.choices[0].finish_reason, 'model': response.model})
++                                if 'gpt-4' in self.lm_id:
++                                    usage = response.usage.prompt_tokens * 0.03 / 1000 + response.usage.completion_tokens * 0.06 / 1000
++                                elif 'gpt-3.5' in self.lm_id:
++                                    usage = response.usage.total_tokens * 0.002 / 1000
++                        elif 'text-' in lm_id:
++                            response = openai.completions.create(model=lm_id, prompt=prompt, **sampling_params)
+                             if self.debug:
+-                                with open(f"output/raw.json", 'a') as f:
+-                                    f.write(json.dumps(response, indent=4))
++                                os.makedirs('output', exist_ok=True)
++                                with open('output/raw.json', 'a') as f:
++                                    f.write(response.model_dump_json(indent=2))
+                                     f.write('\n')
+-                            generated_samples = [response['choices'][i]['text'] for i in range(sampling_params['n'])]
+-                        # mean_log_probs = [np.mean(response['choices'][i]['logprobs']['token_logprobs']) for i in
+-                        # 			  range(sampling_params['n'])]
++                            generated_samples = [response.choices[i].text for i in range(sampling_params['n'])]
+                         else:
+-                            raise ValueError(f"{lm_id} not available!")
++                            raise ValueError(f'{lm_id} not available!')
+                     except OpenAIError as e:
+                         print(e)
+-                        print("Switch key and retry...")
++                        print('Switch key and retry...')
+                         self.sleep()
+                         raise e
+                 elif source == 'huggingface':
+@@ -189,7 +268,11 @@ class LLM:
+         self.apikey_idx += 1
+         if self.apikey_idx >= len(self.apikey_list):
+             self.apikey_idx = 0
+-        openai.api_key = self.apikey_list[self.apikey_idx]
++        if self.source == 'openai':
++            openai.api_key = self.apikey_list[self.apikey_idx]
++        elif self.source == 'anthropic' and anthropic is not None:
++            key = self.apikey_list[self.apikey_idx]
++            self.anthropic_client = _anthropic_client_for(key)
+         time.sleep(sleep_time)
+ 
+     def cut_prompt_with_given_positions(self, position1, position2, prompt):

@@ -1,0 +1,61 @@
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 94)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 94)
+step 0 action ('pick_up', 94) none None
+step 0 action ('pick_up', 94) none None
+step 0 action ('walk_to_single', 94)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 108)
+step 0 action ('walk_to_single', 94)
+step 0 action ('drop', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 90) none None
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 58) none None
+step 0 action ('walk_to_single', 126)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 14)
+step 0 action ('pick_up', 49) none None
+step 0 action ('drop', None)
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('walk_to_single', 23)
+step 0 action ('pick_up', 49) none None
+step 0 action ('explore', None)
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('walk_to_single', 42)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 49)
+step 0 action ('drop', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 49) none None
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('explore', None)
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 49)
+step 0 action ('walk_to_single', 42)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 49)
+step 0 action ('walk_to_single', 49)
+step 0 action ('walk_to_single', 107)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 49) none None
+step 0 action ('walk_to_single', 49)
+step 0 action ('walk_to_single', 49)
+step 0 action ('walk_to_single', 84)
+step 0 action ('walk_to_single', 84)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 49) none None
+step 0 action ('explore', None)
+step 0 action ('pick_up', 49) coffee_grinder 12092978
+step 0 action ('walk_to_single', 49)
+step 0 action ('walk_to_single', 59)
+step 0 action ('pick_up', 49) none None
+step 0 action ('explore', None)
+step 0 action ('explore', None)

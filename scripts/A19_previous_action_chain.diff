@@ -1,0 +1,54 @@
+diff --git a/src/HAZARD/envs/fire/fireagent_controller.py b/src/HAZARD/envs/fire/fireagent_controller.py
+index ec07e67..027f903 100644
+--- a/src/HAZARD/envs/fire/fireagent_controller.py
++++ b/src/HAZARD/envs/fire/fireagent_controller.py
+@@ -436,6 +436,13 @@ class FireAgentController(FireController):
+             commands = self.replace_with_local_path(commands)
+             # self.commands = self.replace_with_local_path(self.commands)
+         resp = super().communicate(commands)
++        # A19 (iw-thinking-fast, 2026-10-16): TDW 1.13 deep-copies a finished action into _previous_action
++        # (tdw/add_ons/replicant_base.py:181) and every move/turn action stores its predecessor, so the copied
++        # chain grows by one link per action and overflows the recursion limit late in an episode. Keep one link.
++        for _agent in getattr(self, 'agents', []):
++            _prev = getattr(_agent, '_previous_action', None)
++            if _prev is not None and getattr(_prev, '_previous_action', None) is not None:
++                _prev._previous_action = None
+         if self.initialized:
+             # for i, agent in enumerate(self.agents):
+             #     # if too hot, agent dies
+diff --git a/src/HAZARD/envs/flood/floodagent_controller.py b/src/HAZARD/envs/flood/floodagent_controller.py
+index e7377ce..1550912 100644
+--- a/src/HAZARD/envs/flood/floodagent_controller.py
++++ b/src/HAZARD/envs/flood/floodagent_controller.py
+@@ -398,6 +398,13 @@ class FloodAgentController(FloodController):
+         if self.use_local_resources:
+             commands = self.replace_with_local_path(commands)
+         resp = super().communicate(commands)
++        # A19 (iw-thinking-fast, 2026-10-16): TDW 1.13 deep-copies a finished action into _previous_action
++        # (tdw/add_ons/replicant_base.py:181) and every move/turn action stores its predecessor, so the copied
++        # chain grows by one link per action and overflows the recursion limit late in an episode. Keep one link.
++        for _agent in getattr(self, 'agents', []):
++            _prev = getattr(_agent, '_previous_action', None)
++            if _prev is not None and getattr(_prev, '_previous_action', None) is not None:
++                _prev._previous_action = None
+         if self.initialized:
+             for target in self.target_ids:
+                 if (np.abs(self.manager.objects[target].position).sum() > 50) and (target not in self.finished):
+diff --git a/src/HAZARD/envs/wind/windagent_controller.py b/src/HAZARD/envs/wind/windagent_controller.py
+index 10edc80..102e0e7 100644
+--- a/src/HAZARD/envs/wind/windagent_controller.py
++++ b/src/HAZARD/envs/wind/windagent_controller.py
+@@ -345,6 +345,13 @@ class WindAgentController(WindController):
+                 if dist > 3:
+                     agent.fail_grasp()
+         resp = super().communicate(commands)
++        # A19 (iw-thinking-fast, 2026-10-16): TDW 1.13 deep-copies a finished action into _previous_action
++        # (tdw/add_ons/replicant_base.py:181) and every move/turn action stores its predecessor, so the copied
++        # chain grows by one link per action and overflows the recursion limit late in an episode. Keep one link.
++        for _agent in getattr(self, 'agents', []):
++            _prev = getattr(_agent, '_previous_action', None)
++            if _prev is not None and getattr(_prev, '_previous_action', None) is not None:
++                _prev._previous_action = None
+         if self.image_capture_path != None:
+             for i in range(len(resp) - 1):
+                 r_id = OutputData.get_data_type_id(resp[i])

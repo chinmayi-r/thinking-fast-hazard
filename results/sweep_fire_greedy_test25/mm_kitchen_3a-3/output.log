@@ -1,0 +1,29 @@
+2026-10-26 22:12:59,140 - fire_custom_10/26/2026, 22:12:59 - DEBUG - 10826
+2026-10-26 22:12:59,140 - fire_custom_10/26/2026, 22:12:59 - INFO - Environment Created
+2026-10-26 22:12:59,141 - fire_custom_10/26/2026, 22:12:59 - INFO - done
+2026-10-26 22:12:59,142 - fire_custom_10/26/2026, 22:12:59 - INFO - Episode: 1/1
+2026-10-26 22:12:59,142 - fire_custom_10/26/2026, 22:12:59 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-3
+2026-10-26 22:14:06,366 - fire_custom_10/26/2026, 22:12:59 - INFO - Environment Reset. Took 67.22450113296509 secs
+2026-10-26 22:14:40,074 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:15:38,535 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '72'), finish: success
+2026-10-26 22:15:45,624 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 3 for episode: 0, action: ('pick_up', '72'), finish: success
+2026-10-26 22:15:54,733 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 4 for episode: 0, action: ('drop', None), finish: success
+2026-10-26 22:16:25,512 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 5 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:17:27,795 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '74'), finish: fail, because max steps reached
+2026-10-26 22:18:02,304 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 7 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:19:09,209 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '70'), finish: fail, because max steps reached
+2026-10-26 22:19:40,522 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 9 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:20:51,688 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '70'), finish: fail, because max steps reached
+2026-10-26 22:21:27,039 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 11 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:22:37,542 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '70'), finish: fail, because max steps reached
+2026-10-26 22:23:11,177 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 13 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:24:19,269 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '70'), finish: fail, because max steps reached
+2026-10-26 22:24:56,590 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 15 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:26:04,144 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-26 22:26:39,494 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 17 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:27:51,579 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 18 for episode: 0, action: ('walk_to', '70'), finish: fail, because max steps reached
+2026-10-26 22:28:29,356 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 19 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:29:42,974 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 20 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-26 22:30:19,208 - fire_custom_10/26/2026, 22:12:59 - INFO - Executing step 21 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:30:19,210 - fire_custom_10/26/2026, 22:12:59 - INFO - eval done, avg score 1.0, max score 22.0, avg steps 1512.0
+2026-10-26 22:30:19,211 - fire_custom_10/26/2026, 22:12:59 - INFO - time: 1040.069592475891

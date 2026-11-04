@@ -1,0 +1,41 @@
+{
+  "env": "fire",
+  "agent": "rule",
+  "episodes_requested": 1,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 449.4,
+  "decisions": 18,
+  "decision_wall_s": {
+    "mean": 0.0001,
+    "max": 0.0002,
+    "min": 0.0001
+  },
+  "frames_at_30fps_total": 18,
+  "eval_results": {
+    "mm_craftroom_2a-1\\eval_result.json": {
+      "avg_score": 1.0,
+      "avg_steps": 1535.0,
+      "avg_max_score": 19.0,
+      "total": 1,
+      "target_status": {
+        "14640280": false,
+        "14544403": false,
+        "16728828": false,
+        "16381463": false,
+        "10511794": 168,
+        "10844722": false,
+        "473176": false,
+        "474390": false,
+        "16013534": false,
+        "6999109": false,
+        "6798686": false
+      },
+      "final_states": {
+        "10511794": 0
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1536
+}

@@ -1,0 +1,64 @@
+{
+  "env": "fire",
+  "agent": "llm",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 604.3,
+  "decisions": 22,
+  "decision_wall_s": {
+    "mean": 5.4867,
+    "max": 11.2208,
+    "min": 0.1359
+  },
+  "frames_at_30fps_total": 3634,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 2.5,
+      "avg_steps": 1532.0,
+      "avg_max_score": 11.0,
+      "total": 1,
+      "target_status": {
+        "6071910": false,
+        "7894596": false,
+        "5056209": false,
+        "3620792": false,
+        "2371457": 813,
+        "14972456": 888,
+        "3671125": false,
+        "13861373": 845,
+        "4468913": false,
+        "2884853": false,
+        "9759015": false
+      },
+      "final_states": {
+        "2371457": 0,
+        "14972456": 0,
+        "13861373": 1
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1533,
+  "llm": {
+    "source": "anthropic",
+    "model": "claude-opus-5-5",
+    "calls": 32,
+    "call_wall_s": {
+      "mean": 3.647,
+      "max": 8.136,
+      "min": 0.916,
+      "total": 116.7
+    },
+    "input_tokens": 32073,
+    "output_tokens": 7646,
+    "stop_reasons": [
+      "end_turn"
+    ],
+    "cost_usd_estimate": 0.2812
+  }
+}

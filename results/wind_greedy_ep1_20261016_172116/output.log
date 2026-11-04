@@ -1,0 +1,34 @@
+2026-10-16 17:21:40,144 - wind_custom_10/16/2026, 17:21:40 - DEBUG - 10826
+2026-10-16 17:21:40,144 - wind_custom_10/16/2026, 17:21:40 - INFO - Environment Created
+2026-10-16 17:21:40,144 - wind_custom_10/16/2026, 17:21:40 - INFO - done
+2026-10-16 17:21:40,145 - wind_custom_10/16/2026, 17:21:40 - INFO - Episode: 1/1
+2026-10-16 17:21:40,145 - wind_custom_10/16/2026, 17:21:40 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_wind\suburb_scene_2023-0-0
+2026-10-16 17:22:29,291 - wind_custom_10/16/2026, 17:21:40 - INFO - Environment Reset. Took 49.14630937576294 secs
+2026-10-16 17:22:46,165 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:00,489 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:15,837 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:32,012 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:45,374 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:00,762 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:15,455 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:30,467 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:41,186 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:57,709 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:12,050 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:27,294 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:36,548 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:49,832 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:06,050 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:22,169 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:34,224 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 17 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:48,286 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 18 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:09,464 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 19 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:25,466 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 20 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:40,688 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 21 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:55,112 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 22 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:08,457 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 23 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:18,776 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 24 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:35,127 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 25 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:48,229 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 26 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:48,232 - wind_custom_10/16/2026, 17:21:40 - INFO - eval done, avg score 0.0, max score 1.0, avg steps 3016.0
+2026-10-16 17:28:48,232 - wind_custom_10/16/2026, 17:21:40 - INFO - time: 428.0873725414276

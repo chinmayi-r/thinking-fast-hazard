@@ -1,0 +1,2 @@
+stay_awake: holding system awake until 'SWEEP V2 ALL DONE' appears in logs/sweep_v2.log
+stay_awake: released

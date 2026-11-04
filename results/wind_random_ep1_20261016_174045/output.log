@@ -1,0 +1,84 @@
+2026-10-16 17:41:10,525 - wind_custom_10/16/2026, 17:41:10 - DEBUG - 10826
+2026-10-16 17:41:10,526 - wind_custom_10/16/2026, 17:41:10 - INFO - Environment Created
+2026-10-16 17:41:10,526 - wind_custom_10/16/2026, 17:41:10 - INFO - done
+2026-10-16 17:41:10,527 - wind_custom_10/16/2026, 17:41:10 - INFO - Episode: 1/1
+2026-10-16 17:41:10,528 - wind_custom_10/16/2026, 17:41:10 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_wind\suburb_scene_2023-0-0
+2026-10-16 17:41:59,588 - wind_custom_10/16/2026, 17:41:10 - INFO - Environment Reset. Took 49.06109809875488 secs
+2026-10-16 17:42:01,184 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 1 for episode: 0, action: ('walk_to_single', 19), finish: success
+2026-10-16 17:42:01,711 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 2 for episode: 0, action: ('walk_to_single', 19), finish: success
+2026-10-16 17:42:02,729 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 3 for episode: 0, action: ('walk_to_single', 12), finish: fail, because target not in vision or memory
+2026-10-16 17:42:15,365 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 4 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:42:19,133 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 5 for episode: 0, action: ('walk_to_single', 10), finish: success
+2026-10-16 17:42:32,186 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 6 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:42:38,010 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 7 for episode: 0, action: ('pick_up', 12), finish: success
+2026-10-16 17:42:39,918 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 8 for episode: 0, action: ('walk_to_single', 12), finish: success
+2026-10-16 17:42:50,393 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 9 for episode: 0, action: ('drop', 1), finish: success
+2026-10-16 17:43:03,263 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 10 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:43:05,029 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 11 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:43:05,541 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 12 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:43:07,635 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 13 for episode: 0, action: ('walk_to_single', 18), finish: success
+2026-10-16 17:43:09,653 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 14 for episode: 0, action: ('walk_to_single', 18), finish: success
+2026-10-16 17:43:22,602 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 15 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:43:27,841 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 16 for episode: 0, action: ('pick_up', 18), finish: success
+2026-10-16 17:43:40,239 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 17 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:43:46,191 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 18 for episode: 0, action: ('pick_up', 18), finish: fail, because failed to grasp
+2026-10-16 17:43:48,578 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 19 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:43:50,388 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 20 for episode: 0, action: ('walk_to_single', 18), finish: success
+2026-10-16 17:43:59,315 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 21 for episode: 0, action: ('drop', 1), finish: success
+2026-10-16 17:44:11,987 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 22 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:44:19,169 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 23 for episode: 0, action: ('pick_up', 14), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:44:20,117 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 24 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:44:32,648 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 25 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:44:33,288 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 26 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:44:39,713 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 27 for episode: 0, action: ('pick_up', 14), finish: success
+2026-10-16 17:44:45,986 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 28 for episode: 0, action: ('pick_up', 14), finish: fail, because failed to grasp
+2026-10-16 17:44:52,296 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 29 for episode: 0, action: ('pick_up', 14), finish: fail, because failed to grasp
+2026-10-16 17:44:54,499 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 30 for episode: 0, action: ('walk_to_single', 3), finish: success
+2026-10-16 17:44:56,455 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 31 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:45:05,054 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 32 for episode: 0, action: ('pick_up', 14), finish: fail, because failed to grasp
+2026-10-16 17:45:10,211 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 33 for episode: 0, action: ('pick_up', 14), finish: fail, because failed to grasp
+2026-10-16 17:45:17,528 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 34 for episode: 0, action: ('pick_up', 14), finish: fail, because failed to grasp
+2026-10-16 17:45:28,203 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 35 for episode: 0, action: ('drop', 1), finish: success
+2026-10-16 17:45:39,735 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 36 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:45:42,416 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 37 for episode: 0, action: ('walk_to_single', 16), finish: success
+2026-10-16 17:45:47,688 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 38 for episode: 0, action: ('pick_up', 11), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:45:53,625 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 39 for episode: 0, action: ('pick_up', 11), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:45:59,101 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 40 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:46:00,716 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 41 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:46:02,215 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 42 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:46:04,133 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 43 for episode: 0, action: ('walk_to_single', 16), finish: success
+2026-10-16 17:46:16,698 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 44 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:46:20,494 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 45 for episode: 0, action: ('walk_to_single', 16), finish: success
+2026-10-16 17:46:34,330 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 46 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:46:38,607 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 47 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:46:44,208 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 48 for episode: 0, action: ('walk_to_single', 16), finish: success
+2026-10-16 17:46:58,936 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 49 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:47:00,641 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 50 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:47:01,195 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 51 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:47:01,934 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 52 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:47:14,342 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 53 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:47:16,953 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 54 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:47:21,918 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 55 for episode: 0, action: ('pick_up', 6), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:47:22,901 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 56 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:47:25,195 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 57 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:47:25,723 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 58 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:47:31,784 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 59 for episode: 0, action: ('pick_up', 6), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:47:34,882 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 60 for episode: 0, action: ('walk_to_single', 3), finish: success
+2026-10-16 17:47:37,519 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 61 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:47:42,544 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 62 for episode: 0, action: ('pick_up', 6), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:47:44,321 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 63 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:47:46,883 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 64 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:47:49,492 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 65 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-16 17:47:51,818 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 66 for episode: 0, action: ('walk_to_single', 9), finish: success
+2026-10-16 17:48:05,235 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 67 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:48:19,237 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 68 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:48:19,704 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 69 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:48:23,822 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 70 for episode: 0, action: ('pick_up', 6), finish: fail, because cannot grasp, maybe too far
+2026-10-16 17:48:25,560 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 71 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:48:37,623 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 72 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:48:38,438 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 73 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:48:39,909 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 74 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:48:40,495 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 75 for episode: 0, action: ('drop', 1), finish: fail, because not holding an object
+2026-10-16 17:48:42,206 - wind_custom_10/16/2026, 17:41:10 - INFO - Executing step 76 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-16 17:48:42,207 - wind_custom_10/16/2026, 17:41:10 - INFO - eval done, avg score 0.0, max score 1.0, avg steps 3000.0
+2026-10-16 17:48:42,207 - wind_custom_10/16/2026, 17:41:10 - INFO - time: 451.6801736354828

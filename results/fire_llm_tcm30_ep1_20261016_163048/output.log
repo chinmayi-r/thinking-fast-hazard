@@ -1,0 +1,15 @@
+2026-10-16 16:31:12,022 - fire_custom_10/16/2026, 16:31:12 - DEBUG - 10826
+2026-10-16 16:31:12,022 - fire_custom_10/16/2026, 16:31:12 - INFO - Environment Created
+2026-10-16 16:31:12,023 - fire_custom_10/16/2026, 16:31:12 - INFO - done
+2026-10-16 16:31:12,024 - fire_custom_10/16/2026, 16:31:12 - INFO - Episode: 1/1
+2026-10-16 16:31:12,024 - fire_custom_10/16/2026, 16:31:12 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 16:32:30,510 - fire_custom_10/16/2026, 16:31:12 - INFO - Environment Reset. Took 78.48626661300659 secs
+2026-10-16 16:33:27,701 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '40'), finish: success
+2026-10-16 16:33:32,351 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 2 for episode: 0, action: ('pick_up', '40'), finish: success
+2026-10-16 16:33:39,526 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 3 for episode: 0, action: ('drop', None), finish: success
+2026-10-16 16:35:13,712 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:36:45,295 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:37:54,098 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 6 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 16:39:21,875 - fire_custom_10/16/2026, 16:31:12 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+2026-10-16 16:39:21,877 - fire_custom_10/16/2026, 16:31:12 - INFO - eval done, avg score 1.0, max score 19.0, avg steps 1655.0
+2026-10-16 16:39:21,877 - fire_custom_10/16/2026, 16:31:12 - INFO - time: 489.8526785373688

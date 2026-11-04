@@ -1,0 +1,55 @@
+{
+  "env": "fire",
+  "agent": "llm",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 584.3,
+  "decisions": 15,
+  "decision_wall_s": {
+    "mean": 5.4023,
+    "max": 8.3919,
+    "min": 3.1735
+  },
+  "frames_at_30fps_total": 2438,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 0.0,
+      "avg_steps": 1502.0,
+      "avg_max_score": 22.0,
+      "total": 1,
+      "target_status": {
+        "9062689": false,
+        "12485822": false,
+        "6507605": false,
+        "1836623": false,
+        "5688585": false,
+        "4923245": false
+      },
+      "final_states": {}
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1503,
+  "llm": {
+    "source": "anthropic",
+    "model": "claude-haiku-5-5",
+    "calls": 30,
+    "call_wall_s": {
+      "mean": 2.595,
+      "max": 6.627,
+      "min": 0.456,
+      "total": 77.9
+    },
+    "input_tokens": 25392,
+    "output_tokens": 10480,
+    "stop_reasons": [
+      "end_turn"
+    ],
+    "cost_usd_estimate": 0.0078
+  }
+}

@@ -1,0 +1,1113 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-27 09:21:19,499 - fire_custom_10/27/2026, 09:21:19 - INFO - Environment Created
+2026-10-27 09:21:19,499 - fire_custom_10/27/2026, 09:21:19 - INFO - done
+2026-10-27 09:21:19,500 - fire_custom_10/27/2026, 09:21:19 - INFO - Episode: 1/1
+2026-10-27 09:21:19,500 - fire_custom_10/27/2026, 09:21:19 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-2
+2026-10-27 09:22:09,411 - fire_custom_10/27/2026, 09:21:19 - INFO - Environment Reset. Took 49.91220426559448 secs
+2026-10-27 09:22:32,628 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:22:53,593 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 2 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:22:59,346 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 3 for episode: 0, action: ('walk_to_single', 82), finish: success
+2026-10-27 09:23:01,934 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 4 for episode: 0, action: ('walk_to_single', 82), finish: success
+2026-10-27 09:23:08,445 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 5 for episode: 0, action: ('pick_up', 74), finish: success
+2026-10-27 09:23:28,208 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 6 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:23:31,448 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 7 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-27 09:23:33,006 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 8 for episode: 0, action: ('walk_to_single', 72), finish: fail, because target not in vision or memory
+2026-10-27 09:23:51,394 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 9 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 09:24:13,491 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 10 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:24:16,605 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 11 for episode: 0, action: ('walk_to_single', 5), finish: success
+2026-10-27 09:24:22,929 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 12 for episode: 0, action: ('pick_up', 72), finish: success
+build pid=34220: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+OUTPUT_DIR G:\iw-thinking-fast\results\sweep_fire_random_test25\mm_kitchen_3a-2
+You need to launch your own build.
+Controller connected
+object 1544242717 not recorded, may be caused by composite objects which you can ignore
+object 2068259523 not recorded, may be caused by composite objects which you can ignore
+object 2124224759 not recorded, may be caused by composite objects which you can ignore
+object 289171883 not recorded, may be caused by composite objects which you can ignore
+object 1499876104 not recorded, may be caused by composite objects which you can ignore
+object 103711101 not recorded, may be caused by composite objects which you can ignore
+object 1581514108 not recorded, may be caused by composite objects which you can ignore
+object 496041186 not recorded, may be caused by composite objects which you can ignore
+object 1059050717 not recorded, may be caused by composite objects which you can ignore
+object 254695505 not recorded, may be caused by composite objects which you can ignore
+object 1762511806 not recorded, may be caused by composite objects which you can ignore
+object 150323668 not recorded, may be caused by composite objects which you can ignore
+object 1129322606 not recorded, may be caused by composite objects which you can ignore
+object 2023663723 not recorded, may be caused by composite objects which you can ignore
+object 691552736 not recorded, may be caused by composite objects which you can ignore
+object 1272329896 not recorded, may be caused by composite objects which you can ignore
+init: {759523: False, 564045: False, 6946485: False, 4840407: False, 14820534: False, 15947515: False, 921540: False, 4405639: False, 4370603: False, 7033941: False, 8079639: False, 2567776: False, 5545432: False, 10358021: False, 8650015: False}
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747583  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4271392e+00  2.0770621e-03  3.0463452e+00]
+8079639 False ObjectState.NORMAL [0.07457615 0.0019907  1.2943513 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+65 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747583  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4271392e+00  2.0770621e-03  3.0463452e+00]
+8079639 False ObjectState.NORMAL [0.07516202 0.00199076 1.2934808 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+114 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4271392e+00  2.0770621e-03  3.0463452e+00]
+8079639 False ObjectState.NORMAL [0.0756414  0.00199067 1.2925923 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 82)
+121 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4271392e+00  2.0770621e-03  3.0463452e+00]
+8079639 False ObjectState.NORMAL [0.07570152 0.00199078 1.2924647 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 82)
+127 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4271392e+00  2.0770621e-03  3.0463452e+00]
+8079639 False ObjectState.NORMAL [0.07575145 0.00199115 1.2923554 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 74)
+149 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False 2026-10-27 09:24:31,376 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 13 for episode: 0, action: ('pick_up', 72), finish: fail, because failed to grasp
+2026-10-27 09:24:54,433 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 14 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:25:15,109 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 15 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:25:18,798 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 16 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-27 09:25:21,761 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 17 for episode: 0, action: ('walk_to_single', 6), finish: success
+2026-10-27 09:25:36,784 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 18 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 09:25:38,086 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 19 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4504864   0.01502541  3.0567229 ]
+8079639 False ObjectState.NORMAL [0.07592196 0.00199099 1.2919538 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+198 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.0487412  0.9237551  2.993434 ]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 1)
+205 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4003237  0.8878645  3.1964536]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 72)
+207 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 False ObjectState.NORMAL [-1.4003237  0.8878645  3.1964536]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+278 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.NORMAL [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+327 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 5)
+334 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-9.2713743e-01  2.2870451e-03  2.2963402e+00]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 72)
+353 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-1.3389007   0.01049858  2.3239954 ]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False2026-10-27 09:25:58,875 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 20 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:26:20,568 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 21 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:26:23,884 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 22 for episode: 0, action: ('walk_to_single', 66), finish: success
+2026-10-27 09:26:25,368 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 23 for episode: 0, action: ('walk_to_single', 68), finish: fail, because target not in vision or memory
+2026-10-27 09:26:26,838 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 24 for episode: 0, action: ('walk_to_single', 68), finish: fail, because target not in vision or memory
+2026-10-27 09:26:30,568 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 25 for episode: 0, action: ('walk_to_single', 17), finish: success
+2026-10-27 09:26:53,269 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 26 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:27:13,124 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 27 for episode: 0, action: ('explore', None), finish: success
+ ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 72)
+no ongoing action
+373 1500
+Target status:
+759523 False ObjectState.NORMAL [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-1.2438647   0.07593474  2.2282586 ]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+422 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-1.7968755   0.67801875  2.6573226 ]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.NORMAL [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+471 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-1.7415568  1.0141317  3.0465248]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 6)
+478 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-1.5163889   0.98946726  3.4475806 ]
+4370603 False ObjectState.NORMAL [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 6)
+484 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.NORMAL [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 False ObjectState.BURNING [-1.6337181  1.03677    3.4161227]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+545 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+546 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL 2026-10-27 09:27:21,725 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 28 for episode: 0, action: ('pick_up', 68), finish: success
+2026-10-27 09:27:42,032 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 29 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:27:57,136 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 30 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 09:28:19,199 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 31 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:28:22,166 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 32 for episode: 0, action: ('walk_to_single', 66), finish: success
+2026-10-27 09:28:43,734 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 33 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:28:44,591 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 34 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+[-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+595 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+644 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 66)
+651 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.NORMAL [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 68)
+653 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 68)
+655 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 17)
+662 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.NORMAL [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.NORMAL [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+711 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING [-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+760 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING 2026-10-27 09:28:47,801 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 35 for episode: 0, action: ('walk_to_single', 66), finish: success
+2026-10-27 09:28:56,645 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 36 for episode: 0, action: ('pick_up', 66), finish: success
+2026-10-27 09:29:06,390 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 37 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 09:29:16,591 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 38 for episode: 0, action: ('pick_up', 67), finish: success
+2026-10-27 09:29:38,601 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 39 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:29:56,393 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 40 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 09:29:57,674 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 41 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+2026-10-27 09:29:58,499 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 42 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+[-0.62608856  0.09548621  1.3596839 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 68)
+781 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.NORMAL [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING [-1.7639539   0.20853266  2.3824615 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+830 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 False ObjectState.BURNING [-1.7641747   0.97289526  2.3825047 ]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+892 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+941 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 66)
+947 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+996 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+997 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 2026-10-27 09:30:01,320 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 43 for episode: 0, action: ('walk_to_single', 41), finish: success
+2026-10-27 09:30:05,795 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 44 for episode: 0, action: ('pick_up', 69), finish: success
+2026-10-27 09:30:18,648 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 45 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 09:30:22,696 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 46 for episode: 0, action: ('walk_to_single', 34), finish: success
+2026-10-27 09:30:46,998 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 47 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:31:11,848 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 48 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:31:34,221 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 49 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:31:35,122 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 50 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 66)
+1003 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1771067   0.00707125  1.0464112 ]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 66)
+1028 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 False ObjectState.BURNING [-1.1502913  0.1255272  1.2965032]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+1074 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 False ObjectState.BURNING [-0.67713875  0.00313061  1.0463439 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 67)
+1099 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.NORMAL [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 False ObjectState.BURNING [-0.88740563  0.13721254  1.3333335 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+1148 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 False ObjectState.BURNING [-1.7173606  0.8093015  2.544707 ]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+1221 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+1222 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+1223 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING 2026-10-27 09:31:41,375 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 51 for episode: 0, action: ('pick_up', 73), finish: success
+2026-10-27 09:31:43,460 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 52 for episode: 0, action: ('walk_to_single', 73), finish: success
+2026-10-27 09:32:07,265 - fire_custom_10/27/2026, 09:21:19 - INFO - Executing step 53 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 09:32:07,275 - fire_custom_10/27/2026, 09:21:19 - INFO - eval done, avg score 5.5, max score 31.0, avg steps 1522.0
+2026-10-27 09:32:07,275 - fire_custom_10/27/2026, 09:21:19 - INFO - time: 647.7753801345825
+[ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 41)
+1230 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [0.07612353 0.00199075 1.2914072 ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 69)
+1248 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 False ObjectState.BURNING [-1.3889991   0.01719397  2.433407  ]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+1294 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 34)
+1301 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+1350 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+1399 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+1448 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+1449 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [8.2286096e-01 2.0771767e-03 2.7963452e+00]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('pick_up', 73)
+1467 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [-1.2164986   0.02309027  2.4978185 ]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('walk_to_single', 73)
+1473 1500
+Target status:
+759523 False ObjectState.BURNING [-0.17713971  0.00313084 -2.453654  ]
+564045 False ObjectState.BURNING [ 0.8228615   0.00313093 -1.9536556 ]
+6946485 False ObjectState.BURNING [-0.4271395   0.00313087 -1.203656  ]
+4840407 1074 ObjectState.BURNING [100.  20.   0.]
+14820534 1221 ObjectState.BURNING [100.  20.   0.]
+15947515 892 ObjectState.BURNING [100.  20.   0.]
+921540 False ObjectState.BURNING [ 0.8301412  -0.00747584  1.7977811 ]
+4405639 545 ObjectState.BURNING [100.  20.   0.]
+4370603 False ObjectState.BURNING [-1.8772848  1.0579381  2.853953 ]
+7033941 278 ObjectState.NORMAL [100.  20.   0.]
+8079639 1294 ObjectState.BURNING [100.  20.   0.]
+2567776 False ObjectState.NORMAL [ 1.1484677   0.8771173  -0.43765736]
+5545432 False ObjectState.NORMAL [ 1.1496224   0.19330466 -0.44798535]
+10358021 False ObjectState.NORMAL [1.2201823  0.19330478 0.04819434]
+8650015 False ObjectState.NORMAL [-1.1771392e+00  5.5671670e-04 -1.7036548e+00]
+('explore', None)
+1522 1500
+finally: {759523: False, 564045: False, 6946485: False, 4840407: 1074, 14820534: 1221, 15947515: 892, 921540: False, 4405639: 545, 4370603: False, 7033941: 278, 8079639: 1294, 2567776: False, 5545432: False, 10358021: False, 8650015: False}
+    DEBUG Moving
+{
+  "env": "fire",
+  "agent": "random",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 648.0,
+  "decisions": 53,
+  "decision_wall_s": {
+    "mean": 0.0,
+    "max": 0.0001,
+    "min": 0.0
+  },
+  "frames_at_30fps_total": 53,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 5.5,
+      "avg_steps": 1522.0,
+      "avg_max_score": 31.0,
+      "total": 1,
+      "target_status": {
+        "759523": false,
+        "564045": false,
+        "6946485": false,
+        "4840407": 1074,
+        "14820534": 1221,
+        "15947515": 892,
+        "921540": false,
+        "4405639": 545,
+        "4370603": false,
+        "7033941": 278,
+        "8079639": 1294,
+        "2567776": false,
+        "5545432": false,
+        "10358021": false,
+        "8650015": false
+      },
+      "final_states": {
+        "4840407": 1,
+        "14820534": 1,
+        "15947515": 1,
+        "4405639": 1,
+        "7033941": 0,
+        "8079639": 1
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1523
+}

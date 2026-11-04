@@ -1,0 +1,23 @@
+step 43 action ('walk_to', '64')
+step 121 action ('pick_up', '64') b03_hair_comb_2010 8657745
+step 139 action ('drop', None)
+step 156 action ('walk_to', '66')
+step 248 action ('pick_up', '66') b04_comb 15599511
+step 290 action ('drop', None)
+step 363 action ('walk_to', '56')
+step 500 action ('walk_to', '56')
+step 634 action ('walk_to', '56')
+step 753 action ('walk_to', '56')
+step 853 action ('pick_up', '56') bag_3 14901620
+step 895 action ('drop', None)
+step 961 action ('walk_to', '57')
+step 1007 action ('pick_up', '57') b04_comb 8265913
+step 1049 action ('drop', None)
+step 1111 action ('explore', None)
+step 1160 action ('explore', None)
+step 1209 action ('explore', None)
+step 1258 action ('explore', None)
+step 1307 action ('explore', None)
+step 1356 action ('explore', None)
+step 1405 action ('explore', None)
+step 1454 action ('explore', None)

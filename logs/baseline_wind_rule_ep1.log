@@ -1,0 +1,346 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-16 17:11:20,452 - wind_custom_10/16/2026, 17:11:20 - INFO - Environment Created
+2026-10-16 17:11:20,452 - wind_custom_10/16/2026, 17:11:20 - INFO - done
+2026-10-16 17:11:20,453 - wind_custom_10/16/2026, 17:11:20 - INFO - Episode: 1/1
+2026-10-16 17:11:20,453 - wind_custom_10/16/2026, 17:11:20 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_wind\suburb_scene_2023-0-0
+2026-10-16 17:12:09,316 - wind_custom_10/16/2026, 17:11:20 - INFO - Environment Reset. Took 48.862513065338135 secs
+[ WARN:0@65.408] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+2026-10-16 17:12:23,207 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:12:43,651 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:12:57,665 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:13,192 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:28,946 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:46,829 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:54,615 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '18'), finish: success
+2026-10-16 17:14:00,605 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 8 for episode: 0, action: ('pick_up', 18), finish: success
+2026-10-16 17:14:14,287 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 9 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:14:27,266 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 10 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:14:41,161 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 11 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:14:55,329 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 12 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:08,381 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 13 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:23,406 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 14 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:37,946 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 15 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:51,312 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 16 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:04,072 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 17 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:18,403 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 18 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:31,150 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 19 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:45,751 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 20 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:59,899 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 21 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:13,982 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 22 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:27,749 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 23 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:41,907 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 24 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:54,789 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 25 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:08,274 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 26 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:22,881 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 27 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:36,325 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 28 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:49,382 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 29 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:03,283 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 30 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:16,824 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 31 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:30,695 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 32 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:44,614 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 33 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:58,281 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 34 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:13,956 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 35 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:26,432 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 36 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:42,196 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 37 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:56,109 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 38 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:21:09,242 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 39 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:21:09,243 - wind_custom_10/16/2026, 17:11:20 - INFO - eval done, avg score 0.0, max score 1.0, avg steps 3054.0
+2026-10-16 17:21:09,243 - wind_custom_10/16/2026, 17:11:20 - INFO - time: 588.7897956371307
+build pid=15196: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+G:\iw-thinking-fast\results\wind_rule_ep1_20261016_171057\suburb_scene_2023-0-0
+OUTPUT_DIR G:\iw-thinking-fast\results\wind_rule_ep1_20261016_171057\suburb_scene_2023-0-0
+You need to launch your own build.
+Controller connected
+init: {5993537: False, 10589376: False, 12346604: False, 6773126: False, 3234661: False, 9914947: False, 4606786: False, 8663181: False, 10335185: False, 12952289: False, 14175671: False, 12288094: False, 14734431: False, 15001027: False, 16550911: False}
+['money', 'basket', 'backpack', 'bag, handbag, pocketbook, purse', 'soda can', 'box', 'bottle'] {'money': {'value': 5}, 'basket': {'value': 1}, 'backpack': {'value': 5}, 'bag, handbag, pocketbook, purse': {'value': 5}, 'soda can': {'value': 1}, 'box': {'value': 1}, 'bottle': {'value': 1}}
+2.4999313
+rgb (3, 1024, 1024)
+current_step 14
+available_plans [('explore', None)]
+('explore', None)
+86 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 88
+available_plans [('explore', None), ('walk_to', '5'), ('walk_to', '6'), ('walk_to', '7'), ('walk_to', '8'), ('walk_to', '9'), ('walk_to', '10'), ('walk_to', '11'), ('walk_to', '12'), ('walk_to', '13'), ('walk_to', '14'), ('walk_to', '16'), ('walk_to', '17'), ('walk_to', '18'), ('explore', None)]
+('walk_to', '18')
+196 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 198
+available_plans [('explore', None), ('walk_to', '5'), ('walk_to', '6'), ('walk_to', '7'), ('walk_to', '8'), ('walk_to', '9'), ('walk_to', '10'), ('walk_to', '11'), ('walk_to', '12'), ('walk_to', '13'), ('walk_to', '14'), ('walk_to', '16'), ('walk_to', '17'), ('walk_to', '18')]
+('walk_to', '18')
+302 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 304
+available_plans [('explore', None), ('walk_to', '5'), ('walk_to', '6'), ('walk_to', '7'), ('walk_to', '8'), ('walk_to', '9'), ('walk_to', '10'), ('walk_to', '11'), ('walk_to', '12'), ('walk_to', '13'), ('walk_to', '14'), ('walk_to', '16'), ('walk_to', '17'), ('walk_to', '18')]
+('walk_to', '18')
+408 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 410
+available_plans [('explore', None), ('walk_to', '5'), ('walk_to', '6'), ('walk_to', '7'), ('walk_to', '8'), ('walk_to', '9'), ('walk_to', '10'), ('walk_to', '11'), ('walk_to', '12'), ('walk_to', '13'), ('walk_to', '14'), ('walk_to', '16'), ('walk_to', '17'), ('walk_to', '18')]
+('walk_to', '18')
+514 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 516
+available_plans [('explore', None), ('walk_to', '5'), ('walk_to', '6'), ('walk_to', '7'), ('walk_to', '8'), ('walk_to', '9'), ('walk_to', '10'), ('walk_to', '11'), ('walk_to', '12'), ('walk_to', '13'), ('walk_to', '14'), ('walk_to', '16'), ('walk_to', '17'), ('walk_to', '18')]
+('walk_to', '18')
+620 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 622
+available_plans [('explore', None), ('walk_to', '5'), ('walk_to', '6'), ('walk_to', '7'), ('walk_to', '8'), ('walk_to', '9'), ('walk_to', '10'), ('walk_to', '11'), ('walk_to', '12'), ('walk_to', '13'), ('walk_to', '14'), ('walk_to', '16'), ('walk_to', '17'), ('walk_to', '18')]
+('walk_to', '18')
+684 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 686
+available_plans [('explore', None), ('pick_up', 18)]
+('pick_up', 18)
+760 3000
+2.4999993
+rgb (3, 1024, 1024)
+current_step 762
+available_plans [('explore', None)]
+('explore', None)
+834 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 836
+available_plans [('explore', None)]
+('explore', None)
+908 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 910
+available_plans [('explore', None)]
+('explore', None)
+982 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 984
+available_plans [('explore', None)]
+('explore', None)
+1056 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1058
+available_plans [('explore', None)]
+('explore', None)
+1130 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1132
+available_plans [('explore', None)]
+('explore', None)
+1204 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1206
+available_plans [('explore', None)]
+('explore', None)
+1278 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1280
+available_plans [('explore', None)]
+('explore', None)
+1352 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1354
+available_plans [('explore', None)]
+('explore', None)
+1426 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1428
+available_plans [('explore', None)]
+('explore', None)
+1500 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1502
+available_plans [('explore', None)]
+('explore', None)
+1574 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1576
+available_plans [('explore', None)]
+('explore', None)
+1648 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1650
+available_plans [('explore', None)]
+('explore', None)
+1722 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1724
+available_plans [('explore', None)]
+('explore', None)
+1796 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1798
+available_plans [('explore', None)]
+('explore', None)
+1870 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1872
+available_plans [('explore', None)]
+('explore', None)
+1944 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 1946
+available_plans [('explore', None)]
+('explore', None)
+2018 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2020
+available_plans [('explore', None)]
+('explore', None)
+2092 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2094
+available_plans [('explore', None)]
+('explore', None)
+2166 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2168
+available_plans [('explore', None)]
+('explore', None)
+2240 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2242
+available_plans [('explore', None)]
+('explore', None)
+2314 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2316
+available_plans [('explore', None)]
+('explore', None)
+2388 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2390
+available_plans [('explore', None)]
+('explore', None)
+2462 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2464
+available_plans [('explore', None)]
+('explore', None)
+2536 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2538
+available_plans [('explore', None)]
+('explore', None)
+2610 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2612
+available_plans [('explore', None)]
+('explore', None)
+2684 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2686
+available_plans [('explore', None)]
+('explore', None)
+2758 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2760
+available_plans [('explore', None)]
+('explore', None)
+2832 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2834
+available_plans [('explore', None)]
+('explore', None)
+2906 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2908
+available_plans [('explore', None)]
+('explore', None)
+2980 3000
+2.4999986
+rgb (3, 1024, 1024)
+current_step 2982
+available_plans [('explore', None)]
+('explore', None)
+3054 3000
+    DEBUG Moving
+{
+  "env": "wind",
+  "agent": "rule",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 588.9,
+  "decisions": 39,
+  "decision_wall_s": {
+    "mean": 0.0,
+    "max": 0.0001,
+    "min": 0.0
+  },
+  "frames_at_30fps_total": 39,
+  "eval_results": {
+    "suburb_scene_2023-0-0\\eval_result.json": {
+      "avg_score": 0.0,
+      "avg_steps": 3054.0,
+      "avg_max_score": 1.0,
+      "total": 1,
+      "target_status": {
+        "5993537": false,
+        "10589376": false,
+        "12346604": false,
+        "6773126": false,
+        "3234661": false,
+        "9914947": false,
+        "4606786": false,
+        "8663181": false,
+        "10335185": false,
+        "12952289": false,
+        "14175671": false,
+        "12288094": false,
+        "14734431": false,
+        "15001027": false,
+        "16550911": false
+      },
+      "final_states": {}
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 3056
+}

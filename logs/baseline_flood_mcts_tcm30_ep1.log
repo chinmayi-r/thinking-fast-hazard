@@ -1,0 +1,344 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-16 17:57:08,010 - flood_custom_10/16/2026, 17:57:07 - INFO - Environment Created
+2026-10-16 17:57:08,010 - flood_custom_10/16/2026, 17:57:07 - INFO - done
+2026-10-16 17:57:08,012 - flood_custom_10/16/2026, 17:57:07 - INFO - Episode: 1/1
+2026-10-16 17:57:08,012 - flood_custom_10/16/2026, 17:57:07 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 17:58:28,340 - flood_custom_10/16/2026, 17:57:07 - INFO - Environment Reset. Took 80.3287878036499 secs
+[ WARN:0@97.602] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+build pid=8360: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+G:\iw-thinking-fast\results\flood_mcts_tcm30_ep1_20261016_175645\mm_craftroom_2a-1
+OUTPUT_DIR G:\iw-thinking-fast\results\flood_mcts_tcm30_ep1_20261016_175645\mm_craftroom_2a-1
+You need to launch your own build.
+Controller connected
+Warning: object with id 451306954 not found in FloodObjectManager
+Warning: object with id 90574932 not found in FloodObjectManager
+Warning: object with id 1298028780 not found in FloodObjectManager
+Warning: object with id 969879779 not found in FloodObjectManager
+Warning: object with id 1296671630 not found in FloodObjectManager
+Warning: object with id 1878811444 not found in FloodObjectManager
+Warning: object with id 1145120857 not found in FloodObjectManager
+Warning: object with id 703415617 not found in FloodObjectManager
+Warning: object with id 60166369 not found in FloodObjectManager
+Warning: object with id 10170055 not found in FloodObjectManager
+Warning: object with id 1014820023 not found in FloodObjectManager
+Warning: object with id 536758888 not found in FloodObjectManager
+Warning: object with id 1126821352 not found in FloodObjectManager
+Warning: object with id 906371918 not found in FloodObjectManager
+Warning: object with id 1755311175 not found in FloodObjectManager
+Warning: object with id 384965946 not found in FloodObjectManager
+Warning: object with id 351435325 not found in FloodObjectManager
+Warning: object with id 781679555 not found in FloodObjectManager
+Warning: object with id 998681676 not found in FloodObjectManager
+Warning: object with id 747099685 not found in FloodObjectManager
+init: {14640280: False, 14544403: False, 16728828: False, 16381463: False, 10511794: False, 10844722: False, 473176: False, 474390: False, 16013534: False, 6999109: False, 6798686: False}
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.NORMAL [3.8196203e-01 5.6456309e-05 2.2542756e+00]
+16728828 False ObjectState.NORMAL [2.15926    0.10233285 1.646721  ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.NORMAL [8.8202524e-01 5.8172271e-04 1.5042921e+00]
+473176 False ObjectState.NORMAL [1.3820242e+00 5.8202446e-04 1.7542925e+00]
+474390 False ObjectState.NORMAL [ 6.3202250e-01  4.7199428e-04 -1.2457085e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18092367  0.39420712  1.0751157 ]
+6798686 False ObjectState.NORMAL [ 3.8202053e-01  9.7185140e-05 -9.9570620e-01]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'int_kitchen_accessories_le_creuset_bowl_30cm', 'category': 'bowl', 'id': '40'}, {'name': 'replicant', 'category': 'replicant', 'id': '109'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '40'), 'cost': 10}]
+  0%|          | 0/2000 [00:00<?, ?it/s] 18%|█▊        | 363/2000 [00:00<00:00, 3606.55it/s] 36%|███▌      | 724/2000 [00:00<00:00, 3551.34it/s] 62%|██████▏   | 1239/2000 [00:00<00:00, 4257.67it/s] 87%|████████▋ | 1740/2000 [00:00<00:00, 4530.49it/s]100%|██████████| 2000/2000 [00:00<00:00, 4418.77it/s]
+2026-10-16 17:59:01,266 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '40'), finish: fail, because max steps reached
+[(('walk_to', '40'), 10), (('pick_up', '40'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '40')
+('walk_to', '40')
+165 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1123090e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221155 1.6467808 ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [8.8194555e-01 6.3988939e-04 1.5042813e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3485483e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6271831e-04 -1.2457066e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18246584  0.39409083  1.0747658 ]
+6798686 False ObjectState.FLOODED [ 3.8202080e-01  9.8600402e-05 -9.9570596e-01]
+2.4999974
+rgb (3, 1024, 1024)
+[{'name': 'floating_counter_top_counter_top', 'category': 'cabinet', 'id': '1'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'backpack', 'category': 'backpack', 'id': '130'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'int_kitchen_accessories_le_creuset_bowl_30cm', 'category': 'bowl', 'id': '40'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'apple', 'category': 'apple', 'id': '64'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '72'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'blue_edition_liquid_soap02', 'category': 'soap dispenser', 'id': '89'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'bag_14', 'category': 'bag, handbag, pocketbook, purse', 'id': '97'}, {'name': 'b03_toothbrush', 'category': 'toothbrush', 'id': '99'}, {'name': 'b03_toothbrush', 'category': 'toothbrush', 'id': '106'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'replicant', 'category': 'replicant', 'id': '109'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '112'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '40'), 'cost': 10}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  3%|▎         | 66/2000 [00:00<00:02, 656.66it/s] 14%|█▍        | 276/2000 [00:00<00:01, 1502.72it/s] 23%|██▎       | 462/2000 [00:00<00:00, 1663.06it/s] 34%|███▍      | 683/2000 [00:00<00:00, 1877.59it/s] 45%|████▌     | 906/2000 [00:00<00:00, 1999.35it/s] 57%|█████▋    | 1131/2000 [00:00<00:00, 2080.02it/s] 68%|██████▊   | 1351/2000 [00:00<00:00, 2111.57it/s] 78%|███████▊  | 1563/2000 [00:00<00:00, 2077.86it/s] 89%|████████▊ | 1771/2000 [00:00<00:00, 2027.34it/s] 99%|█████████▊| 1974/2000 [00:01<00:00, 2011.16it/s]100%|██████████| 2000/2000 [00:01<00:00, 1934.15it/s]
+2026-10-16 17:59:24,234 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 2 for episode: 0, action: ('explore', None), finish: success
+[(('explore', None), 2.5), (('walk_to', '83'), 1.4389666431158161), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 1.164313102219502), (('pick_up', '108'), 0), (('drop', None), 0), (('walk_to', '40'), 10), (('pick_up', '40'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('explore', None)
+('explore', None)
+254 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122624e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.16165195  0.10096601 -2.7710216 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [7.9777139e-01 6.3911825e-04 1.5044941e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3483993e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3202047e-01  4.5658275e-04 -1.2457069e+00]
+16013534 False ObjectState.FLOODED [-1.3634521e+00  4.7713891e-04  2.7732980e+00]
+6999109 False ObjectState.NORMAL [-0.1825068  0.3941137  1.0747501]
+6798686 False ObjectState.FLOODED [ 3.8202056e-01  9.8027522e-05 -9.9570560e-01]
+2.4999983
+rgb (3, 1024, 1024)
+[{'name': 'floating_counter_top_counter_top', 'category': 'cabinet', 'id': '1'}, {'name': 'backpack', 'category': 'backpack', 'id': '130'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'b05_db_apps_tech_08_09_counter_top', 'category': 'cabinet', 'id': '13'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'bung', 'category': 'bottle cork', 'id': '24'}, {'name': 'kids_luggage_2', 'category': 'suitcase', 'id': '27'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '31'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '38'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'int_kitchen_accessories_le_creuset_bowl_30cm', 'category': 'bowl', 'id': '40'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '45'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '51'}, {'name': 'pcylinder222', 'category': 'fork', 'id': '53'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '66'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'jug02', 'category': 'jug', 'id': '70'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '72'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'bag_14', 'category': 'bag, handbag, pocketbook, purse', 'id': '97'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'replicant', 'category': 'replicant', 'id': '109'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '111'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '112'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '113'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}, {'name': 'door', 'category': 'dishwasher', 'id': '115'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '116'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '117'}, {'name': 'door_l', 'category': 'cabinet', 'id': '119'}, {'name': 'door_r', 'category': 'cabinet', 'id': '120'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '122'}]
+[{'action': ('walk_to', '40'), 'cost': 1.0012108977804433}, {'action': ('walk_to', '83'), 'cost': 2.5647178748895136}, {'action': ('walk_to', '108'), 'cost': 2.5519600310349695}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  3%|▎         | 58/2000 [00:00<00:03, 577.42it/s] 12%|█▏        | 231/2000 [00:00<00:01, 1247.64it/s] 20%|█▉        | 394/2000 [00:00<00:01, 1421.28it/s] 27%|██▋       | 537/2000 [00:00<00:01, 1359.03it/s] 34%|███▍      | 681/2000 [00:00<00:00, 1385.38it/s] 42%|████▏     | 832/2000 [00:00<00:00, 1423.15it/s] 49%|████▉     | 987/2000 [00:00<00:00, 1461.00it/s] 59%|█████▊    | 1172/2000 [00:00<00:00, 1582.59it/s] 68%|██████▊   | 1355/2000 [00:00<00:00, 1656.18it/s] 76%|███████▌  | 1524/2000 [00:01<00:00, 1665.89it/s] 85%|████████▍ | 1691/2000 [00:01<00:00, 1631.24it/s] 93%|█████████▎| 1863/2000 [00:01<00:00, 1656.80it/s]100%|██████████| 2000/2000 [00:01<00:00, 1535.23it/s]
+2026-10-16 17:59:45,836 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '40'), finish: success
+[(('walk_to', '40'), 1.0012108977804433), (('pick_up', '40'), 0), (('drop', None), 0), (('walk_to', '108'), 3.0888634006683056), (('pick_up', '108'), 0), (('drop', None), 0), (('walk_to', '83'), 0.5002777006601211), (('pick_up', '83'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '40')
+('walk_to', '40')
+350 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122624e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16167337  0.10096733 -2.7707055 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [5.5567330e-01 7.5864047e-04 1.5064718e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3483993e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3202047e-01  4.5657530e-04 -1.2457069e+00]
+16013534 False ObjectState.FLOODED [-1.3642008e+00  4.8399344e-04  2.7735152e+00]
+6999109 False ObjectState.NORMAL [-0.21928784  0.40571344  1.0691658 ]
+6798686 False ObjectState.FLOODED [ 3.8202056e-01  9.8027405e-05 -9.9570560e-01]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'floating_counter_top_counter_top', 'category': 'cabinet', 'id': '1'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'pot_composite', 'category': 'pot', 'id': '16'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'bung', 'category': 'bottle cork', 'id': '24'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '38'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'int_kitchen_accessories_le_creuset_bowl_30cm', 'category': 'bowl', 'id': '40'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '45'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '51'}, {'name': 'pcylinder222', 'category': 'fork', 'id': '53'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'plate06', 'category': 'plate', 'id': '58'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '61'}, {'name': 'vk0078_fruitspoon', 'category': 'spoon', 'id': '62'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '66'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'jug02', 'category': 'jug', 'id': '70'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '72'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'bag_14', 'category': 'bag, handbag, pocketbook, purse', 'id': '97'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'replicant', 'category': 'replicant', 'id': '109'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '112'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}, {'name': 'door', 'category': 'dishwasher', 'id': '115'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '116'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '117'}, {'name': 'lid', 'category': 'pot', 'id': '118'}, {'name': 'door_l', 'category': 'cabinet', 'id': '119'}, {'name': 'door_r', 'category': 'cabinet', 'id': '120'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '122'}]
+[{'action': ('pick_up', '40'), 'cost': 0}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  3%|▎         | 68/2000 [00:00<00:02, 671.66it/s] 12%|█▏        | 233/2000 [00:00<00:01, 1241.76it/s] 20%|█▉        | 396/2000 [00:00<00:01, 1412.14it/s] 28%|██▊       | 567/2000 [00:00<00:00, 1525.78it/s] 37%|███▋      | 739/2000 [00:00<00:00, 1589.81it/s] 45%|████▌     | 908/2000 [00:00<00:00, 1620.46it/s] 54%|█████▍    | 1079/2000 [00:00<00:00, 1645.86it/s] 62%|██████▏   | 1244/2000 [00:00<00:00, 1618.63it/s] 70%|███████   | 1406/2000 [00:00<00:00, 1618.77it/s] 78%|███████▊  | 1568/2000 [00:01<00:00, 1460.59it/s] 86%|████████▌ | 1717/2000 [00:01<00:00, 1368.91it/s] 93%|█████████▎| 1857/2000 [00:01<00:00, 1274.08it/s]100%|██████████| 2000/2000 [00:01<00:00, 1431.74it/s]
+2026-10-16 18:00:03,835 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 4 for episode: 0, action: ('pick_up', '40'), finish: success
+[(('pick_up', '40'), 0), (('drop', None), 0), (('walk_to', '108'), 2.6504716561397146), (('pick_up', '108'), 0), (('drop', None), 0), (('walk_to', '83'), 0.5002777006601211), (('pick_up', '83'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('pick_up', '40')
+('pick_up', '40')
+442 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122159e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.NORMAL [-1.2564005  0.7695575 -2.8413026]
+10844722 False ObjectState.FLOODED [1.9433679e-01 8.8551641e-04 1.5053961e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3483993e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3201994e-01  4.5792758e-04 -1.2457068e+00]
+16013534 False ObjectState.FLOODED [-1.3707920e+00  4.7702342e-04  2.7727938e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9628931e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202068e-01  9.4505027e-05 -9.9570507e-01]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'floating_counter_top_counter_top', 'category': 'cabinet', 'id': '1'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'bung', 'category': 'bottle cork', 'id': '24'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '28'}, {'name': 'kettle', 'category': 'teakettle', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '38'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'int_kitchen_accessories_le_creuset_bowl_30cm', 'category': 'bowl', 'id': '40'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '45'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '51'}, {'name': 'pcylinder222', 'category': 'fork', 'id': '53'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'plate06', 'category': 'plate', 'id': '58'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '61'}, {'name': 'vk0078_fruitspoon', 'category': 'spoon', 'id': '62'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '66'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'jug02', 'category': 'jug', 'id': '70'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '72'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'bag_14', 'category': 'bag, handbag, pocketbook, purse', 'id': '97'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'replicant', 'category': 'replicant', 'id': '109'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '112'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '113'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}, {'name': 'door', 'category': 'dishwasher', 'id': '115'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '116'}, {'name': 'door_l', 'category': 'cabinet', 'id': '119'}, {'name': 'door_r', 'category': 'cabinet', 'id': '120'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '122'}]
+[{'action': ('drop', None), 'cost': 0}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  1%|          | 12/2000 [00:00<00:17, 115.91it/s]  4%|▍         | 87/2000 [00:00<00:03, 480.80it/s] 11%|█         | 211/2000 [00:00<00:02, 823.36it/s] 18%|█▊        | 355/2000 [00:00<00:01, 1061.27it/s] 25%|██▌       | 500/2000 [00:00<00:01, 1197.67it/s] 32%|███▏      | 642/2000 [00:00<00:01, 1272.40it/s] 39%|███▉      | 781/2000 [00:00<00:00, 1310.61it/s] 46%|████▌     | 913/2000 [00:00<00:00, 1239.56it/s] 53%|█████▎    | 1051/2000 [00:00<00:00, 1278.55it/s] 59%|█████▉    | 1180/2000 [00:01<00:00, 1232.66it/s] 65%|██████▌   | 1305/2000 [00:01<00:00, 1123.65it/s] 71%|███████   | 1420/2000 [00:01<00:00, 1065.74it/s] 78%|███████▊  | 1559/2000 [00:01<00:00, 1150.43it/s] 84%|████████▍ | 1688/2000 [00:01<00:00, 1188.80it/s] 91%|█████████ | 1818/2000 [00:01<00:00, 1218.91it/s] 97%|█████████▋| 1948/2000 [00:01<00:00, 1238.79it/s]100%|██████████| 2000/2000 [00:01<00:00, 1151.82it/s]
+2026-10-16 18:00:25,192 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 5 for episode: 0, action: ('drop', None), finish: success
+[(('drop', None), 0), (('explore', None), 2.5), (('walk_to', '108'), 2.6504716561397146), (('pick_up', '108'), 0), (('drop', None), 0), (('walk_to', '83'), 0.5002777006601211), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '40'), 10), (('pick_up', '40'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('drop', None)
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+554 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122624e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221153 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-3.5263056e-01  9.2955679e-04  1.5056195e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3483993e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3202000e-01  4.5793504e-04 -1.2457068e+00]
+16013534 False ObjectState.FLOODED [-1.3655689e+00  4.7177821e-04  2.7737408e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9629979e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202056e-01  9.8028802e-05 -9.9570566e-01]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'door_l', 'category': 'cabinet', 'id': '128'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '31'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '45'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '51'}, {'name': 'pcylinder222', 'category': 'fork', 'id': '53'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'plate06', 'category': 'plate', 'id': '58'}, {'name': 'vk0078_fruitspoon', 'category': 'spoon', 'id': '62'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'apple', 'category': 'apple', 'id': '64'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '66'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'jug02', 'category': 'jug', 'id': '70'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '72'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'bag_14', 'category': 'bag, handbag, pocketbook, purse', 'id': '97'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'replicant', 'category': 'replicant', 'id': '109'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '111'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '112'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '113'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}, {'name': 'door', 'category': 'dishwasher', 'id': '115'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '116'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '117'}, {'name': 'door_l', 'category': 'cabinet', 'id': '119'}, {'name': 'door_r', 'category': 'cabinet', 'id': '120'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '122'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '83'), 'cost': 2.6901569553549196}, {'action': ('walk_to', '108'), 'cost': 2.6504716561397146}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  1%|▏         | 28/2000 [00:00<00:07, 279.56it/s]  6%|▌         | 112/2000 [00:00<00:03, 605.54it/s] 12%|█▏        | 244/2000 [00:00<00:01, 926.74it/s] 18%|█▊        | 360/2000 [00:00<00:01, 1017.76it/s] 23%|██▎       | 462/2000 [00:00<00:01, 1009.44it/s] 28%|██▊       | 563/2000 [00:00<00:01, 997.02it/s]  33%|███▎      | 663/2000 [00:00<00:01, 992.23it/s] 39%|███▊      | 771/2000 [00:00<00:01, 1017.48it/s] 45%|████▌     | 902/2000 [00:00<00:00, 1105.51it/s] 52%|█████▏    | 1036/2000 [00:01<00:00, 1171.87it/s] 59%|█████▉    | 1177/2000 [00:01<00:00, 1243.83it/s] 66%|██████▌   | 1324/2000 [00:01<00:00, 1308.26it/s] 73%|███████▎  | 1455/2000 [00:01<00:00, 1280.38it/s] 79%|███████▉  | 1585/2000 [00:01<00:00, 1280.79it/s] 86%|████████▌ | 1714/2000 [00:01<00:00, 1199.58it/s] 92%|█████████▏| 1836/2000 [00:01<00:00, 1162.55it/s] 98%|█████████▊| 1958/2000 [00:01<00:00, 1177.10it/s]100%|██████████| 2000/2000 [00:01<00:00, 1106.98it/s]
+2026-10-16 18:01:09,483 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+[(('walk_to', '83'), 2.6901569553549196), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 0.5002777006601211), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '83')
+('walk_to', '83')
+727 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122159e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221153 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-1.0733168e+00  9.3121454e-04  1.5058420e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495169e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201886e-01  4.5711175e-04 -1.2457057e+00]
+16013534 False ObjectState.FLOODED [-1.3726604e+00  4.8246607e-04  2.7563877e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630095e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202080e-01  1.0552234e-04 -9.9570525e-01]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'floating_counter_top_counter_top', 'category': 'cabinet', 'id': '1'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'b05_db_apps_tech_08_09_composite', 'category': 'dishwasher', 'id': '12'}, {'name': 'b05_db_apps_tech_08_09_counter_top', 'category': 'cabinet', 'id': '13'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '14'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'pot_composite', 'category': 'pot', 'id': '16'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'bung', 'category': 'bottle cork', 'id': '24'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '51'}, {'name': 'pcylinder222', 'category': 'fork', 'id': '53'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'plate06', 'category': 'plate', 'id': '58'}, {'name': 'vk0078_fruitspoon', 'category': 'spoon', 'id': '62'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '66'}, {'name': 'vk0058_tablespoon', 'category': 'spoon', 'id': '67'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'jug02', 'category': 'jug', 'id': '70'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'tapered_cork', 'category': 'bottle cork', 'id': '86'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'blue_edition_liquid_soap02', 'category': 'soap dispenser', 'id': '89'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '111'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}, {'name': 'door_l', 'category': 'cabinet', 'id': '119'}, {'name': 'door_r', 'category': 'cabinet', 'id': '120'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '122'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '83'), 'cost': 1.3117259622344906}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  2%|▏         | 35/2000 [00:00<00:05, 348.36it/s]  6%|▋         | 125/2000 [00:00<00:02, 667.87it/s] 14%|█▎        | 274/2000 [00:00<00:01, 1036.90it/s] 21%|██        | 411/2000 [00:00<00:01, 1164.41it/s] 28%|██▊       | 560/2000 [00:00<00:01, 1277.01it/s] 35%|███▌      | 708/2000 [00:00<00:00, 1341.90it/s] 43%|████▎     | 854/2000 [00:00<00:00, 1376.86it/s] 50%|████▉     | 995/2000 [00:00<00:00, 1385.03it/s] 57%|█████▋    | 1134/2000 [00:00<00:00, 1325.47it/s] 63%|██████▎   | 1268/2000 [00:01<00:00, 1328.74it/s] 70%|███████   | 1402/2000 [00:01<00:00, 1260.52it/s] 77%|███████▋  | 1537/2000 [00:01<00:00, 1282.59it/s] 84%|████████▍ | 1688/2000 [00:01<00:00, 1345.04it/s] 92%|█████████▏| 1841/2000 [00:01<00:00, 1397.82it/s]100%|█████████▉| 1991/2000 [00:01<00:00, 1427.42it/s]100%|██████████| 2000/2000 [00:01<00:00, 1291.53it/s]
+2026-10-16 18:01:49,816 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+[(('walk_to', '83'), 1.3117259622344906), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 1.3777245733454855), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '83')
+('walk_to', '83')
+883 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1124953e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-1.7309058e+00  9.2557073e-04  1.5061651e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495169e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201833e-01  4.6778098e-04 -1.2457064e+00]
+16013534 False ObjectState.FLOODED [-1.3701408e+00  4.8826262e-04  2.7730680e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630794e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.82020801e-01  1.05522224e-04 -9.95705247e-01]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'floating_counter_top_counter_top', 'category': 'cabinet', 'id': '1'}, {'name': 'sink_cabinet_unit_wood_beech_honey_chrome_composite', 'category': 'cabinet', 'id': '3'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'b05_db_apps_tech_08_09_counter_top', 'category': 'cabinet', 'id': '13'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '14'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'pot_composite', 'category': 'pot', 'id': '16'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'b03_restoration_hardware_pedestal_salvaged_round_tables', 'category': 'dining table', 'id': '42'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '43'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'plate06', 'category': 'plate', 'id': '58'}, {'name': 'plate06', 'category': 'plate', 'id': '63'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '66'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'square_coaster_stone', 'category': 'coaster', 'id': '74'}, {'name': 'vk0010_dinner_fork_subd0', 'category': 'fork', 'id': '75'}, {'name': 'b04_whiskeybottle', 'category': 'bottle', 'id': '77'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'basic_cork', 'category': 'bottle cork', 'id': '79'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'blue_edition_liquid_soap02', 'category': 'soap dispenser', 'id': '89'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '114'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '122'}, {'name': 'door_r', 'category': 'cabinet', 'id': '125'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '83'), 'cost': 6.555333565509342}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  1%|          | 23/2000 [00:00<00:08, 229.83it/s]  6%|▌         | 111/2000 [00:00<00:03, 611.17it/s] 12%|█▏        | 235/2000 [00:00<00:01, 894.80it/s] 18%|█▊        | 365/2000 [00:00<00:01, 1050.28it/s] 25%|██▍       | 491/2000 [00:00<00:01, 1121.04it/s] 30%|███       | 610/2000 [00:00<00:01, 1140.22it/s] 36%|███▌      | 724/2000 [00:00<00:01, 1053.39it/s] 42%|████▏     | 831/2000 [00:00<00:01, 893.82it/s]  46%|████▋     | 925/2000 [00:01<00:01, 851.18it/s] 51%|█████     | 1014/2000 [00:01<00:01, 721.52it/s] 55%|█████▍    | 1091/2000 [00:01<00:01, 730.75it/s] 61%|██████    | 1214/2000 [00:01<00:00, 856.94it/s] 67%|██████▋   | 1345/2000 [00:01<00:00, 977.14it/s] 74%|███████▎  | 1473/2000 [00:01<00:00, 1058.80it/s] 80%|███████▉  | 1594/2000 [00:01<00:00, 1100.24it/s] 86%|████████▌ | 1712/2000 [00:01<00:00, 1119.27it/s] 91%|█████████▏| 1827/2000 [00:01<00:00, 1078.27it/s] 97%|█████████▋| 1946/2000 [00:02<00:00, 1106.73it/s]100%|██████████| 2000/2000 [00:02<00:00, 963.15it/s] 
+2026-10-16 18:02:19,367 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 8 for episode: 0, action: ('explore', None), finish: success
+[(('explore', None), 2.5), (('walk_to', '83'), 1.5553335655093412), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 0.7593171274243721), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('explore', None)
+('explore', None)
+1005 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122159e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221153 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-2.2381957e+00  6.0410798e-04  1.5062290e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495541e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6271086e-04 -1.2457064e+00]
+16013534 False ObjectState.FLOODED [-1.3753047e+00  5.0447881e-04  2.7597244e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9629629e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  9.8598888e-05 -9.9570596e-01]
+2.4999976
+rgb (3, 1024, 1024)
+[{'name': 'door_l', 'category': 'cabinet', 'id': '128'}, {'name': 'door_r', 'category': 'cabinet', 'id': '129'}, {'name': 'backpack', 'category': 'backpack', 'id': '130'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '14'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '20'}, {'name': 'servingfork', 'category': 'carving fork', 'id': '21'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '23'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '28'}, {'name': 'kettle', 'category': 'teakettle', 'id': '29'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '31'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'cup', 'category': 'cup', 'id': '57'}, {'name': 'b03_burger', 'category': 'sandwich', 'id': '59'}, {'name': 'apple', 'category': 'apple', 'id': '64'}, {'name': 'coffeemug', 'category': 'cup', 'id': '69'}, {'name': 'jug02', 'category': 'jug', 'id': '70'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '78'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'scissors', 'category': 'scissors', 'id': '88'}, {'name': 'blue_edition_liquid_soap02', 'category': 'soap dispenser', 'id': '89'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'lid', 'category': 'pot', 'id': '118'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '127'}]
+[{'action': ('walk_to', '83'), 'cost': 1.8159880230882584}, {'action': ('walk_to', '108'), 'cost': 2.150581316760657}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  3%|▎         | 68/2000 [00:00<00:02, 675.55it/s] 10%|▉         | 196/2000 [00:00<00:01, 1026.95it/s] 16%|█▌        | 313/2000 [00:00<00:01, 1089.57it/s] 22%|██▏       | 437/2000 [00:00<00:01, 1144.88it/s] 28%|██▊       | 552/2000 [00:00<00:01, 1132.62it/s] 34%|███▎      | 674/2000 [00:00<00:01, 1157.68it/s] 40%|███▉      | 798/2000 [00:00<00:01, 1182.14it/s] 46%|████▌     | 921/2000 [00:00<00:00, 1193.39it/s] 52%|█████▏    | 1041/2000 [00:00<00:00, 1188.03it/s] 58%|█████▊    | 1168/2000 [00:01<00:00, 1212.91it/s] 65%|██████▍   | 1299/2000 [00:01<00:00, 1239.00it/s] 71%|███████▏  | 1428/2000 [00:01<00:00, 1254.10it/s] 78%|███████▊  | 1554/2000 [00:01<00:00, 1250.86it/s] 84%|████████▍ | 1680/2000 [00:01<00:00, 1235.49it/s] 90%|█████████ | 1804/2000 [00:01<00:00, 1227.88it/s] 96%|█████████▋| 1927/2000 [00:01<00:00, 1210.86it/s]100%|██████████| 2000/2000 [00:01<00:00, 1187.58it/s]
+2026-10-16 18:02:54,856 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+[(('walk_to', '83'), 1.8159880230882584), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 0.6227459353540575), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '83')
+('walk_to', '83')
+1166 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1124021e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9172884e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3494796e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3202047e-01  4.5656413e-04 -1.2457069e+00]
+16013534 False ObjectState.FLOODED [-1.3671511e+00  4.4720992e-04  2.7737300e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9628931e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202056e-01  9.8028569e-05 -9.9570566e-01]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'door_l', 'category': 'cabinet', 'id': '128'}, {'name': 'door_r', 'category': 'cabinet', 'id': '129'}, {'name': 'backpack', 'category': 'backpack', 'id': '130'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'b04_3d_jar_180_gr_01', 'category': 'jar', 'id': '14'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'vray_043', 'category': 'teakettle', 'id': '17'}, {'name': 'servingfork', 'category': 'carving fork', 'id': '21'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '28'}, {'name': 'kettle', 'category': 'teakettle', 'id': '29'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '31'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '46'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'cgaxis_models_65_14_vray', 'category': 'book', 'id': '82'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'lid', 'category': 'pot', 'id': '118'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '127'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '83'), 'cost': 0.41231056256176607}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  3%|▎         | 58/2000 [00:00<00:03, 579.98it/s]  9%|▉         | 177/2000 [00:00<00:01, 934.48it/s] 15%|█▌        | 306/2000 [00:00<00:01, 1092.85it/s] 21%|██        | 424/2000 [00:00<00:01, 1126.32it/s] 27%|██▋       | 537/2000 [00:00<00:01, 1117.77it/s] 33%|███▎      | 658/2000 [00:00<00:01, 1146.01it/s] 39%|███▉      | 779/2000 [00:00<00:01, 1164.56it/s] 45%|████▍     | 898/2000 [00:00<00:00, 1172.26it/s] 51%|█████     | 1020/2000 [00:00<00:00, 1181.87it/s] 57%|█████▋    | 1139/2000 [00:01<00:00, 1180.33it/s] 63%|██████▎   | 1265/2000 [00:01<00:00, 1203.96it/s] 70%|██████▉   | 1390/2000 [00:01<00:00, 1216.98it/s] 76%|███████▌  | 1516/2000 [00:01<00:00, 1226.64it/s] 82%|████████▏ | 1639/2000 [00:01<00:00, 1205.21it/s] 88%|████████▊ | 1760/2000 [00:01<00:00, 1193.23it/s] 94%|█████████▍| 1887/2000 [00:01<00:00, 1214.19it/s]100%|██████████| 2000/2000 [00:01<00:00, 1170.88it/s]
+2026-10-16 18:03:37,402 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '83'), finish: fail, because max steps reached
+[(('walk_to', '83'), 0.41231056256176607), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 1.2257650672131264), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '83')
+('walk_to', '83')
+1328 1500
+Target status:
+14640280 False ObjectState.FLOODED [-2.0728006  1.0294068  0.8344932]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1120296e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9171766e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3494796e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201904e-01  4.6479702e-04 -1.2457062e+00]
+16013534 False ObjectState.FLOODED [-1.3708706e+00  4.6804175e-04  2.7552452e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9628931e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202056e-01  9.8028919e-05 -9.9570566e-01]
+2.4999976
+rgb (3, 1024, 1024)
+[{'name': 'door_l', 'category': 'cabinet', 'id': '128'}, {'name': 'door_r', 'category': 'cabinet', 'id': '129'}, {'name': 'backpack', 'category': 'backpack', 'id': '130'}, {'name': 'pot_composite', 'category': 'pot', 'id': '2'}, {'name': 'jug01', 'category': 'jug', 'id': '4'}, {'name': 'kitchen_faucet', 'category': 'water faucet', 'id': '11'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '15'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '28'}, {'name': 'kettle', 'category': 'teakettle', 'id': '29'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '31'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '85'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'lid', 'category': 'pot', 'id': '110'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '127'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '83'), 'cost': 5.6}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  2%|▏         | 38/2000 [00:00<00:05, 378.57it/s]  8%|▊         | 150/2000 [00:00<00:02, 807.25it/s] 13%|█▎        | 266/2000 [00:00<00:01, 963.17it/s] 19%|█▉        | 380/2000 [00:00<00:01, 1029.59it/s] 25%|██▍       | 497/2000 [00:00<00:01, 1079.80it/s] 30%|███       | 610/2000 [00:00<00:01, 1095.98it/s] 36%|███▋      | 727/2000 [00:00<00:01, 1119.37it/s] 42%|████▏     | 839/2000 [00:00<00:01, 1106.03it/s] 48%|████▊     | 952/2000 [00:00<00:00, 1108.99it/s] 53%|█████▎    | 1063/2000 [00:01<00:00, 1103.84it/s] 59%|█████▊    | 1174/2000 [00:01<00:00, 1101.81it/s] 64%|██████▍   | 1288/2000 [00:01<00:00, 1110.73it/s] 70%|███████   | 1404/2000 [00:01<00:00, 1123.31it/s] 76%|███████▌  | 1522/2000 [00:01<00:00, 1138.51it/s] 82%|████████▏ | 1642/2000 [00:01<00:00, 1155.37it/s] 88%|████████▊ | 1761/2000 [00:01<00:00, 1164.05it/s] 94%|█████████▍| 1881/2000 [00:01<00:00, 1171.35it/s]100%|█████████▉| 1999/2000 [00:01<00:00, 1166.60it/s]100%|██████████| 2000/2000 [00:01<00:00, 1099.56it/s]
+2026-10-16 18:04:03,749 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 11 for episode: 0, action: ('explore', None), finish: success
+[(('explore', None), 2.5), (('walk_to', '83'), 0.6000000000000001), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 0.8276472678623424), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('explore', None)
+('explore', None)
+1435 1500
+Target status:
+14640280 False ObjectState.FLOODED [-2.0728009  1.0294065  0.8344932]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1123090e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 554 ObjectState.NORMAL [100.  20.   0.]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9173256e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3494796e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201833e-01  4.6777353e-04 -1.2457064e+00]
+16013534 False ObjectState.FLOODED [-1.3721893e+00  4.7418475e-04  2.7560430e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9629746e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202080e-01  1.0552269e-04 -9.9570525e-01]
+2.4999971
+rgb (3, 1024, 1024)
+[{'name': 'backpack', 'category': 'backpack', 'id': '130'}, {'name': 'cabinet_24_single_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '28'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '31'}, {'name': 'cabinet_36_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '34'}, {'name': 'b05_whirlpool_microwave_wmc30516as_v-ray', 'category': 'microwave, microwave oven', 'id': '37'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '38'}, {'name': 'cabinet_24_two_door_wood_beech_honey_composite', 'category': 'cabinet', 'id': '39'}, {'name': 'yellow_side_chair', 'category': 'chair', 'id': '44'}, {'name': 'lg_table_marble_green', 'category': 'table', 'id': '71'}, {'name': '6ft_wood_shelving', 'category': 'shelf', 'id': '73'}, {'name': 'b05_executive_pen', 'category': 'pen', 'id': '83'}, {'name': 'coffee_grinder', 'category': 'coffee grinder', 'id': '84'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '85'}, {'name': 'tapered_cork', 'category': 'bottle cork', 'id': '86'}, {'name': 'cafe_2010', 'category': 'coffee grinder', 'id': '87'}, {'name': 'b03_696615_object001', 'category': 'pan', 'id': '91'}, {'name': 'elf_painting', 'category': 'painting', 'id': '92'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '93'}, {'name': 'hp_printer', 'category': 'printer', 'id': '95'}, {'name': 'b04_lighter', 'category': 'lighter', 'id': '108'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '127'}]
+[{'action': ('walk_to', '83'), 'cost': 0.6000000000000001}, {'action': ('walk_to', '108'), 'cost': 1.3946325680981353}]
+  0%|          | 0/2000 [00:00<?, ?it/s]  3%|▎         | 57/2000 [00:00<00:03, 569.38it/s]  9%|▉         | 178/2000 [00:00<00:01, 941.90it/s] 15%|█▍        | 293/2000 [00:00<00:01, 1033.69it/s] 20%|██        | 403/2000 [00:00<00:01, 1059.36it/s] 26%|██▌       | 523/2000 [00:00<00:01, 1104.30it/s] 32%|███▏      | 641/2000 [00:00<00:01, 1128.78it/s] 38%|███▊      | 755/2000 [00:00<00:01, 1130.77it/s] 44%|████▎     | 873/2000 [00:00<00:00, 1144.31it/s] 49%|████▉     | 988/2000 [00:00<00:00, 1137.32it/s] 55%|█████▌    | 1102/2000 [00:01<00:00, 1118.85it/s] 61%|██████▏   | 1225/2000 [00:01<00:00, 1149.22it/s] 67%|██████▋   | 1346/2000 [00:01<00:00, 1162.85it/s] 73%|███████▎  | 1467/2000 [00:01<00:00, 1173.65it/s] 79%|███████▉  | 1585/2000 [00:01<00:00, 1171.88it/s] 85%|████████▌ | 1703/2000 [00:01<00:00, 1159.01it/s] 91%|█████████ | 1819/2000 [00:01<00:00, 1156.30it/s] 97%|█████████▋| 1935/2000 [00:01<00:00, 1148.04it/s]100%|██████████| 2000/2000 [00:01<00:00, 1116.29it/s]
+2026-10-16 18:04:28,230 - flood_custom_10/16/2026, 17:57:07 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '83'), finish: success
+2026-10-16 18:04:28,231 - flood_custom_10/16/2026, 17:57:07 - INFO - eval done, avg score 0.5, max score 19.0, avg steps 1529.0
+2026-10-16 18:04:28,231 - flood_custom_10/16/2026, 17:57:07 - INFO - time: 440.2203712463379
+[(('walk_to', '83'), 0.6000000000000001), (('pick_up', '83'), 0), (('drop', None), 0), (('walk_to', '108'), 0.8276472678623424), (('pick_up', '108'), 0), (('drop', None), 0), (('explore', None), 2.5)] ('walk_to', '83')
+('walk_to', '83')
+1529 1500
+finally: {14640280: False, 14544403: False, 16728828: False, 16381463: False, 10511794: 554, 10844722: False, 473176: False, 474390: False, 16013534: False, 6999109: False, 6798686: False}
+    DEBUG Moving
+{
+  "env": "flood",
+  "agent": "mcts",
+  "episodes_requested": 1,
+  "clock": "tcm",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 641,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 440.4,
+  "decisions": 12,
+  "decision_wall_s": {
+    "mean": 1.7639,
+    "max": 2.4174,
+    "min": 0.5662
+  },
+  "frames_at_30fps_total": 641,
+  "eval_results": {
+    "mm_craftroom_2a-1\\eval_result.json": {
+      "avg_score": 0.5,
+      "avg_steps": 1529.0,
+      "avg_max_score": 19.0,
+      "total": 1,
+      "target_status": {
+        "14640280": false,
+        "14544403": false,
+        "16728828": false,
+        "16381463": false,
+        "10511794": 554,
+        "10844722": false,
+        "473176": false,
+        "474390": false,
+        "16013534": false,
+        "6999109": false,
+        "6798686": false
+      },
+      "final_states": {
+        "10511794": 0
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1530
+}

@@ -1,0 +1,22 @@
+{
+  "env": "flood",
+  "agent": "rule",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 433.8,
+  "decisions": 15,
+  "decision_wall_s": {
+    "mean": 0.0001,
+    "max": 0.0001,
+    "min": 0.0
+  },
+  "frames_at_30fps_total": 15,
+  "eval_results": {},
+  "exit": 1,
+  "error": " _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 172, in deepcopy\n    y = _reconstruct(x, memo, *rv)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 271, in _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 172, in deepcopy\n    y = _reconstruct(x, memo, *rv)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 271, in _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 172, in deepcopy\n    y = _reconstruct(x, memo, *rv)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 271, in _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 229, in _deepcopy_dict\n    memo[id(x)] = y\nRecursionError: maximum recursion depth exceeded while calling a Python object\n",
+  "final_frame_count": 1502
+}

@@ -1,0 +1,22 @@
+diff --git a/src/HAZARD/challenge.py b/src/HAZARD/challenge.py
+index 2b5913a..360ab52 100644
+--- a/src/HAZARD/challenge.py
++++ b/src/HAZARD/challenge.py
+@@ -320,9 +320,15 @@ class Challenge:
+                     current_action = self.env.get_challenge_action(current_action)
+                 print(current_action)
+                 if current_action[0] == "pick_up":
+-                    obj_name = self.env.controller.id2name[self.id_reverse_renumbering(self.nearest_object)]
++                    # A16 (iw-thinking-fast, 2026-10-16): nearest_object is None until a walk_to succeeds (see line ~352),
++                    # and id2name[-1] raised KeyError; the execution branch below already handles the None case.
++                    try:
++                        _rid = self.id_reverse_renumbering(self.nearest_object)
++                        obj_name = self.env.controller.id2name[_rid]
++                    except (KeyError, TypeError):
++                        _rid, obj_name = None, "none"
+                     print(f"step {self.env.controller.comm_counter} action {current_action} {obj_name} "
+-                          f"{str(self.id_reverse_renumbering(self.nearest_object))}", file=action_logger)
++                          f"{str(_rid)}", file=action_logger)
+                 else:
+                     print(f"step {self.env.controller.comm_counter} action {current_action}", file=action_logger)
+ 

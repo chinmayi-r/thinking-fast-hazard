@@ -1,0 +1,29 @@
+2026-10-26 22:50:25,300 - fire_custom_10/26/2026, 22:50:25 - DEBUG - 10826
+2026-10-26 22:50:25,300 - fire_custom_10/26/2026, 22:50:25 - INFO - Environment Created
+2026-10-26 22:50:25,300 - fire_custom_10/26/2026, 22:50:25 - INFO - done
+2026-10-26 22:50:25,301 - fire_custom_10/26/2026, 22:50:25 - INFO - Episode: 1/1
+2026-10-26 22:50:25,301 - fire_custom_10/26/2026, 22:50:25 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-5
+2026-10-26 22:51:10,278 - fire_custom_10/26/2026, 22:50:25 - INFO - Environment Reset. Took 44.978187799453735 secs
+2026-10-26 22:51:43,295 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:52:47,193 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '72'), finish: fail, because max steps reached
+2026-10-26 22:53:21,835 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 3 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:54:16,669 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '74'), finish: fail, because max steps reached
+2026-10-26 22:54:49,724 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 5 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:55:55,470 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '74'), finish: success
+2026-10-26 22:56:06,267 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 7 for episode: 0, action: ('pick_up', '74'), finish: success
+2026-10-26 22:56:29,153 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 8 for episode: 0, action: ('drop', None), finish: success
+2026-10-26 22:57:03,488 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 9 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:57:26,025 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '72'), finish: fail, because target not in vision or memory
+2026-10-26 22:58:02,264 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 11 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 22:59:07,304 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '32'), finish: fail, because max steps reached
+2026-10-26 22:59:40,540 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 13 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 23:00:04,418 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '31'), finish: success
+2026-10-26 23:00:10,400 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 15 for episode: 0, action: ('pick_up', '31'), finish: success
+2026-10-26 23:00:30,277 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 16 for episode: 0, action: ('drop', None), finish: success
+2026-10-26 23:01:37,871 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 17 for episode: 0, action: ('walk_to', '20'), finish: fail, because max steps reached
+2026-10-26 23:02:41,475 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 18 for episode: 0, action: ('walk_to', '20'), finish: fail, because max steps reached
+2026-10-26 23:03:48,781 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 19 for episode: 0, action: ('walk_to', '20'), finish: fail, because max steps reached
+2026-10-26 23:04:52,973 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 20 for episode: 0, action: ('walk_to', '20'), finish: fail, because max steps reached
+2026-10-26 23:05:56,371 - fire_custom_10/26/2026, 22:50:25 - INFO - Executing step 21 for episode: 0, action: ('walk_to', '20'), finish: fail, because target not in vision or memory
+2026-10-26 23:05:56,381 - fire_custom_10/26/2026, 22:50:25 - INFO - eval done, avg score 1.5, max score 7.0, avg steps 1524.0
+2026-10-26 23:05:56,381 - fire_custom_10/26/2026, 22:50:25 - INFO - time: 931.0806443691254

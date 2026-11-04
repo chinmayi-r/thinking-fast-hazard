@@ -1,0 +1,49 @@
+{
+  "env": "fire",
+  "agent": "random",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 641.0,
+  "decisions": 50,
+  "decision_wall_s": {
+    "mean": 0.0,
+    "max": 0.0001,
+    "min": 0.0
+  },
+  "frames_at_30fps_total": 50,
+  "eval_results": {
+    "mm_craftroom_2a-1\\eval_result.json": {
+      "avg_score": 9.0,
+      "avg_steps": 1516.0,
+      "avg_max_score": 19.0,
+      "total": 1,
+      "target_status": {
+        "14640280": 1029,
+        "14544403": false,
+        "16728828": false,
+        "16381463": 336,
+        "10511794": 171,
+        "10844722": false,
+        "473176": false,
+        "474390": 907,
+        "16013534": false,
+        "6999109": false,
+        "6798686": 749
+      },
+      "final_states": {
+        "14640280": 0,
+        "16381463": 0,
+        "10511794": 0,
+        "474390": 0,
+        "6798686": 0
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1517
+}

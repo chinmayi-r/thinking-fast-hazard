@@ -1,0 +1,20 @@
+step 0 action ('explore', None)
+step 0 action ('walk_to', '99')
+step 0 action ('pick_up', '99') chocolate_bar001 12449350
+step 0 action ('drop', None)
+step 0 action ('walk_to', '109')
+step 0 action ('walk_to', '109')
+step 0 action ('walk_to', '6')
+step 0 action ('pick_up', '6') plate06 9231355
+step 0 action ('drop', None)
+step 0 action ('walk_to', '89')
+step 0 action ('walk_to', '89')
+step 0 action ('walk_to', '109')
+step 0 action ('walk_to', '109')
+step 0 action ('walk_to', '109')
+step 0 action ('walk_to', '109')
+step 0 action ('walk_to', '109')
+step 0 action ('pick_up', '109') plate06 15864378
+step 0 action ('drop', None)
+step 0 action ('walk_to', '84')
+step 0 action ('walk_to', '106')

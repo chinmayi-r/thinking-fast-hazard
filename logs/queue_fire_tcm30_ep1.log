@@ -1,0 +1,8 @@
+===== 15:23:03 start fire rule x1 =====
+===== 15:34:29 end rule exit=0 =====
+===== 15:34:35 start fire greedy x1 =====
+scripts/laptop_baseline_queue.sh: line 10:   908 Segmentation fault      "$ROOT/venv/Scripts/python.exe" -X utf8 "$ROOT/scripts/run_baseline.py" --env "$ENV_NAME" --agent "$A" --episodes "$EPISODES" --port 10826 ${EXTRA_ARGS:-} > "$ROOT/logs/baseline_${ENV_NAME}_${A}${LOG_TAG:-}_ep${EPISODES}.log" 2>&1
+===== 15:38:34 end greedy exit=0 =====
+===== 15:38:40 start fire mcts x1 =====
+===== 15:43:07 end mcts exit=0 =====
+QUEUE DONE

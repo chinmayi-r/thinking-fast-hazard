@@ -1,0 +1,16 @@
+2026-10-16 18:12:09,256 - wind_custom_10/16/2026, 18:12:09 - DEBUG - 10826
+2026-10-16 18:12:09,257 - wind_custom_10/16/2026, 18:12:09 - INFO - Environment Created
+2026-10-16 18:12:09,257 - wind_custom_10/16/2026, 18:12:09 - INFO - done
+2026-10-16 18:12:09,258 - wind_custom_10/16/2026, 18:12:09 - INFO - Episode: 1/1
+2026-10-16 18:12:09,258 - wind_custom_10/16/2026, 18:12:09 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_wind\suburb_scene_2023-0-0
+2026-10-16 18:12:57,848 - wind_custom_10/16/2026, 18:12:09 - INFO - Environment Reset. Took 48.59007692337036 secs
+2026-10-16 18:13:22,120 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '8'), finish: fail, because max steps reached
+2026-10-16 18:14:04,733 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 2 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 18:14:49,450 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-16 18:15:32,581 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-16 18:16:18,004 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-16 18:17:07,640 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-16 18:18:01,342 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 7 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 18:18:46,482 - wind_custom_10/16/2026, 18:12:09 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '14'), finish: fail, because max steps reached
+2026-10-16 18:18:46,484 - wind_custom_10/16/2026, 18:12:09 - INFO - eval done, avg score 0.0, max score 1.0, avg steps 3146.0
+2026-10-16 18:18:46,484 - wind_custom_10/16/2026, 18:12:09 - INFO - time: 397.226683139801

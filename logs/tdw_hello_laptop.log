@@ -1,0 +1,10 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+started TDW.exe pid=32680 on port 1071
+You need to launch your own build.
+controller connected after 20.44s
+build version 1.13.0, unity 2020.3.24f1, standalone False
+empty communicate #0: 2.8 ms
+empty communicate #1: 2.2 ms
+empty communicate #2: 2.4 ms
+Hello world!

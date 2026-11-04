@@ -1,0 +1,24 @@
+2026-10-26 17:11:36,032 - fire_custom_10/26/2026, 17:11:36 - DEBUG - 10826
+2026-10-26 17:11:36,032 - fire_custom_10/26/2026, 17:11:36 - INFO - Environment Created
+2026-10-26 17:11:36,032 - fire_custom_10/26/2026, 17:11:36 - INFO - done
+2026-10-26 17:11:36,033 - fire_custom_10/26/2026, 17:11:36 - INFO - Episode: 1/1
+2026-10-26 17:11:36,033 - fire_custom_10/26/2026, 17:11:36 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-25
+2026-10-26 17:12:26,069 - fire_custom_10/26/2026, 17:11:36 - INFO - Environment Reset. Took 50.03589606285095 secs
+2026-10-26 17:12:40,173 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 17:13:10,418 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '82'), finish: fail, because max steps reached
+2026-10-26 17:13:17,411 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '82'), finish: fail, because target not in vision or memory
+2026-10-26 17:13:43,041 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:14:06,300 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:14:31,945 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:15:04,327 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:15:33,444 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:15:58,046 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:16:28,495 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:16:54,785 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:17:20,428 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:17:47,649 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:18:15,975 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:18:44,739 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:19:13,042 - fire_custom_10/26/2026, 17:11:36 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '71'), finish: fail, because max steps reached
+2026-10-26 17:19:13,053 - fire_custom_10/26/2026, 17:11:36 - INFO - eval done, avg score 0.0, max score 17.0, avg steps 1581.0
+2026-10-26 17:19:13,054 - fire_custom_10/26/2026, 17:11:36 - INFO - time: 457.0208101272583

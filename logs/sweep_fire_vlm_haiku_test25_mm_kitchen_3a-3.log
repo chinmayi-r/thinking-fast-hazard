@@ -1,0 +1,160 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-27 20:51:38,816 - fire_custom_10/27/2026, 20:51:38 - INFO - Environment Created
+2026-10-27 20:51:38,816 - fire_custom_10/27/2026, 20:51:38 - INFO - done
+2026-10-27 20:51:38,817 - fire_custom_10/27/2026, 20:51:38 - INFO - Episode: 1/1
+2026-10-27 20:51:38,817 - fire_custom_10/27/2026, 20:51:38 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-3
+2026-10-27 20:53:51,113 - fire_custom_10/27/2026, 20:51:38 - INFO - Environment Reset. Took 132.29475688934326 secs
+[ WARN:0@146.789] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+Traceback (most recent call last):
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_transports\default.py", line 98, in map_httpcore_exceptions
+    yield
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_transports\default.py", line 245, in handle_request
+    resp = self._pool.handle_request(req)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_sync\connection_pool.py", line 242, in handle_request
+    raise exc from None
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_sync\connection_pool.py", line 224, in handle_request
+    response = connection.handle_request(pool_request.request)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_sync\connection.py", line 94, in handle_request
+    raise exc
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_sync\connection.py", line 74, in handle_request
+    stream = self._connect(request)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_sync\connection.py", line 117, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_backends\sync.py", line 203, in connect_tcp
+    with map_exceptions(exc_map):
+  File "G:\iw-thinking-fast\python310\tools\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpcore2\_exceptions.py", line 17, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore2.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1436, in _attempt_request
+    response = self._client.send(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_client.py", line 980, in send
+    response = self._send_handling_auth(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_client.py", line 1008, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_client.py", line 1043, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_client.py", line 1076, in _send_single_request
+    response = transport.handle_request(request)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_transports\default.py", line 244, in handle_request
+    with map_httpcore_exceptions():
+  File "G:\iw-thinking-fast\python310\tools\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\httpx2\_transports\default.py", line 115, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx2.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\iw-thinking-fast\scripts\run_baseline.py", line 180, in main
+    submit(output_dir=str(out_dir), env_name=args.env, agent=agent, port=args.port,
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\run_experiments.py", line 173, in submit
+    challenge.submit(agent=agent_policy, logger=logger, eval_episodes=1)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\challenge.py", line 318, in submit
+    current_action = agent.choose_target(state, processed_input)
+  File "G:\iw-thinking-fast\scripts\run_baseline.py", line 74, in choose_target
+    action = self.inner.choose_target(state, processed_input)
+  File "G:\iw-thinking-fast\scripts\vlm_agent.py", line 53, in choose_target
+    return super().choose_target(state, processed_input)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 582, in choose_target
+    action, info = self.run(self.current_step, holding_objects, nearest_object, object_list, action_history,
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 618, in run
+    outputs, usage = self.generator(chat_prompt if self.chat else prompt, self.sampling_params)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\backoff\_sync.py", line 105, in retry
+    ret = target(*args, **kwargs)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 173, in _generate
+    raise e
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 166, in _generate
+    response = self.anthropic_client.messages.create(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_utils\_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\resources\messages\messages.py", line 1073, in create
+    return self._post(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1676, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1227, in request
+    return self._request(cast_to, options, stream=stream, stream_cls=stream_cls)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1261, in _request
+    response, prepared = self._attempt_request(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1443, in _attempt_request
+    raise APITimeoutError(request=request) from err
+anthropic.APITimeoutError: Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+
+build pid=32144: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+OUTPUT_DIR G:\iw-thinking-fast\results\sweep_fire_vlm_haiku_test25\mm_kitchen_3a-3
+You need to launch your own build.
+Controller connected
+object 633785354 not recorded, may be caused by composite objects which you can ignore
+object 1084347129 not recorded, may be caused by composite objects which you can ignore
+object 416650913 not recorded, may be caused by composite objects which you can ignore
+object 1126543672 not recorded, may be caused by composite objects which you can ignore
+object 1729736968 not recorded, may be caused by composite objects which you can ignore
+object 285640287 not recorded, may be caused by composite objects which you can ignore
+object 1347648200 not recorded, may be caused by composite objects which you can ignore
+object 1819110309 not recorded, may be caused by composite objects which you can ignore
+object 388201242 not recorded, may be caused by composite objects which you can ignore
+object 398647755 not recorded, may be caused by composite objects which you can ignore
+object 1199965475 not recorded, may be caused by composite objects which you can ignore
+object 1994590414 not recorded, may be caused by composite objects which you can ignore
+object 1818982304 not recorded, may be caused by composite objects which you can ignore
+object 82332522 not recorded, may be caused by composite objects which you can ignore
+init: {9062689: False, 12485822: False, 6507605: False, 1836623: False, 5688585: False, 4923245: False}
+Target status:
+9062689 False ObjectState.NORMAL [1.468103   0.10179655 3.01347   ]
+12485822 False ObjectState.NORMAL [-1.7709693e-01  2.1366514e-03 -2.4536965e+00]
+6507605 False ObjectState.NORMAL [0.36449847 0.73465157 0.3270575 ]
+1836623 False ObjectState.NORMAL [-1.1771423   0.00213958 -1.2036753 ]
+5688585 False ObjectState.NORMAL [1.1870344  0.92230123 2.0103512 ]
+4923245 False ObjectState.NORMAL [ 1.2668829   0.10097241 -1.2700502 ]
+2.4773328
+rgb (3, 1024, 1024)
+current_step 43
+Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+Anthropic error, retrying...
+Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+Anthropic error, retrying...
+Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+Anthropic error, retrying...
+Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+Anthropic error, retrying...
+Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+Anthropic error, retrying...
+Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+Anthropic error, retrying...
+{
+  "env": "fire",
+  "agent": "vlm",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 240.3,
+  "decisions": 0,
+  "decision_wall_s": {
+    "mean": null,
+    "max": null,
+    "min": null
+  },
+  "frames_at_30fps_total": 0,
+  "eval_results": {},
+  "exit": 1,
+  "error": "y\", line 53, in choose_target\n    return super().choose_target(state, processed_input)\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 582, in choose_target\n    action, info = self.run(self.current_step, holding_objects, nearest_object, object_list, action_history,\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 618, in run\n    outputs, usage = self.generator(chat_prompt if self.chat else prompt, self.sampling_params)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\backoff\\_sync.py\", line 105, in retry\n    ret = target(*args, **kwargs)\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 173, in _generate\n    raise e\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 166, in _generate\n    response = self.anthropic_client.messages.create(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_utils\\_utils.py\", line 294, in wrapper\n    return func(*args, **kwargs)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\resources\\messages\\messages.py\", line 1073, in create\n    return self._post(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1676, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1227, in request\n    return self._request(cast_to, options, stream=stream, stream_cls=stream_cls)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1261, in _request\n    response, prepared = self._attempt_request(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1443, in _attempt_request\n    raise APITimeoutError(request=request) from err\nanthropic.APITimeoutError: Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.\n",
+  "final_frame_count": 43
+}

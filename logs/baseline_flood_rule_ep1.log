@@ -1,0 +1,2349 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-16 16:39:53,376 - flood_custom_10/16/2026, 16:39:53 - INFO - Environment Created
+2026-10-16 16:39:53,376 - flood_custom_10/16/2026, 16:39:53 - INFO - done
+2026-10-16 16:39:53,377 - flood_custom_10/16/2026, 16:39:53 - INFO - Episode: 1/1
+2026-10-16 16:39:53,377 - flood_custom_10/16/2026, 16:39:53 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 16:41:12,926 - flood_custom_10/16/2026, 16:39:53 - INFO - Environment Reset. Took 79.54894471168518 secs
+[ WARN:0@97.438] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+2026-10-16 16:41:26,218 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 16:41:52,087 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:42:18,297 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:42:39,859 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:43:03,611 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:43:27,643 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:43:53,132 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:44:17,303 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:44:43,111 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:45:06,219 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:45:32,711 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:46:01,129 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 16:46:28,470 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+build pid=33132: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+G:\iw-thinking-fast\results\flood_rule_ep1_20261016_163929\mm_craftroom_2a-1
+OUTPUT_DIR G:\iw-thinking-fast\results\flood_rule_ep1_20261016_163929\mm_craftroom_2a-1
+You need to launch your own build.
+Controller connected
+Warning: object with id 451306954 not found in FloodObjectManager
+Warning: object with id 90574932 not found in FloodObjectManager
+Warning: object with id 1298028780 not found in FloodObjectManager
+Warning: object with id 969879779 not found in FloodObjectManager
+Warning: object with id 1296671630 not found in FloodObjectManager
+Warning: object with id 1878811444 not found in FloodObjectManager
+Warning: object with id 1145120857 not found in FloodObjectManager
+Warning: object with id 703415617 not found in FloodObjectManager
+Warning: object with id 60166369 not found in FloodObjectManager
+Warning: object with id 10170055 not found in FloodObjectManager
+Warning: object with id 1014820023 not found in FloodObjectManager
+Warning: object with id 536758888 not found in FloodObjectManager
+Warning: object with id 1126821352 not found in FloodObjectManager
+Warning: object with id 906371918 not found in FloodObjectManager
+Warning: object with id 1755311175 not found in FloodObjectManager
+Warning: object with id 384965946 not found in FloodObjectManager
+Warning: object with id 351435325 not found in FloodObjectManager
+Warning: object with id 781679555 not found in FloodObjectManager
+Warning: object with id 998681676 not found in FloodObjectManager
+Warning: object with id 747099685 not found in FloodObjectManager
+init: {14640280: False, 14544403: False, 16728828: False, 16381463: False, 10511794: False, 10844722: False, 473176: False, 474390: False, 16013534: False, 6999109: False, 6798686: False}
+['pen', 'bowl', 'lighter', 'key'] {'pen': {'value': 1, 'waterproof': 1}, 'bowl': {'value': 1, 'waterproof': 1}, 'lighter': {'value': 1, 'waterproof': 0}, 'key': {'value': 1, 'waterproof': 1}}
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.NORMAL [3.8196203e-01 5.6456309e-05 2.2542756e+00]
+16728828 False ObjectState.NORMAL [2.15926    0.10233285 1.646721  ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.NORMAL [8.8202524e-01 5.8172271e-04 1.5042921e+00]
+473176 False ObjectState.NORMAL [1.3820242e+00 5.8202446e-04 1.7542925e+00]
+474390 False ObjectState.NORMAL [ 6.3202250e-01  4.7199428e-04 -1.2457085e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18092367  0.39420712  1.0751157 ]
+6798686 False ObjectState.NORMAL [ 3.8202053e-01  9.7185140e-05 -9.9570620e-01]
+2.499999
+rgb (3, 1024, 1024)
+current_step 43
+available_plans [('explore', None)]
+('explore', None)
+91 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.NORMAL [3.8196203e-01 5.6456309e-05 2.2542756e+00]
+16728828 False ObjectState.NORMAL [2.15926    0.10233285 1.646721  ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [8.8202226e-01 6.3727796e-04 1.5042896e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3491816e-04 1.7542934e+00]
+474390 False ObjectState.NORMAL [ 6.3202250e-01  4.7199428e-04 -1.2457085e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18092367  0.39420712  1.0751157 ]
+6798686 False ObjectState.NORMAL [ 3.8202053e-01  9.7185140e-05 -9.9570620e-01]
+2.499999
+rgb (3, 1024, 1024)
+current_step 92
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '100'), ('walk_to', '108'), ('explore', None)]
+('walk_to', '108')
+193 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1120762e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221156 1.6467807 ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [8.7458926e-01 7.6598302e-04 1.5041678e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3485483e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3201964e-01  4.6375766e-04 -1.2457061e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18247263  0.3940987   1.0747664 ]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  1.0552199e-04 -9.9570525e-01]
+2.499999
+rgb (3, 1024, 1024)
+current_step 194
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '98'), ('walk_to', '108')]
+('walk_to', '108')
+311 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1119830e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16166267  0.1009664  -2.7708607 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [6.6902930e-01 6.4923987e-04 1.5058545e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3485483e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3201886e-01  4.5710430e-04 -1.2457057e+00]
+16013534 False ObjectState.FLOODED [-1.3698704e+00  4.7028437e-04  2.7548044e+00]
+6999109 False ObjectState.NORMAL [-0.18281278  0.39409208  1.0746938 ]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  1.0500173e-04 -9.9570525e-01]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 312
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+413 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122159e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [3.2419151e-01 9.8938867e-04 1.5058477e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3485483e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6271831e-04 -1.2457064e+00]
+16013534 False ObjectState.FLOODED [-1.3696179e+00  4.7995523e-04  2.7547162e+00]
+6999109 False ObjectState.FLOODED [-0.8156173   0.01501278  0.98378426]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  1.0500010e-04 -9.9570525e-01]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 414
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+525 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1121227e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [-2.1558069e-01  9.0125948e-04  1.5055966e+00]
+473176 False ObjectState.FLOODED [1.3820227e+00 5.3485483e-04 1.7542934e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6272576e-04 -1.2457066e+00]
+16013534 False ObjectState.FLOODED [-1.3739847e+00  4.9332529e-04  2.7576790e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9629629e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  9.8600052e-05 -9.9570596e-01]
+2.4999976
+rgb (3, 1024, 1024)
+current_step 526
+available_plans 2026-10-16 16:46:57,397 - flood_custom_10/16/2026, 16:39:53 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+Traceback (most recent call last):
+  File "G:\iw-thinking-fast\scripts\run_baseline.py", line 161, in main
+    submit(output_dir=str(out_dir), env_name=args.env, agent=agent, port=args.port,
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\run_experiments.py", line 195, in submit
+    challenge.submit(agent=agent_policy, logger=logger, eval_episodes=1)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\challenge.py", line 350, in submit
+    action_result, action_info = agent_walk_to(self.env, target=self.id_reverse_renumbering(int(current_action[1])),
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\env_actions.py", line 128, in agent_walk_to
+    env.controller.next_key_frame(force_direction=None)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\envs\flood\floodagent_controller.py", line 316, in next_key_frame
+    self.communicate([])
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\envs\flood\floodagent_controller.py", line 400, in communicate
+    resp = super().communicate(commands)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\envs\flood\flood.py", line 123, in communicate
+    resp = super().communicate(commands)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\tdw\controller.py", line 171, in communicate
+    m.on_send(resp=resp)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\tdw\add_ons\replicant_base.py", line 181, in on_send
+    self._previous_action = deepcopy(self.action)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 172, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 271, in _reconstruct
+    state = deepcopy(state, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 231, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 146, in deepcopy
+    y = copier(x, memo)
+  File "G:\iw-thinking-fast\python310\tools\lib\copy.py", line 229, in _deepcopy_dict
+    memo[id(x)] = y
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+[('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+629 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1123090e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221153 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [-6.7882687e-01  9.3497708e-04  1.5054448e+00]
+473176 False ObjectState.FLOODED [1.3820251e+00 5.7636574e-04 1.7542930e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6271086e-04 -1.2457064e+00]
+16013534 False ObjectState.FLOODED [-1.374670e+00  4.958473e-04  2.758599e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630677e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.82020831e-01  1.04999985e-04 -9.95705247e-01]
+2.499998
+rgb (3, 1024, 1024)
+current_step 630
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+735 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1124487e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [-1.1059524e+00  9.3002617e-04  1.5058661e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495541e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201880e-01  4.5710057e-04 -1.2457057e+00]
+16013534 False ObjectState.FLOODED [-1.3759803e+00  5.0330907e-04  2.7615635e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630444e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  9.8599354e-05 -9.9570596e-01]
+2.499999
+rgb (3, 1024, 1024)
+current_step 736
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+837 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122159e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [-1.5322933e+00  9.2681497e-04  1.5061040e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495541e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6272948e-04 -1.2457066e+00]
+16013534 False ObjectState.FLOODED [-1.376003e+00  5.022362e-04  2.761664e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630677e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  9.8599237e-05 -9.9570596e-01]
+2.4999986
+rgb (3, 1024, 1024)
+current_step 838
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+951 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1123090e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221153 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [-2.0317023e+00  9.2306361e-04  1.5062025e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495169e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201886e-01  4.5710430e-04 -1.2457057e+00]
+16013534 False ObjectState.FLOODED [-1.3731476e+00  4.9378723e-04  2.7711580e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630910e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  9.8599819e-05 -9.9570596e-01]
+2.4999986
+rgb (3, 1024, 1024)
+current_step 952
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+1053 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1124487e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.16168068  0.1009679  -2.770592  ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.FLOODED [-2.2382300e+00  5.9125945e-04  1.5062170e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495914e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3202041e-01  4.6270713e-04 -1.2457064e+00]
+16013534 False ObjectState.FLOODED [-1.3730454e+00  4.9895421e-04  2.7712448e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630444e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202083e-01  9.8599237e-05 -9.9570596e-01]
+2.4999998
+rgb (3, 1024, 1024)
+current_step 1054
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+1158 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1123090e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.FLOODED [-0.83797204  0.9226927  -2.7029157 ]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9174001e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3494424e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3202047e-01  4.5656785e-04 -1.2457069e+00]
+16013534 False ObjectState.FLOODED [-1.3712407e+00  4.7686696e-04  2.7725320e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9628698e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202068e-01  9.7139739e-05 -9.9570495e-01]
+2.499999
+rgb (3, 1024, 1024)
+current_step 1159
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+1264 1500
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1124953e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592386  0.10221154 1.6467808 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.FLOODED [-0.837972    0.92269266 -2.7029157 ]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9173256e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3495169e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201910e-01  4.6481565e-04 -1.2457063e+00]
+16013534 False ObjectState.FLOODED [-1.3688871e+00  4.9408525e-04  2.7734778e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630211e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202068e-01  9.4504794e-05 -9.9570507e-01]
+2.499999
+rgb (3, 1024, 1024)
+current_step 1265
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+1369 1500
+Target status:
+14640280 False ObjectState.FLOODED [-2.072809    1.0294027   0.83449084]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1120296e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.FLOODED [-0.837972    0.92269266 -2.7029157 ]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9175491e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3494424e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201964e-01  4.6377257e-04 -1.2457060e+00]
+16013534 False ObjectState.FLOODED [-1.3674215e+00  4.8423931e-04  2.7737319e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9629979e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202080e-01  1.0552292e-04 -9.9570525e-01]
+2.499998
+rgb (3, 1024, 1024)
+current_step 1370
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+1472 1500
+Target status:
+14640280 False ObjectState.FLOODED [-2.0728006  1.0294067  0.8344932]
+14544403 False ObjectState.FLOODED [3.8195837e-01 5.1122624e-05 2.2542646e+00]
+16728828 False ObjectState.FLOODED [2.1592388  0.10221155 1.6467807 ]
+16381463 False ObjectState.FLOODED [-0.1616807  0.1009679 -2.770592 ]
+10511794 False ObjectState.FLOODED [-0.7677538  0.9226934 -2.7572138]
+10844722 False ObjectState.FLOODED [-2.2382314e+00  5.9175491e-04  1.5062171e+00]
+473176 False ObjectState.FLOODED [1.3820230e+00 5.3494424e-04 1.7542936e+00]
+474390 False ObjectState.FLOODED [ 6.3201904e-01  4.6479702e-04 -1.2457063e+00]
+16013534 False ObjectState.FLOODED [-1.3671594e+00  4.7210604e-04  2.7737422e+00]
+6999109 False ObjectState.FLOODED [-8.1807524e-01  9.9630095e-05  9.8795813e-01]
+6798686 False ObjectState.FLOODED [ 3.8202056e-01  9.8029617e-05 -9.9570566e-01]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 1473
+available_plans [('explore', None), ('walk_to', '40'), ('walk_to', '83'), ('walk_to', '94'), ('walk_to', '108')]
+('walk_to', '108')
+{
+  "env": "flood",
+  "agent": "rule",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 433.8,
+  "decisions": 15,
+  "decision_wall_s": {
+    "mean": 0.0001,
+    "max": 0.0001,
+    "min": 0.0
+  },
+  "frames_at_30fps_total": 15,
+  "eval_results": {},
+  "exit": 1,
+  "error": " _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 172, in deepcopy\n    y = _reconstruct(x, memo, *rv)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 271, in _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 172, in deepcopy\n    y = _reconstruct(x, memo, *rv)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 271, in _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 172, in deepcopy\n    y = _reconstruct(x, memo, *rv)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 271, in _reconstruct\n    state = deepcopy(state, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 231, in _deepcopy_dict\n    y[deepcopy(key, memo)] = deepcopy(value, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 146, in deepcopy\n    y = copier(x, memo)\n  File \"G:\\iw-thinking-fast\\python310\\tools\\lib\\copy.py\", line 229, in _deepcopy_dict\n    memo[id(x)] = y\nRecursionError: maximum recursion depth exceeded while calling a Python object\n",
+  "final_frame_count": 1502
+}

@@ -1,0 +1,72 @@
+[
+ {
+  "wall_s": 4.0651,
+  "input_tokens": 436,
+  "output_tokens": 287,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.3026,
+  "input_tokens": 706,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 6.7325,
+  "input_tokens": 453,
+  "output_tokens": 434,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 2.1192,
+  "input_tokens": 811,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 6.4058,
+  "input_tokens": 532,
+  "output_tokens": 535,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.2421,
+  "input_tokens": 873,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.9598,
+  "input_tokens": 557,
+  "output_tokens": 420,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.9599,
+  "input_tokens": 850,
+  "output_tokens": 21,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.8733,
+  "input_tokens": 561,
+  "output_tokens": 464,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.3594,
+  "input_tokens": 863,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ }
+]

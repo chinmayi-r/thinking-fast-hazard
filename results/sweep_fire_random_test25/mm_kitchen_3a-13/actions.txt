@@ -1,0 +1,42 @@
+step 0 action ('explore', None)
+step 0 action ('pick_up', 47) none None
+step 0 action ('drop', None)
+step 0 action ('pick_up', 65) none None
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 68) none None
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 85)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 1)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 67) none None
+step 0 action ('walk_to_single', 67)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 3) none None
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 27)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 27) none None
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 30) b04_bowl_smooth 2105385
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 30)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 8)

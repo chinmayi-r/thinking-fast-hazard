@@ -1,0 +1,47 @@
+{
+  "env": "wind",
+  "agent": "mcts",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 679.6,
+  "decisions": 29,
+  "decision_wall_s": {
+    "mean": 6.6479,
+    "max": 10.4983,
+    "min": 0.8377
+  },
+  "frames_at_30fps_total": 5797,
+  "eval_results": {
+    "suburb_scene_2023-0-0\\eval_result.json": {
+      "avg_score": 0.0,
+      "avg_steps": 3088.0,
+      "avg_max_score": 1.0,
+      "total": 1,
+      "target_status": {
+        "5993537": false,
+        "10589376": false,
+        "12346604": false,
+        "6773126": false,
+        "3234661": false,
+        "9914947": false,
+        "4606786": false,
+        "8663181": false,
+        "10335185": false,
+        "12952289": false,
+        "14175671": false,
+        "12288094": false,
+        "14734431": false,
+        "15001027": false,
+        "16550911": false
+      },
+      "final_states": {}
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 3090
+}

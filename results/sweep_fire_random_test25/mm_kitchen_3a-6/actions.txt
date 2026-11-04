@@ -1,0 +1,50 @@
+step 0 action ('pick_up', 74) none None
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 48)
+step 0 action ('walk_to_single', 1)
+step 0 action ('pick_up', 48) none None
+step 0 action ('walk_to_single', 12)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 59)
+step 0 action ('walk_to_single', 59)
+step 0 action ('walk_to_single', 13)
+step 0 action ('walk_to_single', 13)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 59) none None
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 53) plate06 4669496
+step 0 action ('walk_to_single', 93)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 75)
+step 0 action ('walk_to_single', 75)
+step 0 action ('drop', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 75) none None
+step 0 action ('walk_to_single', 21)
+step 0 action ('walk_to_single', 21)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 75)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 75)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 75) none None
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 75) b05_ball-point_pen-obj 7439401
+step 0 action ('pick_up', 75) b05_ball-point_pen-obj 7439401
+step 0 action ('pick_up', 75) b05_ball-point_pen-obj 7439401
+step 0 action ('explore', None)

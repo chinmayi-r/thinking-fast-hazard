@@ -1,0 +1,81 @@
+===== 16:36:17 v3 takes over: v2 driver and pass-2 watcher stopped =====
+===== 16:36:18 start fire_rule_test25 mm_kitchen_3a-22 =====
+===== 16:45:19 end fire_rule_test25 mm_kitchen_3a-22 exit=0 =====
+----- sweep fire_rule_test25 done 16:45:23 -----
+===== 16:45:23 start fire_greedy_test25 mm_kitchen_3a-2 =====
+===== 16:53:56 end fire_greedy_test25 mm_kitchen_3a-2 exit=0 =====
+----- sweep fire_greedy_test25 done 16:54:00 -----
+----- sweep fire_random_test25 done 16:54:01 -----
+----- sweep fire_llm_haiku_test25 done 16:54:01 -----
+===== 16:54:02 start video_mcts =====
+===== 17:02:36 end video_mcts exit=0 =====
+===== 17:02:40 start video_vlm_haiku =====
+===== 17:12:06 end video_vlm_haiku exit=0 =====
+fire_mcts_ep1_20261027_165402: 1503 frames -> G:\iw-thinking-fast\results\videos\fire_mcts_ep1_20261027_165402.mp4 (8.5 MB) rc=0
+fire_vlm_ep1_20261027_170240: 1548 frames -> G:\iw-thinking-fast\results\videos\fire_vlm_ep1_20261027_170240.mp4 (9.0 MB) rc=0
+VIDEOS DONE 17:13:35
+===== 17:13:35 start fire_vlm_haiku_test25 mm_kitchen_3a-1 =====
+===== 17:23:19 end fire_vlm_haiku_test25 mm_kitchen_3a-1 exit=0 =====
+===== 17:23:23 start fire_vlm_haiku_test25 mm_kitchen_3a-10 =====
+===== 17:33:13 end fire_vlm_haiku_test25 mm_kitchen_3a-10 exit=0 =====
+===== 17:33:17 start fire_vlm_haiku_test25 mm_kitchen_3a-11 =====
+===== 17:43:57 end fire_vlm_haiku_test25 mm_kitchen_3a-11 exit=0 =====
+===== 17:44:01 start fire_vlm_haiku_test25 mm_kitchen_3a-12 =====
+===== 17:55:39 end fire_vlm_haiku_test25 mm_kitchen_3a-12 exit=0 =====
+===== 17:55:43 start fire_vlm_haiku_test25 mm_kitchen_3a-13 =====
+===== 18:06:44 end fire_vlm_haiku_test25 mm_kitchen_3a-13 exit=0 =====
+===== 18:06:48 start fire_vlm_haiku_test25 mm_kitchen_3a-14 =====
+===== 18:16:55 end fire_vlm_haiku_test25 mm_kitchen_3a-14 exit=0 =====
+===== 18:16:59 start fire_vlm_haiku_test25 mm_kitchen_3a-15 =====
+===== 18:26:24 end fire_vlm_haiku_test25 mm_kitchen_3a-15 exit=0 =====
+===== 18:26:29 start fire_vlm_haiku_test25 mm_kitchen_3a-16 =====
+===== 18:34:55 end fire_vlm_haiku_test25 mm_kitchen_3a-16 exit=1 =====
+===== 18:35:00 start fire_vlm_haiku_test25 mm_kitchen_3a-17 =====
+===== 19:05:01 end fire_vlm_haiku_test25 mm_kitchen_3a-17 exit=124 =====
+===== 19:05:05 start fire_vlm_haiku_test25 mm_kitchen_3a-18 =====
+===== 19:19:54 end fire_vlm_haiku_test25 mm_kitchen_3a-18 exit=0 =====
+===== 19:19:59 start fire_vlm_haiku_test25 mm_kitchen_3a-19 =====
+===== 19:34:27 end fire_vlm_haiku_test25 mm_kitchen_3a-19 exit=0 =====
+===== 19:34:31 start fire_vlm_haiku_test25 mm_kitchen_3a-2 =====
+===== 19:48:36 end fire_vlm_haiku_test25 mm_kitchen_3a-2 exit=0 =====
+===== 19:48:41 start fire_vlm_haiku_test25 mm_kitchen_3a-20 =====
+===== 20:01:22 end fire_vlm_haiku_test25 mm_kitchen_3a-20 exit=0 =====
+===== 20:01:27 start fire_vlm_haiku_test25 mm_kitchen_3a-21 =====
+===== 20:17:13 end fire_vlm_haiku_test25 mm_kitchen_3a-21 exit=0 =====
+===== 20:17:17 start fire_vlm_haiku_test25 mm_kitchen_3a-22 =====
+===== 20:27:12 end fire_vlm_haiku_test25 mm_kitchen_3a-22 exit=0 =====
+===== 20:27:18 start fire_vlm_haiku_test25 mm_kitchen_3a-23 =====
+===== 20:37:12 end fire_vlm_haiku_test25 mm_kitchen_3a-23 exit=0 =====
+===== 20:37:18 start fire_vlm_haiku_test25 mm_kitchen_3a-24 =====
+===== 20:45:09 end fire_vlm_haiku_test25 mm_kitchen_3a-24 exit=1 =====
+===== 20:45:14 start fire_vlm_haiku_test25 mm_kitchen_3a-25 =====
+===== 20:51:14 end fire_vlm_haiku_test25 mm_kitchen_3a-25 exit=1 =====
+===== 20:51:18 start fire_vlm_haiku_test25 mm_kitchen_3a-3 =====
+===== 20:55:40 end fire_vlm_haiku_test25 mm_kitchen_3a-3 exit=1 =====
+===== 20:55:45 start fire_vlm_haiku_test25 mm_kitchen_3a-4 =====
+===== 21:06:06 end fire_vlm_haiku_test25 mm_kitchen_3a-4 exit=0 =====
+===== 21:06:12 start fire_vlm_haiku_test25 mm_kitchen_3a-5 =====
+===== 21:19:24 end fire_vlm_haiku_test25 mm_kitchen_3a-5 exit=0 =====
+===== 21:19:28 start fire_vlm_haiku_test25 mm_kitchen_3a-6 =====
+===== 21:23:07 end fire_vlm_haiku_test25 mm_kitchen_3a-6 exit=1 =====
+===== 21:23:12 start fire_vlm_haiku_test25 mm_kitchen_3a-7 =====
+===== 21:31:59 end fire_vlm_haiku_test25 mm_kitchen_3a-7 exit=0 =====
+===== 21:32:04 start fire_vlm_haiku_test25 mm_kitchen_3a-8 =====
+===== 21:42:25 end fire_vlm_haiku_test25 mm_kitchen_3a-8 exit=0 =====
+===== 21:42:29 start fire_vlm_haiku_test25 mm_kitchen_3a-9 =====
+===== 21:54:40 end fire_vlm_haiku_test25 mm_kitchen_3a-9 exit=0 =====
+----- sweep fire_vlm_haiku_test25 done 21:54:44 -----
+===== 21:54:45 start fire_llm_opus_test5 mm_kitchen_3a-1 =====
+===== 22:04:14 end fire_llm_opus_test5 mm_kitchen_3a-1 exit=0 =====
+===== 22:04:19 start fire_llm_opus_test5 mm_kitchen_3a-10 =====
+===== 22:14:49 end fire_llm_opus_test5 mm_kitchen_3a-10 exit=0 =====
+===== 22:14:55 start fire_llm_opus_test5 mm_kitchen_3a-11 =====
+===== 22:27:39 end fire_llm_opus_test5 mm_kitchen_3a-11 exit=0 =====
+===== 22:27:44 start fire_llm_opus_test5 mm_kitchen_3a-12 =====
+===== 22:40:28 end fire_llm_opus_test5 mm_kitchen_3a-12 exit=0 =====
+===== 22:40:33 start fire_llm_opus_test5 mm_kitchen_3a-13 =====
+===== 22:50:53 end fire_llm_opus_test5 mm_kitchen_3a-13 exit=0 =====
+----- sweep fire_llm_opus_test5 done 22:50:57 -----
+LANE V3 DONE 22:50:57
+SWEEP V2 ALL DONE (markers for the Oct 26 stay-awake helpers) 22:50:57
+SWEEP V2 PASS2 DONE

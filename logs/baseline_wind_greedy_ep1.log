@@ -1,0 +1,280 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-16 17:21:40,144 - wind_custom_10/16/2026, 17:21:40 - INFO - Environment Created
+2026-10-16 17:21:40,144 - wind_custom_10/16/2026, 17:21:40 - INFO - done
+2026-10-16 17:21:40,145 - wind_custom_10/16/2026, 17:21:40 - INFO - Episode: 1/1
+2026-10-16 17:21:40,145 - wind_custom_10/16/2026, 17:21:40 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_wind\suburb_scene_2023-0-0
+2026-10-16 17:22:29,291 - wind_custom_10/16/2026, 17:21:40 - INFO - Environment Reset. Took 49.14630937576294 secs
+[ WARN:0@66.869] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+2026-10-16 17:22:46,165 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:00,489 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:15,837 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:32,012 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:23:45,374 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:00,762 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:15,455 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:30,467 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:41,186 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:24:57,709 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:12,050 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+build pid=5880: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+G:\iw-thinking-fast\results\wind_greedy_ep1_20261016_172116\suburb_scene_2023-0-0
+OUTPUT_DIR G:\iw-thinking-fast\results\wind_greedy_ep1_20261016_172116\suburb_scene_2023-0-0
+You need to launch your own build.
+Controller connected
+init: {5993537: False, 10589376: False, 12346604: False, 6773126: False, 3234661: False, 9914947: False, 4606786: False, 8663181: False, 10335185: False, 12952289: False, 14175671: False, 12288094: False, 14734431: False, 15001027: False, 16550911: False}
+2.4999986
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '8'), 'cost': 5.915395853466961}, {'action': ('walk_to', '9'), 'cost': 10.0}, {'action': ('walk_to', '11'), 'cost': 2.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+118 3000
+2.4999993
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+224 3000
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+330 3000
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+462 3000
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+568 3000
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+672 3000
+2.49999982026-10-16 17:25:27,294 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:36,548 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:25:49,832 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:06,050 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:22,169 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+780 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+912 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1020 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1152 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1284 3000
+2.4999998
+rgb (3, 1024, 1024)
+2026-10-16 17:26:34,224 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 17 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:26:48,286 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 18 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:09,464 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 19 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:25,466 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 20 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:27:40,688 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 21 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1388 3000
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1500 3000
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1606 3000
+2.499998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1748 3000
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1854 3000
+2.4999998
+rgb (3, 1024, 1024)
+2026-10-16 17:27:55,112 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 22 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:08,457 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 23 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:18,776 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 24 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:35,127 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 25 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:48,229 - wind_custom_10/16/2026, 17:21:40 - INFO - Executing step 26 for episode: 0, action: ('walk_to', '9'), finish: fail, because max steps reached
+2026-10-16 17:28:48,232 - wind_custom_10/16/2026, 17:21:40 - INFO - eval done, avg score 0.0, max score 1.0, avg steps 3016.0
+2026-10-16 17:28:48,232 - wind_custom_10/16/2026, 17:21:40 - INFO - time: 428.0873725414276
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+1958 3000
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2102 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2210 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2314 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2450 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2580 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2690 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2794 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+2910 3000
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '1'}, {'name': '699264_shoppingcart_2013', 'category': 'shopping cart', 'id': '2'}, {'name': 'b03_shoppingcart_2013', 'category': 'shopping cart', 'id': '3'}, {'name': 'b03_basket', 'category': 'basket', 'id': '5'}, {'name': 'backpack', 'category': 'backpack', 'id': '6'}, {'name': 'small_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '7'}, {'name': '102_pepsi_can_12_fl_oz_vray', 'category': 'soda can', 'id': '8'}, {'name': 'woven_box', 'category': 'box', 'id': '9'}, {'name': 'b04_basket', 'category': 'basket', 'id': '10'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '11'}, {'name': 'b04_1106_backpack', 'category': 'backpack', 'id': '12'}, {'name': 'red_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '13'}, {'name': 'b04_bottle_20ml', 'category': 'bottle', 'id': '14'}, {'name': 'b04_backpack', 'category': 'backpack', 'id': '15'}, {'name': 'bronze_purse', 'category': 'bag, handbag, pocketbook, purse', 'id': '16'}, {'name': '104_sprite_can_12_fl_oz_vray', 'category': 'soda can', 'id': '17'}, {'name': 'b03_dollarstack', 'category': 'money', 'id': '18'}, {'name': 'replicant', 'category': 'replicant', 'id': '19'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '9'), 'cost': 10.0}]
+[] ('walk_to', '9')
+('walk_to', '9')
+3016 3000
+    DEBUG Moving
+{
+  "env": "wind",
+  "agent": "greedy",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 428.2,
+  "decisions": 26,
+  "decision_wall_s": {
+    "mean": 0.0837,
+    "max": 0.0995,
+    "min": 0.0699
+  },
+  "frames_at_30fps_total": 78,
+  "eval_results": {
+    "suburb_scene_2023-0-0\\eval_result.json": {
+      "avg_score": 0.0,
+      "avg_steps": 3016.0,
+      "avg_max_score": 1.0,
+      "total": 1,
+      "target_status": {
+        "5993537": false,
+        "10589376": false,
+        "12346604": false,
+        "6773126": false,
+        "3234661": false,
+        "9914947": false,
+        "4606786": false,
+        "8663181": false,
+        "10335185": false,
+        "12952289": false,
+        "14175671": false,
+        "12288094": false,
+        "14734431": false,
+        "15001027": false,
+        "16550911": false
+      },
+      "final_states": {}
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 3018
+}

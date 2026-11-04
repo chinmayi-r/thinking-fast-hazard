@@ -1,0 +1,573 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-26 18:47:13,204 - fire_custom_10/26/2026, 18:47:13 - INFO - Environment Created
+2026-10-26 18:47:13,204 - fire_custom_10/26/2026, 18:47:13 - INFO - done
+2026-10-26 18:47:13,205 - fire_custom_10/26/2026, 18:47:13 - INFO - Episode: 1/1
+2026-10-26 18:47:13,205 - fire_custom_10/26/2026, 18:47:13 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-10
+2026-10-26 18:47:58,431 - fire_custom_10/26/2026, 18:47:13 - INFO - Environment Reset. Took 45.22616696357727 secs
+[ WARN:0@65.827] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+2026-10-26 18:48:20,221 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 18:49:05,044 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '41'), finish: fail, because max steps reached
+2026-10-26 18:49:08,770 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '41'), finish: success
+2026-10-26 18:49:12,167 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 4 for episode: 0, action: ('pick_up', '41'), finish: success
+build pid=43576: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+OUTPUT_DIR G:\iw-thinking-fast\results\sweep_fire_greedy_test25\mm_kitchen_3a-10
+You need to launch your own build.
+Controller connected
+object 968641736 not recorded, may be caused by composite objects which you can ignore
+object 1746012215 not recorded, may be caused by composite objects which you can ignore
+object 1489351787 not recorded, may be caused by composite objects which you can ignore
+object 155572630 not recorded, may be caused by composite objects which you can ignore
+object 1718514826 not recorded, may be caused by composite objects which you can ignore
+object 351974381 not recorded, may be caused by composite objects which you can ignore
+object 618235300 not recorded, may be caused by composite objects which you can ignore
+object 1174369807 not recorded, may be caused by composite objects which you can ignore
+object 1526493661 not recorded, may be caused by composite objects which you can ignore
+object 502831504 not recorded, may be caused by composite objects which you can ignore
+object 270231160 not recorded, may be caused by composite objects which you can ignore
+object 805384374 not recorded, may be caused by composite objects which you can ignore
+object 666053189 not recorded, may be caused by composite objects which you can ignore
+object 525169437 not recorded, may be caused by composite objects which you can ignore
+object 282185478 not recorded, may be caused by composite objects which you can ignore
+object 1185268265 not recorded, may be caused by composite objects which you can ignore
+init: {6071910: False, 7894596: False, 5056209: False, 3620792: False, 2371457: False, 14972456: False, 3671125: False, 13861373: False, 4468913: False, 2884853: False, 9759015: False}
+Target status:
+6071910 False ObjectState.NORMAL [-0.16553733  0.796397    0.09530711]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839787  0.7605868   0.6176763 ]
+2371457 False ObjectState.NORMAL [-0.11779843  0.76072896 -0.38502705]
+14972456 False ObjectState.NORMAL [-0.6212608   0.7609206   0.09183699]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 False ObjectState.NORMAL [-0.09833915  0.77825254  0.617262  ]
+9759015 False ObjectState.NORMAL [-0.622165    0.7808395   0.09207389]
+2.4999986
+rgb (3, 1024, 1024)
+[{'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}]
+[{'action': ('explore', None), 'cost': 2.5}]
+[] ('explore', None)
+('explore', None)
+65 1500
+Target status:
+6071910 False ObjectState.NORMAL [-0.1885091   0.78052455  0.11941215]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839791  0.76053363  0.6176757 ]
+2371457 False ObjectState.NORMAL [-0.12846841  0.7606585  -0.39326257]
+14972456 False ObjectState.NORMAL [-0.6212759   0.76052856  0.09189402]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 False ObjectState.NORMAL [-0.09833629  0.77819884  0.6172994 ]
+9759015 False ObjectState.NORMAL [-0.62277734  0.78079224  0.09267543]
+2.499999
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'b04_banana', 'category': 'banana', 'id': '41'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'pcylinder222', 'category': 'fork', 'id': '63'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('walk_to', '41'), 'cost': 10.0}, {'action': ('walk_to', '47'), 'cost': 2.0}, {'action': ('walk_to', '52'), 'cost': 0.2024845673131659}, {'action': ('walk_to', '53'), 'cost': 1.0398317171542713}, {'action': ('walk_to', '57'), 'cost': 1.1888972043452706}, {'action': ('walk_to', '79'), 'cost': 10.0}, {'action': ('walk_to', '81'), 'cost': 10.0}]
+[] ('walk_to', '41')
+('walk_to', '41')
+171 1500
+Target status:
+6071910 False ObjectState.NORMAL [-0.36695275  0.90716046  0.3159404 ]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL 2026-10-26 18:49:16,034 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 5 for episode: 0, action: ('drop', None), finish: success
+[-0.09839791  0.76053363  0.6176757 ]
+2371457 False ObjectState.NORMAL [-0.17102453  0.7607209  -0.39880523]
+14972456 False ObjectState.NORMAL [-0.621442    0.7624326   0.09219124]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 False ObjectState.NORMAL [-0.09833629  0.77819884  0.6172994 ]
+9759015 False ObjectState.NORMAL [-0.62930655  0.7705097   0.08871791]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'b04_banana', 'category': 'banana', 'id': '41'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '62'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '41'), 'cost': 6.8422299808696225}]
+[] ('walk_to', '41')
+('walk_to', '41')
+177 1500
+Target status:
+6071910 False ObjectState.NORMAL [-0.37799063  0.91699994  0.3166264 ]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839791  0.76053363  0.6176757 ]
+2371457 False ObjectState.NORMAL [-0.17096831  0.7608693  -0.39895386]
+14972456 False ObjectState.NORMAL [-0.62148976  0.76309824  0.09215184]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 False ObjectState.NORMAL [-0.09833629  0.77819884  0.6172994 ]
+9759015 False ObjectState.NORMAL [-0.6290584   0.77165467  0.08897702]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'b04_banana', 'category': 'banana', 'id': '41'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '62'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('pick_up', '41'), 'cost': 0}]
+[] ('pick_up', '41')
+('pick_up', '41')
+191 1500
+2026-10-26 18:49:57,740 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '57'), finish: fail, because max steps reached
+2026-10-26 18:50:17,806 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 7 for episode: 0, action: ('explore', None), finish: success
+Target status:
+6071910 False ObjectState.NORMAL [-0.40094447  0.924844    0.30842468]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839229  0.76021373  0.61767536]
+2371457 False ObjectState.NORMAL [-0.16367342  0.7608926  -0.4135609 ]
+14972456 False ObjectState.NORMAL [-0.6214498   0.76094556  0.09231954]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 False ObjectState.NORMAL [0.31920815 0.7727004  0.43285203]
+9759015 False ObjectState.NORMAL [-0.63657194  0.7696939   0.09272201]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'b04_banana', 'category': 'banana', 'id': '41'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '62'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('drop', None), 'cost': 0}]
+[] ('drop', None)
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+208 1500
+Target status:
+6071910 False ObjectState.NORMAL [-0.4417159  0.9633719  0.3252495]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.0983926  0.7602101  0.6176757]
+2371457 False ObjectState.NORMAL [-0.1636734  0.7608926 -0.4135609]
+14972456 False ObjectState.NORMAL [-0.6214817   0.760544    0.09236928]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.65139204  0.7813199   0.09440932]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '62'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+2026-10-26 18:51:00,389 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '78'), finish: fail, because max steps reached
+2026-10-26 18:51:43,253 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '78'), finish: fail, because max steps reached
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '47'), 'cost': 2.0}, {'action': ('walk_to', '52'), 'cost': 0.140089257261219}, {'action': ('walk_to', '53'), 'cost': 0.651920240520265}, {'action': ('walk_to', '57'), 'cost': 10.0}, {'action': ('walk_to', '79'), 'cost': 10.0}]
+[] ('walk_to', '57')
+('walk_to', '57')
+314 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.195227    0.10238365  0.5595914 ]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839262  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.16905254  0.7609047  -0.42330396]
+14972456 False ObjectState.NORMAL [-0.67619616  0.7666505   0.11061005]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.73184115  0.7746235   0.06713455]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '57'), 'cost': 0.3535533905932738}]
+[] ('explore', None)
+('explore', None)
+363 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1952459   0.10337971  0.5578615 ]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.16905254  0.7609047  -0.42330396]
+14972456 False ObjectState.NORMAL [-0.66881084  0.77976614  0.09695917]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.732041    0.770778    0.01664851]
+2.4999998
+rgb (3, 1024, 1024)
+2026-10-26 18:52:09,101 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '78'), finish: success
+2026-10-26 18:52:16,497 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 11 for episode: 0, action: ('pick_up', '78'), finish: success
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'b04_faucet1', 'category': 'water faucet', 'id': '15'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '69'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'b04_bowl_smooth', 'category': 'bowl', 'id': '78'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('walk_to', '33'), 'cost': 1.5832127147038708}, {'action': ('walk_to', '40'), 'cost': 2.0}, {'action': ('walk_to', '53'), 'cost': 0.31841621957571337}, {'action': ('walk_to', '57'), 'cost': 0.3535533905932738}, {'action': ('walk_to', '78'), 'cost': 10.0}, {'action': ('walk_to', '81'), 'cost': 10.0}]
+[] ('walk_to', '78')
+('walk_to', '78')
+469 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1900829   0.09940698  0.5679667 ]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65287113  0.7797723   0.04780401]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.70905274  0.7631349  -0.05541843]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'b04_bowl_smooth', 'category': 'bowl', 'id': '78'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'blue_bag', 'category': 'bag, handbag, pocketbook, purse', 'id': '82'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '78'), 'cost': 10.0}]
+[] ('walk_to', '78')
+('walk_to', '78')
+575 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False 2026-10-26 18:52:27,350 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 12 for episode: 0, action: ('drop', None), finish: success
+ObjectState.NORMAL [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'b04_bowl_smooth', 'category': 'bowl', 'id': '78'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'holy_bible', 'category': 'book', 'id': '80'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '78'), 'cost': 10.0}]
+[] ('walk_to', '78')
+('walk_to', '78')
+643 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 False ObjectState.NORMAL [-0.42713913  0.002227   -1.4536544 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.BURNING [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '9'}, {'name': 'b04_faucet1', 'category': 'water faucet', 'id': '15'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'b04_bowl_smooth', 'category': 'bowl', 'id': '78'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('pick_up', '78'), 'cost': 0}]
+[] ('pick_up', '78')
+('pick_up', '78')
+685 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 False ObjectState.NORMAL [-0.76751566  0.88648486 -1.9013917 ]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False 2026-10-26 18:53:10,349 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 18:53:16,011 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '81'), finish: success
+ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.BURNING [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '9'}, {'name': 'b04_faucet1', 'category': 'water faucet', 'id': '15'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'b04_bowl_smooth', 'category': 'bowl', 'id': '78'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('drop', None), 'cost': 0}]
+[] ('drop', None)
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+748 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.NORMAL [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.BURNING [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '9'}, {'name': 'b04_faucet1', 'category': 'water faucet', 'id': '15'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '46'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0067_fishfork', 'category': 'fork', 'id': '54'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b04_scissors_2013', 'category': 'scissors', 'id': '66'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+2026-10-26 18:53:20,989 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 15 for episode: 0, action: ('pick_up', '81'), finish: success
+2026-10-26 18:53:28,939 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 16 for episode: 0, action: ('drop', None), finish: success
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '33'), 'cost': 2.3956340496828807}, {'action': ('walk_to', '40'), 'cost': 0.507567729470659}, {'action': ('walk_to', '47'), 'cost': 0.8252306075004461}, {'action': ('walk_to', '52'), 'cost': 2.0}, {'action': ('walk_to', '53'), 'cost': 10.0}, {'action': ('walk_to', '57'), 'cost': 10.0}, {'action': ('walk_to', '79'), 'cost': 10.0}, {'action': ('walk_to', '81'), 'cost': 10.0}]
+[] ('walk_to', '81')
+('walk_to', '81')
+851 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.BURNING [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0014_dinner_knife_subd2', 'category': 'knife', 'id': '9'}, {'name': 'b04_faucet1', 'category': 'water faucet', 'id': '15'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'pan1', 'category': 'pot', 'id': '21'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '81'), 'cost': 10.0}]
+[] ('walk_to', '81')
+('walk_to', '81')
+862 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.BURNING [-0.6770791   0.00209498 -0.70407003]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+2026-10-26 18:54:12,414 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 17 for episode: 0, action: ('walk_to', '57'), finish: fail, because max steps reached
+2026-10-26 18:54:27,292 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 18 for episode: 0, action: ('walk_to', '57'), finish: success
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'vk0067_fishfork', 'category': 'fork', 'id': '42'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('pick_up', '81'), 'cost': 0}]
+[] ('pick_up', '81')
+('pick_up', '81')
+881 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 False ObjectState.BURNING [-1.0854762  0.0191879 -1.0522287]
+4468913 False ObjectState.NORMAL [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.NORMAL [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'filler_2010', 'category': 'soap dispenser', 'id': '14'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'juicer', 'category': 'coffee grinder', 'id': '17'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'coffeecup004_fix', 'category': 'cup', 'id': '29'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'vk0067_fishfork', 'category': 'fork', 'id': '42'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '81'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('drop', None), 'cost': 0}]
+[] ('drop', None)
+('drop', None)
+WARNING: not specifying object id, will drop to the ground
+927 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1912937   0.10070384  0.55672276]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False 2026-10-26 18:54:30,956 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 19 for episode: 0, action: ('pick_up', '57'), finish: success
+ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'tapered_cork_w_hole', 'category': 'bottle cork', 'id': '67'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '33'), 'cost': 2.2638462845343543}, {'action': ('walk_to', '47'), 'cost': 2.0}, {'action': ('walk_to', '52'), 'cost': 0.250814998086849}, {'action': ('walk_to', '53'), 'cost': 2.3544492184901724}, {'action': ('walk_to', '57'), 'cost': 10.0}, {'action': ('walk_to', '79'), 'cost': 10.0}]
+[] ('walk_to', '57')
+('walk_to', '57')
+1033 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.1615833   0.11793468  0.5444545 ]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b04_scissors_2013', 'category': 'scissors', 'id': '66'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '69'}, {'name': 'vk0060_dessertspoon', 'category': 'spoon', 'id': '70'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '57'), 'cost': 10.0}]
+[] ('walk_to', '57')
+('walk_to', '57')
+1064 1500
+Target status:
+6071910 False 2026-10-26 18:54:34,814 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 20 for episode: 0, action: ('drop', None), finish: success
+2026-10-26 18:55:17,483 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 21 for episode: 0, action: ('walk_to', '79'), finish: fail, because max steps reached
+2026-10-26 18:55:54,346 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 22 for episode: 0, action: ('walk_to', '79'), finish: fail, because max steps reached
+ObjectState.NORMAL [-1.1227987   0.14013283  0.5588991 ]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999998
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'vk0055_tableknife', 'category': 'knife', 'id': '69'}, {'name': 'vk0060_dessertspoon', 'category': 'spoon', 'id': '70'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'b03_pen', 'category': 'pen', 'id': '74'}, {'name': 'ripple', 'category': 'coin', 'id': '75'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('pick_up', '57'), 'cost': 0}]
+[] ('pick_up', '57')
+('pick_up', '57')
+1079 1500
+Target status:
+6071910 False ObjectState.NORMAL [-1.4900372   0.46324337 -0.08601546]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'serving_bowl', 'category': 'bowl', 'id': '57'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': 'b05_castironradiator', 'category': 'radiator', 'id': '60'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'b05_gold_glass_soap_dispenser(max)', 'category': 'soap dispenser', 'id': '68'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'ripple', 'category': 'coin', 'id': '75'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('drop', None), 'cost': 0}]
+[] ('drop', None)
+('drop', None)
+2026-10-26 18:56:34,611 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 23 for episode: 0, action: ('walk_to', '79'), finish: fail, because max steps reached
+2026-10-26 18:57:16,004 - fire_custom_10/26/2026, 18:47:13 - INFO - Executing step 24 for episode: 0, action: ('walk_to', '79'), finish: fail, because max steps reached
+2026-10-26 18:57:16,007 - fire_custom_10/26/2026, 18:47:13 - INFO - eval done, avg score 3.5, max score 11.0, avg steps 1534.0
+2026-10-26 18:57:16,007 - fire_custom_10/26/2026, 18:47:13 - INFO - time: 602.8022017478943
+WARNING: not specifying object id, will drop to the ground
+1096 1500
+Target status:
+6071910 1096 ObjectState.NORMAL [100.  20.   0.]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'square_coaster_rubber', 'category': 'coaster', 'id': '73'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '33'), 'cost': 1.8310686770298923}, {'action': ('walk_to', '40'), 'cost': 2.0}, {'action': ('walk_to', '47'), 'cost': 2.0}, {'action': ('walk_to', '52'), 'cost': 0.18950227204735876}, {'action': ('walk_to', '53'), 'cost': 0.8095876103087488}, {'action': ('walk_to', '79'), 'cost': 10.0}]
+[] ('walk_to', '79')
+('walk_to', '79')
+1202 1500
+Target status:
+6071910 1096 ObjectState.NORMAL [100.  20.   0.]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '58'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '79'), 'cost': 10.0}]
+[] ('walk_to', '79')
+('walk_to', '79')
+1326 1500
+Target status:
+6071910 1096 ObjectState.NORMAL [100.  20.   0.]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839261  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '79'), 'cost': 10.0}]
+[] ('walk_to', '79')
+('walk_to', '79')
+1431 1500
+Target status:
+6071910 1096 ObjectState.NORMAL [100.  20.   0.]
+7894596 748 ObjectState.NORMAL [100.  20.   0.]
+5056209 False ObjectState.NORMAL [1.3293303 0.9261519 1.3874688]
+3620792 False ObjectState.NORMAL [-0.09839264  0.76021016  0.6176758 ]
+2371457 False ObjectState.NORMAL [-0.1690524   0.76090527 -0.42330387]
+14972456 False ObjectState.NORMAL [-0.65303165  0.7793183   0.04804096]
+3671125 False ObjectState.BURNING [ 0.8231966  0.0020955 -1.4534076]
+13861373 927 ObjectState.BURNING [100.  20.   0.]
+4468913 False ObjectState.BURNING [1.4858536 0.9222878 2.0354264]
+2884853 208 ObjectState.NORMAL [100.  20.   0.]
+9759015 False ObjectState.BURNING [-0.7090648   0.7634932  -0.05540872]
+2.4999995
+rgb (3, 1024, 1024)
+[{'name': 'cabinet_24_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '1'}, {'name': 'dishwasher_4_composite', 'category': 'dishwasher', 'id': '4'}, {'name': 'dishwasher_4_counter_top', 'category': 'cabinet', 'id': '5'}, {'name': 'jug05', 'category': 'jug', 'id': '6'}, {'name': 'sink_cabinet_unit_wood_oak_white_porcelain_composite', 'category': 'cabinet', 'id': '7'}, {'name': 'vk0002_teaspoon', 'category': 'spoon', 'id': '8'}, {'name': 'cabinet_24_single_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '16'}, {'name': 'gas_stove_composite', 'category': 'gas cooker', 'id': '19'}, {'name': 'teakettle_01', 'category': 'teakettle', 'id': '20'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '24'}, {'name': 'appliance-ge-profile-microwave3_composite', 'category': 'microwave', 'id': '27'}, {'name': 'jug03', 'category': 'jug', 'id': '28'}, {'name': 'cabinet_36_two_door_wood_oak_white_composite', 'category': 'cabinet', 'id': '32'}, {'name': 'b03_banana_01_high', 'category': 'banana', 'id': '33'}, {'name': 'vase_05', 'category': 'vase', 'id': '34'}, {'name': 'enzo_industrial_loft_pine_metal_round_dining_table', 'category': 'table', 'id': '36'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '37'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '38'}, {'name': 'chair_willisau_riale', 'category': 'chair', 'id': '39'}, {'name': 'plate06', 'category': 'plate', 'id': '40'}, {'name': 'plate06', 'category': 'plate', 'id': '47'}, {'name': 'plate06', 'category': 'plate', 'id': '52'}, {'name': 'b04_banana', 'category': 'banana', 'id': '53'}, {'name': 'vk0007_steak_knife', 'category': 'knife', 'id': '55'}, {'name': 'tolix_bar_stool', 'category': 'stool', 'id': '59'}, {'name': '5ft_wood_shelving', 'category': 'shelf', 'id': '61'}, {'name': 'cgaxis_models_61_17_vray', 'category': 'coffee grinder', 'id': '72'}, {'name': 'hp_printer', 'category': 'printer', 'id': '76'}, {'name': 'toothbrush', 'category': 'toothbrush', 'id': '79'}, {'name': 'replicant', 'category': 'replicant', 'id': '85'}, {'name': 'door_l', 'category': 'cabinet', 'id': '86'}, {'name': 'door_r', 'category': 'cabinet', 'id': '87'}, {'name': 'door', 'category': 'dishwasher', 'id': '88'}, {'name': 'sink_door_ll', 'category': 'cabinet', 'id': '89'}, {'name': 'sink_door_rl', 'category': 'cabinet', 'id': '90'}, {'name': 'sink_door_rr', 'category': 'cabinet', 'id': '91'}, {'name': 'sink_door_lr', 'category': 'cabinet', 'id': '92'}, {'name': 'cabinet_24_door', 'category': 'cabinet', 'id': '93'}, {'name': 'left-door', 'category': 'gas cooker', 'id': '95'}, {'name': 'right-door', 'category': 'gas cooker', 'id': '96'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '97'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '98'}, {'name': 'appliance-ge-microwave-door', 'category': 'microwave', 'id': '99'}, {'name': 'cabinet_36_door_l', 'category': 'cabinet', 'id': '100'}, {'name': 'cabinet_36_door_r', 'category': 'cabinet', 'id': '101'}]
+[{'action': ('explore', None), 'cost': 2.5}, {'action': ('walk_to', '79'), 'cost': 10.0}]
+[] ('walk_to', '79')
+('walk_to', '79')
+1534 1500
+finally: {6071910: 1096, 7894596: 748, 5056209: False, 3620792: False, 2371457: False, 14972456: False, 3671125: False, 13861373: 927, 4468913: False, 2884853: 208, 9759015: False}
+    DEBUG Moving
+{
+  "env": "fire",
+  "agent": "greedy",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 602.9,
+  "decisions": 24,
+  "decision_wall_s": {
+    "mean": 0.3427,
+    "max": 0.6803,
+    "min": 0.1474
+  },
+  "frames_at_30fps_total": 256,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 3.5,
+      "avg_steps": 1534.0,
+      "avg_max_score": 11.0,
+      "total": 1,
+      "target_status": {
+        "6071910": 1096,
+        "7894596": 748,
+        "5056209": false,
+        "3620792": false,
+        "2371457": false,
+        "14972456": false,
+        "3671125": false,
+        "13861373": 927,
+        "4468913": false,
+        "2884853": 208,
+        "9759015": false
+      },
+      "final_states": {
+        "6071910": 0,
+        "7894596": 0,
+        "13861373": 1,
+        "2884853": 0
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1535
+}

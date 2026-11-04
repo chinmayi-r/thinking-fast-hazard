@@ -1,0 +1,73 @@
+== build: TDW.exe -port 10826 (output to logs/build_20261016_143840.log)
+== submit(env_name=fire, agent=random, max_test_episode=1, port=10826) -> G:\iw-thinking-fast\results\fire_random_ep1_20261016_143840
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-16 14:39:11,024 - fire_random_10/16/2026, 14:39:11 - INFO - Environment Created
+2026-10-16 14:39:11,024 - fire_random_10/16/2026, 14:39:11 - INFO - done
+2026-10-16 14:39:11,025 - fire_random_10/16/2026, 14:39:11 - INFO - Episode: 1/1
+2026-10-16 14:39:11,025 - fire_random_10/16/2026, 14:39:11 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 14:40:38,965 - fire_random_10/16/2026, 14:39:11 - INFO - Environment Reset. Took 87.94045519828796 secs
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\run_experiments.py", line 195, in submit
+    challenge.submit(agent=agent_policy, logger=logger, eval_episodes=1)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\challenge.py", line 323, in submit
+    obj_name = self.env.controller.id2name[self.id_reverse_renumbering(self.nearest_object)]
+KeyError: -1
+G:\iw-thinking-fast\results\fire_random_ep1_20261016_143840\mm_craftroom_2a-1
+OUTPUT_DIR G:\iw-thinking-fast\results\fire_random_ep1_20261016_143840\mm_craftroom_2a-1
+You need to launch your own build.
+Controller connected
+object 451306954 not recorded, may be caused by composite objects which you can ignore
+object 90574932 not recorded, may be caused by composite objects which you can ignore
+object 1298028780 not recorded, may be caused by composite objects which you can ignore
+object 969879779 not recorded, may be caused by composite objects which you can ignore
+object 1296671630 not recorded, may be caused by composite objects which you can ignore
+object 1878811444 not recorded, may be caused by composite objects which you can ignore
+object 1145120857 not recorded, may be caused by composite objects which you can ignore
+object 703415617 not recorded, may be caused by composite objects which you can ignore
+object 60166369 not recorded, may be caused by composite objects which you can ignore
+object 10170055 not recorded, may be caused by composite objects which you can ignore
+object 1014820023 not recorded, may be caused by composite objects which you can ignore
+object 536758888 not recorded, may be caused by composite objects which you can ignore
+object 1126821352 not recorded, may be caused by composite objects which you can ignore
+object 906371918 not recorded, may be caused by composite objects which you can ignore
+object 1755311175 not recorded, may be caused by composite objects which you can ignore
+object 384965946 not recorded, may be caused by composite objects which you can ignore
+object 351435325 not recorded, may be caused by composite objects which you can ignore
+object 781679555 not recorded, may be caused by composite objects which you can ignore
+object 998681676 not recorded, may be caused by composite objects which you can ignore
+object 747099685 not recorded, may be caused by composite objects which you can ignore
+init: {14640280: False, 14544403: False, 16728828: False, 16381463: False, 10511794: False, 10844722: False, 473176: False, 474390: False, 16013534: False, 6999109: False, 6798686: False}
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.NORMAL [3.8196203e-01 5.6456309e-05 2.2542756e+00]
+16728828 False ObjectState.NORMAL [2.15926    0.10233285 1.646721  ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.NORMAL [8.8202524e-01 5.8172271e-04 1.5042921e+00]
+473176 False ObjectState.NORMAL [1.3820242e+00 5.8202446e-04 1.7542925e+00]
+474390 False ObjectState.NORMAL [ 6.3202250e-01  4.7199428e-04 -1.2457085e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18092367  0.39420712  1.0751157 ]
+6798686 False ObjectState.NORMAL [ 3.8202053e-01  9.7185140e-05 -9.9570620e-01]
+('pick_up', 40)
+exit=1  wall=115s  output_dir=G:\iw-thinking-fast\results\fire_random_ep1_20261016_143840
+total 109
+drwxr-xr-x 1 Chinm_user 197121      0 Oct 16 14:39 .
+drwxr-xr-x 1 Chinm_user 197121      0 Oct 16 14:39 ..
+-rw-r--r-- 1 Chinm_user 197121 106609 Oct 16 14:40 log.txt
+drwxr-xr-x 1 Chinm_user 197121      0 Oct 16 14:40 mm_craftroom_2a-1
+-rw-r--r-- 1 Chinm_user 197121    617 Oct 16 14:40 output.log
+== build log tail:
+== Player.log errors:
+[OVRPlugin][ERROR] ovr_Initialize failed: Unable to load LibOVRRT DLL
+== done

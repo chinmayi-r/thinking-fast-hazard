@@ -1,0 +1,23 @@
+2026-10-16 17:49:13,631 - flood_custom_10/16/2026, 17:49:13 - DEBUG - 10826
+2026-10-16 17:49:13,631 - flood_custom_10/16/2026, 17:49:13 - INFO - Environment Created
+2026-10-16 17:49:13,631 - flood_custom_10/16/2026, 17:49:13 - INFO - done
+2026-10-16 17:49:13,631 - flood_custom_10/16/2026, 17:49:13 - INFO - Episode: 1/1
+2026-10-16 17:49:13,632 - flood_custom_10/16/2026, 17:49:13 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 17:50:38,394 - flood_custom_10/16/2026, 17:49:13 - INFO - Environment Reset. Took 84.7631299495697 secs
+2026-10-16 17:51:10,682 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '40'), finish: fail, because max steps reached
+2026-10-16 17:51:29,834 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 2 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:52:03,600 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '98'), finish: fail, because max steps reached
+2026-10-16 17:52:08,904 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '98'), finish: success
+2026-10-16 17:52:17,456 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 5 for episode: 0, action: ('pick_up', '98'), finish: success
+2026-10-16 17:52:34,224 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 6 for episode: 0, action: ('drop', None), finish: success
+2026-10-16 17:53:03,449 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:53:31,298 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:54:01,825 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:54:30,100 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:54:57,529 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:55:23,429 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:55:49,838 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:56:14,296 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:56:38,369 - flood_custom_10/16/2026, 17:49:13 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '108'), finish: fail, because max steps reached
+2026-10-16 17:56:38,371 - flood_custom_10/16/2026, 17:49:13 - INFO - eval done, avg score 0.5, max score 19.0, avg steps 1506.0
+2026-10-16 17:56:38,371 - flood_custom_10/16/2026, 17:49:13 - INFO - time: 444.7409300804138

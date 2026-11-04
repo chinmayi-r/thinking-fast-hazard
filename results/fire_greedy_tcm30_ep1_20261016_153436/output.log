@@ -1,0 +1,13 @@
+2026-10-16 15:35:01,676 - fire_custom_10/16/2026, 15:35:01 - DEBUG - 10826
+2026-10-16 15:35:01,676 - fire_custom_10/16/2026, 15:35:01 - INFO - Environment Created
+2026-10-16 15:35:01,676 - fire_custom_10/16/2026, 15:35:01 - INFO - done
+2026-10-16 15:35:01,678 - fire_custom_10/16/2026, 15:35:01 - INFO - Episode: 1/1
+2026-10-16 15:35:01,678 - fire_custom_10/16/2026, 15:35:01 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 15:36:30,421 - fire_custom_10/16/2026, 15:35:01 - INFO - Environment Reset. Took 88.73885369300842 secs
+2026-10-16 15:37:30,575 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 1 for episode: 0, action: ('walk_to', '100'), finish: fail, because max steps reached
+2026-10-16 15:37:51,081 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '100'), finish: success
+2026-10-16 15:37:56,003 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 3 for episode: 0, action: ('pick_up', '100'), finish: success
+2026-10-16 15:38:07,572 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 4 for episode: 0, action: ('drop', None), finish: success
+2026-10-16 15:38:14,097 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '98'), finish: success
+2026-10-16 15:38:20,841 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 6 for episode: 0, action: ('pick_up', '98'), finish: success
+2026-10-16 15:38:32,526 - fire_custom_10/16/2026, 15:35:01 - INFO - Executing step 7 for episode: 0, action: ('drop', None), finish: success

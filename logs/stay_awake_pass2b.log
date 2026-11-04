@@ -1,0 +1,2 @@
+stay_awake: holding system awake until 'LANE V3 PASS2 DONE' appears in logs/sweep_v2.log
+stay_awake: released

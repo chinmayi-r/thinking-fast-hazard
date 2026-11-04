@@ -1,0 +1,37 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-26 10:59:04,640 - fire_custom_10/26/2026, 10:59:04 - INFO - Environment Created
+2026-10-26 10:59:04,640 - fire_custom_10/26/2026, 10:59:04 - INFO - done
+2026-10-26 10:59:04,641 - fire_custom_10/26/2026, 10:59:04 - INFO - Episode: 1/1
+2026-10-26 10:59:04,641 - fire_custom_10/26/2026, 10:59:04 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-10
+2026-10-26 11:00:09,298 - fire_custom_10/26/2026, 10:59:04 - INFO - Environment Reset. Took 64.65698957443237 secs
+[ WARN:0@118.742] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+2026-10-26 11:00:29,448 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 11:01:10,040 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 11:01:48,903 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 11:02:23,625 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 11:02:56,454 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 11:03:32,507 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 11:04:00,691 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '81'), finish: fail, because max steps reached
+2026-10-26 11:04:19,652 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '81'), finish: success
+2026-10-26 11:04:26,316 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 9 for episode: 0, action: ('pick_up', 81), finish: success
+2026-10-26 11:04:46,263 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 10 for episode: 0, action: ('explore', None), finish: success
+2026-10-26 11:04:56,920 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 11 for episode: 0, action: ('drop', None), finish: success
+2026-10-26 11:05:31,815 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-26 11:06:09,340 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-26 11:06:47,816 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-26 11:07:28,197 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-26 11:08:10,016 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-26 11:08:55,687 - fire_custom_10/26/2026, 10:59:04 - INFO - Executing step 17 for episode: 0, action: ('walk_to', '5'), finish: fail, because max steps reached
+2026-10-26 11:08:55,713 - fire_custom_10/26/2026, 10:59:04 - INFO - eval done, avg score 2.5, max score 14.0, avg steps 1583.0
+2026-10-26 11:08:55,713 - fire_custom_10/26/2026, 10:59:04 - INFO - time: 591.0715956687927
+2026-10-26 11:08:55,740 - fire_custom_10/26/2026, 10:59:04 - INFO - Episode: 1/1
+2026-10-26 11:08:55,740 - fire_custom_10/26/2026, 10:59:04 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-11

@@ -1,0 +1,46 @@
+step 0 action ('walk_to_single', 99)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 77) none None
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 1)
+step 0 action ('pick_up', 41) none None
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 41)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 7)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 75)
+step 0 action ('pick_up', 75) none None
+step 0 action ('pick_up', 75) none None
+step 0 action ('pick_up', 75) apple 8746146
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 7)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 92)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 80)
+step 0 action ('walk_to_single', 80)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 80) none None
+step 0 action ('drop', None)
+step 0 action ('pick_up', 80) chocolate_bar001 5254665
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 80)
+step 0 action ('walk_to_single', 80)
+step 0 action ('pick_up', 80) none None
+step 0 action ('walk_to_single', 80)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 80) none None
+step 0 action ('walk_to_single', 80)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('explore', None)

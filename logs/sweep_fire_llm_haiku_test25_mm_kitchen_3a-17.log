@@ -1,0 +1,367 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-27 13:35:13,863 - fire_custom_10/27/2026, 13:35:13 - INFO - Environment Created
+2026-10-27 13:35:13,863 - fire_custom_10/27/2026, 13:35:13 - INFO - done
+2026-10-27 13:35:13,863 - fire_custom_10/27/2026, 13:35:13 - INFO - Episode: 1/1
+2026-10-27 13:35:13,863 - fire_custom_10/27/2026, 13:35:13 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-17
+2026-10-27 13:36:14,216 - fire_custom_10/27/2026, 13:35:13 - INFO - Environment Reset. Took 60.35214948654175 secs
+[ WARN:0@94.397] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+2026-10-27 13:36:34,056 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 13:36:48,613 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '85'), finish: fail, because target not in vision or memory
+2026-10-27 13:37:28,393 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:38:07,314 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:38:45,680 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:39:25,519 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:40:02,600 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:40:42,778 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 8 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:41:22,604 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 9 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:42:06,370 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 10 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:42:45,323 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 11 for episode: 0, action: ('walk_to', '86'), finish: fail, because max steps reached
+2026-10-27 13:43:29,100 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 12 for episode: 0, action: ('walk_to', '86'), finish: fail, because max steps reached
+2026-10-27 13:44:11,553 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 13 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:44:53,549 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 14 for episode: 0, action: ('walk_to', '94'), finish: fail, because max steps reached
+2026-10-27 13:45:33,723 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 15 for episode: 0, action: ('walk_to', '86'), finish: fail, because max steps reached
+2026-10-27 13:46:09,475 - fire_custom_10/27/2026, 13:35:13 - INFO - Executing step 16 for episode: 0, action: ('walk_to', '86'), finish: fail, because max steps reached
+2026-10-27 13:46:09,477 - fire_custom_10/27/2026, 13:35:13 - INFO - eval done, avg score 0.0, max score 17.0, avg steps 1540.0
+2026-10-27 13:46:09,477 - fire_custom_10/27/2026, 13:35:13 - INFO - time: 655.6141405105591
+build pid=42080: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+OUTPUT_DIR G:\iw-thinking-fast\results\sweep_fire_llm_haiku_test25\mm_kitchen_3a-17
+You need to launch your own build.
+Controller connected
+object 528571881 not recorded, may be caused by composite objects which you can ignore
+object 1432159917 not recorded, may be caused by composite objects which you can ignore
+object 1334954090 not recorded, may be caused by composite objects which you can ignore
+object 1081869585 not recorded, may be caused by composite objects which you can ignore
+object 1400707150 not recorded, may be caused by composite objects which you can ignore
+object 968089591 not recorded, may be caused by composite objects which you can ignore
+object 936855325 not recorded, may be caused by composite objects which you can ignore
+object 282117972 not recorded, may be caused by composite objects which you can ignore
+object 1430600288 not recorded, may be caused by composite objects which you can ignore
+object 557015795 not recorded, may be caused by composite objects which you can ignore
+object 2057118461 not recorded, may be caused by composite objects which you can ignore
+object 1522887995 not recorded, may be caused by composite objects which you can ignore
+object 911961135 not recorded, may be caused by composite objects which you can ignore
+object 1493719964 not recorded, may be caused by composite objects which you can ignore
+object 302172011 not recorded, may be caused by composite objects which you can ignore
+object 32062768 not recorded, may be caused by composite objects which you can ignore
+object 1603177915 not recorded, may be caused by composite objects which you can ignore
+object 2004751840 not recorded, may be caused by composite objects which you can ignore
+object 260194588 not recorded, may be caused by composite objects which you can ignore
+object 1706341672 not recorded, may be caused by composite objects which you can ignore
+object 932171752 not recorded, may be caused by composite objects which you can ignore
+object 1074034121 not recorded, may be caused by composite objects which you can ignore
+object 1589659240 not recorded, may be caused by composite objects which you can ignore
+object 842080624 not recorded, may be caused by composite objects which you can ignore
+object 1359219952 not recorded, may be caused by composite objects which you can ignore
+object 129633855 not recorded, may be caused by composite objects which you can ignore
+object 1621107475 not recorded, may be caused by composite objects which you can ignore
+object 1177635481 not recorded, may be caused by composite objects which you can ignore
+init: {16396968: False, 2292561: False, 6068006: False, 3181486: False, 2352911: False, 15288073: False, 15652670: False, 15447549: False, 13210454: False}
+Target status:
+16396968 False ObjectState.NORMAL [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.32902     0.9325744  -0.40891868]
+3181486 False ObjectState.NORMAL [-0.13555393  0.76861495  0.57083744]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157784 0.00503692 1.7898161 ]
+2.4860244
+rgb (3, 1024, 1024)
+current_step 17
+('explore', None)
+65 1500
+Target status:
+16396968 False ObjectState.NORMAL [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.32902     0.9325744  -0.40891868]
+3181486 False ObjectState.NORMAL [-0.13554722  0.7686268   0.57085747]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999993
+rgb (3, 1024, 1024)
+current_step 66
+('walk_to', '85')
+77 1500
+Target status:
+16396968 False ObjectState.NORMAL [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.32902     0.9325744  -0.40891868]
+3181486 False ObjectState.NORMAL [-0.13558061  0.76863474  0.57086253]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 78
+('walk_to', '94')
+183 1500
+Target status:
+16396968 False ObjectState.NORMAL [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3311274   0.9319177  -0.40797773]
+3181486 False ObjectState.NORMAL [-0.13555472  0.7685946   0.5708452 ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 184
+('walk_to', '94')
+286 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266449   0.93255156 -0.402745  ]
+3181486 False ObjectState.NORMAL [-0.1355537   0.76860607  0.570854  ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 287
+('walk_to', '94')
+390 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266538  0.9325415 -0.4027374]
+3181486 False ObjectState.NORMAL [-0.1355455   0.76861316  0.5708514 ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 391
+('walk_to', '94')
+493 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266536   0.9325519  -0.40273347]
+3181486 False ObjectState.NORMAL [-0.13554794  0.7686117   0.5708585 ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 494
+('walk_to', '94')
+601 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.NORMAL [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266536   0.93255186 -0.40273347]
+3181486 False ObjectState.NORMAL [-0.1355606   0.76859653  0.5708406 ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999979
+rgb (3, 1024, 1024)
+current_step 602
+('walk_to', '94')
+703 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266536  0.9325519 -0.4027335]
+3181486 False ObjectState.NORMAL [-0.13554539  0.76861316  0.57085156]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.499997
+rgb (3, 1024, 1024)
+current_step 704
+('walk_to', '94')
+806 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266518   0.93255115 -0.40273878]
+3181486 False ObjectState.NORMAL [-0.13555661  0.7686149   0.57084674]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.499997
+rgb (3, 1024, 1024)
+current_step 807
+('walk_to', '94')
+910 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266531   0.93255544 -0.4027325 ]
+3181486 False ObjectState.NORMAL [-0.1355752  0.7685866  0.5708709]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999993
+rgb (3, 1024, 1024)
+current_step 911
+('walk_to', '86')
+1014 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.326654    0.9325415  -0.40273744]
+3181486 False ObjectState.NORMAL [-0.13558336  0.76859516  0.5708613 ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 1015
+('walk_to', '86')
+1120 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.3266532   0.93255544 -0.4027325 ]
+3181486 False ObjectState.NORMAL [-0.13555208  0.7686058   0.57086134]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 1121
+('walk_to', '94')
+1224 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.NORMAL [ 1.326654    0.9325415  -0.40273744]
+3181486 False ObjectState.NORMAL [-0.1355586  0.7686421  0.5708385]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 1225
+('walk_to', '94')
+1330 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.BURNING [ 1.3266532   0.9325555  -0.40273246]
+3181486 False ObjectState.NORMAL [-0.13555323  0.7686002   0.5708548 ]
+2352911 False ObjectState.NORMAL [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999995
+rgb (3, 1024, 1024)
+current_step 1331
+('walk_to', '86')
+1434 1500
+Target status:
+16396968 False ObjectState.BURNING [ 5.7286358e-01  2.0902511e-03 -3.2036576e+00]
+2292561 False ObjectState.BURNING [-1.7715685e-01  1.9408008e-03 -1.9536437e+00]
+6068006 False ObjectState.BURNING [ 1.3266541   0.9325415  -0.40273744]
+3181486 False ObjectState.NORMAL [-0.13558178  0.7686185   0.57086444]
+2352911 False ObjectState.BURNING [3.2277173e-01 1.9882657e-03 2.2961941e+00]
+15288073 False ObjectState.NORMAL [1.4675492 0.1020194 3.0129387]
+15652670 False ObjectState.NORMAL [-0.14838673  0.76329625  0.14465499]
+15447549 False ObjectState.NORMAL [-0.02878549  0.4791347   1.03714   ]
+13210454 False ObjectState.NORMAL [0.07157783 0.00503692 1.7898161 ]
+2.4999993
+rgb (3, 1024, 1024)
+current_step 1435
+('walk_to', '86')
+1540 1500
+finally: {16396968: False, 2292561: False, 6068006: False, 3181486: False, 2352911: False, 15288073: False, 15652670: False, 15447549: False, 13210454: False}
+    DEBUG Moving
+{
+  "env": "fire",
+  "agent": "llm",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 655.7,
+  "decisions": 16,
+  "decision_wall_s": {
+    "mean": 4.7264,
+    "max": 7.0858,
+    "min": 3.155
+  },
+  "frames_at_30fps_total": 2277,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 0.0,
+      "avg_steps": 1540.0,
+      "avg_max_score": 17.0,
+      "total": 1,
+      "target_status": {
+        "16396968": false,
+        "2292561": false,
+        "6068006": false,
+        "3181486": false,
+        "2352911": false,
+        "15288073": false,
+        "15652670": false,
+        "15447549": false,
+        "13210454": false
+      },
+      "final_states": {}
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1541,
+  "llm": {
+    "source": "anthropic",
+    "model": "claude-haiku-5-5",
+    "calls": 32,
+    "call_wall_s": {
+      "mean": 2.303,
+      "max": 4.861,
+      "min": 0.564,
+      "total": 73.7
+    },
+    "input_tokens": 32981,
+    "output_tokens": 9079,
+    "stop_reasons": [
+      "end_turn"
+    ],
+    "cost_usd_estimate": 0.0078
+  }
+}

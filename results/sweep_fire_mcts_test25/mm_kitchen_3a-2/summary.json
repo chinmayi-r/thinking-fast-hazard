@@ -1,0 +1,50 @@
+{
+  "env": "fire",
+  "agent": "mcts",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 1160.9,
+  "decisions": 20,
+  "decision_wall_s": {
+    "mean": 9.8056,
+    "max": 16.9967,
+    "min": 2.4322
+  },
+  "frames_at_30fps_total": 5892,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 1.5,
+      "avg_steps": 1531.0,
+      "avg_max_score": 31.0,
+      "total": 1,
+      "target_status": {
+        "759523": false,
+        "564045": false,
+        "6946485": false,
+        "4840407": 694,
+        "14820534": false,
+        "15947515": false,
+        "921540": false,
+        "4405639": false,
+        "4370603": false,
+        "7033941": 508,
+        "8079639": false,
+        "2567776": false,
+        "5545432": false,
+        "10358021": false,
+        "8650015": false
+      },
+      "final_states": {
+        "4840407": 0,
+        "7033941": 1
+      }
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1532
+}

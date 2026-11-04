@@ -1,0 +1,47 @@
+step 0 action ('walk_to_single', 29)
+step 0 action ('walk_to_single', 98)
+step 0 action ('drop', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 29)
+step 0 action ('walk_to_single', 29)
+step 0 action ('pick_up', 29) none None
+step 0 action ('walk_to_single', 114)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 8)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 29) none None
+step 0 action ('pick_up', 29) green_bag 14784020
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 27)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 27) none None
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 18)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 89)
+step 0 action ('pick_up', 85) none None
+step 0 action ('pick_up', 85) none None
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 84) holy_bible 14152278
+step 0 action ('pick_up', 84) none None
+step 0 action ('pick_up', 84) b05_48_body_shop_hair_brush 3119211
+step 0 action ('walk_to_single', 84)
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 66) none None
+step 0 action ('pick_up', 66) none None
+step 0 action ('pick_up', 66) green_bag 10314960
+step 0 action ('walk_to_single', 66)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 71)
+step 0 action ('walk_to_single', 18)
+step 0 action ('pick_up', 71) none None
+step 0 action ('walk_to_single', 71)
+step 0 action ('explore', None)

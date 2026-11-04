@@ -1,0 +1,67 @@
+2026-10-27 07:14:27,998 - fire_custom_10/27/2026, 07:14:27 - DEBUG - 10826
+2026-10-27 07:14:27,999 - fire_custom_10/27/2026, 07:14:27 - INFO - Environment Created
+2026-10-27 07:14:27,999 - fire_custom_10/27/2026, 07:14:27 - INFO - done
+2026-10-27 07:14:28,000 - fire_custom_10/27/2026, 07:14:27 - INFO - Episode: 1/1
+2026-10-27 07:14:28,000 - fire_custom_10/27/2026, 07:14:27 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-10
+2026-10-27 07:15:16,830 - fire_custom_10/27/2026, 07:14:27 - INFO - Environment Reset. Took 48.83115029335022 secs
+2026-10-27 07:15:38,827 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:15:45,004 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 2 for episode: 0, action: ('pick_up', 47), finish: success
+2026-10-27 07:16:08,313 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 3 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:16:18,954 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 4 for episode: 0, action: ('walk_to_single', 1), finish: success
+2026-10-27 07:16:21,706 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 5 for episode: 0, action: ('walk_to_single', 79), finish: success
+2026-10-27 07:16:43,433 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 6 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:16:45,610 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 7 for episode: 0, action: ('walk_to_single', 79), finish: success
+2026-10-27 07:17:05,731 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 8 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:17:08,824 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 9 for episode: 0, action: ('walk_to_single', 79), finish: success
+2026-10-27 07:17:29,502 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 10 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:17:33,167 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 11 for episode: 0, action: ('pick_up', 79), finish: fail, because failed to grasp
+2026-10-27 07:17:55,530 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 12 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:18:16,117 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 13 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:18:19,280 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 14 for episode: 0, action: ('walk_to_single', 79), finish: success
+2026-10-27 07:18:25,616 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 15 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 07:18:50,206 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 16 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:18:56,870 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 17 for episode: 0, action: ('pick_up', 79), finish: success
+2026-10-27 07:19:00,011 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 18 for episode: 0, action: ('walk_to_single', 79), finish: success
+2026-10-27 07:19:15,896 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 19 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 07:19:20,910 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 20 for episode: 0, action: ('pick_up', 81), finish: success
+2026-10-27 07:19:25,099 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 21 for episode: 0, action: ('pick_up', 81), finish: fail, because failed to grasp
+2026-10-27 07:19:47,011 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 22 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:19:49,330 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 23 for episode: 0, action: ('walk_to_single', 81), finish: success
+2026-10-27 07:19:52,837 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 24 for episode: 0, action: ('walk_to_single', 81), finish: success
+2026-10-27 07:19:58,726 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 25 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 07:20:20,710 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 26 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:20:21,387 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 27 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+2026-10-27 07:20:42,146 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 28 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:21:04,553 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 29 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:21:07,205 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 30 for episode: 0, action: ('walk_to_single', 78), finish: success
+2026-10-27 07:21:11,497 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 31 for episode: 0, action: ('walk_to_single', 8), finish: success
+2026-10-27 07:21:14,884 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 32 for episode: 0, action: ('walk_to_single', 8), finish: success
+2026-10-27 07:21:17,904 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 33 for episode: 0, action: ('walk_to_single', 78), finish: success
+2026-10-27 07:21:18,724 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 34 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+2026-10-27 07:21:38,714 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 35 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:21:41,994 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 36 for episode: 0, action: ('walk_to_single', 7), finish: success
+2026-10-27 07:22:02,725 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 37 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:22:24,226 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 38 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:22:28,652 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 39 for episode: 0, action: ('walk_to_single', 86), finish: success
+2026-10-27 07:22:29,985 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 40 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+2026-10-27 07:22:52,478 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 41 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:22:56,072 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 42 for episode: 0, action: ('walk_to_single', 21), finish: success
+2026-10-27 07:23:00,864 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 43 for episode: 0, action: ('pick_up', 78), finish: success
+2026-10-27 07:23:04,022 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 44 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 07:23:06,751 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 45 for episode: 0, action: ('walk_to_single', 57), finish: success
+2026-10-27 07:23:09,762 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 46 for episode: 0, action: ('walk_to_single', 57), finish: success
+2026-10-27 07:23:33,126 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 47 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:23:44,188 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 48 for episode: 0, action: ('pick_up', 57), finish: success
+2026-10-27 07:23:50,230 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 49 for episode: 0, action: ('drop', None), finish: success
+2026-10-27 07:24:12,149 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 50 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:24:12,865 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 51 for episode: 0, action: ('drop', None), finish: fail, because not holding an object
+2026-10-27 07:24:22,325 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 52 for episode: 0, action: ('pick_up', 40), finish: success
+2026-10-27 07:24:45,762 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 53 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:24:55,267 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 54 for episode: 0, action: ('pick_up', 41), finish: fail, because failed to grasp
+2026-10-27 07:25:16,738 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 55 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:25:41,163 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 56 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:25:43,650 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 57 for episode: 0, action: ('walk_to_single', 41), finish: success
+2026-10-27 07:25:45,613 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 58 for episode: 0, action: ('walk_to_single', 52), finish: fail, because target not in vision or memory
+2026-10-27 07:26:07,006 - fire_custom_10/27/2026, 07:14:27 - INFO - Executing step 59 for episode: 0, action: ('explore', None), finish: success
+2026-10-27 07:26:07,007 - fire_custom_10/27/2026, 07:14:27 - INFO - eval done, avg score 4.5, max score 11.0, avg steps 1517.0
+2026-10-27 07:26:07,007 - fire_custom_10/27/2026, 07:14:27 - INFO - time: 699.0082938671112

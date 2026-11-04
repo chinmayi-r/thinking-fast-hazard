@@ -1,0 +1,38 @@
+== [1/6] numpy<2 (torch 2.1 and the mmcv 2.1 wheels were built against numpy 1.x)
+Collecting numpy<2
+  Downloading numpy-1.26.4-cp310-cp310-win_amd64.whl.metadata (61 kB)
+Downloading numpy-1.26.4-cp310-cp310-win_amd64.whl (15.8 MB)
+   ---------------------------------------- 15.8/15.8 MB 10.5 MB/s  0:00:01
+Installing collected packages: numpy
+Successfully installed numpy-1.26.4
+== [2/6] torch 2.1.2 + torchvision 0.16.2, CUDA 11.8 wheels (A5)
+Looking in indexes: https://download.pytorch.org/whl/cu118
+Requirement already satisfied: numpy<2 in .\venv\lib\site-packages (1.26.4)
+Collecting torch==2.1.2
+  Downloading torch-2.1.2%2Bcu118-cp310-cp310-win_amd64.whl (2722.7 MB)
+     ------------                             0.8/2.7 GB 38.4 MB/s eta 0:00:50
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (822.1 MB/2722.7 MB, attempt 1)
+  Resuming download torch-2.1.2%2Bcu118-cp310-cp310-win_amd64.whl (822.1 MB/2722.7 MB)
+     ------------                             0.8/2.7 GB ? eta -:--:--
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (822.1 MB/2722.7 MB, attempt 2)
+  Resuming download torch-2.1.2%2Bcu118-cp310-cp310-win_amd64.whl (822.1 MB/2722.7 MB)
+     ------------                             0.8/2.7 GB ? eta -:--:--
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (822.1 MB/2722.7 MB, attempt 3)
+  Resuming download torch-2.1.2%2Bcu118-cp310-cp310-win_amd64.whl (822.1 MB/2722.7 MB)
+     ------------                             0.8/2.7 GB ? eta -:--:--
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (822.1 MB/2722.7 MB, attempt 4)
+  Resuming download torch-2.1.2%2Bcu118-cp310-cp310-win_amd64.whl (822.1 MB/2722.7 MB)
+     ------------                             0.8/2.7 GB ? eta -:--:--
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (822.1 MB/2722.7 MB, attempt 5)
+  Resuming download torch-2.1.2%2Bcu118-cp310-cp310-win_amd64.whl (822.1 MB/2722.7 MB)
+     ------------                             0.8/2.7 GB ? eta -:--:--
+  WARNING: Connection interrupted while downloading.
+ERROR: Could not install packages due to an OSError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Chinm_user\\AppData\\Local\\Temp\\pip-unpack-3tjx8o1w\\torch-2.1.2+cu118-cp310-cp310-win_amd64.whl'
+Check the permissions.
+
+exit=1

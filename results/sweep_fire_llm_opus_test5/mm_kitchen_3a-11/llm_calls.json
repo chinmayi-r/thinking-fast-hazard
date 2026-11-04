@@ -1,0 +1,212 @@
+[
+ {
+  "wall_s": 3.2541,
+  "input_tokens": 343,
+  "output_tokens": 206,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.7749,
+  "input_tokens": 554,
+  "output_tokens": 34,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 3.6757,
+  "input_tokens": 662,
+  "output_tokens": 272,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 0.9868,
+  "input_tokens": 911,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.4155,
+  "input_tokens": 704,
+  "output_tokens": 422,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.4203,
+  "input_tokens": 1038,
+  "output_tokens": 14,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.2539,
+  "input_tokens": 851,
+  "output_tokens": 376,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.1382,
+  "input_tokens": 1191,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.2539,
+  "input_tokens": 840,
+  "output_tokens": 402,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.0803,
+  "input_tokens": 1227,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 6.709,
+  "input_tokens": 877,
+  "output_tokens": 540,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.0028,
+  "input_tokens": 1274,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 7.0487,
+  "input_tokens": 914,
+  "output_tokens": 632,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.9951,
+  "input_tokens": 1309,
+  "output_tokens": 44,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 9.4743,
+  "input_tokens": 903,
+  "output_tokens": 784,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 2.2632,
+  "input_tokens": 1307,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 7.0695,
+  "input_tokens": 1007,
+  "output_tokens": 600,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.0436,
+  "input_tokens": 1375,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 6.6312,
+  "input_tokens": 982,
+  "output_tokens": 552,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 0.9632,
+  "input_tokens": 1439,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 7.6697,
+  "input_tokens": 1019,
+  "output_tokens": 591,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.7639,
+  "input_tokens": 1419,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.5939,
+  "input_tokens": 1051,
+  "output_tokens": 486,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.1839,
+  "input_tokens": 1434,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 5.8346,
+  "input_tokens": 1051,
+  "output_tokens": 446,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 0.9625,
+  "input_tokens": 1442,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 4.5346,
+  "input_tokens": 1051,
+  "output_tokens": 347,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.2148,
+  "input_tokens": 1343,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 6.1225,
+  "input_tokens": 1049,
+  "output_tokens": 467,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ },
+ {
+  "wall_s": 1.0928,
+  "input_tokens": 1424,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-opus-5-5"
+ }
+]

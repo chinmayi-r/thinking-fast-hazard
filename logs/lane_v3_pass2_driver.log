@@ -1,0 +1,15 @@
+===== 22:51:17 v3 pass 2: redo vlm/opus scenes without results =====
+===== 22:51:18 start fire_vlm_haiku_test25 mm_kitchen_3a-16 (pass 2) =====
+===== 02:48:33 end fire_vlm_haiku_test25 mm_kitchen_3a-16 exit=0 (pass 2) =====
+===== 02:48:37 start fire_vlm_haiku_test25 mm_kitchen_3a-17 (pass 2) =====
+===== 02:57:47 end fire_vlm_haiku_test25 mm_kitchen_3a-17 exit=0 (pass 2) =====
+===== 02:57:51 start fire_vlm_haiku_test25 mm_kitchen_3a-24 (pass 2) =====
+===== 03:06:13 end fire_vlm_haiku_test25 mm_kitchen_3a-24 exit=0 (pass 2) =====
+===== 03:06:17 start fire_vlm_haiku_test25 mm_kitchen_3a-25 (pass 2) =====
+===== 03:14:11 end fire_vlm_haiku_test25 mm_kitchen_3a-25 exit=0 (pass 2) =====
+===== 03:14:14 start fire_vlm_haiku_test25 mm_kitchen_3a-3 (pass 2) =====
+===== 03:22:24 end fire_vlm_haiku_test25 mm_kitchen_3a-3 exit=0 (pass 2) =====
+===== 03:22:28 start fire_vlm_haiku_test25 mm_kitchen_3a-6 (pass 2) =====
+===== 03:29:52 end fire_vlm_haiku_test25 mm_kitchen_3a-6 exit=0 (pass 2) =====
+LANE V3 PASS2 DONE 03:29:55
+SWEEP V2 ALL DONE (release the Oct 26 stay-awake helper) 03:29:55

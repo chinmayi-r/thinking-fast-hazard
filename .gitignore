@@ -1,0 +1,20 @@
+# never
+.secrets/
+*key*.txt
+*.env
+
+# bulk simulator output
+*.png
+*.jpg
+**/images/
+log.txt
+
+# environments and builds
+venv/
+python310/
+python310_dl/
+tdw_build/
+HAZARD/
+__pycache__/
+*.pyc
+*.tgz

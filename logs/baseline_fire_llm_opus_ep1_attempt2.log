@@ -1,0 +1,123 @@
+G:\iw-thinking-fast\venv\lib\site-packages\tdw\librarian.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment flood-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+G:\iw-thinking-fast\venv\lib\site-packages\gym\envs\registration.py:498: UserWarning: [33mWARN: Overriding environment fire-v0 already in registry.[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+2026-10-16 16:01:37,178 - fire_custom_10/16/2026, 16:01:37 - INFO - Environment Created
+2026-10-16 16:01:37,178 - fire_custom_10/16/2026, 16:01:37 - INFO - done
+2026-10-16 16:01:37,179 - fire_custom_10/16/2026, 16:01:37 - INFO - Episode: 1/1
+2026-10-16 16:01:37,180 - fire_custom_10/16/2026, 16:01:37 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\mm_craftroom_2a-1
+2026-10-16 16:02:46,135 - fire_custom_10/16/2026, 16:01:37 - INFO - Environment Reset. Took 68.9561140537262 secs
+[ WARN:0@105.709] global loadsave.cpp:848 cv::imwrite_ Unsupported depth image for selected encoder is fallbacked to CV_8U.
+Traceback (most recent call last):
+  File "G:\iw-thinking-fast\scripts\run_baseline.py", line 161, in main
+    submit(output_dir=str(out_dir), env_name=args.env, agent=agent, port=args.port,
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\run_experiments.py", line 195, in submit
+    challenge.submit(agent=agent_policy, logger=logger, eval_episodes=1)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\challenge.py", line 318, in submit
+    current_action = agent.choose_target(state, processed_input)
+  File "G:\iw-thinking-fast\scripts\run_baseline.py", line 74, in choose_target
+    action = self.inner.choose_target(state, processed_input)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 566, in choose_target
+    action, info = self.run(self.current_step, holding_objects, nearest_object, object_list, action_history,
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 602, in run
+    outputs, usage = self.generator(chat_prompt if self.chat else prompt, self.sampling_params)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\backoff\_sync.py", line 105, in retry
+    ret = target(*args, **kwargs)
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 158, in _generate
+    raise e
+  File "G:\iw-thinking-fast\HAZARD\src\HAZARD\policy\llm.py", line 151, in _generate
+    response = self.anthropic_client.messages.create(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_utils\_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\resources\messages\messages.py", line 1073, in create
+    return self._post(
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1676, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1227, in request
+    return self._request(cast_to, options, stream=stream, stream_cls=stream_cls)
+  File "G:\iw-thinking-fast\venv\lib\site-packages\anthropic\_base_client.py", line 1330, in _request
+    raise self._make_status_error_from_response(response) from None
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WkvT8FJ2fei4p5sHiM'}
+
+build pid=3532: G:\iw-thinking-fast\tdw_build\TDW\TDW.exe -port 10826
+G:\iw-thinking-fast\results\fire_llm_ep1_20261016_160047\mm_craftroom_2a-1
+OUTPUT_DIR G:\iw-thinking-fast\results\fire_llm_ep1_20261016_160047\mm_craftroom_2a-1
+You need to launch your own build.
+Controller connected
+object 451306954 not recorded, may be caused by composite objects which you can ignore
+object 90574932 not recorded, may be caused by composite objects which you can ignore
+object 1298028780 not recorded, may be caused by composite objects which you can ignore
+object 969879779 not recorded, may be caused by composite objects which you can ignore
+object 1296671630 not recorded, may be caused by composite objects which you can ignore
+object 1878811444 not recorded, may be caused by composite objects which you can ignore
+object 1145120857 not recorded, may be caused by composite objects which you can ignore
+object 703415617 not recorded, may be caused by composite objects which you can ignore
+object 60166369 not recorded, may be caused by composite objects which you can ignore
+object 10170055 not recorded, may be caused by composite objects which you can ignore
+object 1014820023 not recorded, may be caused by composite objects which you can ignore
+object 536758888 not recorded, may be caused by composite objects which you can ignore
+object 1126821352 not recorded, may be caused by composite objects which you can ignore
+object 906371918 not recorded, may be caused by composite objects which you can ignore
+object 1755311175 not recorded, may be caused by composite objects which you can ignore
+object 384965946 not recorded, may be caused by composite objects which you can ignore
+object 351435325 not recorded, may be caused by composite objects which you can ignore
+object 781679555 not recorded, may be caused by composite objects which you can ignore
+object 998681676 not recorded, may be caused by composite objects which you can ignore
+object 747099685 not recorded, may be caused by composite objects which you can ignore
+init: {14640280: False, 14544403: False, 16728828: False, 16381463: False, 10511794: False, 10844722: False, 473176: False, 474390: False, 16013534: False, 6999109: False, 6798686: False}
+Target status:
+14640280 False ObjectState.NORMAL [-2.072804   1.0293262  0.8344984]
+14544403 False ObjectState.NORMAL [3.8196203e-01 5.6456309e-05 2.2542756e+00]
+16728828 False ObjectState.NORMAL [2.15926    0.10233285 1.646721  ]
+16381463 False ObjectState.NORMAL [-0.16163665  0.10105046 -2.7713585 ]
+10511794 False ObjectState.NORMAL [-0.8379719  0.9226927 -2.7029128]
+10844722 False ObjectState.NORMAL [8.8202524e-01 5.8172271e-04 1.5042921e+00]
+473176 False ObjectState.NORMAL [1.3820242e+00 5.8202446e-04 1.7542925e+00]
+474390 False ObjectState.NORMAL [ 6.3202250e-01  4.7199428e-04 -1.2457085e+00]
+16013534 False ObjectState.NORMAL [-1.3679893e+00  4.7279522e-04  2.7543161e+00]
+6999109 False ObjectState.NORMAL [-0.18092367  0.39420712  1.0751157 ]
+6798686 False ObjectState.NORMAL [ 3.8202053e-01  9.7185140e-05 -9.9570620e-01]
+2.4999778
+rgb (3, 1024, 1024)
+current_step 43
+Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WjkgidwCws5U6vcvTL'}
+Anthropic error, retrying...
+Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WjpoGvGX6XcmXjCQcA'}
+Anthropic error, retrying...
+Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WjuHeFuDUiVkDb2Fem'}
+Anthropic error, retrying...
+Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WkCcSi8W7HVz96dsKX'}
+Anthropic error, retrying...
+Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WknpFBNsPxEhfS67ET'}
+Anthropic error, retrying...
+Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WkvT8FJ2fei4p5sHiM'}
+Anthropic error, retrying...
+{
+  "env": "fire",
+  "agent": "llm",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 88.1,
+  "decisions": 0,
+  "decision_wall_s": {
+    "mean": null,
+    "max": null,
+    "min": null
+  },
+  "frames_at_30fps_total": 0,
+  "eval_results": {},
+  "exit": 1,
+  "error": " choose_target\n    action = self.inner.choose_target(state, processed_input)\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 566, in choose_target\n    action, info = self.run(self.current_step, holding_objects, nearest_object, object_list, action_history,\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 602, in run\n    outputs, usage = self.generator(chat_prompt if self.chat else prompt, self.sampling_params)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\backoff\\_sync.py\", line 105, in retry\n    ret = target(*args, **kwargs)\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 158, in _generate\n    raise e\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 151, in _generate\n    response = self.anthropic_client.messages.create(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_utils\\_utils.py\", line 294, in wrapper\n    return func(*args, **kwargs)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\resources\\messages\\messages.py\", line 1073, in create\n    return self._post(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1676, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1227, in request\n    return self._request(cast_to, options, stream=stream, stream_cls=stream_cls)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1330, in _request\n    raise self._make_status_error_from_response(response) from None\nanthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WkvT8FJ2fei4p5sHiM'}\n",
+  "final_frame_count": 43
+}
+exit=1

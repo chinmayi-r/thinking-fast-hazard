@@ -1,0 +1,22 @@
+{
+  "env": "fire",
+  "agent": "llm",
+  "episodes_requested": 1,
+  "clock": "none",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 0,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 88.1,
+  "decisions": 0,
+  "decision_wall_s": {
+    "mean": null,
+    "max": null,
+    "min": null
+  },
+  "frames_at_30fps_total": 0,
+  "eval_results": {},
+  "exit": 1,
+  "error": " choose_target\n    action = self.inner.choose_target(state, processed_input)\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 566, in choose_target\n    action, info = self.run(self.current_step, holding_objects, nearest_object, object_list, action_history,\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 602, in run\n    outputs, usage = self.generator(chat_prompt if self.chat else prompt, self.sampling_params)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\backoff\\_sync.py\", line 105, in retry\n    ret = target(*args, **kwargs)\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 158, in _generate\n    raise e\n  File \"G:\\iw-thinking-fast\\HAZARD\\src\\HAZARD\\policy\\llm.py\", line 151, in _generate\n    response = self.anthropic_client.messages.create(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_utils\\_utils.py\", line 294, in wrapper\n    return func(*args, **kwargs)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\resources\\messages\\messages.py\", line 1073, in create\n    return self._post(\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1676, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1227, in request\n    return self._request(cast_to, options, stream=stream, stream_cls=stream_cls)\n  File \"G:\\iw-thinking-fast\\venv\\lib\\site-packages\\anthropic\\_base_client.py\", line 1330, in _request\n    raise self._make_status_error_from_response(response) from None\nanthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.'}, 'request_id': 'req_011Cg6WkvT8FJ2fei4p5sHiM'}\n",
+  "final_frame_count": 43
+}

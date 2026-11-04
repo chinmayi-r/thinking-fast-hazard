@@ -1,0 +1,47 @@
+2026-10-16 17:11:20,451 - wind_custom_10/16/2026, 17:11:20 - DEBUG - 10826
+2026-10-16 17:11:20,452 - wind_custom_10/16/2026, 17:11:20 - INFO - Environment Created
+2026-10-16 17:11:20,452 - wind_custom_10/16/2026, 17:11:20 - INFO - done
+2026-10-16 17:11:20,453 - wind_custom_10/16/2026, 17:11:20 - INFO - Episode: 1/1
+2026-10-16 17:11:20,453 - wind_custom_10/16/2026, 17:11:20 - INFO - Resetting Environment ... data is G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_wind\suburb_scene_2023-0-0
+2026-10-16 17:12:09,316 - wind_custom_10/16/2026, 17:11:20 - INFO - Environment Reset. Took 48.862513065338135 secs
+2026-10-16 17:12:23,207 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 1 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:12:43,651 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 2 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:12:57,665 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 3 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:13,192 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 4 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:28,946 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 5 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:46,829 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 6 for episode: 0, action: ('walk_to', '18'), finish: fail, because max steps reached
+2026-10-16 17:13:54,615 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 7 for episode: 0, action: ('walk_to', '18'), finish: success
+2026-10-16 17:14:00,605 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 8 for episode: 0, action: ('pick_up', 18), finish: success
+2026-10-16 17:14:14,287 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 9 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:14:27,266 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 10 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:14:41,161 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 11 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:14:55,329 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 12 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:08,381 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 13 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:23,406 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 14 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:37,946 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 15 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:15:51,312 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 16 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:04,072 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 17 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:18,403 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 18 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:31,150 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 19 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:45,751 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 20 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:16:59,899 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 21 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:13,982 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 22 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:27,749 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 23 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:41,907 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 24 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:17:54,789 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 25 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:08,274 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 26 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:22,881 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 27 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:36,325 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 28 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:18:49,382 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 29 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:03,283 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 30 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:16,824 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 31 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:30,695 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 32 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:44,614 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 33 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:19:58,281 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 34 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:13,956 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 35 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:26,432 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 36 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:42,196 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 37 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:20:56,109 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 38 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:21:09,242 - wind_custom_10/16/2026, 17:11:20 - INFO - Executing step 39 for episode: 0, action: ('explore', None), finish: success
+2026-10-16 17:21:09,243 - wind_custom_10/16/2026, 17:11:20 - INFO - eval done, avg score 0.0, max score 1.0, avg steps 3054.0
+2026-10-16 17:21:09,243 - wind_custom_10/16/2026, 17:11:20 - INFO - time: 588.7897956371307

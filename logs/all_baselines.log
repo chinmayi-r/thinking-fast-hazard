@@ -1,0 +1,28 @@
+first Claude episode cost estimate: 0.2377 USD
+===== 16:30:48 start fire_llm_opus_tcm30_ep1 =====
+===== 16:39:23 end fire_llm_opus_tcm30_ep1 exit=0 =====
+===== 16:39:28 start flood_rule_ep1 =====
+===== 16:47:08 end flood_rule_ep1 exit=0 =====
+===== 16:47:14 start flood_greedy_ep1 =====
+===== 16:54:43 end flood_greedy_ep1 exit=0 =====
+===== 16:54:49 start flood_mcts_ep1 =====
+===== 17:03:17 end flood_mcts_ep1 exit=0 =====
+===== 17:03:23 start flood_random_ep1 =====
+===== 17:10:51 end flood_random_ep1 exit=0 =====
+===== 17:10:57 start wind_rule_ep1 =====
+===== 17:21:10 end wind_rule_ep1 exit=0 =====
+===== 17:21:16 start wind_greedy_ep1 =====
+===== 17:28:49 end wind_greedy_ep1 exit=0 =====
+===== 17:28:55 start wind_mcts_ep1 =====
+===== 17:40:40 end wind_mcts_ep1 exit=0 =====
+===== 17:40:45 start wind_random_ep1 =====
+===== 17:48:44 end wind_random_ep1 exit=0 =====
+===== 17:48:49 start flood_greedy_tcm30_ep1 =====
+===== 17:56:39 end flood_greedy_tcm30_ep1 exit=0 =====
+===== 17:56:45 start flood_mcts_tcm30_ep1 =====
+===== 18:04:30 end flood_mcts_tcm30_ep1 exit=0 =====
+===== 18:04:35 start wind_greedy_tcm30_ep1 =====
+===== 18:11:39 end wind_greedy_tcm30_ep1 exit=0 =====
+===== 18:11:45 start wind_mcts_tcm30_ep1 =====
+===== 18:18:47 end wind_mcts_tcm30_ep1 exit=0 =====
+ALL BASELINES DONE 18:18:53

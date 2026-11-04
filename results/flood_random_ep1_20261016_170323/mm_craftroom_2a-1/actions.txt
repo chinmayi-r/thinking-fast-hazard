@@ -1,0 +1,47 @@
+step 0 action ('pick_up', 40) none None
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 124)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 122)
+step 0 action ('walk_to_single', 122)
+step 0 action ('walk_to_single', 35)
+step 0 action ('walk_to_single', 35)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 35)
+step 0 action ('pick_up', 35) none None
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 100)
+step 0 action ('walk_to_single', 119)
+step 0 action ('walk_to_single', 119)
+step 0 action ('pick_up', 100) none None
+step 0 action ('walk_to_single', 124)
+step 0 action ('walk_to_single', 100)
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 100) none None
+step 0 action ('pick_up', 100) key_brass 6798686
+step 0 action ('explore', None)
+step 0 action ('pick_up', 100) key_brass 6798686
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('walk_to_single', 98)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 98)
+step 0 action ('pick_up', 98) none None
+step 0 action ('walk_to_single', 98)
+step 0 action ('explore', None)
+step 0 action ('walk_to_single', 98)
+step 0 action ('walk_to_single', 98)
+step 0 action ('walk_to_single', 98)
+step 0 action ('drop', None)
+step 0 action ('pick_up', 94) none None
+step 0 action ('pick_up', 94) none None
+step 0 action ('explore', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 94) key_brass 6999109
+step 0 action ('explore', None)
+step 0 action ('drop', None)
+step 0 action ('explore', None)
+step 0 action ('pick_up', 83) key_brass 6999109
+step 0 action ('walk_to_single', 83)
