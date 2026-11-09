@@ -21,6 +21,14 @@ echo "$(wc -l < "$ROOT/logs/asset_urls_${ENV_NAME}.txt") unique urls"
 cd "$ASSETS" && wget -q -nc -i "$ROOT/logs/asset_urls_${ENV_NAME}.txt" 2>&1 | tail -3
 echo "$(ls "$ASSETS" | wc -l) files in data/assets, $(du -sh "$ASSETS" | cut -f1)"
 
+echo "== [1b/2] add-on bundles no scene log.txt names: the fire visual effect, the replicant, the fireman (Nov 9; urls from"
+echo "   tdw/metadata_libraries/visual_effects.json and replicants.json, Linux entries; the TDW 1.13 build loads the 2020.3 bundles)"
+for u in https://tdw-public.s3.amazonaws.com/visual_effects/linux/2020.3/fire \
+         https://tdw-public.s3.amazonaws.com/replicants/linux/2020.3/replicant_0 \
+         https://tdw-public.s3.amazonaws.com/replicants/linux/2020.3/fireman; do
+  (cd "$ASSETS" && wget -q -nc "$u"); printf '%-12s %s bytes\n' "$(basename "$u")" "$(stat -c %s "$ASSETS/$(basename "$u")" 2>/dev/null || echo MISSING)"
+done
+
 echo "== [2/2] one scene in cached mode until HAZARD stops writing download_assets.sh (add-on assets)"
 SCENE="$(ls "$TEST" | sort | head -1)"
 pkill -u "$USER" -f TDW.x86_64 2>/dev/null; pkill -u "$USER" Xvfb 2>/dev/null; sleep 1
