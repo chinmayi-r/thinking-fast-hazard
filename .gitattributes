@@ -1,0 +1,5 @@
+# shell and slurm scripts run on Linux clusters: always LF, whatever the Windows checkout does
+*.sh text eol=lf
+*.slurm text eol=lf
+*.py text eol=lf
+*.diff text eol=lf

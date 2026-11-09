@@ -113,6 +113,8 @@ def main() -> int:
     ap.add_argument("--port", type=int, default=10826)
     ap.add_argument("--build", default=r"G:\iw-thinking-fast\tdw_build\TDW\TDW.exe")
     ap.add_argument("--launch", default="", help='prefix for the build command, e.g. "vglrun -d egl"')
+    ap.add_argument("--build_args", default="", help='extra args after -port for the build, e.g. "-logFile logs/unity_5.log" '
+                                                      '(Unity standalone flag; one Player.log per concurrent task on a cluster)')
     ap.add_argument("--out", default=r"G:\iw-thinking-fast\results")
     ap.add_argument("--run_on_test", action="store_true")
     ap.add_argument("--no_build", action="store_true", help="assume a build is already listening on --port")
@@ -130,6 +132,9 @@ def main() -> int:
     ap.add_argument("--resume_dir", default="", help="existing results folder to continue a sweep in (scenes with eval_result.json are skipped)")
     ap.add_argument("--record", action="store_true", help="HAZARD record_with_agents: capture every frame under <out>/images for a video (challenge.py:73)")
     ap.add_argument("--data_dir", default="", help="one specific scene folder (HAZARD data_dir); default: the training set in order")
+    ap.add_argument("--cached_assets", action="store_true",
+                    help="HAZARD use_cached_assets: load assets from <cwd>/data/assets instead of S3 (A28, cluster compute nodes "
+                         "have no internet). Missing files make HAZARD write data/assets/download_assets.sh and exit 0.")
     args = ap.parse_args()
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -150,7 +155,7 @@ def main() -> int:
     build = None
     if not args.no_build:
         build_log = open(logs_dir / f"build_{stamp}.log", "w")
-        cmd = shlex.split(args.launch) + [args.build, f"-port {args.port}"]
+        cmd = shlex.split(args.launch) + [args.build, f"-port {args.port}"] + shlex.split(args.build_args)
         build = subprocess.Popen(cmd, stdout=build_log, stderr=subprocess.STDOUT)
         print(f"build pid={build.pid}: {' '.join(cmd)}")
         time.sleep(5)
@@ -179,7 +184,7 @@ def main() -> int:
     try:
         submit(output_dir=str(out_dir), env_name=args.env, agent=agent, port=args.port,
                max_test_episode=args.episodes, run_on_test=args.run_on_test,
-               record_with_agents=args.record, data_dir=args.data_dir)
+               record_with_agents=args.record, data_dir=args.data_dir, use_cached_assets=args.cached_assets)
     except Exception as e:  # keep the summary even when HAZARD raises (e.g. challenge.py:323 KeyError)
         import traceback
         err = traceback.format_exc()
