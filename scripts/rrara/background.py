@@ -19,7 +19,10 @@ class BackgroundJob:
         assert self._future is None, "a job is already pending; collect() or discard() it first"
         self.started_at = time.perf_counter()
         self.tag = tag
-        self._future = self._pool.submit(fn, *args)
+        # The thread records when fn finished, so wall = time the verdict took to EXIST, not the time until the agent
+        # happened to ask for it at the next decision (Nov 10 bug: that later time included the whole simulated action,
+        # about 40 s on the laptop, so every worldtime verdict was "late" by construction; NOTES Nov 10 10:10).
+        self._future = self._pool.submit(lambda: (fn(*args), time.perf_counter()))
 
     def pending(self):
         return self._future is not None
@@ -33,11 +36,11 @@ class BackgroundJob:
             return None
         fut, tag = self._future, self.tag
         self._future = None
-        wall = time.perf_counter() - self.started_at
         try:
-            result = fut.result()
+            result, finished_at = fut.result()
+            wall = finished_at - self.started_at
         except Exception as e:  # the reflector's API call failed after its retries: report, never crash the episode
-            result = {"error": repr(e)}
+            result, wall = {"error": repr(e)}, time.perf_counter() - self.started_at
         return result, wall, tag
 
     def discard(self):

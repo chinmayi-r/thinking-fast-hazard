@@ -98,6 +98,18 @@ class TestBackground(unittest.TestCase):
         self.assertFalse(job.pending())
         job.shutdown()
 
+    def test_wall_is_time_to_finish_not_time_to_collect(self):
+        # Nov 10 regression: the agent collects at the NEXT decision, after the simulator played the whole action out;
+        # the verdict's wall must be how long it took to exist, not how long it sat waiting to be read.
+        job = BackgroundJob()
+        job.start(lambda: (time.sleep(0.2), "done")[1])
+        time.sleep(0.8)
+        res, wall, tag = job.collect()
+        self.assertEqual(res, "done")
+        self.assertGreaterEqual(wall, 0.2)
+        self.assertLess(wall, 0.6)
+        job.shutdown()
+
     def test_error_is_reported_not_raised(self):
         job = BackgroundJob()
         job.start(lambda: 1 / 0)

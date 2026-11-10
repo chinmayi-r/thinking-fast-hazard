@@ -76,7 +76,9 @@ class RRARAv1Agent:
             if got is not None:
                 result, wall, tag = got
                 if isinstance(result, dict) and "error" not in result:
-                    result = dict(result, wall_s=wall)  # the time the agent waited, thread included
+                    # wall = start of the check to the moment the verdict existed (thread scheduling included); the
+                    # reflector's own API-call time is kept beside it for the log
+                    result = dict(result, api_wall_s=result.get("wall_s"), wall_s=wall)
                 if tag == self.n - 1:
                     verdict, rec["verdict_status"] = result, "used"
                 else:
@@ -97,7 +99,7 @@ class RRARAv1Agent:
         if hasattr(self.reflex, "last_costs"):
             rec["reflex_costs"] = self.reflex.last_costs
         if verdict is not None:
-            rec["verdict"] = {k: verdict.get(k) for k in ("valid", "replacement", "wall_s", "raw")}
+            rec["verdict"] = {k: verdict.get(k) for k in ("valid", "replacement", "wall_s", "api_wall_s", "raw")}
 
         # 5. start the next background check on the action that will execute
         if self.job is not None:

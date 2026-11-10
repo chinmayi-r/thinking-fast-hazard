@@ -665,3 +665,42 @@ HAZARD's weight map 4x4 (block max) before A* and searches at most the 6 nearest
 synthetic 512x512 maps with 11 targets 178 -> 64 ms per decision; the real-run figure is read off the restarted sweep.
 Restarted 23:45: faithful sweep, then worldtime sweep chained (`scripts/laptop_rrara_sweep.sh`, Git Bash has no pkill,
 so the script uses taskkill).
+
+## Nov 10, 03:20 (laptop + Della relay)
+- Della queue finished 03:09: eight clocked sweeps, 200 episodes, write-up results/DELLA_TWO_TRACKS.md on Della (commit 24e2ab8 there, unpushed).
+  Value rate unclocked -> clocked, d35c71e: rule 0.141->0.131, greedy 0.133->0.145, mcts 0.114->0.102, paper reflex (clocked) 0.228, hazard_rule reflex in wrapper 0.099.
+  5a50c2d + tdw 1.12.5: rule 0.410->0.383, greedy 0.270->0.249, mcts 0.750->0.359, paper reflex (clocked) 0.741 (sd 0.180, 33 frames charged/episode, 0.008 s/decision).
+- Both paper-reflex sweeps on Della used the UNBOUNDED reflex (7b61af3: full-map A*, all targets); 117e5b6 (coarse=4, max_searches=6) reached Della only at 03:11. Folders kept with suffix _fullmap; bounded reruns submitted (d35c71e on gputest, 5a50c2d on gpu-short). Write-up to state the version next to each number.
+- Cross-session messages to the Della session can arrive hours late (the 00:20 LLM-track brief arrived 03:11). LLM track started 03:14 on della-vis1: smoke test, then lane 1 llm Haiku tcm30 and lane 2 rrara_v1 paper worldtime, resumable per scene across the 05:30 maintenance.
+- Laptop: faithful sweep 21/25 at 03:10, mean 0.132 (sd 0.126), bounded reflex; worldtime sweep chained after.
+
+## Nov 10, 03:30 (Della LLM lanes, first kitchen mm_kitchen_3a-1, d35c71e, bounded reflex, tcm30, Haiku)
+- Lane 1 HAZARD llm agent, clocked: value rate 0.0; 7 decisions at 4.20 s each -> 885 frames charged (59 % of the budget). Tom's "weak baseline" prediction, measured.
+- Lane 2 rrara worldtime: 0.056; 15 decisions, 23 frames charged; all 14 verdicts "late" (2 s of Haiku = 60 frames > the ~45 frames the checked walk took) so 0 overrides. In worldtime the reflector can only matter when actions take longer than ceil(wall x 30) frames.
+- Lane 3 rrara faithful: 0.0; 14 decisions, 19 frames charged, 4 overrides (smoke test on the same kitchen: 4 overrides, 0.056; Haiku is not deterministic).
+- Bounded vs unbounded reflex on d35c71e, same kitchens: 1.0-1.6 vs 2.1-4.3 frames per decision; on 5a50c2d both ~1 frame. Vis node load 167 on 80 cores (other users); stays at 3 lanes, ~7 min/kitchen, 12-15 kitchens per lane before the 05:30 reboot. Restart recipe in Della's results/DELLA_TWO_TRACKS.md (commit 066caf9).
+
+## Nov 10, 03:55 (Della)
+- 5a50c2d paper reflex, bounded (117e5b6), clocked: 0.757 (sd 0.177) vs unbounded 0.741; paired +0.016 (se 0.014); 0.008 s/decision, 33 frames charged/episode. Old-stack number stands: reflex alone ~0.75 = unclocked mcts 0.750, 2x clocked mcts 0.359.
+- d35c71e bounded paper reflex 12/25 at 03:54 (1-1.6 frames/decision vs 2-4 unbounded). LLM lanes: llm 5/25, worldtime 4/25, faithful 4/25, ~8 min/kitchen.
+- Laptop faithful sweep done 03:48 (d35c71e, bounded reflex, Haiku, tcm30, 25/25): value rate 0.135 (sd 0.129); 120 overrides over 395 used verdicts (30 %); reflector wall mean ~2.3 s; total cost $0.10. Below the Della reflex-alone 0.228 (unbounded, other machine): the overrides look harmful on current HAZARD; Della's faithful lane on the same machine as its reflex-only sweep will settle it. Worldtime sweep started 03:48 on the laptop.
+
+## Nov 10, 04:50 (Della)
+- d35c71e paper reflex, bounded, clocked: 0.199 (sd 0.193) vs unbounded 0.228 (paired -0.028, se 0.023, noise); vs clocked HAZARD rule 0.131 paired +0.069 (se 0.032). 0.022 s/decision, 22 frames charged/episode (unbounded: 0.071 s, 51 frames). Canonical reflex-alone rows now: d35c71e 0.199, 5a50c2d 0.757 (DELLA_TWO_TRACKS.md states reflex version beside each number).
+- LLM lanes at 04:50: llm 12/25, worldtime 11/25, faithful 11/25, no errors. Queue empty.
+
+## Nov 10, 05:08 (Della, pre-reboot partials, d35c71e, bounded reflex, tcm30, Haiku)
+- llm agent (Tom's weak baseline), 14 scenes: 0.068 (sd 0.088); 3.95 s/decision, 975 frames charged/episode (65 % of budget).
+- rrara worldtime, 13 scenes: 0.142 (sd 0.124); 0 overrides, all 206 verdicts late (2.4 s = 72 frames > action length); 31 frames charged.
+- rrara faithful, 13 scenes: 0.111 (sd 0.114); 63 overrides of 208 verdicts (30 %); 32 frames charged.
+- Same stack for scale: rule 0.131, reflex alone 0.199, mcts 0.102 (all clocked). Cost so far $0.14 for 41 episodes. Ordering so far: reflex alone > worldtime (= reflex in effect) > rule > faithful > mcts > llm.
+
+## Nov 10, 09:40 (laptop)
+- Laptop worldtime sweep done 09:38 (d35c71e, bounded reflex, Haiku, tcm30, 25/25): 0.147 (sd 0.164, se 0.033); 0 overrides, all 400 verdicts late (reflector wall mean 2.15 s = 65 frames > action length); 69.6 frames charged/episode; cost $0.10. Faithful (25/25): 0.135 (sd 0.129), 120 overrides of 395, 51.9 frames/episode.
+- Della session lost its Remote Control connection in the 05:30 reboot (last activity 06:20, no 08:00 report). Lane state unknown since 05:08 (llm 16, worldtime 14, faithful 14 of 25). CR must log in and run the restart recipe in Della's results/DELLA_TWO_TRACKS.md.
+- Meeting summary written: results/MEETING_NOV10.md.
+
+## Nov 10, 10:10 (laptop): worldtime timing bug, found while answering CR's question about verdict timing
+- scripts/rrara/background.py measured a verdict's wall from job start to collect(), and collect() runs at the NEXT decision, after HAZARD played the whole action out (about 40 s of laptop wall time per action). agent.py then overwrote the reflector's own wall_s (API call, ~2.2 s) with it. reconcile.decide's frames_needed = ceil(wall x 30) was therefore ~1264 frames on the laptop (checked over the 400 used verdicts of the worldtime sweep: mean 1264, min 60; action_frames mean 86.8, 265 of 400 >= 100), so every worldtime verdict was "late" by construction.
+- Consequence: both worldtime results (laptop 0.147 25/25, Della lane 0.142 partial) are reflex-alone plus the cost of starting checks, NOT worldtime. Faithful results unaffected (in_time is True by definition; only the logged wall_s was wrong). Folders renamed with prefix failed_walltime_bug_.
+- Fix: the thread records when fn finished; wall = finished - started. The reflector's API time is kept as api_wall_s beside it. Regression test test_wall_is_time_to_finish_not_time_to_collect added; 14 tests pass. Laptop worldtime sweep restarted 10:12 into a fresh folder of the same name; Della's worldtime lane must restart from scratch after pulling the fix.
