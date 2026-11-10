@@ -20,7 +20,7 @@ echo "== $(date '+%F %T') sweep $SWEEP start" | tee -a "$ROOT/logs/sweep_$SWEEP.
 for SCENE in $(ls "$TEST" | sort | head -25); do
   if [ -f "$OUT/$SCENE/eval_result.json" ]; then echo "skip $SCENE (done)" | tee -a "$ROOT/logs/sweep_$SWEEP.log"; continue; fi
   echo "== $(date '+%T') $SCENE" | tee -a "$ROOT/logs/sweep_$SWEEP.log"
-  pkill -f "TDW.exe" 2>/dev/null; sleep 2
+  taskkill //F //IM TDW.exe >/dev/null 2>&1; sleep 2   # Git Bash has no pkill; a build left over from a killed run holds the port
   timeout "$CAP" "$ROOT/venv/Scripts/python.exe" -X utf8 "$ROOT/scripts/run_baseline.py" --env fire --agent rrara_v1 \
       --reflex "$REFLEX" --reflector_mode "$MODE" --lm_id "$LM" --api_key_file "G:\iw-thinking-fast\.secrets\anthropic_key.txt" \
       --episodes 1 --port 10826 --build "G:\iw-thinking-fast\tdw_build\TDW\TDW.exe" --out "G:\iw-thinking-fast\results" \
@@ -30,5 +30,5 @@ for SCENE in $(ls "$TEST" | sort | head -25); do
   VR=$("$ROOT/venv/Scripts/python.exe" -c "import json,sys; d=json.load(open(sys.argv[1])); print(round(d['avg_score']/d['avg_max_score'],3))" "$OUT/$SCENE/eval_result.json" 2>/dev/null || echo "none")
   echo "   exit=$RC value_rate=$VR" | tee -a "$ROOT/logs/sweep_$SWEEP.log"
 done
-pkill -f "TDW.exe" 2>/dev/null
+taskkill //F //IM TDW.exe >/dev/null 2>&1
 echo "== $(date '+%F %T') sweep $SWEEP done: $(ls "$OUT"/*/eval_result.json 2>/dev/null | wc -l)/25 scenes" | tee -a "$ROOT/logs/sweep_$SWEEP.log"

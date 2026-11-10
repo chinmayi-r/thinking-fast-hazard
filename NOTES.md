@@ -652,3 +652,16 @@ of the rule agent; a coarser A* grid would bring it under a frame if needed (not
 the current snapshot's 0.5 m arrival rule even as its path shrinks from 141 to 51 cells across attempts; the October random
 agent reached it at frame 853, so it is reachable but slow; both the reflex's penalty and the reflector's "A" overrides
 fought over it for the last 1000 frames.
+
+## Nov 9, 23:40: laptop RRARA sweep restarted after a slow-reflex diagnosis and a duplicate runner
+
+The first faithful-mode sweep (started 21:42) was stopped at 7 scenes: mm_kitchen_3a-10 hit the 25 min cap after 6 decisions
+with 1.5-2.1 s of blocking per decision (47-64 frames charged) and 3a-11 took 22 min with 230 frames charged. Partial
+results moved to `results/failed_runs_sweep_fire_rrara_v1_paper_faithful_tcm30_test25_slowreflex/`. Two causes found:
+(1) a second runner (`python310\tools\python.exe ... run_baseline.py`, origin unknown, not started by this session) was
+running at the same time on the same port 10826 with its own TDW build, so two simulators shared the laptop; killed at 23:40
+with the sweep. (2) The reflex's A* on the full 512x512 map is unbounded in cost on cluttered maps; `reflex.py` now pools
+HAZARD's weight map 4x4 (block max) before A* and searches at most the 6 nearest targets by straight line (A34 updated):
+synthetic 512x512 maps with 11 targets 178 -> 64 ms per decision; the real-run figure is read off the restarted sweep.
+Restarted 23:45: faithful sweep, then worldtime sweep chained (`scripts/laptop_rrara_sweep.sh`, Git Bash has no pkill,
+so the script uses taskkill).
