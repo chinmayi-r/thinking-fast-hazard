@@ -1,0 +1,60 @@
+{
+  "env": "fire",
+  "agent": "rrara_v1",
+  "episodes_requested": 1,
+  "clock": "tcm",
+  "k": 0,
+  "fps": 30,
+  "frames_charged_total": 15,
+  "machine": "CHIN_WIN",
+  "wall_s_total": 573.5,
+  "decisions": 15,
+  "decision_wall_s": {
+    "mean": 0.0003,
+    "max": 0.0013,
+    "min": 0.0001
+  },
+  "frames_at_30fps_total": 15,
+  "eval_results": {
+    "eval_result.json": {
+      "avg_score": 0.0,
+      "avg_steps": 1587.0,
+      "avg_max_score": 9.0,
+      "total": 1,
+      "target_status": {
+        "14901620": false,
+        "3819180": false,
+        "8265913": false,
+        "8657745": false,
+        "15599511": false
+      },
+      "final_states": {}
+    }
+  },
+  "exit": 0,
+  "error": "",
+  "final_frame_count": 1588,
+  "rrara": {
+    "mode": "faithful",
+    "decisions": 15,
+    "overrides": 1,
+    "verdicts_used": 14,
+    "verdicts_stale": 0,
+    "checks_skipped_busy": 0,
+    "paths": {
+      "reflex (no verdict)": 1,
+      "reflex (verdict valid)": 13,
+      "override": 1
+    },
+    "reflector": {
+      "model": "claude-haiku-5-5",
+      "calls": 15,
+      "wall_s": {
+        "mean": 1.838,
+        "max": 3.519
+      },
+      "invalid": 1,
+      "cost_usd_estimate": 0.0027
+    }
+  }
+}

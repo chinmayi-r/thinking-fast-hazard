@@ -1,0 +1,631 @@
+[
+ {
+  "decision": 0,
+  "frame": 43,
+  "mode": "faithful",
+  "verdict_status": "none",
+  "proposed": [
+   "walk_to",
+   "64"
+  ],
+  "action": [
+   "walk_to",
+   "64"
+  ],
+  "path": "reflex (no verdict)",
+  "override": false,
+  "in_time": null,
+  "frames_needed": null,
+  "action_frames": 0,
+  "reflex_costs": {
+   "64": [
+    504.0,
+    1.0,
+    505.0
+   ]
+  },
+  "check": "started"
+ },
+ {
+  "decision": 1,
+  "frame": 150,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "66"
+  ],
+  "action": [
+   "walk_to",
+   "66"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1176,
+  "action_frames": 107,
+  "reflex_costs": {
+   "64": [
+    293.0,
+    1.0,
+    588.0
+   ],
+   "66": [
+    14.0,
+    1.0,
+    15.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 39.181719200103544,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 2,
+  "frame": 260,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "66"
+  ],
+  "action": [
+   "walk_to",
+   "66"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1490,
+  "action_frames": 110,
+  "reflex_costs": {
+   "64": [
+    344.0,
+    1.0,
+    690.0
+   ],
+   "66": [
+    5.0,
+    1.0,
+    12.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 49.65846279996913,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 3,
+  "frame": 270,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "pick_up",
+   "66"
+  ],
+  "action": [
+   "pick_up",
+   "66"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 134,
+  "action_frames": 10,
+  "reflex_costs": {
+   "64": [
+    344.0,
+    1.0,
+    690.0
+   ],
+   "66": [
+    5.0,
+    1.0,
+    12.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 4.451252200058661,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 4,
+  "frame": 313,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "drop",
+   "None"
+  ],
+  "action": [
+   "drop",
+   "None"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 206,
+  "action_frames": 43,
+  "reflex_costs": {
+   "64": [
+    344.0,
+    1.0,
+    690.0
+   ],
+   "66": [
+    5.0,
+    1.0,
+    12.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 6.856299599981867,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 5,
+  "frame": 376,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "64"
+  ],
+  "action": [
+   "walk_to",
+   "64"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 276,
+  "action_frames": 63,
+  "reflex_costs": {
+   "64": [
+    345.0,
+    1.0,
+    692.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 9.177516900002956,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 6,
+  "frame": 446,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "pick_up",
+   "64"
+  ],
+  "action": [
+   "pick_up",
+   "64"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 691,
+  "action_frames": 70,
+  "reflex_costs": {
+   "64": [
+    345.0,
+    1.0,
+    692.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 23.013235700083897,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 7,
+  "frame": 461,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "drop",
+   "None"
+  ],
+  "action": [
+   "drop",
+   "None"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 99,
+  "action_frames": 15,
+  "reflex_costs": {
+   "64": [
+    345.0,
+    1.0,
+    692.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 3.299933400005102,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 8,
+  "frame": 507,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 221,
+  "action_frames": 46,
+  "reflex_costs": {
+   "56": [
+    141.0,
+    5.0,
+    28.4
+   ],
+   "57": [
+    354.0,
+    1.0,
+    355.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 7.351704600034282,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 9,
+  "frame": 616,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1306,
+  "action_frames": 109,
+  "reflex_costs": {
+   "56": [
+    123.0,
+    5.0,
+    49.6
+   ],
+   "57": [
+    397.0,
+    1.0,
+    398.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 43.51849119993858,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 10,
+  "frame": 723,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1117,
+  "action_frames": 107,
+  "reflex_costs": {
+   "56": [
+    63.0,
+    5.0,
+    51.2
+   ],
+   "57": [
+    407.0,
+    1.0,
+    408.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 37.20354719995521,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 11,
+  "frame": 832,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "57"
+  ],
+  "action": [
+   "walk_to",
+   "57"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1500,
+  "action_frames": 109,
+  "reflex_costs": {
+   "56": [
+    77.0,
+    5.0,
+    124.8
+   ],
+   "57": [
+    95.0,
+    1.0,
+    96.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 49.98745210003108,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 12,
+  "frame": 943,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "override",
+  "override": true,
+  "in_time": true,
+  "frames_needed": 1140,
+  "action_frames": 111,
+  "reflex_costs": {
+   "56": [
+    98.0,
+    5.0,
+    158.4
+   ],
+   "57": [
+    98.0,
+    1.0,
+    198.0
+   ]
+  },
+  "verdict": {
+   "valid": false,
+   "replacement": [
+    "walk_to",
+    "56"
+   ],
+   "wall_s": 37.971930800005794,
+   "raw": "A"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 13,
+  "frame": 1050,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "57"
+  ],
+  "action": [
+   "walk_to",
+   "57"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1071,
+  "action_frames": 107,
+  "reflex_costs": {
+   "56": [
+    77.0,
+    5.0,
+    249.6
+   ],
+   "57": [
+    73.0,
+    1.0,
+    148.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 35.67371420003474,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 14,
+  "frame": 1174,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "override",
+  "override": true,
+  "in_time": true,
+  "frames_needed": 1358,
+  "action_frames": 124,
+  "reflex_costs": {
+   "56": [
+    52.0,
+    5.0,
+    169.6
+   ],
+   "57": [
+    48.0,
+    1.0,
+    196.0
+   ]
+  },
+  "verdict": {
+   "valid": false,
+   "replacement": [
+    "walk_to",
+    "56"
+   ],
+   "wall_s": 45.2510335999541,
+   "raw": "A"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 15,
+  "frame": 1283,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "57"
+  ],
+  "action": [
+   "walk_to",
+   "57"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1481,
+  "action_frames": 109,
+  "reflex_costs": {
+   "56": [
+    122.0,
+    5.0,
+    787.2
+   ],
+   "57": [
+    108.0,
+    1.0,
+    436.0
+   ]
+  },
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 49.33751919993665,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 16,
+  "frame": 1392,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "override",
+  "override": true,
+  "in_time": true,
+  "frames_needed": 1431,
+  "action_frames": 109,
+  "reflex_costs": {
+   "56": [
+    42.0,
+    5.0,
+    275.2
+   ],
+   "57": [
+    60.0,
+    1.0,
+    488.0
+   ]
+  },
+  "verdict": {
+   "valid": false,
+   "replacement": [
+    "walk_to",
+    "56"
+   ],
+   "wall_s": 47.68748079997022,
+   "raw": "A"
+  },
+  "check": "started"
+ }
+]

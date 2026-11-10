@@ -1,0 +1,37 @@
+type,prompt
+fire,"Suppose I am wearing fireproof suits and my house is on fire. I want to save as many valuable target objects as possible by picking them up and putting them into my bag. All objects are denoted as <name> (id), such as <table> (712), and different objects have different values. Note objects lose their value once they start burning. The status of the objects previously seen may not be accurate any more. The final score is measured by the total value of the target objects I saved successfully.
+Target objects:
+$TARGET_OBJECTS$
+Current State:
+$STATE$
+Previous actions:
+$ACTION_HISTORY$
+A fast rule-based reflex has ALREADY STARTED this action: $PROPOSED$
+Available actions:
+$AVAILABLE_ACTIONS$
+Is the started action a good choice right now? Answer with exactly one word: VALID if I should keep doing it, otherwise only the letter of the better available action.
+Answer:"
+flood,"My house is flooding now, I want to save as many valuable target objects as possible by picking them up and putting them into my bag. All objects are denoted as <name> (id), such as <table> (712), and different objects have different values. Note a non-waterproof object loses its value if it becomes submerged by the flood. The status of the objects previously seen may not be accurate any more. The final score is measured by the total value of target objects I saved successfully.
+Target objects:
+$TARGET_OBJECTS$
+Current State:
+$STATE$
+Previous actions:
+$ACTION_HISTORY$
+A fast rule-based reflex has ALREADY STARTED this action: $PROPOSED$
+Available actions:
+$AVAILABLE_ACTIONS$
+Is the started action a good choice right now? Answer with exactly one word: VALID if I should keep doing it, otherwise only the letter of the better available action.
+Answer:"
+wind,"A strong wind is blowing objects away outdoors. I want to save as many valuable target objects as possible by picking them up and putting them into a shopping cart. All objects are denoted as <name> (id), such as <table> (712), and different objects have different values. The status of the objects previously seen may not be accurate any more. The final score is measured by the total value of target objects I saved successfully.
+Target objects:
+$TARGET_OBJECTS$
+Current State:
+$STATE$
+Previous actions:
+$ACTION_HISTORY$
+A fast rule-based reflex has ALREADY STARTED this action: $PROPOSED$
+Available actions:
+$AVAILABLE_ACTIONS$
+Is the started action a good choice right now? Answer with exactly one word: VALID if I should keep doing it, otherwise only the letter of the better available action.
+Answer:"

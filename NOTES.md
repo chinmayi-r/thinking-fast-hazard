@@ -598,3 +598,57 @@ Fix on the way: `module load` under `set -u` aborted on unset PS1; script now ex
 - 223 unique S3 urls across the 25 fire test scenes' log.txt (linux platform), wget'd flat into HAZARD/src/HAZARD/data/assets: 223 files, 1.1 GB.
 - Cached-mode probe (rule agent, mm_kitchen_3a-1, 180 s cap): pass 1 "nothing missing", so the add-on assets were covered. 224 files, 1.2 GB afterwards (the extra file is whatever HAZARD wrote during the probe; to check with `ls -t | head`).
 - Full log: ~/iw-thinking-fast/logs/della_cache.log. Still open for A28: whether a compute node (no internet) runs a full episode from this cache; the rule job array is the test.
+
+## Nov 9 (evening): RRARA-v1 skeleton plugs into HAZARD's custom-agent slot; Della day summary
+
+Correction to the Nov 8 ~20:30 entry: that "cache complete" was a false pass (HAZARD's download_assets.sh stayed 0 bytes
+because the probe was killed mid-handshake and its output discarded). The fire test set needs four add-on bundles no scene
+log.txt names (fire visual effect, replicant_0, fireman, walking_2); fetched Nov 9 on della-vis1, `scripts/della_cache_assets.sh`.
+
+Della (commit d35c71e, TDW 1.13.0, A100 nodes; details and per-scene tables in NOTES_DELLA.md and results/DELLA_*.md on
+Della, committed as CR, not yet pushed): fire test set, 25 scenes each. rule 0.141 unclocked -> 0.131 tcm30 (1 frame per
+decision); greedy 0.133 -> 0.145 (2-12 frames per decision); mcts unclocked 0.114 (2.09 s per decision); clocked mcts
+submitted 18:36 (array 17209422, gpu-short). Authors' pinned stack (HAZARD 5a50c2d, tdw 1.12.5, build 1.12.5, della-vis1,
+S3 assets): rule 0.410 (Qinhong 0.448, paper 0.531): A29, the benchmark drifted in the action layer. CR's decision: d35c71e
+stays the base; the pinned run is the reproduction.
+
+Laptop, 18:52-19:07: `scripts/rrara/agent.py` skeleton (HAZARD's RuleBasedAgent inside a `custom`-labelled class, no
+reflector yet) through `scripts/run_baseline.py --agent rrara_v1 --clock tcm --fps 30`, fire `mm_kitchen_3a-1`:
+exit 0, 20 decisions, decision wall 0.0001 s, 20 frames charged (1 per decision, charged == ceil(wall x 30) == frame
+advance on every record), final frame 1615, avg_score 0.5 / 9 = value rate 0.056 (laptop rule on this scene: 0.111 Oct 26,
+0.167 Oct 27; Della 0.0 and 0.056), wall 750 s. Folder `results/rrara_v1_skeleton_check/`. The custom slot works unchanged;
+one visible difference from the rule baseline is that label `custom` skips `visualize_obs` (challenge.py:313-315 writes
+images only for mcts labels), which affects wall time, not decisions. Plan and framework rules: `RRARA_V1_PLAN.md`.
+
+## Nov 9, 19:20-19:45: first full RRARA-v1 episode on the laptop (faithful mode, Haiku reflector, clock on)
+
+`scripts/rrara/` now has reflector.py (+ reflector_prompt.csv), background.py, reconcile.py, test_rrara.py (13 tests pass)
+and the wired agent.py; runner options `--reflector_mode off|faithful|worldtime`. Fire `mm_kitchen_3a-1`, folder
+`results/rrara_v1_faithful_check/`: exit 0, 15 decisions, blocking 0.3 ms mean (1.3 ms max), 15 frames charged (1 per
+decision, consistent on every record), 15 reflector calls at 1.84 s mean (3.52 max), 14 verdicts used, 0 stale, 1 override,
+cost $0.003, value rate 0.0 (skeleton run on the same scene: 0.056; laptop rule 0.111 / 0.167).
+Mechanism works; the episode failed on behaviour: every walk_to hit the 100-frame cap ("max steps reached"); after the
+reflector's one override (walk_to 64 -> walk_to 56, answer "A") the rule reflex kept proposing walk_to 56 because
+`rule_based.py:91-92` repeats the last action while it is still available, and the reflector answered VALID 12 times in a
+row. Two causes to put to CR, not fixed: (1) HAZARD's `action_result_to_description` (llm.py:534-540) renders the failed
+walk as "paused after taking 100 steps", which reads as benign, so the LLM baseline and the reflector both see no failure;
+(2) the reflector prompt tells the model the action has "ALREADY STARTED", which biases it to persist (also seen in the fake
+kitchen test, 19:10). Per F3, any wording fix applies to baseline and reflector alike and is recorded as an assumption.
+
+## Nov 9, 20:00-20:50: the paper's reflex (A34) on kitchen 3a-1, reflector off and faithful
+
+`scripts/rrara/reflex.py` (RRARA eq. 2 reimplemented: drop / pick_up / walk to argmin (A* path cells + 1) / value using HAZARD's
+`policy/astar.py`, failure penalty x2 per failed walk; `--reflex paper|hazard_rule`). Both runs fire `mm_kitchen_3a-1`, clock
+on, folders `results/rrara_v1_paper_off_check/` and `results/rrara_v1_paper_faithful_check/`:
+- reflex alone (off): 17 decisions, value rate 0.167 (combs 66 and 64 saved by frame 461, one half-burnt; 9 failed walks to
+  the handbag 56 and comb 57 afterwards), blocking 0.10 s mean (0.15 max), 60 frames charged (3-4 per decision).
+- reflex + Haiku reflector (faithful): 17 decisions, value rate 0.167 (same two saves), 17 reflector calls at 1.44 s mean,
+  16 verdicts used, 3 overrides (all "A" = go for the 5-point handbag after the reflex had switched to comb 57), 61 frames.
+HAZARD's rule agent on this kitchen: 0.0 to 0.167 across five runs on two machines; the paper reflex hit the top of that
+range deterministically in both runs. One kitchen, so no conclusion about the effect yet.
+Two facts for the record: (1) the reflex's A* over the 512x512 semantic map costs about 0.1 s per decision (one weight map
+plus one pyastar2d call per visible target), i.e. 3-4 charged frames, the same as HAZARD's greedy agent and not the 1 frame
+of the rule agent; a coarser A* grid would bring it under a frame if needed (not done). (2) The handbag stays unreached under
+the current snapshot's 0.5 m arrival rule even as its path shrinks from 141 to 51 cells across attempts; the October random
+agent reached it at frame 853, so it is reachable but slow; both the reflex's penalty and the reflector's "A" overrides
+fought over it for the last 1000 frames.

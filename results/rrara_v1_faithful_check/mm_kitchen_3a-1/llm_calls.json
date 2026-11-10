@@ -1,0 +1,107 @@
+[
+ {
+  "wall_s": 1.0025,
+  "input_tokens": 382,
+  "output_tokens": 3,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.3635,
+  "input_tokens": 578,
+  "output_tokens": 132,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.0749,
+  "input_tokens": 611,
+  "output_tokens": 269,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.4169,
+  "input_tokens": 629,
+  "output_tokens": 188,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.823,
+  "input_tokens": 659,
+  "output_tokens": 263,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.7845,
+  "input_tokens": 677,
+  "output_tokens": 221,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.6357,
+  "input_tokens": 695,
+  "output_tokens": 201,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.9924,
+  "input_tokens": 713,
+  "output_tokens": 290,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.3514,
+  "input_tokens": 731,
+  "output_tokens": 169,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.7164,
+  "input_tokens": 749,
+  "output_tokens": 204,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.5125,
+  "input_tokens": 767,
+  "output_tokens": 183,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 3.5181,
+  "input_tokens": 780,
+  "output_tokens": 534,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.1713,
+  "input_tokens": 780,
+  "output_tokens": 254,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.5405,
+  "input_tokens": 780,
+  "output_tokens": 215,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.6511,
+  "input_tokens": 780,
+  "output_tokens": 217,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ }
+]

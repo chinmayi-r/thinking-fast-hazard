@@ -1,0 +1,121 @@
+[
+ {
+  "wall_s": 1.2237,
+  "input_tokens": 395,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.2424,
+  "input_tokens": 468,
+  "output_tokens": 144,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.8251,
+  "input_tokens": 486,
+  "output_tokens": 236,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 0.6966,
+  "input_tokens": 493,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 0.7615,
+  "input_tokens": 481,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.5261,
+  "input_tokens": 469,
+  "output_tokens": 381,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.4142,
+  "input_tokens": 604,
+  "output_tokens": 332,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 0.9825,
+  "input_tokens": 564,
+  "output_tokens": 122,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.4495,
+  "input_tokens": 584,
+  "output_tokens": 150,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 0.8448,
+  "input_tokens": 602,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 0.8967,
+  "input_tokens": 620,
+  "output_tokens": 5,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.3938,
+  "input_tokens": 622,
+  "output_tokens": 147,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.5541,
+  "input_tokens": 632,
+  "output_tokens": 162,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.4526,
+  "input_tokens": 631,
+  "output_tokens": 172,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 1.0693,
+  "input_tokens": 643,
+  "output_tokens": 133,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.0569,
+  "input_tokens": 639,
+  "output_tokens": 273,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ },
+ {
+  "wall_s": 2.0431,
+  "input_tokens": 658,
+  "output_tokens": 225,
+  "stop_reason": "end_turn",
+  "model": "claude-haiku-5-5"
+ }
+]

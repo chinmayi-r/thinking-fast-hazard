@@ -1,0 +1,185 @@
+[
+ {
+  "step": 43,
+  "proposed": [
+   "explore",
+   "None"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "B",
+  "wall_s": 1.0041,
+  "n_options": 2
+ },
+ {
+  "step": 93,
+  "proposed": [
+   "walk_to",
+   "64"
+  ],
+  "valid": false,
+  "replacement": [
+   "walk_to",
+   "56"
+  ],
+  "raw": "A",
+  "wall_s": 1.364,
+  "n_options": 4
+ },
+ {
+  "step": 197,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 2.0753,
+  "n_options": 5
+ },
+ {
+  "step": 302,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.4174,
+  "n_options": 5
+ },
+ {
+  "step": 406,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 2.828,
+  "n_options": 5
+ },
+ {
+  "step": 513,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.7849,
+  "n_options": 5
+ },
+ {
+  "step": 620,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.6361,
+  "n_options": 5
+ },
+ {
+  "step": 727,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.9929,
+  "n_options": 5
+ },
+ {
+  "step": 859,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.3518,
+  "n_options": 5
+ },
+ {
+  "step": 964,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.717,
+  "n_options": 5
+ },
+ {
+  "step": 1067,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.513,
+  "n_options": 5
+ },
+ {
+  "step": 1171,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 3.5187,
+  "n_options": 5
+ },
+ {
+  "step": 1276,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 2.1719,
+  "n_options": 5
+ },
+ {
+  "step": 1381,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.5411,
+  "n_options": 5
+ },
+ {
+  "step": 1485,
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "valid": true,
+  "replacement": null,
+  "raw": "VALID",
+  "wall_s": 1.6514,
+  "n_options": 5
+ }
+]

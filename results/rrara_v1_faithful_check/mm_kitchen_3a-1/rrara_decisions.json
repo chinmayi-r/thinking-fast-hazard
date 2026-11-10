@@ -1,0 +1,389 @@
+[
+ {
+  "decision": 0,
+  "frame": 43,
+  "mode": "faithful",
+  "verdict_status": "none",
+  "proposed": [
+   "explore",
+   "None"
+  ],
+  "action": [
+   "explore",
+   "None"
+  ],
+  "path": "reflex (no verdict)",
+  "override": false,
+  "in_time": null,
+  "frames_needed": null,
+  "action_frames": 0,
+  "check": "started"
+ },
+ {
+  "decision": 1,
+  "frame": 93,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "64"
+  ],
+  "action": [
+   "walk_to",
+   "64"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 753,
+  "action_frames": 50,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 25.079389499966055,
+   "raw": "B"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 2,
+  "frame": 197,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "64"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "override",
+  "override": true,
+  "in_time": true,
+  "frames_needed": 1174,
+  "action_frames": 104,
+  "verdict": {
+   "valid": false,
+   "replacement": [
+    "walk_to",
+    "56"
+   ],
+   "wall_s": 39.10078209999483,
+   "raw": "A"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 3,
+  "frame": 302,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 835,
+  "action_frames": 105,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 27.801457799971104,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 4,
+  "frame": 406,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 709,
+  "action_frames": 104,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 23.616822900017723,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 5,
+  "frame": 513,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 882,
+  "action_frames": 107,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 29.369645600090735,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 6,
+  "frame": 620,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 726,
+  "action_frames": 107,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 24.17197699996177,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 7,
+  "frame": 727,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 949,
+  "action_frames": 107,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 31.62739469995722,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 8,
+  "frame": 859,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1681,
+  "action_frames": 132,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 56.01697310002055,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 9,
+  "frame": 964,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1453,
+  "action_frames": 105,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 48.42899129993748,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 10,
+  "frame": 1067,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1276,
+  "action_frames": 103,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 42.51093220000621,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 11,
+  "frame": 1171,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1547,
+  "action_frames": 104,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 51.56115830002818,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 12,
+  "frame": 1276,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1568,
+  "action_frames": 105,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 52.2421804999467,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 13,
+  "frame": 1381,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 1267,
+  "action_frames": 105,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 42.21370189997833,
+   "raw": "VALID"
+  },
+  "check": "started"
+ },
+ {
+  "decision": 14,
+  "frame": 1485,
+  "mode": "faithful",
+  "verdict_status": "used",
+  "proposed": [
+   "walk_to",
+   "56"
+  ],
+  "action": [
+   "walk_to",
+   "56"
+  ],
+  "path": "reflex (verdict valid)",
+  "override": false,
+  "in_time": true,
+  "frames_needed": 563,
+  "action_frames": 104,
+  "verdict": {
+   "valid": true,
+   "replacement": null,
+   "wall_s": 18.75972470000852,
+   "raw": "VALID"
+  },
+  "check": "started"
+ }
+]

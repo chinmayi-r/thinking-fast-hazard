@@ -132,6 +132,12 @@ def main() -> int:
     ap.add_argument("--resume_dir", default="", help="existing results folder to continue a sweep in (scenes with eval_result.json are skipped)")
     ap.add_argument("--record", action="store_true", help="HAZARD record_with_agents: capture every frame under <out>/images for a video (challenge.py:73)")
     ap.add_argument("--data_dir", default="", help="one specific scene folder (HAZARD data_dir); default: the training set in order")
+    ap.add_argument("--reflector_mode", default="faithful", choices=["off", "faithful", "worldtime"],
+                    help="rrara_v1 only (A30): off = reflex alone; faithful = RRARA's accounting, a finished background verdict "
+                         "always counts; worldtime = it counts only if ceil(wall x fps) <= frames the checked action took")
+    ap.add_argument("--reflex", default="paper", choices=["paper", "hazard_rule"],
+                    help="rrara_v1 only (A34): paper = RRARA eq. (2) reimplemented (value over A* path distance); "
+                         "hazard_rule = HAZARD's shipped RuleBasedAgent untouched")
     ap.add_argument("--cached_assets", action="store_true",
                     help="HAZARD use_cached_assets: load assets from <cwd>/data/assets instead of S3 (A28, cluster compute nodes "
                          "have no internet). Missing files make HAZARD write data/assets/download_assets.sh and exit 0.")
@@ -165,7 +171,12 @@ def main() -> int:
 
     # absolute prompt path so LLM agents work from any cwd (HAZARD's own default is relative to src/HAZARD)
     prompt_path = str(Path(__file__).resolve().parents[1] / "HAZARD" / "src" / "HAZARD" / "policy" / "llm_configs" / "prompt_v2.csv")
-    if args.agent == "vlm":  # A20: HAZARD's llm agent + the camera frame per decision (scripts/vlm_agent.py)
+    if args.agent == "rrara_v1":  # RRARA-v1 (scripts/rrara/agent.py): rule reflex + async LLM reflector; HAZARD's "custom" slot
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from rrara.agent import RRARAv1Agent
+        inner = RRARAv1Agent(task=args.env, mode=args.reflector_mode, lm_id=args.lm_id, api_key_file=args.api_key_file,
+                             fps=args.fps, reflex=args.reflex)
+    elif args.agent == "vlm":  # A20: HAZARD's llm agent + the camera frame per decision (scripts/vlm_agent.py)
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from vlm_agent import VLMAgent
         from policy.llm import SamplingParameters
@@ -212,6 +223,12 @@ def main() -> int:
         "eval_results": evals, "exit": rc, "error": err[-2000:] if err else "",
         "final_frame_count": HOLDER.get("challenge").env.controller.frame_count if HOLDER.get("challenge") else None,
     }
+    if hasattr(inner, "rrara_summary"):  # RRARA-v1: override counts, verdict timing, reflector calls
+        summary["rrara"] = inner.rrara_summary()
+        json.dump(inner.decision_log, open(out_dir / "rrara_decisions.json", "w"), indent=1)
+        if inner.reflector is not None:
+            json.dump(inner.reflector.verdicts, open(out_dir / "rrara_verdicts.json", "w"), indent=1)
+            json.dump(inner.reflector.call_log, open(out_dir / "llm_calls.json", "w"), indent=1)
     call_log = getattr(inner, "call_log", None)  # A18: per-API-call latency for llm agents
     if call_log:
         calls = [c["wall_s"] for c in call_log]
