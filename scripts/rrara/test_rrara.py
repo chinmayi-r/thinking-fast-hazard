@@ -50,6 +50,16 @@ class TestDecide(unittest.TestCase):
         self.assertEqual(a, ("walk_to", "71"))
         self.assertTrue(rec["override"])
 
+    def test_override_drop_returns_python_none_not_the_string(self):
+        # Regression: the verdict stores parameters as strings; the action handed to HAZARD must carry the native
+        # value, or 5a50c2d's challenge.py:345 does int('None') and crashes (Della, mm_kitchen_3a-21, Nov 10).
+        pi = dict(PI, holding_objects=[{"id": "64", "category": "hairbrush"}])
+        v = {"valid": False, "replacement": ["drop", "None"], "wall_s": 1.0}
+        a, rec = decide(("explore", None), v, legal_actions(pi, TARGETS), mode="faithful")
+        self.assertTrue(rec["override"])
+        self.assertEqual(a, ("drop", None))
+        self.assertIs(a[1], None)
+
     def test_invalid_but_illegal_replacement(self):
         v = {"valid": False, "replacement": ["drop", None], "wall_s": 1.0}  # not holding anything
         a, rec = decide(("walk_to", "64"), v, self.legal, mode="faithful")

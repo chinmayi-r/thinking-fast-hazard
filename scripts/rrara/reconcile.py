@@ -47,8 +47,12 @@ def decide(proposed, verdict, legal, mode="worldtime", action_frames=0, fps=30):
         rec["path"] = "reflex (verdict valid)"
         return proposed, rec
     rep = verdict["replacement"]
-    if rep is None or not any(same_action(rep, a) for a in legal):
+    # The verdict record stores the replacement's parameter as a string (it is JSON-logged), so return the matching
+    # legal action, which carries the native parameter: ("drop", None), never ("drop", "None"). 5a50c2d's loop does
+    # int() on a drop parameter unless it is Python None (challenge.py:345), so the string crashed it (Della, Nov 10).
+    match = None if rep is None else next((a for a in legal if same_action(rep, a)), None)
+    if match is None:
         rec["path"] = "reflex (replacement not legal now)"
         return proposed, rec
     rec.update(path="override", override=True)
-    return (rep[0], rep[1]), rec
+    return (match[0], match[1]), rec
