@@ -138,6 +138,11 @@ def main() -> int:
     ap.add_argument("--reflex", default="paper", choices=["paper", "hazard_rule"],
                     help="rrara_v1 only (A34): paper = RRARA eq. (2) reimplemented (value over A* path distance); "
                          "hazard_rule = HAZARD's shipped RuleBasedAgent untouched")
+    # Human baseline (A36, scripts/human): a person answers the LLM agent's menu on a local page. Clock off unless --clock.
+    ap.add_argument("--human_port", type=int, default=8765, help="human only: port of the local page (0 = any free port)")
+    ap.add_argument("--no_camera", action="store_true", help="human only: do not save or show the robot's camera frame (text-only run)")
+    ap.add_argument("--no_browser", action="store_true", help="human only: do not open the page in the default browser")
+    ap.add_argument("--human_hold", type=float, default=20.0, help="human only: seconds the final score stays on the page before exit")
     ap.add_argument("--cached_assets", action="store_true",
                     help="HAZARD use_cached_assets: load assets from <cwd>/data/assets instead of S3 (A28, cluster compute nodes "
                          "have no internet). Missing files make HAZARD write data/assets/download_assets.sh and exit 0.")
@@ -171,6 +176,7 @@ def main() -> int:
 
     # absolute prompt path so LLM agents work from any cwd (HAZARD's own default is relative to src/HAZARD)
     prompt_path = str(Path(__file__).resolve().parents[1] / "HAZARD" / "src" / "HAZARD" / "policy" / "llm_configs" / "prompt_v2.csv")
+    page = None  # the human baseline's page (A36); stays None for every other agent
     if args.agent == "rrara_v1":  # RRARA-v1 (scripts/rrara/agent.py): rule reflex + async LLM reflector; HAZARD's "custom" slot
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from rrara.agent import RRARAv1Agent
@@ -183,6 +189,12 @@ def main() -> int:
         keys = [l.strip() for l in open(args.api_key_file) if l.strip()] if args.api_key_file else ""  # as run_experiments.py:28-33
         inner = VLMAgent(source=args.lm_source, lm_id=args.lm_id, prompt_template_path=prompt_path, cot=True,
                          sampling_parameters=SamplingParameters(max_tokens=args.max_tokens), task=args.env, api_key=keys)
+    elif args.agent == "human":  # A36: HAZARD's LLM agent with a person as the generator (scripts/human/human_agent.py)
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from human.runner import make_human_agent, LiveCounters
+        inner, page = make_human_agent(task=args.env, prompt_path=prompt_path, get_challenge=lambda: HOLDER.get("challenge"),
+                                       port=args.human_port, camera=not args.no_camera, open_browser=not args.no_browser)
+        print(f"human page: {page.url}  (the first decision appears once the scene has loaded)")
     else:
         inner = get_examplar_agent(agent_name=args.agent, env_name=args.env, prompt_path=prompt_path,
                                    lm_source=args.lm_source, lm_id=args.lm_id, api_key_file=args.api_key_file,
@@ -229,6 +241,10 @@ def main() -> int:
         if inner.reflector is not None:
             json.dump(inner.reflector.verdicts, open(out_dir / "rrara_verdicts.json", "w"), indent=1)
             json.dump(inner.reflector.call_log, open(out_dir / "llm_calls.json", "w"), indent=1)
+    if page is not None:  # A36: final score to the page, then the person's decisions in the summary
+        from human.runner import finish_human_run
+        summary["human"] = finish_human_run(page, inner, evals, counters=LiveCounters(lambda: HOLDER.get("challenge")),
+                                            hold_s=args.human_hold)
     call_log = getattr(inner, "call_log", None)  # A18: per-API-call latency for llm agents
     if call_log:
         calls = [c["wall_s"] for c in call_log]

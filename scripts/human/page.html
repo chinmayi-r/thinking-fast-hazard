@@ -59,6 +59,7 @@ pre { white-space:pre-wrap; font:13px/1.45 ui-monospace, Consolas, monospace; ma
   <section id="side">
     <h2>Where things stand</h2>
     <dl class="counters">
+      <dt>kitchen</dt><dd id="c_scene">–</dd>
       <dt>decision</dt><dd id="c_n">–</dd>
       <dt>frame</dt><dd id="c_frame">–</dd>
       <dt>fire time left</dt><dd id="c_left">–</dd>
@@ -128,6 +129,7 @@ pre { white-space:pre-wrap; font:13px/1.45 ui-monospace, Consolas, monospace; ma
       $('c_hold').textContent = d.holding && d.holding.length ? d.holding.join(', ') : 'nothing';
     }
     $('c_saved').textContent = info.saved != null ? info.saved : '–';
+    $('c_scene').textContent = info.kitchen != null ? info.kitchen : '–';
 
     // prompt + menu, only when the decision changes
     const key = st.seq + ':' + st.status;  // redraw when the decision changes or the episode ends
