@@ -108,7 +108,7 @@ class TimedAgent:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--env", default="fire", choices=["fire", "flood", "wind"])
-    ap.add_argument("--agent", default="rule", help="rule | greedy | mcts | mctsv2 | random")
+    ap.add_argument("--agent", default="rule", help="rule | greedy | mcts | mctsv2 | random | llm | vlm | rrara_v1 | human | jev")
     ap.add_argument("--episodes", type=int, default=1)
     ap.add_argument("--port", type=int, default=10826)
     ap.add_argument("--build", default=r"G:\iw-thinking-fast\tdw_build\TDW\TDW.exe")
@@ -129,6 +129,7 @@ def main() -> int:
     ap.add_argument("--lm_id", default="claude-opus-5-5")
     ap.add_argument("--api_key_file", default="", help="path to a file holding the API key (never echoed)")
     ap.add_argument("--max_tokens", type=int, default=512, help="HAZARD's max new tokens per LLM call")
+    ap.add_argument("--jev_examples", default="", help="A37, --agent jev: text file of in-context examples prepended to Jev's state (none by default)")
     ap.add_argument("--resume_dir", default="", help="existing results folder to continue a sweep in (scenes with eval_result.json are skipped)")
     ap.add_argument("--record", action="store_true", help="HAZARD record_with_agents: capture every frame under <out>/images for a video (challenge.py:73)")
     ap.add_argument("--data_dir", default="", help="one specific scene folder (HAZARD data_dir); default: the training set in order")
@@ -195,6 +196,13 @@ def main() -> int:
         inner, page = make_human_agent(task=args.env, prompt_path=prompt_path, get_challenge=lambda: HOLDER.get("challenge"),
                                        port=args.human_port, camera=not args.no_camera, open_browser=not args.no_browser)
         print(f"human page: {page.url}  (the first decision appears once the scene has loaded)")
+    elif args.agent == "jev":  # A37: HAZARD's LLM agent with TypeSafe's Jev decision model as the generator (scripts/jev/)
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from jev.jev_agent import JevAgent
+        model = args.lm_id if args.lm_id.startswith("jev") else "jev-latest"
+        inner = JevAgent(task=args.env, prompt_template_path=prompt_path, api_key_file=args.api_key_file, model=model,
+                         examples_path=args.jev_examples or None)
+        args.lm_source, args.lm_id = "jev", model  # the summary's llm block is labelled by these
     else:
         inner = get_examplar_agent(agent_name=args.agent, env_name=args.env, prompt_path=prompt_path,
                                    lm_source=args.lm_source, lm_id=args.lm_id, api_key_file=args.api_key_file,
@@ -245,6 +253,8 @@ def main() -> int:
         from human.runner import finish_human_run
         summary["human"] = finish_human_run(page, inner, evals, counters=LiveCounters(lambda: HOLDER.get("challenge")),
                                             hold_s=args.human_hold)
+    if args.agent == "jev":
+        summary["jev"] = inner.summary()  # A37: decisions, confidence, per-call wall, reported model ids, cost
     call_log = getattr(inner, "call_log", None)  # A18: per-API-call latency for llm agents
     if call_log:
         calls = [c["wall_s"] for c in call_log]
