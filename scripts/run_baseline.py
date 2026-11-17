@@ -153,6 +153,9 @@ def main() -> int:
     ap.add_argument("--reflector_mode", default="faithful", choices=["off", "faithful", "worldtime"],
                     help="rrara_v1 only (A30): off = reflex alone; faithful = RRARA's accounting, a finished background verdict "
                          "always counts; worldtime = it counts only if ceil(wall x fps) <= frames the checked action took")
+    ap.add_argument("--reflector", default="llm", choices=["llm", "jev"],
+                    help="rrara_v1 only (A37): llm = HAZARD's LLM class with --lm_id (Haiku); jev = TypeSafe's Jev answering the same question")
+    ap.add_argument("--reflector_key_file", default="", help="rrara_v1 with --reflector jev: the TypeSafe key file (default: --api_key_file)")
     ap.add_argument("--reflex", default="paper", choices=["paper", "hazard_rule"],
                     help="rrara_v1 only (A34): paper = RRARA eq. (2) reimplemented (value over A* path distance); "
                          "hazard_rule = HAZARD's shipped RuleBasedAgent untouched")
@@ -208,7 +211,8 @@ def main() -> int:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from rrara.agent import RRARAv1Agent
         inner = RRARAv1Agent(task=args.env, mode=args.reflector_mode, lm_id=args.lm_id, api_key_file=args.api_key_file,
-                             fps=args.fps, reflex=args.reflex)
+                             fps=args.fps, reflex=args.reflex, reflector=args.reflector,
+                             reflector_key_file=args.reflector_key_file or None)
     elif args.agent == "vlm":  # A20: HAZARD's llm agent + the camera frame per decision (scripts/vlm_agent.py)
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from vlm_agent import VLMAgent

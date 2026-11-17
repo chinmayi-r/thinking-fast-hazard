@@ -21,9 +21,12 @@ from rrara.reconcile import decide, legal_actions
 
 
 class RRARAv1Agent:
-    def __init__(self, task, mode="faithful", lm_id="claude-haiku-5-5", api_key_file="", fps=30, reflex="paper"):
+    def __init__(self, task, mode="faithful", lm_id="claude-haiku-5-5", api_key_file="", fps=30, reflex="paper",
+                 reflector="llm", reflector_key_file=None, reflector_client=None):
         assert mode in ("off", "faithful", "worldtime")
         assert reflex in ("paper", "hazard_rule")
+        assert reflector in ("llm", "jev")
+        self.reflector_kind = reflector
         self.task = task
         self.mode = mode
         self.fps = fps
@@ -37,8 +40,13 @@ class RRARAv1Agent:
         self.reflector = None
         self.job = None
         if mode != "off":
-            from rrara.reflector import Reflector  # imported here so mode "off" needs no API key or anthropic package
-            self.reflector = Reflector(task=task, lm_id=lm_id, api_key_file=api_key_file)
+            if reflector == "jev":  # A37: Jev answers the VALID-or-letter question in about 0.1-0.3 s (scripts/jev/jev_reflector.py)
+                from jev.jev_reflector import JevReflector
+                self.reflector = JevReflector(task=task, api_key_file=reflector_key_file or api_key_file,
+                                              model=lm_id if lm_id.startswith("jev") else "jev-latest", client=reflector_client)
+            else:
+                from rrara.reflector import Reflector  # imported here so mode "off" needs no API key or anthropic package
+                self.reflector = Reflector(task=task, lm_id=lm_id, api_key_file=api_key_file)
             self.job = BackgroundJob()
         self.decision_log = []
         self._episode_start()
@@ -119,7 +127,7 @@ class RRARAv1Agent:
         paths = {}
         for r in self.decision_log:
             paths[r["path"]] = paths.get(r["path"], 0) + 1
-        out = {"mode": self.mode, "reflex": self.reflex_kind, "decisions": len(self.decision_log),
+        out = {"mode": self.mode, "reflex": self.reflex_kind, "reflector_kind": self.reflector_kind, "decisions": len(self.decision_log),
                "overrides": sum(1 for r in self.decision_log if r["override"]),
                "verdicts_used": sum(1 for r in self.decision_log if r["verdict_status"] == "used"),
                "verdicts_stale": sum(1 for r in self.decision_log if r["verdict_status"].startswith("stale")),
@@ -131,4 +139,6 @@ class RRARAv1Agent:
                                 "wall_s": {"mean": round(sum(w) / len(w), 3), "max": round(max(w), 3)} if w else None,
                                 "invalid": sum(1 for v in self.reflector.verdicts if not v["valid"]),
                                 "cost_usd_estimate": round(self.reflector.total_cost, 5)}
+            if hasattr(self.reflector, "summary"):  # Jev: per-call wall and frames from the client's log
+                out["reflector"].update(self.reflector.summary())
         return out
