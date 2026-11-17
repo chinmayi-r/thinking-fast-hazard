@@ -62,6 +62,18 @@ class TestWalkLog(unittest.TestCase):
         self.assertEqual(env_actions.WALK_LOG, [])  # moved, not copied
         t.choose_target({"goal_map": np.zeros((4, 4))}, {"step": 4})  # nothing new: no extra lines
         self.assertEqual(len(open(d / "walk_log.jsonl", encoding="utf-8").readlines()), 2)
+        # HAZARD's own module name (src.HAZARD.policy.env_actions, challenge.py:11) is a different module object: drained too
+        import sys, types
+        fake = types.ModuleType("src.HAZARD.policy.env_actions")
+        fake.WALK_LOG = [{"frame": 7, "dist_m": 1.0}]
+        sys.modules["src.HAZARD.policy.env_actions"] = fake
+        try:
+            t.choose_target({"goal_map": np.zeros((4, 4))}, {"step": 5})
+        finally:
+            del sys.modules["src.HAZARD.policy.env_actions"]
+        lines = [json.loads(l) for l in open(d / "walk_log.jsonl", encoding="utf-8")]
+        self.assertEqual([(l["frame"], l["decision"]) for l in lines][-1], (7, 2))
+        self.assertEqual(fake.WALK_LOG, [])
 
 
 if __name__ == "__main__":

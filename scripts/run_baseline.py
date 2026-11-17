@@ -73,17 +73,18 @@ class TimedAgent:
 
     def _dump_walk_log(self):
         """A46: move HAZARD's env_actions.WALK_LOG (the steps of the walk just executed) to walk_log.jsonl, tagged by decision."""
-        try:
-            from policy import env_actions
-        except Exception:
-            return
-        log = getattr(env_actions, "WALK_LOG", None)
-        if not log:
+        # HAZARD imports the executor as src.HAZARD.policy.env_actions (challenge.py:11 via run_experiments.py:1); tests and
+        # other callers may load it as policy.env_actions: a different module object with its own WALK_LOG. Drain every one.
+        logs = [getattr(m, "WALK_LOG", None) for name, m in list(sys.modules.items())
+                if name.endswith("policy.env_actions") and m is not None]
+        logs = [l for l in logs if l]
+        if not logs:
             return
         with open(self.walk_log_path, "a", encoding="utf-8") as f:
-            for r in log:
-                f.write(json.dumps(dict(r, episode=self.episode, decision=self.n)) + "\n")
-        log.clear()
+            for log in logs:
+                for r in log:
+                    f.write(json.dumps(dict(r, episode=self.episode, decision=self.n)) + "\n")
+                log.clear()
 
     def choose_target(self, state, processed_input):
         f0, c0 = self._frame()
@@ -313,6 +314,7 @@ def main() -> int:
                                             hold_s=args.human_hold)
     if args.agent == "jev":
         summary["jev"] = inner.summary()  # A37: decisions, confidence, per-call wall, reported model ids, cost
+        json.dump(inner.decisions, open(out_dir / "jev_decisions.json", "w"), indent=1)  # menu, letter, probabilities, prompt text
     if args.honest_text and getattr(inner, "honest", None) is not None:  # A41: speed estimate, walks, saved, full log
         summary["honest"] = inner.honest.summary()
         json.dump(inner.honest.log, open(out_dir / "honest_log.json", "w"), indent=1, default=str)

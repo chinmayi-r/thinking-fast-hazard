@@ -43,6 +43,7 @@ class JevAgent(LLM):
         self.decisions.append({"n": len(self.decisions) + 1, "letter": res["letter"], "plan": dict(menu)[res["letter"]],
                                "confidence": res["confidence"], "probabilities": res["probabilities"],
                                "wall_s": res["wall_s"], "model": res["model"], "menu": [t for _, t in menu],
+                               "prompt": prompt,  # the state text Jev saw (HAZARD's or the honest text); saved as jev_decisions.json
                                "t_unix": round(time.time(), 3)})
         return [res["letter"]], res["cost_usd"]  # parse_answer's one-letter branch (llm.py:342-380); usage in USD
 
