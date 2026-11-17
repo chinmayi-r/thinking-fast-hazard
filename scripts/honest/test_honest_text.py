@@ -156,6 +156,16 @@ class TestResults(unittest.TestCase):
         self.assertIn("walks tried 1, last ended 1.0 m short", h.state_text())
         self.assertEqual(h.history_text(), "1. frame 43: " + rec["text"])
 
+    def test_walk_beyond_the_cap_is_said_so(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        # a slow walk: 1.0 m in 106 frames -> 106 frames per metre; the comb is then 3.2 m = 340 frames away
+        self.run_walk(h, make_state(agent=(32, 10), facing=(32, 11)), make_state(agent=(32, 20), facing=(32, 21)))
+        f = h.facts["66"]
+        self.assertEqual(f["need_frames"], math.ceil(f["path_m"] * 106.0))
+        self.assertGreater(f["need_frames"], 100)
+        self.assertIn(f"about {f['need_frames']} frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about {math.ceil(f['need_frames'] / 100)} walks", h.state_text())
+        self.assertNotIn("about 100 frames (cap 100)", h.state_text())
+
     def test_walk_that_did_not_get_going(self):
         h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
         rec = self.run_walk(h, make_state(), make_state(agent=(32, 11), facing=(32, 12)))

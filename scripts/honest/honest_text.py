@@ -197,7 +197,7 @@ class Honest:
         explored = obs["map"]["explored"]
         for o in targets[:PLAN_NEAREST]:
             path = paths.path(o["id"]) if paths is not None else None
-            fact = {"path_m": None, "unseen_m": None, "pred_frames": None,
+            fact = {"path_m": None, "unseen_m": None, "pred_frames": None, "need_frames": None,
                     "tries": len(tries.get(o["id"], [])),
                     "last_short_m": (tries[o["id"]][-1]["remaining_m"] if tries.get(o["id"]) else None)}
             if path is not None:
@@ -207,10 +207,11 @@ class Honest:
                 # HAZARD's A* returns the path's corner points only (astar.py:16-34, path_cleanup), so sample every segment cell by cell
                 fact["unseen_m"] = round(unseen_cells_along(path, explored) * CELL_M, 2)
                 if fpm is not None:
-                    fact["pred_frames"] = int(min(WALK_CAP_FRAMES, math.ceil(fact["path_m"] * fpm)))
+                    fact["need_frames"] = int(math.ceil(fact["path_m"] * fpm))  # at my speed so far, uncapped
+                    fact["pred_frames"] = int(min(WALK_CAP_FRAMES, fact["need_frames"]))
             self.facts[o["id"]] = fact
         for o in targets[PLAN_NEAREST:]:
-            self.facts[o["id"]] = {"path_m": None, "unseen_m": None, "pred_frames": None,
+            self.facts[o["id"]] = {"path_m": None, "unseen_m": None, "pred_frames": None, "need_frames": None,
                                    "tries": len(tries.get(o["id"], [])),
                                    "last_short_m": (tries[o["id"]][-1]["remaining_m"] if tries.get(o["id"]) else None)}
 
@@ -269,10 +270,15 @@ class Honest:
         s = f"path {fact['path_m']} m"
         if fact["unseen_m"]:
             s += f" ({fact['unseen_m']} m over unseen floor)"
-        if fact["pred_frames"] is not None:
-            s += f", about {fact['pred_frames']} frames (cap {WALK_CAP_FRAMES})"
-        else:
+        need = fact.get("need_frames")
+        if need is None:
             s += f", walk time unknown yet (cap {WALK_CAP_FRAMES} frames)"
+        elif need <= WALK_CAP_FRAMES:
+            s += f", about {need} frames (cap {WALK_CAP_FRAMES})"
+        else:
+            walks = math.ceil(need / WALK_CAP_FRAMES)
+            s += (f", about {need} frames at my speed so far: more than one walk's cap of {WALK_CAP_FRAMES}, "
+                  f"so one walk will stop short and it takes about {walks} walks")
         return s
 
     def state_text(self, temps=None):
