@@ -1,0 +1,37 @@
+--- /tmp/model_before_A53.py	2026-11-17 09:35:22.147536900 -0500
++++ HAZARD/src/HAZARD/utils/model.py	2026-11-17 09:35:22.260510400 -0500
+@@ -135,6 +135,12 @@
+ """
+ 
+ 
++def _map_drop_oob():
++    """A53 (iw-thinking-fast, 2026-11-17): HAZARD_MAP_DROP_OOB=1 drops points outside the map instead of clamping them to its border."""
++    import os as _os
++    return _os.environ.get("HAZARD_MAP_DROP_OOB", "0").strip() == "1"
++
++
+ def _map_max_obstacle_height():
+     """A44 (iw-thinking-fast, 2026-11-17): points above this height (m) are not floor-level obstacles. HAZARD's shipped
+     cut is 2.5 m, which keeps the ceiling and wall cabinets as obstacles on the floor cells below them (A43). Set
+@@ -284,14 +290,18 @@
+         XZ = ((point_cloud[0, [0, 2], :, :] + self.grid_size * 0.5) // self.grid_size + torch.Tensor(self.map_offset).to(self.device).reshape((2, 1, 1)))
+         bound_low = torch.Tensor([0, 0]).to(self.device).reshape((2, 1, 1))
+         bound_high = torch.Tensor([self.map_size_h-1, self.map_size_v-1]).to(self.device).reshape((2, 1, 1))
++        _inb = ((XZ >= bound_low) & (XZ <= bound_high)).all(0)  # A53: which points fall inside the map before clamping
+         XZ = torch.max(torch.min(XZ, bound_high), bound_low)
+         XZ = XZ.long()
+         zipped = XZ[0, :, :] * self.map_size_v + XZ[1, :, :]
+         
+         _hmax = _map_max_obstacle_height()  # A44: 2.5 as shipped unless HAZARD_MAP_MAX_OBSTACLE_H is set
+-        zipped = zipped[Y < _hmax]
+-        id_map = id_map[Y < _hmax]
+-        Y = Y[Y < _hmax]
++        _keep = Y < _hmax
++        if _map_drop_oob():  # A53: a point outside the map is not evidence about any border cell
++            _keep = _keep & _inb
++        zipped = zipped[_keep]
++        id_map = id_map[_keep]
++        Y = Y[_keep]
+         
+         sort_Y, order = torch.sort(Y.flatten())
+         sort_idx = zipped.flatten()[order]
