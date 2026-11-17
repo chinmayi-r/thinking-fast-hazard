@@ -48,6 +48,7 @@ class TimedAgent:
         self.clock, self.k, self.fps = clock, k, fps
         self.save_maps = save_maps  # A43: save the map arrays of the first K decisions per episode (scripts/hazard_fixes/save_maps.py)
         self.maps_dir = log_path.parent / "maps"
+        self.walk_log_path = log_path.parent / "walk_log.jsonl"  # A46: per-step walk records when HAZARD_WALK_LOG=1
         self.frames_charged_total = 0
         self.agent_type = inner.agent_type  # challenge.py dispatches on this
         self.log = open(log_path, "w", encoding="utf-8")
@@ -70,8 +71,23 @@ class TimedAgent:
         except Exception:
             return -1, -1
 
+    def _dump_walk_log(self):
+        """A46: move HAZARD's env_actions.WALK_LOG (the steps of the walk just executed) to walk_log.jsonl, tagged by decision."""
+        try:
+            from policy import env_actions
+        except Exception:
+            return
+        log = getattr(env_actions, "WALK_LOG", None)
+        if not log:
+            return
+        with open(self.walk_log_path, "a", encoding="utf-8") as f:
+            for r in log:
+                f.write(json.dumps(dict(r, episode=self.episode, decision=self.n)) + "\n")
+        log.clear()
+
     def choose_target(self, state, processed_input):
         f0, c0 = self._frame()
+        self._dump_walk_log()  # the steps of the action that just finished belong to decision self.n
         if self.save_maps and self.n < self.save_maps:
             try:
                 from hazard_fixes.save_maps import save_decision_maps

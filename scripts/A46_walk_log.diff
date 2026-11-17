@@ -1,0 +1,51 @@
+diff --git a/src/HAZARD/policy/env_actions.py b/src/HAZARD/policy/env_actions.py
+index f5c60c9..7861903 100644
+--- a/src/HAZARD/policy/env_actions.py
++++ b/src/HAZARD/policy/env_actions.py
+@@ -82,6 +82,25 @@ def visualize_obs(env, obs, suffix="0", save_dir=os.path.join(PATH, "logs"), ast
+     cv2.imwrite(os.path.join(save_dir, f"height_map_{suffix}.png"), height_img)
+     cv2.imwrite(os.path.join(save_dir, f"explore_{suffix}.png"), explored)
+ 
++WALK_LOG = []  # A46 (iw-thinking-fast, 2026-11-17): per-step records of agent_walk_to when HAZARD_WALK_LOG=1
++
++
++def _walk_log_on():
++    import os as _os
++    return _os.environ.get("HAZARD_WALK_LOG", "0").strip() == "1"
++
++
++def _walk_log(env, target, agent_pos, target_pos, path, status):
++    try:
++        WALK_LOG.append({"frame": int(env.controller.frame_count), "target": int(target) if isinstance(target, int) else None,
++                         "pos": [float(agent_pos[0]), float(agent_pos[2])],
++                         "dist_m": float(np.linalg.norm(agent_pos[[0, 2]] - target_pos[[0, 2]])),
++                         "next_cell": [int(path[1][0]), int(path[1][1])] if path is not None and len(path) > 1 else None,
++                         "status": [str(x) for x in status] if status is not None else None})
++    except Exception as e:  # logging must never stop a walk
++        WALK_LOG.append({"error": repr(e)})
++
++
+ """this action is environment independent"""
+ # def agent_walk_to(env: WindEnv, target: Union[int, np.ndarray, List], max_steps=100, reset_arms: bool = False, arrived_at=1.0):
+ def agent_walk_to(env, target: Union[int, np.ndarray, List], max_steps=100, reset_arms: bool = False, arrived_at=1.0,
+@@ -125,13 +144,17 @@ def agent_walk_to(env, target: Union[int, np.ndarray, List], max_steps=100, rese
+                                                                         "reset_arms": reset_arms,
+                                                                         "arrived_at": 0.05 if record_mode else 0.5})
+         if not effect_on_agents or task == "fire":
+-            env.controller.next_key_frame(force_direction=None)
++            _kf = env.controller.next_key_frame(force_direction=None)
+         elif task == "wind":
+             wind_v = env.controller.manager.wind_v
+-            env.controller.next_key_frame(force_direction=wind_v)
++            _kf = env.controller.next_key_frame(force_direction=wind_v)
+         else:
+             assert env.controller.manager.flood_manager.source_from == 'x_max'
+-            env.controller.next_key_frame(force_direction=np.array([-1, 0, 0]))
++            _kf = env.controller.next_key_frame(force_direction=np.array([-1, 0, 0]))
++        if _walk_log_on():  # A46
++            _walk_log(env, target, env.controller.agents[0].dynamic.transform.position,
++                      env.controller.manager.objects[target].position if isinstance(target, int) else np.array(target), path,
++                      _kf[0] if isinstance(_kf, tuple) and len(_kf) > 0 else None)
+ 
+ 
+ def low_level_action(env, action, effect_on_agents=False, task=None, **kwargs):
