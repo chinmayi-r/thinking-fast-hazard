@@ -1,0 +1,34 @@
+type,prompt
+fire,"My house is on fire and I am wearing a fireproof suit. I want to save as many valuable items as I can by walking to them, picking them up and putting them in my bag. The clock runs while I think and while I act; the episode ends at frame 1500. An item loses its value once it burns. Distances below are in metres along the paths on my own map; directions are relative to where I am facing (left/right in degrees). ""Unseen floor"" is floor my camera has never looked at: my map treats it as walkable, which may be wrong. I can only pick up an item after a walk to it has arrived (within 0.5 m).
+Target categories and what they are worth:
+$TARGET_OBJECTS$
+Me and the map now:
+$STATE$
+Everything I have done so far, oldest first, with what actually happened:
+$ACTION_HISTORY$
+Available actions, with what each will do and cost:
+$AVAILABLE_ACTIONS$
+Answer with the letter of the best next action.
+Answer:"
+flood,"My house is flooding and I want to save as many valuable items as I can by walking to them, picking them up and putting them in my bag. The clock runs while I think and while I act; the episode ends at frame 1500. Distances below are in metres along the paths on my own map; directions are relative to where I am facing. ""Unseen floor"" is floor my camera has never looked at. I can only pick up an item after a walk to it has arrived (within 0.5 m).
+Target categories and what they are worth:
+$TARGET_OBJECTS$
+Me and the map now:
+$STATE$
+Everything I have done so far, oldest first, with what actually happened:
+$ACTION_HISTORY$
+Available actions, with what each will do and cost:
+$AVAILABLE_ACTIONS$
+Answer with the letter of the best next action.
+Answer:"
+wind,"A storm is blowing items away and I want to put as many valuable items as I can into a shopping cart. The clock runs while I think and while I act; the episode ends at frame 3000. Distances below are in metres along the paths on my own map; directions are relative to where I am facing.
+Target categories and what they are worth:
+$TARGET_OBJECTS$
+Me and the map now:
+$STATE$
+Everything I have done so far, oldest first, with what actually happened:
+$ACTION_HISTORY$
+Available actions, with what each will do and cost:
+$AVAILABLE_ACTIONS$
+Answer with the letter of the best next action.
+Answer:"

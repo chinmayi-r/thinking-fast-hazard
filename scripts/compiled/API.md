@@ -1,4 +1,4 @@
-# The program API for HAZARD (compiled policy, A39 step i), version 1
+# The program API for HAZARD (compiled policy, A39 step i), version 1.1
 
 This is the document a compiler (Opus, or a person) reads before writing a program that plays HAZARD's fire task
 without any model call during play. Every statement below is backed by `scripts/compiled/api.py` and by the HAZARD
@@ -60,6 +60,7 @@ camera has segmented and put on its map; the map is the robot's own.
 | `frames_left` | int | `EPISODE_FRAMES[task] - frame`, floor 0 | `challenge.py:53-59` |
 | `agent_cell` | (r, c) or None | the robot's map cell; None when off the map edge | `goal_map == -2`, `fireagent_controller.py:557-558` |
 | `facing_cell` | (r, c) or None | the cell one step ahead in the facing direction (8 directions) | `goal_map == -1`, `fireagent_controller.py:559-565` |
+| `heading_deg` | float or None | heading on the map from the facing mark: angle of (facing - agent) from +row (world x) toward +col (world z), the body's `get_facing()` convention (`envs/fire/agent.py:270-275`), quantized to 45 degrees | v1.1 |
 | `holding` | list of object | what the robot holds (0 or 1 item) | `processed_input["holding_objects"]`, `challenge.py:149, 167-172` |
 | `at_object` | object or None | the object the robot just walked to; set only after a `walk_to` arrived, cleared otherwise | `processed_input["nearest_object"]`, `challenge.py:150-159, 357-360` |
 | `objects` | list of object | every object currently on the explored map, all categories | `processed_input["explored_object_name_list"]`, `challenge.py:136-148` |
@@ -68,8 +69,11 @@ camera has segmented and put on its map; the map is the robot's own.
 | `map` | dict of 3 arrays | `explored` (0/1), `height` (metres), `id` (object ids, meaningful where explored == 1); 512 x 512 cells of 0.1 m | `state["sem_map"]`, `challenge.py:48`, `fireagent_controller.py:535-540` |
 
 An **object** is `{"id": str, "name": str, "category": str, "is_target": bool, "value": float or None}`; objects
-in `objects` also carry `"cell": (r, c) or None` (mean of the object's explored cells, `llm.py:544-549`) and
-`"straight_cells": float or None` (straight-line cells from the robot). `value` is the category value for targets
+in `objects` also carry `"cell": (r, c) or None` (mean of the object's explored cells, `llm.py:544-549`),
+`"straight_cells": float or None` (straight-line cells from the robot), `"range_m"` (the same in metres) and
+`"bearing_deg"` (direction relative to the heading, (-180, 180], positive = the robot's left; A41: the sign is derived
+from `turn_by`'s "positive = clockwise" and `get_facing`'s arctan2(z, x) and is to be confirmed on the first camera
+episode). `value` is the category value for targets
 and None for everything else. Ids are strings (`challenge.py:144` builds them as str; the body does `int()` on them).
 
 What is NOT in the observation, by design: the camera image, the temperature layer (`state["sem_map"]["other"]`,
@@ -99,7 +103,9 @@ only).
 
 ## 5. Helpers a program may use (`from compiled.api import Paths`)
 
-- `Paths(obs, coarse=4)`: builds HAZARD's own A* weight on the robot's map once (`policy/astar.py`, the function the
+- `Paths(obs, coarse=4)`: `.path(id)` returns the planned path's corner points as full-map cells (HAZARD's A* returns
+  turning points only, `astar.py:16-34, path_cleanup`) or None;
+  `.cells(id)` its length. It builds HAZARD's own A* weight on the robot's map once (`policy/astar.py`, the function the
   walk executor uses, `env_actions.py:118-119`), pooled `coarse` x `coarse` by block max so obstacles stay obstacles.
   `.cells(id)` returns the path length in full cells (0.1 m) from the robot to that object's cell, or None when the
   robot or the object has no cell. HAZARD's weights are finite everywhere (a 2.5 m wall costs about 12,000 per

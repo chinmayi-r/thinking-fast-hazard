@@ -24,12 +24,12 @@ import numpy as np
 
 from policy.astar import get_astar_path, get_astar_weight  # HAZARD's own planner (src/HAZARD on PYTHONPATH)
 
-API_VERSION = "1"
+API_VERSION = "1.1"  # 1.1 (Nov 17): heading_deg, per-object range_m / bearing_deg, Paths.path()
 CELL_M = 0.1  # challenge.py:48: grid_size=0.1, map 512 x 512
 EPISODE_FRAMES = {"fire": 1500, "flood": 1500, "wind": 3000}  # challenge.py:53-59; the loop ends at :421
 ACTIONS = ("walk_to", "pick_up", "drop", "explore")
-OBS_KEYS = ("api_version", "task", "frame", "frames_left", "agent_cell", "facing_cell", "holding", "at_object",
-            "objects", "last_action", "last_result", "map")
+OBS_KEYS = ("api_version", "task", "frame", "frames_left", "agent_cell", "facing_cell", "heading_deg", "holding",
+            "at_object", "objects", "last_action", "last_result", "map")
 ALLOWED_IMPORTS = ("math", "collections", "heapq", "itertools", "functools", "typing", "dataclasses", "numpy", "compiled",
                    "compiled.api")
 
@@ -52,6 +52,31 @@ def object_cell(sem_map, obj_id):
     only where explored == 1 (challenge.py:136). None when the object is not on the explored map."""
     pts = np.argwhere((sem_map["explored"] * sem_map["id"]) == int(obj_id))
     return None if len(pts) == 0 else (int(round(pts[:, 0].mean())), int(round(pts[:, 1].mean())))
+
+
+def heading_deg(agent, facing):
+    """The robot's heading on the map, in degrees, from the facing mark: the angle of (facing - agent) measured from
+    +row (world +x) toward +col (world +z), the same convention as the body's get_facing() (envs/fire/agent.py:270-275,
+    arctan2(z, x)), quantized to 45 degrees by the mark (fireagent_controller.py:560-565). None without both cells."""
+    if agent is None or facing is None:
+        return None
+    return float(np.degrees(np.arctan2(facing[1] - agent[1], facing[0] - agent[0])))
+
+
+def wrap_deg(a):
+    """Wrap to (-180, 180]."""
+    return float(-((-a + 180.0) % 360.0 - 180.0))
+
+
+def bearing_deg(agent, heading, cell):
+    """Direction of `cell` relative to the heading, degrees in (-180, 180]; positive = counter-clockwise seen from
+    above = the robot's LEFT (A41: the sign follows from turn_by's "positive = clockwise" and get_facing's
+    arctan2(z, x); to be confirmed on the first camera episode). None when anything is missing."""
+    if agent is None or heading is None or cell is None:
+        return None
+    if tuple(cell) == tuple(agent):
+        return 0.0
+    return wrap_deg(np.degrees(np.arctan2(cell[1] - agent[1], cell[0] - agent[0])) - heading)
 
 
 class Paths:
@@ -78,11 +103,12 @@ class Paths:
             self._weight = w
         return self._weight
 
-    def cells(self, obj_id):
-        """Path length in cells from the robot to the object's cell, or None when the object has no cell, the robot has
-        none, or A* returns nothing. HAZARD's weights are finite everywhere (a 2.5 m wall costs about 12,000 per cell,
-        astar.py:41-42), so in practice a path always exists and a wall shows up as a long or expensive path, not as
-        None. A program that wants "reachable" must compare the length with the straight line itself."""
+    def path(self, obj_id):
+        """The planned path to the object as its corner points in full-map (row, col) cells (HAZARD's A* returns
+        turning points only, astar.py:16-34, path_cleanup; pooled coordinates scaled back), or None when the object has no cell, the robot has none, or A* returns
+        nothing. HAZARD's weights are finite everywhere (a 2.5 m wall costs about 12,000 per cell, astar.py:41-42), so
+        in practice a path always exists and a wall shows up as a long or expensive path, not as None. A program that
+        wants "reachable" must compare the length with the straight line itself."""
         origin = self.obs["agent_cell"]
         dest = None
         for o in self.obs["objects"]:
@@ -94,16 +120,25 @@ class Paths:
         c = self.coarse
         o, d = (origin[0] // c, origin[1] // c), (dest[0] // c, dest[1] // c)
         if o == d:
-            return 0.0
+            return [tuple(origin)]
         path = get_astar_path(self._weight_map(dest), o, d)
         if path is None or len(path) == 0:
             return None
+        return [(int(p[0]) * c, int(p[1]) * c) for p in path]
+
+    def cells(self, obj_id):
+        """Path length in full cells (0.1 m) from the robot to the object's cell; None as for path()."""
+        path = self.path(obj_id)
+        if path is None:
+            return None
+        if len(path) < 2:
+            return 0.0
         pts = np.asarray(path, dtype=float)
-        return float(np.sum(np.linalg.norm(np.diff(pts, axis=0), axis=1))) * c if len(pts) > 1 else 0.0
+        return float(np.sum(np.linalg.norm(np.diff(pts, axis=0), axis=1)))
 
 
 # ---------------------------------------------------------------- the observation
-def _obj(entry, target_values, agent=None, sem_map=None):
+def _obj(entry, target_values, agent=None, sem_map=None, heading=None):
     cat = entry["category"]
     is_target = cat in target_values
     rec = {"id": str(entry["id"]), "name": entry["name"], "category": cat, "is_target": is_target,
@@ -111,8 +146,11 @@ def _obj(entry, target_values, agent=None, sem_map=None):
     if sem_map is not None:
         cell = object_cell(sem_map, int(entry["id"]))
         rec["cell"] = cell
-        rec["straight_cells"] = (None if (cell is None or agent is None)
-                                 else float(np.hypot(cell[0] - agent[0], cell[1] - agent[1])))
+        straight = None if (cell is None or agent is None) else float(np.hypot(cell[0] - agent[0], cell[1] - agent[1]))
+        rec["straight_cells"] = straight
+        rec["range_m"] = None if straight is None else round(straight * CELL_M, 2)
+        b = bearing_deg(agent, heading, cell)
+        rec["bearing_deg"] = None if b is None else round(b, 1)
     return rec
 
 
@@ -123,8 +161,10 @@ def build_observation(state, processed_input, task, target_values, last_action=N
     (challenge.py:100-108), the map is the robot's own."""
     sem_map, goal_map = state["sem_map"], state["goal_map"]
     agent = agent_cell(goal_map)
+    facing = facing_cell(goal_map)
+    heading = heading_deg(agent, facing)
     frame = int(processed_input["step"])  # env.controller.frame_count at decision time (challenge.py:160)
-    objects = [_obj(o, target_values, agent, sem_map) for o in processed_input["explored_object_name_list"]]
+    objects = [_obj(o, target_values, agent, sem_map, heading) for o in processed_input["explored_object_name_list"]]
     holding = [_obj(o, target_values) for o in processed_input["holding_objects"]]
     near = processed_input.get("nearest_object") or []
     at_object = _obj(near[0], target_values) if near else None  # set only after a walk_to arrived (challenge.py:357-360)
@@ -137,7 +177,8 @@ def build_observation(state, processed_input, task, target_values, last_action=N
         "frame": frame,
         "frames_left": max(0, EPISODE_FRAMES[task] - frame),
         "agent_cell": agent,
-        "facing_cell": facing_cell(goal_map),
+        "facing_cell": facing,
+        "heading_deg": heading,
         "holding": holding,
         "at_object": at_object,
         "objects": objects,

@@ -130,6 +130,12 @@ def main() -> int:
     ap.add_argument("--api_key_file", default="", help="path to a file holding the API key (never echoed)")
     ap.add_argument("--max_tokens", type=int, default=512, help="HAZARD's max new tokens per LLM call")
     ap.add_argument("--program", default="", help="A39, --agent program: path to a compiled program module (scripts/compiled/API.md)")
+    ap.add_argument("--honest_text", action="store_true",
+                    help="A41: llm / vlm / human / jev agents get the honest text (scripts/honest): metres, directions, "
+                         "predicted costs, numeric results with reasons, full history, scorer values, turn/step/single-step")
+    ap.add_argument("--category_values", action="store_true", help="honest_text: HAZARD's per-category values instead of the scorer's per-name values")
+    ap.add_argument("--no_single_steps", action="store_true", help="honest_text: no 'one step toward' option")
+    ap.add_argument("--no_turns", action="store_true", help="honest_text: no turn-left/right/step-forward options")
     ap.add_argument("--jev_examples", default="", help="A37, --agent jev: text file of in-context examples prepended to Jev's state (none by default)")
     ap.add_argument("--resume_dir", default="", help="existing results folder to continue a sweep in (scenes with eval_result.json are skipped)")
     ap.add_argument("--record", action="store_true", help="HAZARD record_with_agents: capture every frame under <out>/images for a video (challenge.py:73)")
@@ -151,6 +157,9 @@ def main() -> int:
     args = ap.parse_args()
     if args.agent == "program" and not args.program:  # A39: checked before any folder or build is created
         print("--program is required for --agent program", file=sys.stderr)
+        return 2
+    if args.honest_text and args.agent not in ("llm", "vlm", "human", "jev"):  # A41
+        print(f"--honest_text applies to llm / vlm / human / jev, not {args.agent}", file=sys.stderr)
         return 2
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -215,6 +224,13 @@ def main() -> int:
         inner = get_examplar_agent(agent_name=args.agent, env_name=args.env, prompt_path=prompt_path,
                                    lm_source=args.lm_source, lm_id=args.lm_id, api_key_file=args.api_key_file,
                                    max_tokens=args.max_tokens)
+    if args.honest_text:  # A41: the honest text layer over HAZARD's LLM-class agents (scripts/honest/honest_text.py)
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from honest.honest_text import apply_honest_text
+        honest_template = str(Path(__file__).resolve().parent / "honest" / "prompt_honest.csv")
+        apply_honest_text(inner, honest_template, name_values=None if args.category_values else "scorer",
+                          single_steps=not args.no_single_steps, turns=not args.no_turns,
+                          fps=args.fps if args.clock == "tcm" else 0)
     agent = TimedAgent(inner, out_dir / "decisions.jsonl", clock=args.clock, k=args.k, fps=args.fps)
 
     t0 = time.perf_counter()
@@ -263,6 +279,9 @@ def main() -> int:
                                             hold_s=args.human_hold)
     if args.agent == "jev":
         summary["jev"] = inner.summary()  # A37: decisions, confidence, per-call wall, reported model ids, cost
+    if args.honest_text and getattr(inner, "honest", None) is not None:  # A41: speed estimate, walks, saved, full log
+        summary["honest"] = inner.honest.summary()
+        json.dump(inner.honest.log, open(out_dir / "honest_log.json", "w"), indent=1, default=str)
     if args.agent == "program":  # A39: decisions, illegal count, wall per decision, action counts
         summary["program"] = inner.summary()
         json.dump(inner.decision_log, open(out_dir / "program_decisions.json", "w"), indent=1)

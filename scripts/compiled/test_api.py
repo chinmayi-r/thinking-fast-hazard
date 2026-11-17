@@ -108,6 +108,33 @@ class TestObservation(unittest.TestCase):
         self.assertIsNone(obs["facing_cell"])
         self.assertIsNone(obs["objects"][1]["straight_cells"])
 
+    def test_heading_range_and_bearing(self):
+        # heading +col (facing (50, 9) from (50, 8)) = 90 deg in the body's arctan2(z, x) convention
+        st = scene(objects={66: (50, 40), 64: (10, 8), 56: (90, 8) if False else (60, 8)})
+        obs = build_observation(st, PI_FIRST, "fire", {"hairbrush": 1.0, "purse": 5.0})
+        self.assertEqual(obs["heading_deg"], 90.0)
+        by_id = {o["id"]: o for o in obs["objects"]}
+        self.assertEqual((by_id["66"]["range_m"], by_id["66"]["bearing_deg"]), (3.2, 0.0))  # straight ahead
+        self.assertEqual(by_id["64"]["bearing_deg"], 90.0)  # smaller row = world -x = the robot's left (A41)
+        self.assertEqual(by_id["56"]["bearing_deg"], -90.0)  # larger row = right
+        self.assertEqual(by_id["1"]["bearing_deg"], None)
+        self.assertEqual(api.wrap_deg(270.0), -90.0)
+        self.assertEqual(api.wrap_deg(-180.0), 180.0)
+        st = scene(agent=(50, 8), facing=(49, 7), objects={66: (50, 40)})  # diagonal mark: heading -135
+        obs = build_observation(st, PI_FIRST, "fire", {"hairbrush": 1.0, "purse": 5.0})
+        self.assertEqual(obs["heading_deg"], -135.0)
+        self.assertEqual({o["id"]: o for o in obs["objects"]}["66"]["bearing_deg"], -135.0)
+
+    def test_path_points_are_full_map_cells(self):
+        st = scene(objects={66: (50, 40)})
+        obs = build_observation(st, PI_FIRST, "fire", {"hairbrush": 1.0, "purse": 5.0})
+        path = Paths(obs, coarse=4).path("66")
+        self.assertEqual(path[0], (48, 8))  # the robot's pooled cell, scaled back
+        self.assertEqual(path[-1], (48, 40))
+        self.assertTrue(all((r % 4 == 0 and c % 4 == 0) for r, c in path))
+        self.assertEqual(len(path), 2)  # a straight run: HAZARD's A* keeps the corner points only (astar.py:16-34, path_cleanup)
+        self.assertIsNone(Paths(obs).path("99"))
+
     def test_wind_episode_length(self):
         obs = build_observation(scene(), dict(PI_FIRST, step=100), "wind", {})
         self.assertEqual(obs["frames_left"], 2900)
