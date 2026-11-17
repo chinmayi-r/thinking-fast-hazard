@@ -57,11 +57,18 @@ def extract_module(text):
     return (blocks[-1] if blocks else text).strip() + "\n"
 
 
+def client_kwargs():
+    """A18b: an org-level key needs the anthropic-workspace-id header; set ANTHROPIC_WORKSPACE_ID for the laptop key,
+    leave it unset for CR's own key on Della."""
+    ws = os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip()
+    return {"default_headers": {"anthropic-workspace-id": ws}} if ws else {}
+
+
 def call_model(prompt, api_key_file, model=DEFAULT_MODEL, max_tokens=MAX_TOKENS):
     """One Anthropic call; the key is read from the file and never printed. Returns (text, usage dict, wall seconds)."""
     import anthropic  # imported here so the dry run and the tests need no SDK
     key = [l.strip() for l in open(api_key_file, encoding="utf-8") if l.strip()][0]
-    client = anthropic.Anthropic(api_key=key)
+    client = anthropic.Anthropic(api_key=key, **client_kwargs())
     t = time.perf_counter()
     msg = client.messages.create(model=model, max_tokens=max_tokens, system=SYSTEM,
                                  messages=[{"role": "user", "content": prompt}])

@@ -43,6 +43,19 @@ class TestPrompt(unittest.TestCase):
         self.assertEqual(comp.extract_module("```\nx = 1\n```\nthen ```python\ny = 2\n```"), "y = 2\n")
 
 
+class TestClientKwargs(unittest.TestCase):
+    def test_workspace_header(self):
+        saved = os.environ.pop("ANTHROPIC_WORKSPACE_ID", None)
+        try:
+            self.assertEqual(comp.client_kwargs(), {})
+            os.environ["ANTHROPIC_WORKSPACE_ID"] = "wrkspc_x"
+            self.assertEqual(comp.client_kwargs(), {"default_headers": {"anthropic-workspace-id": "wrkspc_x"}})
+        finally:
+            os.environ.pop("ANTHROPIC_WORKSPACE_ID", None)
+            if saved is not None:
+                os.environ["ANTHROPIC_WORKSPACE_ID"] = saved
+
+
 class TestRound(unittest.TestCase):
     def setUp(self):
         self.out = tempfile.mkdtemp()
