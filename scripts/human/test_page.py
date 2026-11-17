@@ -16,8 +16,8 @@ import urllib.request
 from human.page import PageChooser
 
 
-def decision(n=1, png=None, rejected=()):
-    return {"n": n, "frame": 120 + 40 * n, "frames_total": 1500, "automatic": False, "prompt": f"PROMPT {n}\nAvailable actions:\nA. x\nB. y\n",
+def decision(n=1, png=None, rejected=(), map_png=None):
+    return {"n": n, "frame": 120 + 40 * n, "frames_total": 1500, "automatic": False, "prompt": f"PROMPT {n}\nAvailable actions:\nA. x\nB. y\n", "map_png": map_png,
             "menu": [{"letter": "A", "text": "go pick up object <hairbrush> (64)", "action": ["walk_to", "64"]},
                      {"letter": "B", "text": "look around", "action": ["explore", "None"]}],
             "letters": ["A", "B"], "frame_png": png, "holding": [], "rejected": list(rejected)}
@@ -132,6 +132,24 @@ class TestPage(unittest.TestCase):
         self.assertIsNone(st["decision"])
         self.assertEqual(st["info"], {"saved": 2, "score": 0.4})
         self.assertEqual(self.post("/choose", {"seq": 1, "letter": "A"})[0], 409)
+
+    def test_map_is_served_like_the_frame(self):
+        with self.assertRaises(urllib.error.HTTPError) as cm:
+            self.get("/map.png")
+        self.assertEqual(cm.exception.code, 404)
+        png = os.path.join(tempfile.mkdtemp(), "m.png")
+        with open(png, "wb") as f:
+            f.write(b"\x89PNG\r\n\x1a\nmap")
+        t, box = self.ask_in_thread(decision(1, map_png=png))
+        st = json.loads(self.get("/state")[2])
+        self.assertTrue(st["decision"]["has_map"])
+        self.assertFalse(st["decision"]["has_frame"])
+        self.assertNotIn("map_png", st["decision"])  # local paths are not sent to the page
+        code, ctype, body = self.get("/map.png?seq=1")
+        self.assertEqual((code, ctype, body), (200, "image/png", b"\x89PNG\r\n\x1a\nmap"))
+        self.post("/choose", {"seq": 1, "letter": "A"})
+        t.join(2)
+        self.assertEqual(box["letter"], "A")
 
     def test_bad_json_is_400(self):
         req = urllib.request.Request(self.base + "/choose", data=b"{not json", method="POST")

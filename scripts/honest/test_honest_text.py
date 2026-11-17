@@ -137,6 +137,46 @@ class TestHonestState(unittest.TestCase):
         self.assertIn("Unseen floor: none within 3 m; 100 % of the floor within 3 m is mapped.", s)
 
 
+class TestRadar(unittest.TestCase):
+    def test_eight_sectors(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        # robot at (32, 10) facing +col; a wall at col 30 on rows 0-40 (2 m ahead); map 64 x 64
+        h.begin_decision(make_state(wall=(0, 40, 30)), make_input())
+        facts = {f["sector"]: f for f in h.radar_facts()}
+        self.assertEqual([f["sector"] for f in h.radar_facts()],
+                         ["ahead", "ahead-left", "left", "behind-left", "behind", "behind-right", "right", "ahead-right"])
+        self.assertEqual((facts["ahead"]["kind"], facts["ahead"]["dist_m"]), ("wall", 2.0))
+        self.assertEqual((facts["behind"]["kind"], facts["behind"]["dist_m"]), ("map edge", 1.1))  # col -1 at step 11
+        self.assertEqual((facts["left"]["kind"], facts["left"]["dist_m"]), ("map edge", 3.3))  # left = -row (A41)
+        self.assertEqual((facts["right"]["kind"], facts["right"]["dist_m"]), ("map edge", 3.2))
+        self.assertEqual(facts["ahead-left"]["kind"], "wall")  # the diagonal toward smaller rows meets the wall (rows < 40)
+        self.assertEqual(facts["ahead-right"]["kind"], "map edge")  # the other diagonal passes below the wall's end (row 40)
+        self.assertGreater(facts["ahead-right"]["dist_m"], 4.0)
+        text = h.radar_text()
+        self.assertTrue(text.startswith("Around me, the first thing in each direction: ahead: wall at 2.0 m; ahead-left: wall at"), text)
+        self.assertIn("Around me", h.state_text())
+
+    def test_unseen_and_low_obstacle_and_open(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        st = make_state(unexplored=(0, 64, 20, 24))
+        st["sem_map"]["height"][40:64, 10] = 0.3  # a counter 0.8 m to the right (+row)
+        h.begin_decision(st, make_input())
+        facts = {f["sector"]: f for f in h.radar_facts()}
+        self.assertEqual((facts["ahead"]["kind"], facts["ahead"]["dist_m"]), ("unseen floor", 1.0))
+        self.assertEqual((facts["right"]["kind"], facts["right"]["dist_m"]), ("low obstacle", 0.8))
+        self.assertIn("right: low obstacle at 0.8 m", h.radar_text())
+        big = make_state(n=160, agent=(80, 80), facing=(80, 81), cells={66: (150, 150)})
+        h.begin_decision(big, make_input(objects=OBJECTS[:2]))
+        self.assertTrue(all(f["kind"] == "open" for f in h.radar_facts()))
+        self.assertIn("ahead: open for 5 m", h.radar_text())
+
+    def test_no_heading_no_radar(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        h.begin_decision(make_state(facing=None), make_input())
+        self.assertIsNone(h.radar_facts())
+        self.assertNotIn("Around me", h.state_text())
+
+
 class TestResults(unittest.TestCase):
     def run_walk(self, h, st_before, st_after, step0=43, step1=149, result=False, info="max steps reached"):
         h.begin_decision(st_before, make_input(step=step0))

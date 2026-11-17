@@ -160,6 +160,8 @@ def build_observation(state, processed_input, task, target_values, last_action=N
     what the robot has segmented and mapped, values are the per-category values every shipped agent gets at reset
     (challenge.py:100-108), the map is the robot's own."""
     sem_map, goal_map = state["sem_map"], state["goal_map"]
+    if sem_map.get("height") is None:  # a map without a height layer (tests, record mode): flat floor
+        sem_map = dict(sem_map, height=np.zeros_like(sem_map["explored"], dtype=np.float32))
     agent = agent_cell(goal_map)
     facing = facing_cell(goal_map)
     heading = heading_deg(agent, facing)
@@ -184,7 +186,9 @@ def build_observation(state, processed_input, task, target_values, last_action=N
         "objects": objects,
         "last_action": None if last_action is None else (last_action[0], None if last_action[1] is None else str(last_action[1])),
         "last_result": last_result,
-        "map": {"explored": sem_map["explored"], "height": sem_map["height"], "id": sem_map["id"]},
+        "map": {"explored": sem_map["explored"],
+                "height": sem_map["height"] if sem_map.get("height") is not None else np.zeros_like(sem_map["explored"], dtype=np.float32),
+                "id": sem_map["id"]},
     }
 
 

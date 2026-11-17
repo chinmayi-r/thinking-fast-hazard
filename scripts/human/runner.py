@@ -46,12 +46,12 @@ class CountedChooser:
         return self.page(decision)
 
 
-def make_human_agent(task, prompt_path, get_challenge, host="127.0.0.1", port=8765, camera=True, open_browser=True):
+def make_human_agent(task, prompt_path, get_challenge, host="127.0.0.1", port=8765, camera=True, open_browser=True, map_image=True):
     """HumanAgent wired to a PageChooser. Imported lazily: human_agent pulls in HAZARD's policy.llm (~40 s cold)."""
     from human.human_agent import HumanAgent
     page = PageChooser(host=host, port=port, open_browser=open_browser)
     agent = HumanAgent(task=task, prompt_template_path=prompt_path, chooser=CountedChooser(page, LiveCounters(get_challenge)),
-                       camera=camera)
+                       camera=camera, map_image=map_image)
     return agent, page
 
 

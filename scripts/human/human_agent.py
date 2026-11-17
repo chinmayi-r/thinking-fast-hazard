@@ -57,7 +57,7 @@ def _to_png(rgb, path, image_side=512):
 class HumanAgent(LLM):
     FRAMES_TOTAL = 1500  # HAZARD's episode length (challenge.py:53-56, 289); shown to the person as "frame x of 1500"
 
-    def __init__(self, task, prompt_template_path, chooser=None, camera=True, image_side=512):
+    def __init__(self, task, prompt_template_path, chooser=None, camera=True, image_side=512, map_image=True):
         # source "anthropic" only picks the chat-style prompt and sampling dict (llm.py:77, 86-98); with an empty key
         # the client object is built but never used, and we drop it below so no call can ever go out.
         super().__init__(source="anthropic", lm_id="human", prompt_template_path=prompt_template_path, cot=False,
@@ -66,6 +66,7 @@ class HumanAgent(LLM):
         self.generator = self._ask_person  # LLM.run calls self.generator(messages, sampling_params) (llm.py:640)
         self.chooser = chooser or stdin_chooser
         self.camera = camera
+        self.map_image = map_image  # the robot's own map drawn per decision (scripts/honest/map_image.py)
         self.image_side = image_side
         self.records = []  # one per decision of the current episode, automatic ones included
         self.n = 0  # decisions this episode
@@ -93,14 +94,27 @@ class HumanAgent(LLM):
                 except Exception as e:  # the picture must never stop the game
                     print(f"HumanAgent: could not save frame: {e}")
                     png = None
-        self._pending = {"n": self.n, "frame": frame, "save_dir": save_dir, "frame_png": png,
+        map_png = None
+        if self.map_image and self.target_objects is not None:
+            try:
+                from compiled.api import build_observation
+                from honest.map_image import render_map
+                tv = {c: float((self.objects_info or {}).get(c, {}).get("value", 1)) for c in self.target_objects}
+                obs = build_observation(state, processed_input, self.task, tv)
+                map_png = os.path.join(save_dir, f"{frame:04d}_human_map.png")
+                render_map(state, obs, map_png, frame=frame)
+            except Exception as e:  # the picture must never stop the game
+                print(f"HumanAgent: could not draw the map: {e}")
+                map_png = None
+        self._pending = {"n": self.n, "frame": frame, "save_dir": save_dir, "frame_png": png, "map_png": map_png,
                          "holding": [o.get("category", "?") for o in processed_input["holding_objects"]],
                          "asked": False}
         t0 = time.perf_counter()
         action = super().choose_target(state, processed_input)  # may return pick_up / drop without asking (llm.py:560-567)
         if not self._pending["asked"]:
             rec = {"n": self.n, "frame": frame, "automatic": True, "action": [action[0], str(action[1])],
-                   "wall_s": round(time.perf_counter() - t0, 4), "frame_png": png, "holding": self._pending["holding"]}
+                   "wall_s": round(time.perf_counter() - t0, 4), "frame_png": png, "map_png": self._pending["map_png"],
+                   "holding": self._pending["holding"]}
             self._write(rec)
         self._pending = None
         return action
@@ -112,11 +126,11 @@ class HumanAgent(LLM):
         _, _, plan_list, actions = self.get_available_plans()
         menu = [{"letter": chr(ord("A") + i), "text": plan, "action": [a[0], str(a[1])]}
                 for i, (plan, a) in enumerate(zip(plan_list, actions))]
-        p = self._pending or {"n": self.n, "frame": -1, "save_dir": self.save_dir, "frame_png": None, "holding": []}
+        p = self._pending or {"n": self.n, "frame": -1, "save_dir": self.save_dir, "frame_png": None, "map_png": None, "holding": []}
         p["asked"] = True
         decision = {"n": p["n"], "frame": p["frame"], "frames_total": self.FRAMES_TOTAL, "automatic": False,
                     "prompt": prompt, "menu": menu, "letters": [m["letter"] for m in menu],
-                    "frame_png": p["frame_png"], "holding": p["holding"], "rejected": []}
+                    "frame_png": p["frame_png"], "map_png": p.get("map_png"), "holding": p["holding"], "rejected": []}
         t0 = time.perf_counter()
         while True:
             raw = self.chooser(decision)

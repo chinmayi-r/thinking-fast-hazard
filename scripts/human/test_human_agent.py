@@ -60,11 +60,23 @@ class TestHumanAgent(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
 
-    def make(self, answers, camera=True):
+    def make(self, answers, camera=True, map_image=True):
         chooser = ScriptedChooser(answers)
-        agent = HumanAgent(task="fire", prompt_template_path=PROMPT, chooser=chooser, camera=camera)
+        agent = HumanAgent(task="fire", prompt_template_path=PROMPT, chooser=chooser, camera=camera, map_image=map_image)
         agent.reset(GOALS, OBJECTS_INFO)
         return agent, chooser
+
+    def test_map_picture_per_decision(self):
+        agent, chooser = self.make(["A"])
+        agent.choose_target(make_state(), make_input(self.tmp))
+        d = chooser.seen[0]
+        self.assertTrue(d["map_png"].endswith("0120_human_map.png"))
+        self.assertTrue(os.path.exists(d["map_png"]))
+        with open(d["map_png"], "rb") as f:
+            self.assertEqual(f.read(8), b"\x89PNG\r\n\x1a\n")
+        agent, chooser = self.make(["A"], map_image=False)
+        agent.choose_target(make_state(), make_input(self.tmp))
+        self.assertIsNone(chooser.seen[0]["map_png"])
 
     def test_no_model_is_ever_called(self):
         agent, _ = self.make(["A"])

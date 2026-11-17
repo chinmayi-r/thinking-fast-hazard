@@ -33,6 +33,8 @@ STEP_M = 1.0
 MENU_CAP = 12
 MOVED_EPS_M = 0.3  # below this a walk "did not get going"
 PLAN_NEAREST = 8  # targets planned per decision (A* calls), the nearest by straight line
+RADAR_SECTORS = ("ahead", "ahead-left", "left", "behind-left", "behind", "behind-right", "right", "ahead-right")
+RADAR_MAX_M = 5.0
 
 
 def name_value_table(path=None):
@@ -260,6 +262,46 @@ class Honest:
         return {"mapped_frac": round(frac, 2), "nearest_m": round(float(d[r, c]) * CELL_M, 1),
                 "bearing_deg": bearing_deg(agent, obs["heading_deg"], (int(rr[r, c]), int(cc[r, c])))}
 
+    def radar_facts(self, max_m=RADAR_MAX_M):
+        """Eight rays from the robot, 45 degrees apart starting straight ahead and turning left (positive bearing,
+        A41): the first thing each ray meets within max_m on the robot's own map (unseen floor, a wall taller than
+        0.5 m, a low obstacle over 0.1 m, the map edge) and its distance; "open" when nothing within max_m."""
+        obs = self.obs
+        agent, heading = obs["agent_cell"], obs["heading_deg"]
+        if agent is None or heading is None:
+            return None
+        ex, hg = obs["map"]["explored"], obs["map"]["height"]
+        H, W = ex.shape
+        out = []
+        for k, name in enumerate(RADAR_SECTORS):
+            th = np.radians(heading + 45.0 * k)
+            dr, dc = np.cos(th), np.sin(th)
+            kind, dist = "open", None
+            for step in range(3, int(round(max_m / CELL_M)) + 1):  # the first two cells are the robot itself
+                r, c = int(round(agent[0] + dr * step)), int(round(agent[1] + dc * step))
+                if r < 0 or r >= H or c < 0 or c >= W:
+                    kind = "map edge"
+                elif ex[r, c] == 0:
+                    kind = "unseen floor"
+                elif hg[r, c] > 0.5:
+                    kind = "wall"
+                elif hg[r, c] > 0.1:
+                    kind = "low obstacle"
+                else:
+                    continue
+                dist = round(step * CELL_M, 1)
+                break
+            out.append({"sector": name, "kind": kind, "dist_m": dist})
+        return out
+
+    def radar_text(self):
+        facts = self.radar_facts()
+        if not facts:
+            return None
+        parts = [(f"{f['sector']}: open for {RADAR_MAX_M:g} m" if f["kind"] == "open"
+                  else f"{f['sector']}: {f['kind']} at {f['dist_m']} m") for f in facts]
+        return "Around me, the first thing in each direction: " + "; ".join(parts) + "."
+
     # ---- text
     def item_label(self, o):
         return f"{o['category']} \"{o['name']}\" (id {o['id']})"
@@ -327,6 +369,9 @@ class Honest:
             else:
                 lines.append(f"Unseen floor: nearest {un['nearest_m']} m away, {direction_text(un['bearing_deg'])}; "
                              f"{int(un['mapped_frac'] * 100)} % of the floor within 3 m is mapped.")
+        radar = self.radar_text()
+        if radar:
+            lines.append(radar)
         if self.saved:
             tot = sum(v for _, _, v in self.saved)
             lines.append("Saved so far: " + ", ".join(f"{c} (id {i}) worth {v:g}" for i, c, v in self.saved) + f" (total {tot:g}).")

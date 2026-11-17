@@ -54,13 +54,13 @@ class PageChooser:
                         self._send(200, f.read(), "text/html; charset=utf-8")
                 elif path == "/state":
                     self._send(200, json.dumps(chooser.state()).encode("utf-8"))
-                elif path == "/frame.png":
-                    png = chooser._frame_path()
+                elif path in ("/frame.png", "/map.png"):
+                    png = chooser._frame_path() if path == "/frame.png" else chooser._map_path()
                     if png and os.path.exists(png):
                         with open(png, "rb") as f:
                             self._send(200, f.read(), "image/png")
                     else:
-                        self._send(404, b"no frame", "text/plain")
+                        self._send(404, b"no frame" if path == "/frame.png" else b"no map", "text/plain")
                 else:
                     self._send(404, b"not found", "text/plain")
 
@@ -88,13 +88,18 @@ class PageChooser:
         with self._lock:
             d = None
             if self.decision is not None:
-                d = {k: v for k, v in self.decision.items() if k != "frame_png"}
+                d = {k: v for k, v in self.decision.items() if k not in ("frame_png", "map_png")}
                 d["has_frame"] = bool(self.decision.get("frame_png"))
+                d["has_map"] = bool(self.decision.get("map_png"))
             return {"status": self.status, "seq": self.seq, "decision": d, "info": dict(self.info)}
 
     def _frame_path(self):
         with self._lock:
             return self.decision.get("frame_png") if self.decision else None
+
+    def _map_path(self):
+        with self._lock:
+            return self.decision.get("map_png") if self.decision else None
 
     # --- what the page sends ---
     def submit(self, seq, letter):

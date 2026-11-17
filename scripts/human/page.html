@@ -47,6 +47,9 @@ pre { white-space:pre-wrap; font:13px/1.45 ui-monospace, Consolas, monospace; ma
     <h2>Camera <button class="tog" id="camtog">turn off</button></h2>
     <div id="camwrap"><img id="frame" alt="the robot's camera" hidden><div class="off" id="camoff">no frame yet</div></div>
     <p class="wait" style="margin-top:10px">What the robot's camera sees at this decision. The language model never gets this picture in the text-only run; turn it off for a fair comparison, on if you want to see where things are.</p>
+    <h2 style="margin-top:14px">Map</h2>
+    <div id="mapwrap"><img id="map" alt="the robot's own map" hidden><div class="off" id="mapoff">no map yet</div></div>
+    <p class="wait" style="margin-top:10px">The robot's own map: explored floor light, unseen floor dark, walls black, low obstacles tan, targets red with their id, the robot green with its heading. Drawn from the same arrays the model's numbers come from, so it adds no information the text does not have.</p>
   </section>
 
   <section id="mid">
@@ -89,7 +92,7 @@ pre { white-space:pre-wrap; font:13px/1.45 ui-monospace, Consolas, monospace; ma
 <script>
 (function () {
   const $ = id => document.getElementById(id);
-  let shownSeq = -1, camOn = true, lastHasFrame = false;
+  let shownSeq = -1, camOn = true, lastHasFrame = false, lastHasMap = false;
   try { camOn = localStorage.getItem('hazard_cam') !== 'off'; } catch (e) {}
 
   function setCam(on) {
@@ -120,6 +123,16 @@ pre { white-space:pre-wrap; font:13px/1.45 ui-monospace, Consolas, monospace; ma
       off.textContent = camOn ? 'no frame for this decision' : 'camera off (text-only run)';
     }
     lastHasFrame = !!(d && d.has_frame);
+
+    // the robot's map
+    const mimg = $('map'), moff = $('mapoff');
+    if (d && d.has_map) {
+      if (st.seq !== shownSeq || !lastHasMap) mimg.src = '/map.png?seq=' + st.seq;
+      mimg.hidden = false; moff.hidden = true;
+    } else {
+      mimg.hidden = true; moff.hidden = false;
+    }
+    lastHasMap = !!(d && d.has_map);
 
     // counters
     if (d) {

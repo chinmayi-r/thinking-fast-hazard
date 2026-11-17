@@ -150,6 +150,7 @@ def main() -> int:
     ap.add_argument("--human_port", type=int, default=8765, help="human only: port of the local page (0 = any free port)")
     ap.add_argument("--no_camera", action="store_true", help="human only: do not save or show the robot's camera frame (text-only run)")
     ap.add_argument("--no_browser", action="store_true", help="human only: do not open the page in the default browser")
+    ap.add_argument("--no_map", action="store_true", help="human only: do not draw the robot's map on the page (scripts/honest/map_image.py)")
     ap.add_argument("--human_hold", type=float, default=20.0, help="human only: seconds the final score stays on the page before exit")
     ap.add_argument("--cached_assets", action="store_true",
                     help="HAZARD use_cached_assets: load assets from <cwd>/data/assets instead of S3 (A28, cluster compute nodes "
@@ -207,7 +208,8 @@ def main() -> int:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from human.runner import make_human_agent, LiveCounters
         inner, page = make_human_agent(task=args.env, prompt_path=prompt_path, get_challenge=lambda: HOLDER.get("challenge"),
-                                       port=args.human_port, camera=not args.no_camera, open_browser=not args.no_browser)
+                                       port=args.human_port, camera=not args.no_camera, open_browser=not args.no_browser,
+                                       map_image=not args.no_map)
         print(f"human page: {page.url}  (the first decision appears once the scene has loaded)")
     elif args.agent == "jev":  # A37: HAZARD's LLM agent with TypeSafe's Jev decision model as the generator (scripts/jev/)
         sys.path.insert(0, str(Path(__file__).resolve().parent))
