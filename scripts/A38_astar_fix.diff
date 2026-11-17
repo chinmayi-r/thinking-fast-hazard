@@ -1,0 +1,53 @@
+diff --git a/src/HAZARD/policy/astar.py b/src/HAZARD/policy/astar.py
+index 8de0739..976651c 100644
+--- a/src/HAZARD/policy/astar.py
++++ b/src/HAZARD/policy/astar.py
+@@ -1,3 +1,4 @@
++import os
+ import pyastar2d
+ from typing import List
+ import numpy as np
+@@ -32,6 +33,14 @@ def get_astar_path(weight, origin, destination):
+     path = path_cleanup(path)
+     return path
+ 
++
++def _astar_fix_config():
++    """A38 (iw-thinking-fast, 2026-11-16): planner fix, off unless HAZARD_ASTAR_FIX=1. Returns (on, unexplored cost, reach)."""
++    on = os.environ.get("HAZARD_ASTAR_FIX", "0").strip() == "1"
++    unexplored = float(os.environ.get("HAZARD_ASTAR_UNEXPLORED", "300" if on else "30"))
++    reach = int(os.environ.get("HAZARD_ASTAR_WALL_REACH", "2"))
++    return on, unexplored, reach
++
+ # sem_map: [channel, height, width]
+ def get_astar_weight(sem_map, origin, destination):
+     # unexplored: 5, explored: 1
+@@ -40,14 +49,27 @@ def get_astar_weight(sem_map, origin, destination):
+     explored = sem_map["explored"]
+     height = sem_map["height"]
+     w, h = explored.shape
++    fix_on, unexplored_cost, reach = _astar_fix_config()  # A38
+     weight = np.ones((w, h))
+-    weight[explored == 0] = 30
++    weight[explored == 0] = unexplored_cost  # 30 as shipped unless HAZARD_ASTAR_FIX=1
+     
+     # exp(x * 0.) * y= 10
+     # exp(x * 1.6) * y = 1000
+     # x = 3, y = 7
+     weight[height > 0.5] += np.exp(height[height > 0.5] * 3) * 7
+     weight[height > 0.1] += 10
++    if fix_on:  # A38 (c): the robot cannot pass anything taller than 0.5 m, so such a cell is never cheaper than a wall
++        blocked = (explored == 1) & (height > 0.5)
++        weight[blocked] = np.maximum(weight[blocked], 1e4)
++        # A38 (a): a ranged obstacle taller than 0.5 m continues, at its own cost, into the unexplored cells next to it
++        tall_w = np.where(blocked, weight, 0.0)
++        near_w = np.zeros((w, h))
++        for i in range(-reach, reach + 1):
++            for j in range(-reach, reach + 1):
++                d = near_w[max(0, i): min(w, w + i), max(0, j): min(h, h + j)]
++                np.maximum(d, tall_w[max(0, -i): min(w, w - i), max(0, -j): min(h, h - j)], out=d)
++        extend = (explored == 0) & (near_w > 0)
++        weight[extend] = np.maximum(weight[extend], near_w[extend])
+     # weight[height > 0.5] += 50
+     # weight[height > 1.6] += 1000
+     # for each position, if it is near an obstacle, increase its weight by 50
