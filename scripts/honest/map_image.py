@@ -80,7 +80,7 @@ def render_map(state, obs=None, out_path=None, px=384, paths=None, frame=None, p
         rr = max(1.5, scale * 0.45)
         for marks in path_marks.values():
             for cell, kind in marks:
-                if kind in ("known", "goal"):  # goal: the target's own footprint, never walked (classify_path)
+                if kind in ("known", "goal", "start"):  # goal/start footprints are not obstacles (classify_path)
                     continue
                 x, y = to_xy(cell)
                 draw.ellipse([x - rr, y - rr, x + rr, y + rr], fill=COL_PATH_UNSEEN if kind == "unseen" else COL_PATH_BLOCKED)

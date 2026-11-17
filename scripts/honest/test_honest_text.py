@@ -165,7 +165,7 @@ class TestFeasibility(unittest.TestCase):
         self.assertIn("cannot arrive as planned", plans[[a[1] for a in actions].index("66")])
         marks = h.path_marks["66"]
         self.assertTrue(any(k == "tall" for _, k in marks))
-        self.assertTrue(all(k in ("known", "unseen", "low", "tall", "goal") for _, k in marks))
+        self.assertTrue(all(k in ("known", "unseen", "low", "tall", "goal", "start") for _, k in marks))
 
     def test_target_on_a_counter_is_not_blocked(self):
         """The last 0.5 m of a path is the target's own footprint: a walk arrives before stepping onto it (NOTES Nov 17:
@@ -187,9 +187,24 @@ class TestFeasibility(unittest.TestCase):
         st2["sem_map"]["height"][:, 28:31] = 0.9
         h.begin_decision(st2, make_input())
         self.assertEqual(h.facts["66"]["feasible"], "blocked")
+        # leaving a counter the body arrived at: the robot stands 0.3 m from a counter that runs 1.5 m along its path
+        st3 = make_state()
+        st3["sem_map"]["height"][29:31, 8:26] = 0.9  # counter edge two rows above the robot (row 32), cols 8-25
+        h.begin_decision(st3, make_input())
+        f = h.facts["66"]
+        self.assertEqual((f["feasible"], f["tall_m"]), ("known", 0.0), f)
+        kinds = [k for _, k in h.path_marks["66"]]
+        self.assertIn("start", kinds)
+        self.assertNotIn("tall", kinds)
+        # the same counter beginning 1 m away (a break of known floor first) is a block
+        st4 = make_state()
+        st4["sem_map"]["height"][:, 24:26] = 0.9
+        h.begin_decision(st4, make_input())
+        self.assertEqual(h.facts["66"]["feasible"], "blocked")
         # direct call: the goal cells are the last arrive_cells of the path, whatever is under them
         marks = classify_path([(32, 10), (32, 40)], st["sem_map"]["explored"], st["sem_map"]["height"], 4, arrive_cells=5)
         self.assertEqual([k for _, k in marks][-7:], ["known"] + ["goal"] * 6)  # distances 0..5 cells from the end
+        self.assertEqual([k for _, k in marks][:7], ["start"] * 6 + ["known"])  # the start footprint, 6 cells
 
     def test_counter_is_tall_and_a_step_is_low(self):
         st = make_state()

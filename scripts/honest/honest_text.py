@@ -83,7 +83,10 @@ def unseen_cells_along(path, explored):
     return sum(1 for r, c in cells_along(path, explored.shape) if explored[r, c] == 0)
 
 
-def classify_path(path, explored, height, coarse, arrive_cells=0):
+START_CELLS = 6  # the body's own footprint at the path start (robot square R=2 cells + one pooled 4-cell block), A48
+
+
+def classify_path(path, explored, height, coarse, arrive_cells=0, start_cells=START_CELLS):
     """What the planner chose to walk through, by the pooled block the planner itself priced (block max height, block
     min explored): per 1-cell step one of "known" (seen floor), "unseen", "low" (a seen object 0.1-0.5 m tall, which
     HAZARD's planner prices at +10 and the body may or may not pass) or "tall" (a seen obstacle over 0.5 m: a counter,
@@ -91,14 +94,20 @@ def classify_path(path, explored, height, coarse, arrive_cells=0):
     known obstacle (it is lethal); HAZARD's does, at a price, so the class says whether the walk can arrive at all.
     The last `arrive_cells` of the path (the destination's own footprint: a walk ends when the body is within the
     arrival distance of the target, env_actions.py:87-123, so it never steps onto the counter the target sits on) are
-    marked "goal" and count for nothing; without this every walk to an item on a counter read as blocked (NOTES Nov 17)."""
+    marked "goal" and count for nothing; without this every walk to an item on a counter read as blocked (NOTES Nov 17).
+    Likewise the start: cells within `start_cells` of the path's first point, and a run of obstacle cells that begins
+    there and continues without a break, are marked "start": the body is standing in that zone (it got there) and may
+    leave it along the counter it arrived at (a navigation stack exempts the start pose from inflation for the same
+    reason); without this the first walk after every arrival read as blocked (NOTES Nov 17 06:50)."""
     cells = cells_along(path, explored.shape)
     if not cells:
         return []
     H, W = explored.shape
     c = max(1, int(coarse))
     end = np.asarray(path[-1], dtype=float)
+    start = np.asarray(path[0], dtype=float)
     out = []
+    in_start = True  # still inside the start zone: the footprint, then any unbroken run of obstacle cells out of it
     for r, col in cells:
         if arrive_cells and float(np.hypot(r - end[0], col - end[1])) <= arrive_cells:
             out.append(((r, col), "goal"))
@@ -116,6 +125,13 @@ def classify_path(path, explored, height, coarse, arrive_cells=0):
             kind = "unseen"
         else:
             kind = "known"
+        if in_start:
+            if start_cells and float(np.hypot(r - start[0], col - start[1])) <= start_cells:
+                kind = "start"
+            elif kind in ("tall", "low"):
+                kind = "start"
+            else:
+                in_start = False
         out.append(((r, col), kind))
     return out
 
