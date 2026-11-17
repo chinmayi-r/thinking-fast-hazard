@@ -258,6 +258,24 @@ class TestFeasibility(unittest.TestCase):
         self.assertEqual(rec["text"], "looked around (49 frames): 1 new object on my map, 1 gone from it")
         self.assertEqual(h.summary()["actions"], {"explore": 1})
 
+    def test_repeated_looks_from_one_spot_are_said_on_the_option(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        h.begin_decision(make_state(), make_input())
+        self.assertNotIn("from this spot", h.menu()[0])
+        h.end_decision(("explore", None))
+        h.begin_decision(make_state(), make_input(step=92, result=True, info="success"))  # same spot, nothing new
+        self.assertIn("look around: turn a full circle, 49 frames; adds what I see to my map; I have already done this 1 time "
+                      "from this spot without moving, the last added 0 objects", h.menu()[0])
+        h.end_decision(("explore", None))
+        h.begin_decision(make_state(), make_input(step=141, result=True, info="success"))
+        self.assertEqual(h.looks_here(), (2, 0))
+        self.assertIn("already done this 2 times from this spot", h.menu()[0])
+        # a walk that moved the robot resets the count
+        h.end_decision(("walk_to", "66"))
+        h.begin_decision(make_state(agent=(32, 20), facing=(32, 21)), make_input(step=250, result=False, info="max steps reached"))
+        self.assertEqual(h.looks_here(), (0, 0))
+        self.assertNotIn("from this spot", h.menu()[0])
+
     def test_decision_time_full_map_many_objects(self):
         rng = np.random.default_rng(0)
         n = 512

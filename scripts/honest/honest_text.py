@@ -603,7 +603,12 @@ class Honest:
                 o = targets[0]
                 plans.append(f"one step toward {self.item_label(o)}: a few frames; does not count as arriving")
                 actions.append(("walk_to_single", o["id"]))
-        plans.append(f"look around: turn a full circle, {EXPLORE_FRAMES} frames; adds what I see to my map")
+        n_here, last_new = self.looks_here()
+        look = f"look around: turn a full circle, {EXPLORE_FRAMES} frames; adds what I see to my map"
+        if n_here:
+            look += (f"; I have already done this {n_here} time{'s' if n_here > 1 else ''} from this spot without moving, "
+                     f"the last added {last_new} object{'s' if last_new != 1 else ''}")
+        plans.append(look)
         actions.append(("explore", None))
         if self.turns:
             plans.append(f"turn left {TURN_DEG:g} deg: a few frames")
@@ -616,6 +621,19 @@ class Honest:
         self._last_menu_actions = actions
         text = "".join(f"{chr(ord('A') + i)}. {p}\n" for i, p in enumerate(plans))
         return text, len(plans), plans, actions
+
+    def looks_here(self):
+        """(how many looks around in a row since the robot last moved, what the last one added): the trailing run of
+        explore records whose moved_m is under MOVED_EPS_M. Bookkeeping the robot has anyway (v2.3, NOTES Nov 17 07:00)."""
+        n, last_new = 0, 0
+        for r in reversed(self.log):
+            if r["action"][0] == "explore" and (r["moved_m"] is None or r["moved_m"] < MOVED_EPS_M):
+                if n == 0:
+                    last_new = r["new_objects"] or 0
+                n += 1
+            else:
+                break
+        return n, last_new
 
     def summary(self):
         walks = [r for r in self.log if r["action"][0] == "walk_to"]
