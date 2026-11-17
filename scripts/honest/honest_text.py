@@ -83,19 +83,26 @@ def unseen_cells_along(path, explored):
     return sum(1 for r, c in cells_along(path, explored.shape) if explored[r, c] == 0)
 
 
-def classify_path(path, explored, height, coarse):
+def classify_path(path, explored, height, coarse, arrive_cells=0):
     """What the planner chose to walk through, by the pooled block the planner itself priced (block max height, block
     min explored): per 1-cell step one of "known" (seen floor), "unseen", "low" (a seen object 0.1-0.5 m tall, which
     HAZARD's planner prices at +10 and the body may or may not pass) or "tall" (a seen obstacle over 0.5 m: a counter,
     cabinet, appliance or wall, which the body cannot pass). A real navigation stack never returns a path through a
-    known obstacle (it is lethal); HAZARD's does, at a price, so the class says whether the walk can arrive at all."""
+    known obstacle (it is lethal); HAZARD's does, at a price, so the class says whether the walk can arrive at all.
+    The last `arrive_cells` of the path (the destination's own footprint: a walk ends when the body is within the
+    arrival distance of the target, env_actions.py:87-123, so it never steps onto the counter the target sits on) are
+    marked "goal" and count for nothing; without this every walk to an item on a counter read as blocked (NOTES Nov 17)."""
     cells = cells_along(path, explored.shape)
     if not cells:
         return []
     H, W = explored.shape
     c = max(1, int(coarse))
+    end = np.asarray(path[-1], dtype=float)
     out = []
     for r, col in cells:
+        if arrive_cells and float(np.hypot(r - end[0], col - end[1])) <= arrive_cells:
+            out.append(((r, col), "goal"))
+            continue
         rb, cb = (r // c) * c, (col // c) * c
         blk_ex = explored[rb:min(H, rb + c), cb:min(W, cb + c)]
         blk_h = height[rb:min(H, rb + c), cb:min(W, cb + c)]
@@ -272,7 +279,7 @@ class Honest:
                 length_c = float(np.sum(np.linalg.norm(np.diff(pts, axis=0), axis=1))) if len(pts) > 1 else 0.0
                 fact["path_m"] = round(length_c * CELL_M, 2)
                 # HAZARD's A* returns the path's corner points only (astar.py:16-34, path_cleanup), so sample every segment cell by cell
-                marks = classify_path(path, explored, height, self.coarse)
+                marks = classify_path(path, explored, height, self.coarse, arrive_cells=int(round(ARRIVE_M / CELL_M)))
                 self.path_marks[o["id"]] = marks
                 kinds = [k for _, k in marks]
                 fact["unseen_m"] = round(kinds.count("unseen") * CELL_M, 2)
@@ -289,26 +296,27 @@ class Honest:
                                    "tries": len(tries.get(o["id"], [])),
                                    "last_short_m": (tries[o["id"]][-1]["remaining_m"] if tries.get(o["id"]) else None)}
 
-    def fire_facts(self):
-        """Hottest mapped spot, from the robot's own temperature layer (sem_map['other'][0] = mapped log temperature,
-        fireagent_controller.py:528-540); None when the layer is absent or nothing is mapped."""
-        st = self.state
-        other = None if st is None else st["sem_map"].get("other")
-        if other is None or self.obs["agent_cell"] is None:
+    def fire_facts(self, temps=None):
+        """The hottest item the robot has seen, from HAZARD's per-object temperature record (env_change_record: log
+        temperature per object id, the same record HAZARD's own prompt prints, llm.py:403-405). None when no seen item is
+        above 60 C. The map's temperature layer (sem_map['other'][0]) is NOT a temperature: the mapper stores
+        log_temp * point_height per cell (utils/model.py:311), so it reads 0 on floor cells and ~4 * 1.8 on wall tops,
+        and a cell beside the robot (its own body pixels, height zeroed but the product kept, model.py:319-325) read as
+        "1941 C" in the first honest episodes (NOTES Nov 17); it is not used."""
+        if not temps or self.obs is None:
             return None
-        layer = np.asarray(other[0] if other.ndim == 3 else other, dtype=float)
-        mask = (self.obs["map"]["explored"] == 1) & np.isfinite(layer)
-        if not mask.any():
+        best = None
+        for o in self.obs["objects"]:
+            rec = temps.get(o["id"])
+            if not rec:
+                continue
+            t = float(np.exp(rec[-1]))
+            if t >= 60.0 and (best is None or t > best[0]):
+                best = (t, o)
+        if best is None:
             return None
-        idx = np.argmax(np.where(mask, layer, -np.inf))
-        r, c = np.unravel_index(idx, layer.shape)
-        temp_c = float(np.exp(layer[r, c]))
-        if temp_c < 60.0:
-            return None
-        from compiled.api import bearing_deg
-        agent = self.obs["agent_cell"]
-        return {"temp_c": round(temp_c), "range_m": round(_dist_cells(agent, (r, c)) * CELL_M, 1),
-                "bearing_deg": bearing_deg(agent, self.obs["heading_deg"], (int(r), int(c)))}
+        t, o = best
+        return {"temp_c": round(t), "label": self.item_label(o), "range_m": o["range_m"], "bearing_deg": o["bearing_deg"]}
 
     def unseen_facts(self, radius_m=3.0):
         """Nearest unexplored cell and the mapped fraction within radius_m of the robot."""
@@ -438,12 +446,15 @@ class Honest:
                 lines.append(s + ".")
         else:
             lines.append("Target items I have seen: none yet.")
-        fire = self.fire_facts()
+        fire = self.fire_facts(temps)
         if self.task == "fire":
             if fire is None:
-                lines.append("Fire: nothing hot on my map yet.")
+                lines.append("Fire: no item I have seen is hot (above 60 C) yet.")
+            elif fire["range_m"] is None:
+                lines.append(f"Fire: hottest item I have seen is {fire['label']} at {fire['temp_c']} C.")
             else:
-                lines.append(f"Fire: hottest spot on my map {fire['temp_c']} C, {fire['range_m']} m away, {direction_text(fire['bearing_deg'])}.")
+                lines.append(f"Fire: hottest item I have seen is {fire['label']} at {fire['temp_c']} C, {fire['range_m']} m away, "
+                             f"{direction_text(fire['bearing_deg'])}.")
         un = self.unseen_facts()
         if un is not None:
             if un["nearest_m"] is None:

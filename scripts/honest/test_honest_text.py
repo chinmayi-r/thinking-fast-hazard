@@ -96,7 +96,7 @@ class TestHonestState(unittest.TestCase):
         h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
         st = make_state(unexplored=(0, 64, 20, 24), hot=((32, 30), 400))  # an unseen band across the whole map
         h.begin_decision(st, make_input())
-        s = h.state_text()
+        s = h.state_text(temps={"66": [np.log(25.0), np.log(400.0)], "62": [np.log(30.0)]})  # HAZARD's per-object record
         self.assertIn("Frame 43 of 1500, 1457 frames left.", s)
         self.assertIn("Holding: nothing.", s)
         self.assertIn("Standing at: no item", s)
@@ -110,7 +110,8 @@ class TestHonestState(unittest.TestCase):
         self.assertIn("walk time unknown yet (cap 100 frames)", comb)
         self.assertIn('"bag_3" (id 56): worth 1', s)  # the scorer's value, not the category's 5
         self.assertIn('"small_purse" (id 62): worth 5', s)
-        self.assertIn("Fire: hottest spot on my map 400 C, 2.0 m away, straight ahead.", s)
+        # the hot cell in the map layer is ignored (it is log_temp x height, model.py:311); the object record is used
+        self.assertIn('Fire: hottest item I have seen is hairbrush "b04_comb" (id 66) at 400 C, 3.0 m away, straight ahead.', s)
         self.assertIn("Unseen floor: nearest 1.0 m away", s)
         self.assertIn("Saved so far: nothing.", s)
         self.assertEqual(h.history_text(), "(nothing yet)")
@@ -133,7 +134,8 @@ class TestHonestState(unittest.TestCase):
         h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
         h.begin_decision(make_state(), make_input())
         s = h.state_text()
-        self.assertIn("Fire: nothing hot on my map yet.", s)
+        self.assertIn("Fire: no item I have seen is hot (above 60 C) yet.", s)
+        self.assertIn("Fire: no item I have seen is hot", h.state_text(temps={"66": [np.log(40.0)]}))
         self.assertIn("Unseen floor: none within 3 m; 100 % of the floor within 3 m is mapped.", s)
 
 
@@ -163,7 +165,31 @@ class TestFeasibility(unittest.TestCase):
         self.assertIn("cannot arrive as planned", plans[[a[1] for a in actions].index("66")])
         marks = h.path_marks["66"]
         self.assertTrue(any(k == "tall" for _, k in marks))
-        self.assertTrue(all(k in ("known", "unseen", "low", "tall") for _, k in marks))
+        self.assertTrue(all(k in ("known", "unseen", "low", "tall", "goal") for _, k in marks))
+
+    def test_target_on_a_counter_is_not_blocked(self):
+        """The last 0.5 m of a path is the target's own footprint: a walk arrives before stepping onto it (NOTES Nov 17:
+        with this missing, every walk to an item on a counter read as 'cannot arrive' and Jev only looked around)."""
+        st = make_state()
+        st["sem_map"]["height"][30:35, 39:43] = 0.9  # the counter the comb (id 66 at rows 32-33, cols 40-41) sits on
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        h.begin_decision(st, make_input())
+        f = h.facts["66"]
+        self.assertEqual((f["feasible"], f["tall_m"]), ("known", 0.0))
+        kinds = [k for _, k in h.path_marks["66"]]
+        self.assertIn("goal", kinds)
+        self.assertNotIn("tall", kinds)
+        comb = next(l for l in h.state_text().splitlines() if "(id 66)" in l)
+        self.assertIn("over seen floor", comb)  # the planner detours round the counter block; no "cannot arrive"
+        self.assertNotIn("cannot arrive", comb)
+        # a counter across the whole room 1 m before the target (beyond the goal footprint) is still a block
+        st2 = make_state()
+        st2["sem_map"]["height"][:, 28:31] = 0.9
+        h.begin_decision(st2, make_input())
+        self.assertEqual(h.facts["66"]["feasible"], "blocked")
+        # direct call: the goal cells are the last arrive_cells of the path, whatever is under them
+        marks = classify_path([(32, 10), (32, 40)], st["sem_map"]["explored"], st["sem_map"]["height"], 4, arrive_cells=5)
+        self.assertEqual([k for _, k in marks][-7:], ["known"] + ["goal"] * 6)  # distances 0..5 cells from the end
 
     def test_counter_is_tall_and_a_step_is_low(self):
         st = make_state()
