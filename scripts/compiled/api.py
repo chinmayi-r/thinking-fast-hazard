@@ -24,7 +24,7 @@ import numpy as np
 
 from policy.astar import get_astar_path, get_astar_weight  # HAZARD's own planner (src/HAZARD on PYTHONPATH)
 
-API_VERSION = "1.1"  # 1.1 (Nov 17): heading_deg, per-object range_m / bearing_deg, Paths.path()
+API_VERSION = "1.2"  # 1.1 (Nov 17): heading_deg, per-object range_m / bearing_deg, Paths.path()
 CELL_M = 0.1  # challenge.py:48: grid_size=0.1, map 512 x 512
 EPISODE_FRAMES = {"fire": 1500, "flood": 1500, "wind": 3000}  # challenge.py:53-59; the loop ends at :421
 ACTIONS = ("walk_to", "pick_up", "drop", "explore")
@@ -83,12 +83,15 @@ def crop_box(explored, cells=(), margin=40):
 
 
 def heading_deg(agent, facing):
-    """The robot's heading on the map, in degrees, from the facing mark: the angle of (facing - agent) measured from
-    +row (world +x) toward +col (world +z), the same convention as the body's get_facing() (envs/fire/agent.py:270-275,
-    arctan2(z, x)), quantized to 45 degrees by the mark (fireagent_controller.py:560-565). None without both cells."""
+    """The robot's TRUE heading on the map, in degrees from +row (world +x) toward +col (world +z), from the facing mark.
+    The mark (fireagent_controller.py:557-565) is placed from the body's get_facing() (envs/fire/agent.py:270-275), which
+    applies the INVERSE rotation to +z and so returns 180 - true heading (a mirror about the z axis): measured in TDW
+    (scripts/hazard_fixes/facing_check.py, A52): true 90 -> HAZARD 90, true 0 -> HAZARD 180, true -90 -> HAZARD -90.
+    So the mark's angle is 180 - heading, and this returns 180 - mark angle, quantized to 45 degrees by the mark.
+    None without both cells. (API 1.1 returned the mark's angle itself; bearings were then rotated by 2*heading - 180.)"""
     if agent is None or facing is None:
         return None
-    return float(np.degrees(np.arctan2(facing[1] - agent[1], facing[0] - agent[0])))
+    return wrap_deg(180.0 - float(np.degrees(np.arctan2(facing[1] - agent[1], facing[0] - agent[0]))))
 
 
 def wrap_deg(a):
@@ -97,9 +100,9 @@ def wrap_deg(a):
 
 
 def bearing_deg(agent, heading, cell):
-    """Direction of `cell` relative to the heading, degrees in (-180, 180]; positive = counter-clockwise seen from
-    above = the robot's LEFT (A41: the sign follows from turn_by's "positive = clockwise" and get_facing's
-    arctan2(z, x); to be confirmed on the first camera episode). None when anything is missing."""
+    """Direction of `cell` relative to the TRUE heading (heading_deg), degrees in (-180, 180]; positive = from +x toward
+    +z = counter-clockwise seen from above in TDW's left-handed frame = the robot's LEFT (turn_by(-90) is a left turn;
+    measured, A52). None when anything is missing."""
     if agent is None or heading is None or cell is None:
         return None
     if tuple(cell) == tuple(agent):

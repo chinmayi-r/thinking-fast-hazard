@@ -108,6 +108,19 @@ class TestObservation(unittest.TestCase):
         self.assertIsNone(obs["facing_cell"])
         self.assertIsNone(obs["objects"][1]["straight_cells"])
 
+    def test_heading_is_the_mirror_of_the_facing_mark(self):
+        """A52: HAZARD's facing mark is 180 - the true heading (measured in TDW, scripts/hazard_fixes/facing_check.py)."""
+        from compiled.api import heading_deg, bearing_deg
+        self.assertEqual(heading_deg((32, 10), (32, 11)), 90.0)   # mark +col: unchanged (90 is its own mirror)
+        self.assertEqual(heading_deg((32, 10), (32, 9)), -90.0)   # mark -col: unchanged
+        self.assertEqual(heading_deg((32, 10), (33, 10)), 180.0)  # mark +row (HAZARD says 0): the body faces -row
+        self.assertEqual(heading_deg((32, 10), (31, 10)), 0.0)    # mark -row (HAZARD says 180): the body faces +row
+        self.assertEqual(heading_deg((32, 10), (33, 11)), 135.0)  # mark +45: true 135
+        # a body facing +row (mark at -row) has an object at a larger row straight ahead, one at a larger col on its left
+        self.assertEqual(bearing_deg((32, 10), heading_deg((32, 10), (31, 10)), (40, 10)), 0.0)
+        self.assertEqual(bearing_deg((32, 10), heading_deg((32, 10), (31, 10)), (32, 20)), 90.0)
+        self.assertEqual(bearing_deg((32, 10), heading_deg((32, 10), (31, 10)), (24, 10)), 180.0)
+
     def test_heading_range_and_bearing(self):
         # heading +col (facing (50, 9) from (50, 8)) = 90 deg in the body's arctan2(z, x) convention
         st = scene(objects={66: (50, 40), 64: (10, 8), 56: (90, 8) if False else (60, 8)})
@@ -120,10 +133,10 @@ class TestObservation(unittest.TestCase):
         self.assertEqual(by_id["1"]["bearing_deg"], None)
         self.assertEqual(api.wrap_deg(270.0), -90.0)
         self.assertEqual(api.wrap_deg(-180.0), 180.0)
-        st = scene(agent=(50, 8), facing=(49, 7), objects={66: (50, 40)})  # diagonal mark: heading -135
+        st = scene(agent=(50, 8), facing=(49, 7), objects={66: (50, 40)})  # diagonal mark at -135: true heading -45 (A52)
         obs = build_observation(st, PI_FIRST, "fire", {"hairbrush": 1.0, "purse": 5.0})
-        self.assertEqual(obs["heading_deg"], -135.0)
-        self.assertEqual({o["id"]: o for o in obs["objects"]}["66"]["bearing_deg"], -135.0)
+        self.assertEqual(obs["heading_deg"], -45.0)
+        self.assertEqual({o["id"]: o for o in obs["objects"]}["66"]["bearing_deg"], 135.0)  # +col is behind-left of -45
 
     def test_object_cells_one_pass_equals_per_object(self):
         rng = np.random.default_rng(3)

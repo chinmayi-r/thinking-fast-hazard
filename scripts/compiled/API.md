@@ -1,4 +1,4 @@
-# The program API for HAZARD (compiled policy, A39 step i), version 1.1
+# The program API for HAZARD (compiled policy, A39 step i), version 1.2
 
 This is the document a compiler (Opus, or a person) reads before writing a program that plays HAZARD's fire task
 without any model call during play. Every statement below is backed by `scripts/compiled/api.py` and by the HAZARD
@@ -60,7 +60,7 @@ camera has segmented and put on its map; the map is the robot's own.
 | `frames_left` | int | `EPISODE_FRAMES[task] - frame`, floor 0 | `challenge.py:53-59` |
 | `agent_cell` | (r, c) or None | the robot's map cell; None when off the map edge | `goal_map == -2`, `fireagent_controller.py:557-558` |
 | `facing_cell` | (r, c) or None | the cell one step ahead in the facing direction (8 directions) | `goal_map == -1`, `fireagent_controller.py:559-565` |
-| `heading_deg` | float or None | heading on the map from the facing mark: angle of (facing - agent) from +row (world x) toward +col (world z), the body's `get_facing()` convention (`envs/fire/agent.py:270-275`), quantized to 45 degrees | v1.1 |
+| `heading_deg` | float or None | the body's TRUE heading on the map: angle from +row (world x) toward +col (world z), quantized to 45 degrees. Computed as 180 minus the facing mark's angle, because HAZARD's `get_facing()` (`envs/fire/agent.py:270-275`) returns the mirror of the heading (measured in TDW, A52). v1.1 returned the mark's angle itself | v1.2 |
 | `holding` | list of object | what the robot holds (0 or 1 item) | `processed_input["holding_objects"]`, `challenge.py:149, 167-172` |
 | `at_object` | object or None | the object the robot just walked to; set only after a `walk_to` arrived, cleared otherwise | `processed_input["nearest_object"]`, `challenge.py:150-159, 357-360` |
 | `objects` | list of object | every object currently on the explored map, all categories | `processed_input["explored_object_name_list"]`, `challenge.py:136-148` |
@@ -71,7 +71,7 @@ camera has segmented and put on its map; the map is the robot's own.
 An **object** is `{"id": str, "name": str, "category": str, "is_target": bool, "value": float or None}`; objects
 in `objects` also carry `"cell": (r, c) or None` (mean of the object's explored cells, `llm.py:544-549`),
 `"straight_cells": float or None` (straight-line cells from the robot), `"range_m"` (the same in metres) and
-`"bearing_deg"` (direction relative to the heading, (-180, 180], positive = the robot's left; A41: the sign is derived
+`"bearing_deg"` (direction relative to the true heading, (-180, 180], positive = the robot's left; measured in TDW, A52: `turn_by(-90)` is a left turn and the bearing of a fixed object then decreases by 90)
 from `turn_by`'s "positive = clockwise" and `get_facing`'s arctan2(z, x) and is to be confirmed on the first camera
 episode). `value` is the category value for targets
 and None for everything else. Ids are strings (`challenge.py:144` builds them as str; the body does `int()` on them).
