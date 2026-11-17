@@ -11,7 +11,7 @@ import io
 import os
 import sys
 
-p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "HAZARD", "src", "HAZARD", "policy", "env_actions.py")
+p = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "HAZARD", "src", "HAZARD", "policy", "env_actions.py")
 s = io.open(p, encoding="utf-8").read()
 if "_walk_waypoint" in s:
     print("already patched")
@@ -63,8 +63,29 @@ new = '''        _wp = _walk_waypoint(path, _walk_lookahead_cells(env))  # A50: 
         if not effect_on_agents or task == "fire":
             _kf = env.controller.next_key_frame(force_direction=None)
 '''
-assert s.count(old) == 1, s.count(old)
-s = s.replace(old, new)
+if s.count(old) == 1:  # d35c71e
+    s = s.replace(old, new)
+else:  # 5a50c2d (policy/env_actions.py:74-103): no record_mode / task arguments, bare next_key_frame(); anchor on the
+    # "walk to first point" block of agent_walk_to (agent_walk_to_single_step has the same move_to lines but no such comment)
+    old2 = '''        # walk to first point
+        if path is None or len(path) <= 1:
+            return False, "don't know, maybe out of bounds"
+        env.controller.do_action(agent_idx=0, action="move_to", params={"target": TDWUtils.array_to_vector3(env.controller.grid_to_real(path[1])),
+                                                                        "reset_arms": reset_arms,
+                                                                        "arrived_at": 0.5})
+        env.controller.next_key_frame()
+'''
+    new2 = '''        # walk to first point
+        if path is None or len(path) <= 1:
+            return False, "don't know, maybe out of bounds"
+        _wp = _walk_waypoint(path, _walk_lookahead_cells(env))  # A50: path[1] unless HAZARD_WALK_LOOKAHEAD is set
+        env.controller.do_action(agent_idx=0, action="move_to", params={"target": TDWUtils.array_to_vector3(env.controller.grid_to_real(_wp)),
+                                                                        "reset_arms": reset_arms,
+                                                                        "arrived_at": 0.5})
+        env.controller.next_key_frame()
+'''
+    assert s.count(old2) == 1, ("no A50 anchor in this env_actions.py", s.count(old2))
+    s = s.replace(old2, new2)
 ast.parse(s)
 io.open(p, "w", encoding="utf-8", newline="\n").write(s)
 print("A50 applied, syntax OK")
