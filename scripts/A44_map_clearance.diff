@@ -1,0 +1,41 @@
+diff --git a/src/HAZARD/utils/model.py b/src/HAZARD/utils/model.py
+index cc0a8f4..5ca54dd 100644
+--- a/src/HAZARD/utils/model.py
++++ b/src/HAZARD/utils/model.py
+@@ -1,6 +1,7 @@
+ import torch
+ import torch.nn as nn
+ from typing import List, Optional
++import os
+ import numpy as np
+ 
+ from src.HAZARD.utils.distributions import Categorical, DiagGaussian
+@@ -133,6 +134,14 @@ Same utility functions as in TDWUtils, but:
+ - support batched inputs
+ """
+ 
++
++def _map_max_obstacle_height():
++    """A44 (iw-thinking-fast, 2026-11-17): points above this height (m) are not floor-level obstacles. HAZARD's shipped
++    cut is 2.5 m, which keeps the ceiling and wall cabinets as obstacles on the floor cells below them (A43). Set
++    HAZARD_MAP_MAX_OBSTACLE_H (e.g. 1.8, the body's clearance) to change it; unset = 2.5 as shipped."""
++    v = os.environ.get("HAZARD_MAP_MAX_OBSTACLE_H", "").strip()
++    return float(v) if v else 2.5
++
+ class PointCloud:
+     __WIDTH: int = -1
+     __HEIGHT: int = -1
+@@ -279,9 +288,10 @@ class Semantic_Mapping(nn.Module):
+         XZ = XZ.long()
+         zipped = XZ[0, :, :] * self.map_size_v + XZ[1, :, :]
+         
+-        zipped = zipped[Y < 2.5]
+-        id_map = id_map[Y < 2.5]
+-        Y = Y[Y < 2.5]
++        _hmax = _map_max_obstacle_height()  # A44: 2.5 as shipped unless HAZARD_MAP_MAX_OBSTACLE_H is set
++        zipped = zipped[Y < _hmax]
++        id_map = id_map[Y < _hmax]
++        Y = Y[Y < _hmax]
+         
+         sort_Y, order = torch.sort(Y.flatten())
+         sort_idx = zipped.flatten()[order]

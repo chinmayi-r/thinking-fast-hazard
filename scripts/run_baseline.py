@@ -43,9 +43,11 @@ def install_challenge_hook():
 class TimedAgent:
     """Delegates everything to the shipped agent; times choose_target and logs frame counts."""
 
-    def __init__(self, inner, log_path: Path, clock: str = "none", k: int = 0, fps: int = 30):
+    def __init__(self, inner, log_path: Path, clock: str = "none", k: int = 0, fps: int = 30, save_maps: int = 0):
         self.inner = inner
         self.clock, self.k, self.fps = clock, k, fps
+        self.save_maps = save_maps  # A43: save the map arrays of the first K decisions per episode (scripts/hazard_fixes/save_maps.py)
+        self.maps_dir = log_path.parent / "maps"
         self.frames_charged_total = 0
         self.agent_type = inner.agent_type  # challenge.py dispatches on this
         self.log = open(log_path, "w", encoding="utf-8")
@@ -70,6 +72,14 @@ class TimedAgent:
 
     def choose_target(self, state, processed_input):
         f0, c0 = self._frame()
+        if self.save_maps and self.n < self.save_maps:
+            try:
+                from hazard_fixes.save_maps import save_decision_maps
+                ch = HOLDER.get("challenge")
+                save_decision_maps(state, str(self.maps_dir), self.episode, self.n + 1, f0,
+                                   controller=ch.env.controller if ch is not None else None)
+            except Exception as e:
+                print(f"save_maps: {e}")
         t = time.perf_counter()
         action = self.inner.choose_target(state, processed_input)
         dt = time.perf_counter() - t
@@ -150,6 +160,7 @@ def main() -> int:
     ap.add_argument("--human_port", type=int, default=8765, help="human only: port of the local page (0 = any free port)")
     ap.add_argument("--no_camera", action="store_true", help="human only: do not save or show the robot's camera frame (text-only run)")
     ap.add_argument("--no_browser", action="store_true", help="human only: do not open the page in the default browser")
+    ap.add_argument("--save_maps", type=int, default=0, help="A43: save sem_map/goal_map/depth/camera arrays of the first K decisions per episode to <out>/maps/")
     ap.add_argument("--no_map", action="store_true", help="human only: do not draw the robot's map on the page (scripts/honest/map_image.py)")
     ap.add_argument("--human_hold", type=float, default=20.0, help="human only: seconds the final score stays on the page before exit")
     ap.add_argument("--cached_assets", action="store_true",
@@ -187,6 +198,7 @@ def main() -> int:
         time.sleep(5)
 
     install_challenge_hook()
+    sys.path.insert(0, str(Path(__file__).resolve().parent))  # scripts/ packages (hazard_fixes, honest, compiled, ...)
     from src.HAZARD.run_experiments import get_examplar_agent, submit  # same module path HAZARD uses
 
     # absolute prompt path so LLM agents work from any cwd (HAZARD's own default is relative to src/HAZARD)
@@ -233,7 +245,7 @@ def main() -> int:
         apply_honest_text(inner, honest_template, name_values=None if args.category_values else "scorer",
                           single_steps=not args.no_single_steps, turns=not args.no_turns,
                           fps=args.fps if args.clock == "tcm" else 0)
-    agent = TimedAgent(inner, out_dir / "decisions.jsonl", clock=args.clock, k=args.k, fps=args.fps)
+    agent = TimedAgent(inner, out_dir / "decisions.jsonl", clock=args.clock, k=args.k, fps=args.fps, save_maps=args.save_maps)
 
     t0 = time.perf_counter()
     rc = 0
