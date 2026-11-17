@@ -108,7 +108,7 @@ class TimedAgent:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--env", default="fire", choices=["fire", "flood", "wind"])
-    ap.add_argument("--agent", default="rule", help="rule | greedy | mcts | mctsv2 | random | llm | vlm | rrara_v1 | human | jev")
+    ap.add_argument("--agent", default="rule", help="rule | greedy | mcts | mctsv2 | random | llm | vlm | rrara_v1 | human | jev | program")
     ap.add_argument("--episodes", type=int, default=1)
     ap.add_argument("--port", type=int, default=10826)
     ap.add_argument("--build", default=r"G:\iw-thinking-fast\tdw_build\TDW\TDW.exe")
@@ -129,6 +129,7 @@ def main() -> int:
     ap.add_argument("--lm_id", default="claude-opus-5-5")
     ap.add_argument("--api_key_file", default="", help="path to a file holding the API key (never echoed)")
     ap.add_argument("--max_tokens", type=int, default=512, help="HAZARD's max new tokens per LLM call")
+    ap.add_argument("--program", default="", help="A39, --agent program: path to a compiled program module (scripts/compiled/API.md)")
     ap.add_argument("--jev_examples", default="", help="A37, --agent jev: text file of in-context examples prepended to Jev's state (none by default)")
     ap.add_argument("--resume_dir", default="", help="existing results folder to continue a sweep in (scenes with eval_result.json are skipped)")
     ap.add_argument("--record", action="store_true", help="HAZARD record_with_agents: capture every frame under <out>/images for a video (challenge.py:73)")
@@ -148,6 +149,9 @@ def main() -> int:
                     help="HAZARD use_cached_assets: load assets from <cwd>/data/assets instead of S3 (A28, cluster compute nodes "
                          "have no internet). Missing files make HAZARD write data/assets/download_assets.sh and exit 0.")
     args = ap.parse_args()
+    if args.agent == "program" and not args.program:  # A39: checked before any folder or build is created
+        print("--program is required for --agent program", file=sys.stderr)
+        return 2
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     clock_tag = "" if args.clock == "none" else (f"_tcm{args.fps}" if args.clock == "tcm" else f"_k{args.k}")
@@ -203,6 +207,10 @@ def main() -> int:
         inner = JevAgent(task=args.env, prompt_template_path=prompt_path, api_key_file=args.api_key_file, model=model,
                          examples_path=args.jev_examples or None)
         args.lm_source, args.lm_id = "jev", model  # the summary's llm block is labelled by these
+    elif args.agent == "program":  # A39: a compiled program in HAZARD's custom slot (scripts/compiled/api.py, API.md)
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from compiled.api import ProgramAgent
+        inner = ProgramAgent(task=args.env, program_path=args.program, fps=args.fps)
     else:
         inner = get_examplar_agent(agent_name=args.agent, env_name=args.env, prompt_path=prompt_path,
                                    lm_source=args.lm_source, lm_id=args.lm_id, api_key_file=args.api_key_file,
@@ -255,6 +263,9 @@ def main() -> int:
                                             hold_s=args.human_hold)
     if args.agent == "jev":
         summary["jev"] = inner.summary()  # A37: decisions, confidence, per-call wall, reported model ids, cost
+    if args.agent == "program":  # A39: decisions, illegal count, wall per decision, action counts
+        summary["program"] = inner.summary()
+        json.dump(inner.decision_log, open(out_dir / "program_decisions.json", "w"), indent=1)
     call_log = getattr(inner, "call_log", None)  # A18: per-API-call latency for llm agents
     if call_log:
         calls = [c["wall_s"] for c in call_log]
