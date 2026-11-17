@@ -11,10 +11,33 @@ import io
 import os
 import sys
 
-p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "HAZARD", "src", "HAZARD", "policy", "env_actions.py")
+HITS_HELPER = '''def _walk_hits(env):
+    """A54 (2026-11-17): object ids the Replicant's body parts are in contact with after the key frame (TDW
+    ReplicantDynamic.collisions, body parts excluded), with HAZARD's class for each ("Object", "Fire", "Agent", or "?")."""
+    try:
+        dyn = env.controller.agents[0].dynamic
+        ids = sorted({int(o) for lst in dyn.collisions.values() for o in lst if o not in dyn.body_parts})
+        objs = env.controller.manager.objects
+        return [[i, objs[i].name if i in objs else "?"] for i in ids]
+    except Exception as e:
+        return [["error", repr(e)]]
+
+
+'''
+
+p = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "HAZARD", "src", "HAZARD", "policy", "env_actions.py")
 s = io.open(p, encoding="utf-8").read()
-if "WALK_LOG" in s:
-    print("already patched")
+if "_walk_hits" in s:
+    print("already patched (with hits)")
+    sys.exit(0)
+if "WALK_LOG" in s:  # A46 without the A54 "hits" field: upgrade in place
+    old_line = '"status": [str(x) for x in status] if status is not None else None})'
+    assert s.count(old_line) == 1 and s.count("def _walk_log(") == 1
+    s = s.replace(old_line, '"status": [str(x) for x in status] if status is not None else None,\n                         "hits": _walk_hits(env)})')
+    s = s.replace("def _walk_log(", HITS_HELPER + "def _walk_log(", 1)
+    ast.parse(s)
+    io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+    print("A46 upgraded with hits, syntax OK")
     sys.exit(0)
 
 anchor = '"""this action is environment independent"""\n# def agent_walk_to('
@@ -27,13 +50,26 @@ def _walk_log_on():
     return _os.environ.get("HAZARD_WALK_LOG", "0").strip() == "1"
 
 
+def _walk_hits(env):
+    """A54 (2026-11-17): object ids the Replicant's body parts are in contact with after the key frame (TDW
+    ReplicantDynamic.collisions, body parts excluded), with HAZARD's class for each ("Object", "Fire", "Agent", or "?")."""
+    try:
+        dyn = env.controller.agents[0].dynamic
+        ids = sorted({int(o) for lst in dyn.collisions.values() for o in lst if o not in dyn.body_parts})
+        objs = env.controller.manager.objects
+        return [[i, objs[i].name if i in objs else "?"] for i in ids]
+    except Exception as e:
+        return [["error", repr(e)]]
+
+
 def _walk_log(env, target, agent_pos, target_pos, path, status):
     try:
         WALK_LOG.append({"frame": int(env.controller.frame_count), "target": int(target) if isinstance(target, int) else None,
                          "pos": [float(agent_pos[0]), float(agent_pos[2])],
                          "dist_m": float(np.linalg.norm(agent_pos[[0, 2]] - target_pos[[0, 2]])),
                          "next_cell": [int(path[1][0]), int(path[1][1])] if path is not None and len(path) > 1 else None,
-                         "status": [str(x) for x in status] if status is not None else None})
+                         "status": [str(x) for x in status] if status is not None else None,
+                         "hits": _walk_hits(env)})
     except Exception as e:  # logging must never stop a walk
         WALK_LOG.append({"error": repr(e)})
 
@@ -69,8 +105,19 @@ new = '''        env.controller.do_action(agent_idx=0, action="move_to", params=
                       env.controller.manager.objects[target].position if isinstance(target, int) else np.array(target), path,
                       _kf[0] if isinstance(_kf, tuple) and len(_kf) > 0 else None)
 '''
-assert s.count(old) == 1, s.count(old)
-s = s.replace(old, new)
+if s.count(old) == 1:  # d35c71e
+    s = s.replace(old, new)
+else:  # 5a50c2d (policy/env_actions.py:99-104): bare next_key_frame() ends agent_walk_to, right before agent_walk_to_single_step
+    old2 = "        env.controller.next_key_frame()\n\ndef agent_walk_to_single_step("
+    new2 = '''        _kf = env.controller.next_key_frame()
+        if _walk_log_on():  # A46
+            _walk_log(env, target, env.controller.agents[0].dynamic.transform.position,
+                      env.controller.manager.objects[target].position if isinstance(target, int) else np.array(target), path,
+                      _kf[0] if isinstance(_kf, tuple) and len(_kf) > 0 else None)
+
+def agent_walk_to_single_step('''
+    assert s.count(old2) == 1, ("no A46 anchor in this env_actions.py", s.count(old2))
+    s = s.replace(old2, new2)
 ast.parse(s)
 io.open(p, "w", encoding="utf-8", newline="\n").write(s)
 print("A46 applied, syntax OK")

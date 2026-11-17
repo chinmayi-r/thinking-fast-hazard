@@ -45,6 +45,28 @@ class TestWalkLog(unittest.TestCase):
         env_actions._walk_log(FakeEnv(), np.array([0, 0, 0]), np.array([0.0, 0.0, 0.0]), np.array([0.0, 0.0, 0.0]), None, None)
         self.assertEqual((env_actions.WALK_LOG[-1]["target"], env_actions.WALK_LOG[-1]["next_cell"], env_actions.WALK_LOG[-1]["status"]), (None, None, None))
 
+    def test_hits(self):
+        # A54: contacts after the key frame, body parts dropped, HAZARD class looked up; FakeEnv without dynamic -> error entry, never a raise
+        class Obj:
+            def __init__(self, n): self.name = n
+        class Env:
+            class C:
+                frame_count = 7
+                class A:
+                    class D:
+                        body_parts = [900, 901]
+                        collisions = {900: [55, 901], 901: [55, 77]}
+                    dynamic = D()
+                agents = [A()]
+                class M:
+                    objects = {55: Obj("Object"), 66: Obj("Fire")}
+                manager = M()
+            controller = C()
+        self.assertEqual(env_actions._walk_hits(Env()), [[55, "Object"], [77, "?"]])
+        self.assertEqual(env_actions._walk_hits(FakeEnv())[0][0], "error")
+        env_actions._walk_log(Env(), 1, np.array([0.0, 0.0, 0.0]), np.array([1.0, 0.0, 0.0]), None, None)
+        self.assertEqual(env_actions.WALK_LOG[-1]["hits"], [[55, "Object"], [77, "?"]])
+
     def test_runner_dump(self):
         from run_baseline import TimedAgent
 
