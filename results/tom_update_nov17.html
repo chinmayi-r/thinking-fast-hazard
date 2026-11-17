@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thinking Fast Enough Update</title>
+<style>
+:root { --bg:#faf8f3; --fg:#1d1b17; --muted:#5d5a52; --line:#d9d4c8; --accent:#8a4b1f; --th:#efeadf; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#1a1916; --fg:#ece8df; --muted:#a9a397; --line:#3a3730; --accent:#e0a068; --th:#262420; } }
+:root[data-theme="dark"] { --bg:#1a1916; --fg:#ece8df; --muted:#a9a397; --line:#3a3730; --accent:#e0a068; --th:#262420; }
+html,body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 Georgia, "Times New Roman", serif; }
+main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+h1 { font-size:28px; margin:0 0 4px; } .sub { color:var(--muted); margin:0 0 28px; font-size:15px; }
+h2 { font-size:19px; margin:30px 0 8px; color:var(--accent); } p, li { margin:0 0 10px; } ul { padding-left:20px; }
+table { border-collapse:collapse; width:100%; margin:10px 0 16px; font-size:15px; }
+th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); } th { background:var(--th); font-weight:600; }
+td.n { font-variant-numeric:tabular-nums; } .hi td { font-weight:600; }
+ol { padding-left:22px; } .small { color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Thinking Fast Enough on HAZARD</h1>
+<p class="sub">Update for Tom, Nov 17 · CR · every number labelled by machine and snapshot in NOTES.md</p>
+
+<h2>The question</h2>
+<p>A robot has a reflex that answers in no time and a slow brain that may answer better. Thinking is charged on the same clock as the world (30 frames per second of wall time, RRARA's rule). Does a gate between the two beat either alone?</p>
+
+<h2>The table: paper's snapshot, 25 test kitchens, clock on, Della</h2>
+<table>
+<tr><th>brain</th><th>value rate</th><th>frames of thinking per episode</th></tr>
+<tr class="hi"><td>hand reflex</td><td class="n">0.757</td><td class="n">0</td></tr>
+<tr><td>Jev, 0.2 s decision model, HAZARD's own text</td><td class="n">0.718</td><td class="n">194</td></tr>
+<tr><td>RRARA: reflex + Haiku checker</td><td class="n">0.708</td><td class="n">—</td></tr>
+<tr><td>Haiku alone</td><td class="n">0.410</td><td class="n">977</td></tr>
+<tr><td>random</td><td class="n">0.401</td><td class="n">0</td></tr>
+<tr><td>rule · MCTS</td><td class="n">0.383 · 0.359</td><td class="n">0</td></tr>
+</table>
+<ul>
+<li>Jev beats Haiku on all 24 shared kitchens, paired gain 0.31. The slow brain spends two thirds of the episode thinking and lands at random's level: "by the time it's done thinking, the world will be destroyed", measured.</li>
+<li>Nothing beats the reflex. RRARA's checker costs a few points; its overrides are never wiser than the rule. A fast model can replace the hand reflex, which is the one positive.</li>
+</ul>
+
+<h2>Why the current snapshot scores 0.1 for everyone: three body defects</h2>
+<p>Each found in the code, verified in saved map arrays, fixed behind a flag with unit tests.</p>
+<ul>
+<li><b>The walk loop creeps.</b> Each step sends the body to the path's first corner, usually 13 cm away, with a 50 cm arrival radius: it turns, walks 5 cm, reports success, re-plans. "Max steps" is a 100-frame budget, so a walk nets about 1 m. The paper's snapshot has the same loop; its 1.25 m arrival forgives one more metre, which is most of the gap between 0.7 there and 0.1 here. Fix: a lookahead waypoint, 2 m per 100 frames measured.</li>
+<li><b>The ceiling is recorded as walls.</b> Fix: ignore points above body height. Rule agent, 25 kitchens, clock on: 0.230 with the fix vs 0.131 shipped, paired +0.10.</li>
+<li><b>Phantom objects on the map border.</b> Out-of-map points are clamped to the border, so far-plane pixels around an object's silhouette paint copies of it 25 m away; HAZARD's prompt reports the centre of those cells as "distance", so a comb 2 m away reads 30 m. Every brain that reads distances is fooled; random reads nothing, which is why random holds up here. Fix: drop out-of-map points.</li>
+</ul>
+<p class="small">Also found: HAZARD's heading function returns the mirror of the true heading; our honest text had left and right swapped until this morning (fixed, tests).</p>
+
+<h2>Honest text and the human ceiling</h2>
+<p>HAZARD's prompt gives distances in cells, hides why a walk failed and prints a literal placeholder for history. Rewritten to say what a navigation stack knows: metres, bearings, feasibility, stop reason, full history, the cost of each option. With it Jev saves items on 3a-1 where before it only looked around. Played by hand with unlimited time, CR and I both score 0.222 on 3a-1; with the three fixes I reach three items but two have already burned. The worth-5 item there sits on a fire source and is gone before frame 50. The ceiling is the fire, not the brain.</p>
+
+<h2>Liane's loop</h2>
+<p>Built end to end. Round 1 compiled by Opus from Haiku's traces: 0.204 on five training scenes; round 2, with round 1's program and validation in the prompt: 0.294. Both run on the 20 held-out kitchens this afternoon.</p>
+
+<h2>What it shows</h2>
+<p>On HAZARD fire the best policy is "always run the reflex", and that is the task, not the implementation: nearest valuable item first is the right answer, so deliberation has no decision to improve and a gate has nothing to protect. A clean negative with the reason named, and the specification of a testbed that can show the gate: decisions where the greedy choice is wrong often enough that a slow solver, given time, scores well above a reflex, and where that time costs something. Everything built this month transfers unchanged.</p>
+
+<h2>Decisions for today</h2>
+<ol>
+<li>Keep HAZARD as the latency testbed; report the reflex ceiling and the three body defects.</li>
+<li>Design HAZARD scenes where greedy is wrong (a far high-value item that burns first, items behind doors), and run flood and wind under the clock, where the paper shows the reflex losing.</li>
+<li>Move to a benchmark that needs lookahead, as Karthik suggested, and port the clock and the gate to it.</li>
+</ol>
+<p class="small">Running today on Della: Jev with the honest text and with the body fixes on both snapshots, the compiled programs on the held-out kitchens, the phantom-object fix as its own column set.</p>
+</main>
+</body>
+</html>
