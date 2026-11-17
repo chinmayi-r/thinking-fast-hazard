@@ -46,21 +46,22 @@ Me and the map now:
 Frame 43 of 1500, 1457 frames left.
 Holding: nothing.
 Standing at: no item (I must walk to an item before I can pick it up).
-Target items I have seen, nearest first:
-- purse "small_purse" (id 62): worth 5; 1.81 m away, 84 deg to my right; path 2.0 m, walk time unknown yet (cap 100 frames).
-- hairbrush "b04_comb" (id 66): worth 1; 3.0 m away, straight ahead; path 3.2 m (0.4 m over unseen floor), walk time unknown yet (cap 100 frames).
-- purse "bag_3" (id 56): worth 1; 3.72 m away, 36 deg to my left; path 5.6 m (0.4 m over unseen floor), walk time unknown yet (cap 100 frames).
+Target items I have seen, nearest first (my walk planner may route through counters or walls it has already seen, and it cannot pass anything taller than 0.5 m; such a walk cannot arrive):
+- purse "small_purse" (id 62): worth 5; 1.81 m away, 84 deg to my right; path 2.0 m over seen floor, walk time unknown yet (cap 100 frames).
+- hairbrush "b04_comb" (id 66): worth 1; 3.0 m away, straight ahead; path 3.2 m, 0.4 m of it over unseen floor, walk time unknown yet (cap 100 frames).
+- purse "bag_3" (id 56): worth 1; 3.72 m away, 36 deg to my left; path 5.6 m, 0.4 m of it over unseen floor, walk time unknown yet (cap 100 frames).
 Fire: hottest spot on my map 400 C, 2.0 m away, straight ahead.
 Unseen floor: nearest 1.0 m away, straight ahead; 89 % of the floor within 3 m is mapped.
+Around me, the first thing in each direction: ahead: unseen floor at 1.0 m; ahead-left: unseen floor at 1.4 m; left: map edge at 3.3 m; behind-left: map edge at 1.5 m; behind: map edge at 1.1 m; behind-right: map edge at 1.5 m; right: map edge at 3.2 m; ahead-right: unseen floor at 1.4 m.
 Saved so far: nothing.
 
 Everything I have done so far, oldest first, with what actually happened:
 (nothing yet)
 
 Available actions, with what each will do and cost:
-A. walk to purse "small_purse" (id 62): path 2.0 m, walk time unknown yet (cap 100 frames); arriving lets me pick it up
-B. walk to hairbrush "b04_comb" (id 66): path 3.2 m (0.4 m over unseen floor), walk time unknown yet (cap 100 frames); arriving lets me pick it up
-C. walk to purse "bag_3" (id 56): path 5.6 m (0.4 m over unseen floor), walk time unknown yet (cap 100 frames); arriving lets me pick it up
+A. walk to purse "small_purse" (id 62): path 2.0 m over seen floor, walk time unknown yet (cap 100 frames); arriving lets me pick it up
+B. walk to hairbrush "b04_comb" (id 66): path 3.2 m, 0.4 m of it over unseen floor, walk time unknown yet (cap 100 frames); arriving lets me pick it up
+C. walk to purse "bag_3" (id 56): path 5.6 m, 0.4 m of it over unseen floor, walk time unknown yet (cap 100 frames); arriving lets me pick it up
 D. one step toward purse "small_purse" (id 62): a few frames; does not count as arriving
 E. look around: turn a full circle, 49 frames; adds what I see to my map
 F. turn left 90 deg: a few frames
@@ -112,21 +113,22 @@ Me and the map now:
 Frame 149 of 1500, 1351 frames left.
 Holding: nothing.
 Standing at: no item (I must walk to an item before I can pick it up).
-Target items I have seen, nearest first:
-- purse "small_purse" (id 62): worth 5; 3.01 m away, 86 deg to my right; path 3.2 m, about 283 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 3 walks; walks tried 1, last ended 3.01 m short.
-- purse "bag_3" (id 56): worth 1; 3.16 m away, 18 deg to my left; path 4.4 m (0.4 m over unseen floor), about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks.
-- hairbrush "b04_comb" (id 66): worth 1; 3.23 m away, 22 deg to my right; path 4.4 m (0.4 m over unseen floor), about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks.
+Target items I have seen, nearest first (my walk planner may route through counters or walls it has already seen, and it cannot pass anything taller than 0.5 m; such a walk cannot arrive):
+- purse "small_purse" (id 62): worth 5; 3.01 m away, 86 deg to my right; path 3.2 m over seen floor, about 283 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 3 walks; walks tried 1, last ended 3.01 m short.
+- purse "bag_3" (id 56): worth 1; 3.16 m away, 18 deg to my left; path 4.4 m, 0.4 m of it over unseen floor, about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks.
+- hairbrush "b04_comb" (id 66): worth 1; 3.23 m away, 22 deg to my right; path 4.4 m, 0.4 m of it over unseen floor, about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks.
 Fire: hottest spot on my map 400 C, 2.3 m away, 31 deg to my right.
 Unseen floor: nearest 1.0 m away, straight ahead; 89 % of the floor within 3 m is mapped.
+Around me, the first thing in each direction: ahead: unseen floor at 1.0 m; ahead-left: unseen floor at 1.4 m; left: map edge at 2.1 m; behind-left: map edge at 1.5 m; behind: map edge at 1.1 m; behind-right: map edge at 1.5 m; right: map edge at 4.4 m; ahead-right: unseen floor at 1.4 m.
 Saved so far: nothing.
 
 Everything I have done so far, oldest first, with what actually happened:
 1. frame 43: walked toward purse "small_purse" (id 62): moved 1.2 m in 106 frames; ended 3.01 m from it (was 1.81 m): walked but got no closer (the path led around or away)
 
 Available actions, with what each will do and cost:
-A. walk to purse "small_purse" (id 62): path 3.2 m, about 283 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 3 walks; arriving lets me pick it up
-B. walk to purse "bag_3" (id 56): path 4.4 m (0.4 m over unseen floor), about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks; arriving lets me pick it up
-C. walk to hairbrush "b04_comb" (id 66): path 4.4 m (0.4 m over unseen floor), about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks; arriving lets me pick it up
+A. walk to purse "small_purse" (id 62): path 3.2 m over seen floor, about 283 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 3 walks; arriving lets me pick it up
+B. walk to purse "bag_3" (id 56): path 4.4 m, 0.4 m of it over unseen floor, about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks; arriving lets me pick it up
+C. walk to hairbrush "b04_comb" (id 66): path 4.4 m, 0.4 m of it over unseen floor, about 389 frames at my speed so far: more than one walk's cap of 100, so one walk will stop short and it takes about 4 walks; arriving lets me pick it up
 D. one step toward purse "small_purse" (id 62): a few frames; does not count as arriving
 E. look around: turn a full circle, 49 frames; adds what I see to my map
 F. turn left 90 deg: a few frames

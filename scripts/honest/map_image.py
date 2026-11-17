@@ -16,6 +16,8 @@ COL_OBJ = (120, 130, 150)
 COL_TARGET = (214, 48, 40)
 COL_ROBOT = (40, 170, 90)
 COL_PATH = (50, 110, 230)
+COL_PATH_UNSEEN = (240, 150, 30)
+COL_PATH_BLOCKED = (230, 40, 200)
 COL_TEXT = (20, 20, 20)
 
 
@@ -35,8 +37,10 @@ def crop_box(explored, agent=None, margin_cells=8):
     return r0, r1, c0, c1
 
 
-def render_map(state, obs=None, out_path=None, px=384, paths=None, frame=None):
-    """Draw the map; save to out_path when given. Returns (PIL image, info dict with the crop box and scale)."""
+def render_map(state, obs=None, out_path=None, px=384, paths=None, frame=None, path_marks=None):
+    """Draw the map; save to out_path when given. Returns (PIL image, info dict with the crop box and scale).
+    paths: {id: corner points} drawn blue; path_marks: {id: [((r, c), kind)]} drawn on top, unseen stretches orange
+    and stretches through a known obstacle magenta (honest_text.classify_path)."""
     from PIL import Image, ImageDraw, ImageFont
 
     sem = state["sem_map"]
@@ -72,6 +76,14 @@ def render_map(state, obs=None, out_path=None, px=384, paths=None, frame=None):
         for pts in paths.values():
             if pts and len(pts) > 1:
                 draw.line([to_xy(p) for p in pts], fill=COL_PATH, width=max(1, int(scale * 0.5)))
+    if path_marks:
+        rr = max(1.5, scale * 0.45)
+        for marks in path_marks.values():
+            for cell, kind in marks:
+                if kind == "known":
+                    continue
+                x, y = to_xy(cell)
+                draw.ellipse([x - rr, y - rr, x + rr, y + rr], fill=COL_PATH_UNSEEN if kind == "unseen" else COL_PATH_BLOCKED)
     if obs:
         rad = max(3.0, scale * 1.6)
         for o in obs["objects"]:

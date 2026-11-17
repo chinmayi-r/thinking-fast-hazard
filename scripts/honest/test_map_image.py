@@ -10,7 +10,8 @@ import unittest
 import numpy as np
 
 from compiled.api import build_observation
-from honest.map_image import COL_FLOOR, COL_LOW, COL_ROBOT, COL_TALL, COL_TARGET, COL_UNSEEN, crop_box, render_map
+from honest.map_image import (COL_FLOOR, COL_LOW, COL_PATH_BLOCKED, COL_PATH_UNSEEN, COL_ROBOT, COL_TALL, COL_TARGET,
+                              COL_UNSEEN, crop_box, render_map)
 from honest.test_honest_text import NAME_VALUES, TARGET_VALUES, make_input, make_state
 
 
@@ -60,6 +61,15 @@ class TestRender(unittest.TestCase):
         self.assertEqual(px(im, info, (10, 5)), COL_FLOOR)
         im2, _ = render_map(st, None, None)  # no observation: floor and objects only
         self.assertEqual(im2.size, im.size)
+
+    def test_path_marks_by_class(self):
+        st = make_state(unexplored=(0, 64, 20, 24))
+        obs = build_observation(st, make_input(), "fire", TARGET_VALUES)
+        marks = {"66": [((32, 15), "known"), ((32, 21), "unseen"), ((32, 35), "tall")]}
+        im, info = render_map(st, obs, None, paths={"66": [(32, 10), (32, 40)]}, path_marks=marks)
+        self.assertEqual(px(im, info, (32, 21)), COL_PATH_UNSEEN)
+        self.assertEqual(px(im, info, (32, 35)), COL_PATH_BLOCKED)
+        self.assertNotEqual(px(im, info, (32, 15)), COL_PATH_UNSEEN)  # known stretches keep the plain path colour
 
     def test_all_unexplored(self):
         st = make_state()

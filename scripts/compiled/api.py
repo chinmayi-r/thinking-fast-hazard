@@ -54,6 +54,34 @@ def object_cell(sem_map, obj_id):
     return None if len(pts) == 0 else (int(round(pts[:, 0].mean())), int(round(pts[:, 1].mean())))
 
 
+def object_cells(sem_map):
+    """All objects' mean explored cells in one pass over the map: {id: (row, col)}. Same numbers as object_cell()
+    per id (the per-id version costs a full-map scan per object: 45 objects took 0.8 s on the laptop, Nov 17)."""
+    m = np.asarray(sem_map["explored"]) * np.asarray(sem_map["id"])
+    pts = np.argwhere(m != 0)
+    if len(pts) == 0:
+        return {}
+    vals = m[pts[:, 0], pts[:, 1]]
+    ids, inv = np.unique(vals, return_inverse=True)
+    counts = np.bincount(inv)
+    rows = np.bincount(inv, weights=pts[:, 0]) / counts
+    cols = np.bincount(inv, weights=pts[:, 1]) / counts
+    return {int(i): (int(round(r)), int(round(c))) for i, r, c in zip(ids, rows, cols)}
+
+
+def crop_box(explored, cells=(), margin=40):
+    """Rows/cols spanning the explored area and the given cells plus a margin (4 m by default), for planning on a
+    crop instead of the whole 512 x 512 map. Outside the explored area HAZARD's weight is uniform (unexplored cost),
+    so a path that stays more than two cells inside the crop is the same as on the full map."""
+    h, w = explored.shape
+    pts = np.argwhere(explored == 1)
+    rs = [int(c[0]) for c in cells if c is not None] + ([int(pts[:, 0].min()), int(pts[:, 0].max())] if len(pts) else [])
+    cs = [int(c[1]) for c in cells if c is not None] + ([int(pts[:, 1].min()), int(pts[:, 1].max())] if len(pts) else [])
+    if not rs:
+        return 0, h, 0, w
+    return max(0, min(rs) - margin), min(h, max(rs) + margin + 1), max(0, min(cs) - margin), min(w, max(cs) + margin + 1)
+
+
 def heading_deg(agent, facing):
     """The robot's heading on the map, in degrees, from the facing mark: the angle of (facing - agent) measured from
     +row (world +x) toward +col (world +z), the same convention as the body's get_facing() (envs/fire/agent.py:270-275,
@@ -85,17 +113,25 @@ class Paths:
     obstacles) because one full-map pyastar2d call costs 0.1-0.2 s (rrara/reflex.py notes); lengths are returned in full
     cells (0.1 m). The weight is computed once per observation and reused for every object."""
 
-    def __init__(self, obs, coarse=4):
+    def __init__(self, obs, coarse=4, crop=True):
         self.obs = obs
         self.coarse = max(1, int(coarse))
+        self.crop = crop
         self._weight = None
+        self._origin = (0, 0)  # full-map cell of the crop's top-left corner (a multiple of coarse)
 
     def _weight_map(self, dest):
         if self._weight is None:
             sem = self.obs["map"]
-            w = get_astar_weight(sem_map={"explored": sem["explored"], "height": sem["height"]},
-                                 origin=self.obs["agent_cell"], destination=dest)
+            ex, hg = sem["explored"], sem["height"]
             c = self.coarse
+            if self.crop:
+                cells = [self.obs["agent_cell"]] + [o.get("cell") for o in self.obs["objects"]]
+                r0, r1, c0, c1 = crop_box(ex, cells)
+                r0, c0 = (r0 // c) * c, (c0 // c) * c
+                ex, hg = ex[r0:r1, c0:c1], hg[r0:r1, c0:c1]
+                self._origin = (r0, c0)
+            w = get_astar_weight(sem_map={"explored": ex, "height": hg}, origin=self.obs["agent_cell"], destination=dest)
             if c > 1:
                 h, wd = w.shape
                 h2, w2 = h // c, wd // c
@@ -118,13 +154,15 @@ class Paths:
         if origin is None or dest is None:
             return None
         c = self.coarse
-        o, d = (origin[0] // c, origin[1] // c), (dest[0] // c, dest[1] // c)
+        w = self._weight_map(dest)
+        r0, c0 = self._origin
+        o, d = ((origin[0] - r0) // c, (origin[1] - c0) // c), ((dest[0] - r0) // c, (dest[1] - c0) // c)
         if o == d:
             return [tuple(origin)]
-        path = get_astar_path(self._weight_map(dest), o, d)
+        path = get_astar_path(w, o, d)
         if path is None or len(path) == 0:
             return None
-        return [(int(p[0]) * c, int(p[1]) * c) for p in path]
+        return [(int(p[0]) * c + r0, int(p[1]) * c + c0) for p in path]
 
     def cells(self, obj_id):
         """Path length in full cells (0.1 m) from the robot to the object's cell; None as for path()."""
@@ -138,13 +176,13 @@ class Paths:
 
 
 # ---------------------------------------------------------------- the observation
-def _obj(entry, target_values, agent=None, sem_map=None, heading=None):
+def _obj(entry, target_values, agent=None, cells=None, heading=None):
     cat = entry["category"]
     is_target = cat in target_values
     rec = {"id": str(entry["id"]), "name": entry["name"], "category": cat, "is_target": is_target,
            "value": float(target_values[cat]) if is_target else None}
-    if sem_map is not None:
-        cell = object_cell(sem_map, int(entry["id"]))
+    if cells is not None:
+        cell = cells.get(int(entry["id"]))
         rec["cell"] = cell
         straight = None if (cell is None or agent is None) else float(np.hypot(cell[0] - agent[0], cell[1] - agent[1]))
         rec["straight_cells"] = straight
@@ -166,7 +204,8 @@ def build_observation(state, processed_input, task, target_values, last_action=N
     facing = facing_cell(goal_map)
     heading = heading_deg(agent, facing)
     frame = int(processed_input["step"])  # env.controller.frame_count at decision time (challenge.py:160)
-    objects = [_obj(o, target_values, agent, sem_map, heading) for o in processed_input["explored_object_name_list"]]
+    cells = object_cells(sem_map)
+    objects = [_obj(o, target_values, agent, cells, heading) for o in processed_input["explored_object_name_list"]]
     holding = [_obj(o, target_values) for o in processed_input["holding_objects"]]
     near = processed_input.get("nearest_object") or []
     at_object = _obj(near[0], target_values) if near else None  # set only after a walk_to arrived (challenge.py:357-360)

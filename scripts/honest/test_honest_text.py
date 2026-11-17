@@ -14,8 +14,8 @@ import unittest
 
 import numpy as np
 
-from honest.honest_text import (EXPLORE_FRAMES, Honest, apply_honest_text, direction_text, load_template,
-                                name_value_table)
+from honest.honest_text import (EXPLORE_FRAMES, Honest, ahead_facts, apply_honest_text, classify_path, direction_text,
+                                load_template, name_value_table)
 from human.human_agent import HumanAgent
 from jev.client import JevClient
 from jev.jev_agent import JevAgent
@@ -135,6 +135,112 @@ class TestHonestState(unittest.TestCase):
         s = h.state_text()
         self.assertIn("Fire: nothing hot on my map yet.", s)
         self.assertIn("Unseen floor: none within 3 m; 100 % of the floor within 3 m is mapped.", s)
+
+
+class TestFeasibility(unittest.TestCase):
+    def test_classes_known_unseen_blocked(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        # known floor all the way to the comb
+        h.begin_decision(make_state(), make_input())
+        f = h.facts["66"]
+        self.assertEqual((f["feasible"], f["unseen_m"], f["low_m"], f["tall_m"]), ("known", 0.0, 0.0, 0.0))
+        self.assertIn('(id 66): worth 1; 3.0 m away, straight ahead; path 3.2 m over seen floor', h.state_text())
+        # an unseen band on the way
+        h.begin_decision(make_state(unexplored=(0, 64, 20, 24)), make_input())
+        f = h.facts["66"]
+        self.assertEqual(f["feasible"], "unknown")
+        self.assertGreater(f["unseen_m"], 0)
+        self.assertIn(f"path {f['path_m']} m, {f['unseen_m']} m of it over unseen floor", h.state_text())
+        # a 2.5 m wall across the whole map: HAZARD's planner goes through it, the text says the walk cannot arrive
+        h.begin_decision(make_state(wall=(0, 64, 30)), make_input())
+        f = h.facts["66"]
+        self.assertEqual(f["feasible"], "blocked")
+        self.assertGreater(f["tall_m"], 0)
+        s = h.state_text()
+        self.assertIn(f"but it goes through {f['tall_m']} m of counter, cabinet or wall my map already knows: this walk cannot arrive as planned", s)
+        self.assertIn("my walk planner may route through counters or walls it has already seen", s)
+        text, n, plans, actions = h.menu()
+        self.assertIn("cannot arrive as planned", plans[[a[1] for a in actions].index("66")])
+        marks = h.path_marks["66"]
+        self.assertTrue(any(k == "tall" for _, k in marks))
+        self.assertTrue(all(k in ("known", "unseen", "low", "tall") for _, k in marks))
+
+    def test_counter_is_tall_and_a_step_is_low(self):
+        st = make_state()
+        st["sem_map"]["height"][:, 30] = 0.9  # a kitchen counter: taller than 0.5 m, the body cannot pass it
+        st["sem_map"]["height"][:, 20] = 0.3  # a low object the planner prices at +10
+        marks = classify_path([(32, 10), (32, 40)], st["sem_map"]["explored"], st["sem_map"]["height"], 4)
+        kinds = [k for _, k in marks]
+        self.assertIn("tall", kinds)
+        self.assertIn("low", kinds)
+        self.assertEqual(classify_path(None, st["sem_map"]["explored"], st["sem_map"]["height"], 4), [])
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        st2 = make_state()
+        st2["sem_map"]["height"][:, 20] = 0.3
+        h.begin_decision(st2, make_input())
+        f = h.facts["66"]
+        self.assertEqual(f["feasible"], "unknown")
+        self.assertIn("m of it over low objects (under 0.5 m)", h.state_text())
+
+    def test_stop_reason_from_what_is_ahead(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        h.begin_decision(make_state(), make_input())
+        h.end_decision(("walk_to", "66"))
+        after = make_state(agent=(32, 27), facing=(32, 28))
+        after["sem_map"]["height"][20:45, 30] = 0.3  # a counter 0.3 m ahead when the robot stopped
+        h.begin_decision(after, make_input(step=149, result=False, info="max steps reached"))
+        rec = h.log[-1]
+        self.assertEqual(rec["ahead"], {"kind": "low obstacle", "dist_m": 0.3})
+        self.assertIn("stopped with low obstacle 0.3 m ahead of me", rec["text"])
+        self.assertIn("ran out of the 100-frame walk budget", rec["text"])
+        self.assertIsNone(ahead_facts(h.obs) if False else ahead_facts({"agent_cell": None, "heading_deg": 90.0, "map": h.obs["map"]}))
+        open_obs = dict(h.obs, agent_cell=(10, 10))
+        self.assertIsNone(ahead_facts(open_obs))
+
+    def test_blocked_plan_is_named_after_the_walk(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        h.begin_decision(make_state(wall=(0, 64, 30)), make_input())
+        h.end_decision(("walk_to", "66"))
+        h.begin_decision(make_state(agent=(32, 26), facing=(32, 27), wall=(0, 64, 30)),
+                         make_input(step=149, result=False, info="max steps reached"))
+        rec = h.log[-1]
+        self.assertIn("the planned path went through an obstacle my map already knew", rec["text"])
+        self.assertIn("stopped with wall 0.4 m ahead of me", rec["text"])
+
+    def test_explore_counts_new_and_gone_by_id(self):
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        h.begin_decision(make_state(), make_input(objects=OBJECTS[:3]))  # cabinet, comb, bag_3
+        h.end_decision(("explore", None))
+        h.begin_decision(make_state(), make_input(step=92, result=True, info="success", objects=[OBJECTS[0], OBJECTS[1], OBJECTS[3]]))
+        rec = h.log[-1]
+        self.assertEqual((rec["new_objects"], rec["gone_objects"]), (1, 1))
+        self.assertEqual(rec["text"], "looked around (49 frames): 1 new object on my map, 1 gone from it")
+        self.assertEqual(h.summary()["actions"], {"explore": 1})
+
+    def test_decision_time_full_map_many_objects(self):
+        rng = np.random.default_rng(0)
+        n = 512
+        explored = np.zeros((n, n), dtype=np.int64)
+        explored[150:400, 150:400] = 1
+        height = np.where(rng.random((n, n)) > 0.97, 0.9, 0.0).astype(np.float32)
+        ids = np.zeros((n, n), dtype=np.int64)
+        objs = []
+        for i in range(45):
+            r, c = int(rng.integers(155, 395)), int(rng.integers(155, 395))
+            ids[r:r + 3, c:c + 3] = 100 + i
+            objs.append({"name": f"obj{i}", "category": "hairbrush" if i < 8 else "cabinet", "id": str(100 + i)})
+        goal = np.zeros((n, n)); goal[256, 200] = -2; goal[256, 201] = -1
+        st = {"sem_map": {"explored": explored, "height": height, "id": ids, "other": np.full((1, n, n), np.log(25.0), dtype=np.float32)},
+              "goal_map": goal, "raw": {}}
+        h = Honest("fire", TARGET_VALUES, name_values=NAME_VALUES)
+        t = time.perf_counter()
+        h.begin_decision(st, make_input(objects=objs))
+        h.state_text()
+        h.menu()
+        dt = time.perf_counter() - t
+        print(f"\n  honest facts + text on a 512x512 map with 45 objects (8 targets): {dt*1000:.0f} ms")
+        self.assertLess(dt, 2.0, dt)  # 1.6 s a decision in the Nov 17 episode before the one-pass cells and the crop; a loaded
+        # laptop takes about 1.2 s here, an idle one about 0.2 s; the episode's frames charged are the real measure
 
 
 class TestRadar(unittest.TestCase):

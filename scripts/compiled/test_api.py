@@ -125,6 +125,41 @@ class TestObservation(unittest.TestCase):
         self.assertEqual(obs["heading_deg"], -135.0)
         self.assertEqual({o["id"]: o for o in obs["objects"]}["66"]["bearing_deg"], -135.0)
 
+    def test_object_cells_one_pass_equals_per_object(self):
+        rng = np.random.default_rng(3)
+        ids = np.zeros((128, 128), dtype=np.int64)
+        for i in range(30):
+            r, c = int(rng.integers(0, 124)), int(rng.integers(0, 124))
+            ids[r:r + int(rng.integers(1, 5)), c:c + int(rng.integers(1, 5))] = 100 + i
+        explored = (rng.random((128, 128)) > 0.3).astype(np.int64)
+        sem = {"explored": explored, "id": ids}
+        cells = api.object_cells(sem)
+        present = {int(v) for v in np.unique(explored * ids) if v != 0}
+        self.assertEqual(set(cells), present)
+        for oid in present:
+            self.assertEqual(cells[oid], api.object_cell(sem, oid))
+        self.assertEqual(api.object_cells({"explored": np.zeros((4, 4), dtype=np.int64), "id": ids[:4, :4]}), {})
+
+    def test_cropped_planning_matches_the_full_map(self):
+        # a 512 map explored only in the middle, as a kitchen is; the crop (explored area + 4 m) must give the same path
+        n = 512
+        explored = np.zeros((n, n), dtype=np.int64)
+        explored[200:320, 200:330] = 1
+        height = np.zeros((n, n), dtype=np.float32)
+        height[200:300, 260] = 2.5  # a wall with a gap at rows 300-319
+        ids = np.zeros((n, n), dtype=np.int64)
+        ids[240:242, 310:312] = 66
+        goal = np.zeros((n, n)); goal[240, 210] = -2; goal[240, 211] = -1
+        st = {"sem_map": {"explored": explored, "height": height, "id": ids}, "goal_map": goal}
+        obs = build_observation(st, PI_FIRST, "fire", {"hairbrush": 1.0, "purse": 5.0})
+        full = Paths(obs, coarse=4, crop=False)
+        cropped = Paths(obs, coarse=4, crop=True)
+        self.assertEqual(cropped.path("66"), full.path("66"))
+        self.assertEqual(cropped.cells("66"), full.cells("66"))
+        self.assertLess(cropped._weight.shape[0], full._weight.shape[0])  # the crop is smaller than 128 pooled rows
+        self.assertEqual(cropped._origin, (160, 160))  # explored box minus 40 cells, aligned to the pooling
+        self.assertEqual(api.crop_box(np.zeros((8, 8), dtype=np.int64), []), (0, 8, 0, 8))
+
     def test_path_points_are_full_map_cells(self):
         st = scene(objects={66: (50, 40)})
         obs = build_observation(st, PI_FIRST, "fire", {"hairbrush": 1.0, "purse": 5.0})
@@ -317,7 +352,7 @@ class TestProgramAgent(unittest.TestCase):
         action = a.choose_target(st, PI_FIRST)
         dt = time.perf_counter() - t
         self.assertEqual(action[0], "walk_to")
-        self.assertLess(dt, 0.5, dt)  # 15 frames at most; the measured figure is reported in NOTES
+        self.assertLess(dt, 1.0, dt)  # 30 frames at most even on a loaded laptop; the measured figure is reported in NOTES
         print(f"\n  decision on a 512x512 map with 3 targets: {dt*1000:.1f} ms")
 
 

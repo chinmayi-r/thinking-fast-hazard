@@ -22,7 +22,7 @@ import time
 import numpy as np
 
 import policy  # HAZARD package (src/HAZARD on PYTHONPATH), to find data/meta_data/value.json
-from compiled.api import CELL_M, EPISODE_FRAMES, Paths, build_observation
+from compiled.api import CELL_M, EPISODE_FRAMES, Paths, build_observation, bearing_deg
 
 HIGH_VALUE, LOW_VALUE = 5, 1  # challenge.py:89-90
 EXPLORE_FRAMES = 49  # measured, every explore (NOTES Oct 28)
@@ -63,20 +63,78 @@ def _dist_cells(a, b):
     return None if a is None or b is None else float(np.hypot(a[0] - b[0], a[1] - b[1]))
 
 
-def unseen_cells_along(path, explored):
-    """Number of 1-cell steps along the polyline `path` (corner points, full-map cells) that land on unexplored cells."""
+def cells_along(path, shape):
+    """The 1-cell steps along the polyline `path` (corner points, full-map cells), clipped to the map."""
     if path is None or len(path) < 2:
-        return 0
-    n = 0
-    H, W = explored.shape
+        return []
+    H, W = shape
+    out = []
     for (r0, c0), (r1, c1) in zip(path[:-1], path[1:]):
         steps = max(1, int(round(float(np.hypot(r1 - r0, c1 - c0)))))
         for k in range(1, steps + 1):
             r = int(round(r0 + (r1 - r0) * k / steps))
             c = int(round(c0 + (c1 - c0) * k / steps))
-            if explored[min(max(r, 0), H - 1), min(max(c, 0), W - 1)] == 0:
-                n += 1
-    return n
+            out.append((min(max(r, 0), H - 1), min(max(c, 0), W - 1)))
+    return out
+
+
+def unseen_cells_along(path, explored):
+    """Number of 1-cell steps along `path` that land on unexplored cells."""
+    return sum(1 for r, c in cells_along(path, explored.shape) if explored[r, c] == 0)
+
+
+def classify_path(path, explored, height, coarse):
+    """What the planner chose to walk through, by the pooled block the planner itself priced (block max height, block
+    min explored): per 1-cell step one of "known" (seen floor), "unseen", "low" (a seen object 0.1-0.5 m tall, which
+    HAZARD's planner prices at +10 and the body may or may not pass) or "tall" (a seen obstacle over 0.5 m: a counter,
+    cabinet, appliance or wall, which the body cannot pass). A real navigation stack never returns a path through a
+    known obstacle (it is lethal); HAZARD's does, at a price, so the class says whether the walk can arrive at all."""
+    cells = cells_along(path, explored.shape)
+    if not cells:
+        return []
+    H, W = explored.shape
+    c = max(1, int(coarse))
+    out = []
+    for r, col in cells:
+        rb, cb = (r // c) * c, (col // c) * c
+        blk_ex = explored[rb:min(H, rb + c), cb:min(W, cb + c)]
+        blk_h = height[rb:min(H, rb + c), cb:min(W, cb + c)]
+        seen = blk_ex == 1
+        hmax = float(blk_h[seen].max()) if seen.any() else 0.0
+        if hmax > 0.5:
+            kind = "tall"
+        elif hmax > 0.1:
+            kind = "low"
+        elif (blk_ex == 0).any():
+            kind = "unseen"
+        else:
+            kind = "known"
+        out.append(((r, col), kind))
+    return out
+
+
+def ahead_facts(obs, max_m=0.6):
+    """The first thing on the robot's own map in the cells straight ahead within max_m (A41: the depth camera faces
+    forward and the map updates during a walk, env_actions.py:116, so what the robot stopped against is on the map).
+    None when nothing is there or the heading is unknown."""
+    agent, heading = obs["agent_cell"], obs["heading_deg"]
+    if agent is None or heading is None:
+        return None
+    ex, hg = obs["map"]["explored"], obs["map"]["height"]
+    H, W = ex.shape
+    th = np.radians(heading)
+    dr, dc = np.cos(th), np.sin(th)
+    for step in range(2, int(round(max_m / CELL_M)) + 1):
+        r, c = int(round(agent[0] + dr * step)), int(round(agent[1] + dc * step))
+        if r < 0 or r >= H or c < 0 or c >= W:
+            return {"kind": "map edge", "dist_m": round(step * CELL_M, 1)}
+        if ex[r, c] == 1 and hg[r, c] > 0.5:
+            return {"kind": "wall", "dist_m": round(step * CELL_M, 1)}
+        if ex[r, c] == 1 and hg[r, c] > 0.1:
+            return {"kind": "low obstacle", "dist_m": round(step * CELL_M, 1)}
+        if ex[r, c] == 0:
+            return {"kind": "unseen floor", "dist_m": round(step * CELL_M, 1)}
+    return None
 
 
 def load_template(path, task):
@@ -111,6 +169,7 @@ class Honest:
         self.obs = None
         self.state = None
         self.facts = {}  # target id -> path facts this decision
+        self.path_marks = {}  # target id -> [((row, col), kind)] along the planned path, for the map picture
         self.t_start = None
 
     # ---- values
@@ -158,10 +217,14 @@ class Honest:
                "moved_m": moved, "target": p["target"], "was_m": p["was_m"], "remaining_m": None, "new_objects": None}
         if name in ("walk_to", "walk_to_single") and p["target"] is not None:
             rec["remaining_m"] = self._target_range(obs, p["target"])
+            rec["ahead"] = ahead_facts(obs)  # what the robot stopped against, from its own map
             if moved is not None and moved >= MOVED_EPS_M and frames > 0:
                 self.speed.append((moved, frames))
         elif name == "explore":
-            rec["new_objects"] = len(obs["objects"]) - p["n_objects"]
+            now = {o["id"] for o in obs["objects"]}
+            before = p.get("object_ids") or set()
+            rec["new_objects"] = len(now - before)
+            rec["gone_objects"] = len(before - now)
         elif name == "drop" and res["ok"] and p["holding"]:
             h = p["holding"][0]
             self.saved.append((h["id"], h["category"], self.value_of(h)))
@@ -178,7 +241,7 @@ class Honest:
             target = str(param)
         self.prev = {"n": self.n, "frame": obs["frame"], "agent_cell": obs["agent_cell"], "action": (name, param),
                      "target": target, "was_m": self._target_range(obs, target) if target else None,
-                     "n_objects": len(obs["objects"]), "holding": obs["holding"],
+                     "n_objects": len(obs["objects"]), "object_ids": {o["id"] for o in obs["objects"]}, "holding": obs["holding"],
                      "think_wall_s": round(think_wall, 4),
                      "think_frames": math.ceil(think_wall * self.fps) if self.fps else 0,
                      "planned": dict(self.facts.get(target, {})) if target else None,
@@ -188,6 +251,7 @@ class Honest:
     # ---- facts about the map
     def _compute_facts(self, obs):
         self.facts = {}
+        self.path_marks = {}
         targets = [o for o in obs["objects"] if o["is_target"] and o["cell"] is not None]
         targets.sort(key=lambda o: (o["straight_cells"], o["id"]))
         fpm = self.frames_per_m()
@@ -196,10 +260,11 @@ class Honest:
             if r["action"][0] == "walk_to" and r["target"] is not None:
                 tries.setdefault(r["target"], []).append(r)
         paths = Paths(obs, coarse=self.coarse) if obs["agent_cell"] is not None else None
-        explored = obs["map"]["explored"]
+        explored, height = obs["map"]["explored"], obs["map"]["height"]
         for o in targets[:PLAN_NEAREST]:
             path = paths.path(o["id"]) if paths is not None else None
-            fact = {"path_m": None, "unseen_m": None, "pred_frames": None, "need_frames": None,
+            fact = {"path_m": None, "unseen_m": None, "low_m": None, "tall_m": None, "feasible": None,
+                    "pred_frames": None, "need_frames": None,
                     "tries": len(tries.get(o["id"], [])),
                     "last_short_m": (tries[o["id"]][-1]["remaining_m"] if tries.get(o["id"]) else None)}
             if path is not None:
@@ -207,13 +272,20 @@ class Honest:
                 length_c = float(np.sum(np.linalg.norm(np.diff(pts, axis=0), axis=1))) if len(pts) > 1 else 0.0
                 fact["path_m"] = round(length_c * CELL_M, 2)
                 # HAZARD's A* returns the path's corner points only (astar.py:16-34, path_cleanup), so sample every segment cell by cell
-                fact["unseen_m"] = round(unseen_cells_along(path, explored) * CELL_M, 2)
+                marks = classify_path(path, explored, height, self.coarse)
+                self.path_marks[o["id"]] = marks
+                kinds = [k for _, k in marks]
+                fact["unseen_m"] = round(kinds.count("unseen") * CELL_M, 2)
+                fact["low_m"] = round(kinds.count("low") * CELL_M, 2)
+                fact["tall_m"] = round(kinds.count("tall") * CELL_M, 2)
+                fact["feasible"] = ("blocked" if fact["tall_m"] else "unknown" if (fact["unseen_m"] or fact["low_m"]) else "known")
                 if fpm is not None:
                     fact["need_frames"] = int(math.ceil(fact["path_m"] * fpm))  # at my speed so far, uncapped
                     fact["pred_frames"] = int(min(WALK_CAP_FRAMES, fact["need_frames"]))
             self.facts[o["id"]] = fact
         for o in targets[PLAN_NEAREST:]:
-            self.facts[o["id"]] = {"path_m": None, "unseen_m": None, "pred_frames": None, "need_frames": None,
+            self.facts[o["id"]] = {"path_m": None, "unseen_m": None, "low_m": None, "tall_m": None, "feasible": None,
+                                   "pred_frames": None, "need_frames": None,
                                    "tries": len(tries.get(o["id"], [])),
                                    "last_short_m": (tries[o["id"]][-1]["remaining_m"] if tries.get(o["id"]) else None)}
 
@@ -310,8 +382,17 @@ class Honest:
         if fact is None or fact["path_m"] is None:
             return "no path on my map"
         s = f"path {fact['path_m']} m"
-        if fact["unseen_m"]:
-            s += f" ({fact['unseen_m']} m over unseen floor)"
+        if fact.get("feasible") == "blocked":
+            s += (f", but it goes through {fact['tall_m']} m of counter, cabinet or wall my map already knows: "
+                  f"this walk cannot arrive as planned")
+            if fact["unseen_m"]:
+                s += f" ({fact['unseen_m']} m over unseen floor too)"
+        elif fact["unseen_m"] or fact["low_m"]:
+            parts = [f"{fact['unseen_m']} m of it over unseen floor" if fact["unseen_m"] else "",
+                     f"{fact['low_m']} m of it over low objects (under 0.5 m)" if fact["low_m"] else ""]
+            s += ", " + " and ".join(p for p in parts if p)
+        else:
+            s += " over seen floor"
         need = fact.get("need_frames")
         if need is None:
             s += f", walk time unknown yet (cap {WALK_CAP_FRAMES} frames)"
@@ -340,7 +421,8 @@ class Honest:
         targets = [o for o in obs["objects"] if o["is_target"]]
         targets.sort(key=lambda o: (self.facts.get(o["id"], {}).get("path_m") or 1e9, o["range_m"] or 1e9, o["id"]))
         if targets:
-            lines.append("Target items I have seen, nearest first:")
+            lines.append("Target items I have seen, nearest first (my walk planner may route through counters or walls it "
+                         "has already seen, and it cannot pass anything taller than 0.5 m; such a walk cannot arrive):")
             for o in targets:
                 f = self.facts.get(o["id"])
                 s = f"- {self.item_label(o)}: worth {self.value_of(o):g}"
@@ -406,6 +488,8 @@ class Honest:
             k = rec["new_objects"]
             s = f"looked around ({fr})"
             s += f": {k} new object{'s' if k != 1 else ''} on my map" if k is not None else ""
+            if rec.get("gone_objects"):
+                s += f", {rec['gone_objects']} gone from it"
             return s if rec["ok"] else s + f"; failed: {rec['info']}"
         if name == "pick_up":
             return f"picked up {tgt} ({fr})" if rec["ok"] else f"tried to pick up {tgt} ({fr}): failed, {rec['info']}"
@@ -433,8 +517,13 @@ class Honest:
                 why = "walked but got no closer (the path led around or away)"
             else:
                 why = f"ran out of the {WALK_CAP_FRAMES}-frame walk budget"
-            if planned.get("unseen_m"):
+            if planned.get("feasible") == "blocked":
+                why += "; the planned path went through an obstacle my map already knew"
+            elif planned.get("unseen_m"):
                 why += f"; the planned path crossed {planned['unseen_m']} m of unseen floor"
+            ahead = rec.get("ahead")
+            if ahead is not None:
+                why += f"; stopped with {ahead['kind']} {ahead['dist_m']} m ahead of me"
             return why
         if info == "target not in vision or memory":
             return "the item is no longer on my map"
@@ -509,7 +598,7 @@ class Honest:
                 "walks": len(walks), "walks_arrived": sum(1 for r in walks if r["ok"] and r["info"] == "success"),
                 "walks_capped": sum(1 for r in walks if r["info"] == "max steps reached"),
                 "saved": [list(s) for s in self.saved], "saved_value": sum(v for _, _, v in self.saved),
-                "actions": {}}
+                "actions": {a: sum(1 for r in self.log if r["action"][0] == a) for a in sorted({r["action"][0] for r in self.log})}}
 
 
 class HonestTextMixin:

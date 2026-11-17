@@ -102,7 +102,10 @@ class HumanAgent(LLM):
                 tv = {c: float((self.objects_info or {}).get(c, {}).get("value", 1)) for c in self.target_objects}
                 obs = build_observation(state, processed_input, self.task, tv)
                 map_png = os.path.join(save_dir, f"{frame:04d}_human_map.png")
-                render_map(state, obs, map_png, frame=frame)
+                honest = getattr(self, "honest", None)  # the honest text layer, when applied: its planned paths
+                marks = getattr(honest, "path_marks", None) if honest is not None else None
+                paths = {k: [c for c, _ in v] for k, v in marks.items()} if marks else None
+                render_map(state, obs, map_png, frame=frame, paths=paths, path_marks=marks)
             except Exception as e:  # the picture must never stop the game
                 print(f"HumanAgent: could not draw the map: {e}")
                 map_png = None
