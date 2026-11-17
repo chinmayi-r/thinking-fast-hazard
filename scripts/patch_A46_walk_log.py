@@ -18,7 +18,13 @@ HITS_HELPER = '''def _walk_hits(env):
         dyn = env.controller.agents[0].dynamic
         ids = sorted({int(o) for lst in dyn.collisions.values() for o in lst if o not in dyn.body_parts})
         objs = env.controller.manager.objects
-        return [[i, objs[i].name if i in objs else "?"] for i in ids]
+        out = []
+        for i in ids:  # [id, class, x, z]; position None when HAZARD does not track the object
+            o = objs.get(i)
+            pos = getattr(o, "position", None) if o is not None else None
+            out.append([i, o.name if o is not None else "?",
+                        float(pos[0]) if pos is not None else None, float(pos[2]) if pos is not None else None])
+        return out
     except Exception as e:
         return [["error", repr(e)]]
 
@@ -57,7 +63,13 @@ def _walk_hits(env):
         dyn = env.controller.agents[0].dynamic
         ids = sorted({int(o) for lst in dyn.collisions.values() for o in lst if o not in dyn.body_parts})
         objs = env.controller.manager.objects
-        return [[i, objs[i].name if i in objs else "?"] for i in ids]
+        out = []
+        for i in ids:  # [id, class, x, z]; position None when HAZARD does not track the object
+            o = objs.get(i)
+            pos = getattr(o, "position", None) if o is not None else None
+            out.append([i, o.name if o is not None else "?",
+                        float(pos[0]) if pos is not None else None, float(pos[2]) if pos is not None else None])
+        return out
     except Exception as e:
         return [["error", repr(e)]]
 
