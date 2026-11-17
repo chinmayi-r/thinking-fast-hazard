@@ -13,7 +13,7 @@ export HAZARD_MAP_MAX_OBSTACLE_H=1.8 HAZARD_WALK_LOOKAHEAD=1.0 HAZARD_WALK_LOOKA
 for CLK in ${CLKS:-off tcm}; do
   if [ "$CLK" = off ]; then OUT=reflex_A44_A50v3_A53_3a-1; CARGS=""; PORT=10830; else OUT=reflex_A44_A50v3_A53_3a-1_tcm30; CARGS="--clock tcm --fps 30"; PORT=10831; fi
   echo "== $(date '+%F %T') reflex 3a-1 clock=$CLK -> $OUT" | tee -a "$LOG"
-  timeout 1500 "$PY" -X utf8 "$ROOT/scripts/run_baseline.py" --env fire --agent rrara_v1 --reflector_mode off --save_maps 3 \
+  timeout 3000 "$PY" -X utf8 "$ROOT/scripts/run_baseline.py" --env fire --agent rrara_v1 --reflector_mode off --save_maps 3 \
       --episodes 1 --port $PORT --build "G:\iw-thinking-fast\tdw_build\TDW\TDW.exe" --out "G:\iw-thinking-fast\results" \
       --resume_dir "G:/iw-thinking-fast/results/$OUT" \
       --data_dir "G:\iw-thinking-fast\HAZARD\src\HAZARD\data\room_setup_fire\test_set\mm_kitchen_3a-1" $CARGS \
