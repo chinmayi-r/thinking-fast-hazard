@@ -42,12 +42,15 @@ class TestWalkLookahead(unittest.TestCase):
         # one segment of 30 cells: the waypoint is 10 cells along it, not the far corner
         self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 40]], 10.0), [10, 20])
 
-    def test_l_path_cut_in_the_second_segment(self):
-        # 4 cells right, then 20 cells down: 10 cells along the polyline is 6 cells into the second segment
-        self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 14], [30, 14]], 10.0), [16, 14])
+    def test_l_path_stops_at_the_first_corner(self):
+        # 4 cells right, then 20 cells down: the waypoint is the corner, never a point the straight line to which cuts it
+        self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 14], [30, 14]], 10.0), [10, 14])
+        # a long first segment is cut at the lookahead even when corners follow
+        self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 40], [30, 40]], 10.0), [10, 20])
 
-    def test_short_path_ends_at_the_target(self):
-        self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 12], [12, 12]], 10.0), [12, 12])
+    def test_short_first_segment_is_the_shipped_corner(self):
+        # a first segment shorter than the lookahead ends at its corner (the shipped behaviour for that step)
+        self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 12], [12, 12]], 10.0), [10, 12])
         self.assertEqual(env_actions._walk_waypoint([[10, 10], [10, 12]], 10.0), [10, 12])
 
     def test_diagonal_segment_rounds_to_cells(self):

@@ -32,22 +32,19 @@ helper = '''def _walk_lookahead_cells(env):
 
 
 def _walk_waypoint(path, lookahead_cells):
-    """The point `lookahead_cells` along the planned polyline `path` (corner points, map cells) from its start; the path's
-    end when it is shorter; the shipped path[1] when lookahead_cells <= 0. Returns [row, col] ints."""
+    """The point `lookahead_cells` along the planned path's FIRST segment (path[0] -> path[1], map cells), or path[1]
+    itself when that segment is shorter, so the straight line the body walks lies on the planned path; the shipped path[1]
+    when lookahead_cells <= 0. (A first version followed the polyline round corners: the body then cut corners into
+    counters, 31 of 63 steps "detected_obstacle", NOTES Nov 17 06:45.) Returns [row, col] ints."""
     if lookahead_cells <= 0 or len(path) < 2:
         return [int(path[1][0]), int(path[1][1])]
-    acc = 0.0
-    prev = np.asarray(path[0], dtype=float)
-    for i in range(1, len(path)):
-        p = np.asarray(path[i], dtype=float)
-        seg = float(np.linalg.norm(p - prev))
-        if seg > 0 and acc + seg >= lookahead_cells:
-            t = (lookahead_cells - acc) / seg
-            q = prev + t * (p - prev)
-            return [int(round(q[0])), int(round(q[1]))]
-        acc += seg
-        prev = p
-    return [int(path[-1][0]), int(path[-1][1])]
+    a = np.asarray(path[0], dtype=float)
+    b = np.asarray(path[1], dtype=float)
+    seg = float(np.linalg.norm(b - a))
+    if seg <= lookahead_cells or seg == 0:
+        return [int(path[1][0]), int(path[1][1])]
+    q = a + (lookahead_cells / seg) * (b - a)
+    return [int(round(q[0])), int(round(q[1]))]
 
 
 '''

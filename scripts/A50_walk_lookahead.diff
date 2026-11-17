@@ -1,6 +1,6 @@
 --- /tmp/env_actions_before_A50.py	2026-11-17 06:22:12.657137300 -0500
-+++ HAZARD/src/HAZARD/policy/env_actions.py	2026-11-17 06:22:12.809506700 -0500
-@@ -101,6 +101,37 @@
++++ HAZARD/src/HAZARD/policy/env_actions.py	2026-11-17 06:42:22.160092700 -0500
+@@ -101,6 +101,34 @@
          WALK_LOG.append({"error": repr(e)})
  
  
@@ -17,28 +17,25 @@
 +
 +
 +def _walk_waypoint(path, lookahead_cells):
-+    """The point `lookahead_cells` along the planned polyline `path` (corner points, map cells) from its start; the path's
-+    end when it is shorter; the shipped path[1] when lookahead_cells <= 0. Returns [row, col] ints."""
++    """The point `lookahead_cells` along the planned path's FIRST segment (path[0] -> path[1], map cells), or path[1]
++    itself when that segment is shorter, so the straight line the body walks lies on the planned path; the shipped path[1]
++    when lookahead_cells <= 0. (A first version followed the polyline round corners: the body then cut corners into
++    counters, 31 of 63 steps "detected_obstacle", NOTES Nov 17 06:45.) Returns [row, col] ints."""
 +    if lookahead_cells <= 0 or len(path) < 2:
 +        return [int(path[1][0]), int(path[1][1])]
-+    acc = 0.0
-+    prev = np.asarray(path[0], dtype=float)
-+    for i in range(1, len(path)):
-+        p = np.asarray(path[i], dtype=float)
-+        seg = float(np.linalg.norm(p - prev))
-+        if seg > 0 and acc + seg >= lookahead_cells:
-+            t = (lookahead_cells - acc) / seg
-+            q = prev + t * (p - prev)
-+            return [int(round(q[0])), int(round(q[1]))]
-+        acc += seg
-+        prev = p
-+    return [int(path[-1][0]), int(path[-1][1])]
++    a = np.asarray(path[0], dtype=float)
++    b = np.asarray(path[1], dtype=float)
++    seg = float(np.linalg.norm(b - a))
++    if seg <= lookahead_cells or seg == 0:
++        return [int(path[1][0]), int(path[1][1])]
++    q = a + (lookahead_cells / seg) * (b - a)
++    return [int(round(q[0])), int(round(q[1]))]
 +
 +
  """this action is environment independent"""
  # def agent_walk_to(env: WindEnv, target: Union[int, np.ndarray, List], max_steps=100, reset_arms: bool = False, arrived_at=1.0):
  def agent_walk_to(env, target: Union[int, np.ndarray, List], max_steps=100, reset_arms: bool = False, arrived_at=1.0,
-@@ -140,7 +171,8 @@
+@@ -140,7 +168,8 @@
              env.controller.agents[0].collision_detection.avoid = True
              env.controller.agents[0].collision_detection.objects = True
              return False, "don't know, maybe out of bounds"
