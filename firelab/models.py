@@ -24,7 +24,8 @@ LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 JEV_URL = "https://api.typesafe.ai/v1/systemone"
 # Dollars per million tokens (input, output). Jev: vendor list price, Nov 2026 (A37). Opus 5.5: the claude-api
 # skill's table cached Nov 3 2026 (thinking is billed as output). Check both on the day of a run.
-PRICES = {"jev": (0.042, 0.0), "claude-opus-5-5": (4.0, 20.0), "fake": (0.0, 0.0)}
+# Haiku 5.5: 0.10 and 0.50 for prompts up to 100 000 tokens (same table).
+PRICES = {"jev": (0.042, 0.0), "claude-opus-5-5": (4.0, 20.0), "claude-haiku-5-5": (0.10, 0.50), "fake": (0.0, 0.0)}
 
 
 class Answer(NamedTuple):

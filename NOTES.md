@@ -1558,3 +1558,11 @@ Rooms 0 to 49, 8 items, every gap against the reflex's 0.598 (`scripts/gap_table
 Kept for reference, planner without fire, clock off: 0.680 (+0.082 [-0.006, +0.165]); cautious 0.792 (+0.194 [+0.134, +0.252]). On the unseen rooms 50 to 99 the cautious planner with fire scores 0.932 against the reflex's 0.627 (+0.305 [+0.251, +0.362]).
 
 So CR's second condition, read her way, is met by the planner as it was (run 1: +0.218) and by more with the cautious one. Opus with the fire menu is running on Della (tag `opus_run50_fire`, started by the Della session at about 12:00 on CR's word, about 10 dollars and 2 hours expected).
+
+## Nov 23 (12:45 to 13:00): Liane's method on the fire task, offline: the writing and validation steps built (no model call, no Della run yet)
+
+Asked for through the chat "HAZARD/ThreeDWorld requirements audit" (it says CR read the plan and said "Yes, send it run dell after"). Preconditions first: A99. Built on the laptop: `firelab/PROGRAM_API.md`, `firelab/compile.py`, `firelab/validate.py`, `firelab/test_compile.py`, `scripts/liane_offline.sh`; Haiku's price added to `firelab/models.py` (the call itself needed no change).
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_compile.py firelab/test_models.py` : 12 passed.
+- Dry run of the writing step, no model call: `venv_kinder\Scripts\python.exe -m firelab.compile --games <ten saved Jev games> --out results/firelab_compiled/dryrun --round 1 --dry-run` wrote `results/firelab_compiled/dryrun/prompt_round1.md`: 131 080 characters, about 33 000 tokens, about 13 cents of Opus input a round.
+- Expected cost of the whole list: Haiku games about 5 cents; three writing rounds at most about 1.45 dollars (output capped at 16 000 tokens, effort medium); the script writes no further round once spending passes 1.60.
+- On Della, after CR pushes: `cd ~/thinking-fast-hazard && git fetch && git merge --no-edit origin/main && bash scripts/liane_offline.sh ~/iw-thinking-fast/.secrets/anthropic_key.txt 2>&1 | tee logs/liane_offline.log` on della-vis1.
