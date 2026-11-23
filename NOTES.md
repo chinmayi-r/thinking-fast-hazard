@@ -1602,3 +1602,9 @@ The chat "HAZARD/ThreeDWorld requirements audit" sent: CR read the text there an
 - I wrote the instruction for the Della session (same command as `opus_run50_fire`, agent `model` only, `--call-time measured`, tag `opus_run50_fire_measured`, 5 processes of 10 rooms, a guard that stops if 5 times the cost of the first 10 rooms passes 9 dollars). Estimate 5.5 dollars or less, from the 5.33 dollars the same agent cost on the same rooms with declared time.
 - This session's permission check refused to send it: a go-ahead to spend that CR did not type in this chat herself. I did not go around it. The run starts when CR says so here, or says so herself in the Della chat.
 - Nothing was spent. Liane's loop on Della is untouched.
+
+## Nov 23 (13:55): the Opus run with its real time charged is on hold; it never started
+
+A correction came through the chat "HAZARD/ThreeDWorld requirements audit": CR wanted the higher limit only. As relayed: the new limit stays (up to 10 more dollars of Opus today, on top of the 20.52 spent); hold the run with real time charged; no other Opus run on the 50 rooms until CR names it; Liane's loop continues.
+- The run had not started (13:45 entry above), so there is nothing to stop, no rows, and nothing spent on it.
+- The limit reached me through another chat, not from CR in this one. I record it as relayed. It changes nothing I do until CR names a run.
