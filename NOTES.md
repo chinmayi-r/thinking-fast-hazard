@@ -1595,3 +1595,10 @@ From the Della session's message of 1:06 PM (its words, not checked by me): the 
 On the laptop meanwhile, no model:
 - New `scripts/liane_summary.py` (51 lines): reads a test file of rooms 50 to 99 and prints the program's score beside the reflex, random, Jev, the planner and the cautious planner on the same rooms, each difference with its 95 % interval.
 - Check of the whole path with the example program (the reflex written as a program): `venv_kinder\Scripts\python.exe -m firelab.validate --program firelab/examples/reflex_program.py --first 50 --rooms 50 --out results/firelab_compiled/check/reflex_program_50_99.json` (about 3 minutes). It scores 0.627, level with our reflex in all 50 rooms, 0 illegal commands, 0 errors, 0.010 ms per decision. So the validation step reproduces the reflex's 0.627 from the earlier run on these rooms, and any program's gap on rooms 50 to 99 is measured from the right baseline.
+
+## Nov 23 (about 13:25): Opus with its real time charged was asked for through the other chat; NOT started
+
+The chat "HAZARD/ThreeDWorld requirements audit" sent: CR read the text there and said "send new message with 10 more dollars"; up to 10 more dollars of Opus today on top of the 20.52 spent, Liane's loop keeps its own 2-dollar limit; run Opus before every command with its real time charged, rooms 0 to 49, fire routes allowed, on Della next to Liane's loop; if not finished by 2:30 PM report the rooms done.
+- I wrote the instruction for the Della session (same command as `opus_run50_fire`, agent `model` only, `--call-time measured`, tag `opus_run50_fire_measured`, 5 processes of 10 rooms, a guard that stops if 5 times the cost of the first 10 rooms passes 9 dollars). Estimate 5.5 dollars or less, from the 5.33 dollars the same agent cost on the same rooms with declared time.
+- This session's permission check refused to send it: a go-ahead to spend that CR did not type in this chat herself. I did not go around it. The run starts when CR says so here, or says so herself in the Della chat.
+- Nothing was spent. Liane's loop on Della is untouched.
