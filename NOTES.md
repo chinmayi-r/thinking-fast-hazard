@@ -1619,3 +1619,39 @@ A third message from the chat "HAZARD/ThreeDWorld requirements audit": CR's word
 
 CR typed "Yes, start it" here. The instruction of the 13:45 entry went to the Della chat "Della availability check" (tag `opus_run50_fire_measured`, agent `model`, `--call-time measured`, 5 processes of 10 rooms, guard at 9 dollars). This route gives no receipt; it has started only when the Della chat says so. Estimate 5.5 dollars or less; with it, Opus spending today would be about 26 dollars, inside the 20.52 plus 10 relayed as the new limit.
 - Della chat, in its words: the five processes started at 2:13 PM Della time, detached; the cost guard after the first 10 rooms is set; Liane's script is untouched and still running.
+
+## Nov 23 (14:05 to 14:25): Liane's method, offline, first result; and Opus with its real time charged
+
+Both ran on Della, by the Della session. Laptop copies are typed from its messages and checked as said below.
+
+**Liane's method (A99), `scripts/liane_offline.sh`, finished about 2:05 PM.** Haiku played rooms 100 to 109 (score 0.503, 175 s of model time, 0.0215 dollars). Opus wrote programs in three rounds: round 1 accepted (42.6 s, 0.2375 dollars), round 2 accepted (24.7 s, 0.2135 dollars), round 3 not accepted (the reply hit the 16 000-token cap, stop reason max_tokens, 169 s, 0.4834 dollars, no program). On the validation rooms 110 to 119 (reflex 0.6255): round 1 0.524, round 2 0.688. Round 2 was kept and played rooms 50 to 99 once.
+
+| on rooms 50 to 99 | score | kept program minus it, 95 % interval | program ahead / level / behind |
+|---|---|---|---|
+| kept program (round 2) | 0.695 | | |
+| reflex | 0.627 | +0.067 [+0.037, +0.101] | 27 / 21 / 2 |
+| random | 0.063 | +0.632 [+0.577, +0.691] | 50 / 0 / 0 |
+| Jev before every command | 0.676 | +0.019 [-0.004, +0.040] | 25 / 14 / 11 |
+| planner, clock off | 0.888 | -0.193 [-0.262, -0.118] | 3 / 2 / 45 |
+| cautious planner, clock off | 0.932 | -0.238 [-0.279, -0.195] | 0 / 3 / 47 |
+
+- Time per decision: 0.02 ms on Della, 0.03 ms on the laptop (slowest 0.23 ms). 0 deaths, 0 illegal commands, 0 errors, no room at 0.
+- Preparation cost: 175 s of Haiku and 236 s of Opus, 0.9559 dollars in all (0.48 of it the round that gave nothing), under the 2-dollar limit.
+- Checked on the laptop: the program text from the message was saved as `results/firelab_compiled/v1/policy_round2.py` and replayed on rooms 50 to 99 with `firelab.validate` (no model, 6 minutes). Score, reflex score, ticks and decisions are the same as Della's in all 50 rooms (`test_rooms_50_99_laptop.json` against `della_test_rooms_50_99_typed.csv`). The table is `scripts/liane_summary.py` on the laptop file.
+- What the program does (Della session's reading, which matches the text): bank after every pick like the reflex, with three changes: it estimates the ticks left from how much is burning; it picks the most valuable item whose fetch and walk home fit that estimate; with a bag it takes one more item if it is within 10 ticks; it goes home through fire once if no other way exists. It has the doorway columns and the safe row written in as numbers, so it is specific to this room layout.
+- Weak points: one compile is one sample; round 2 was chosen on 10 validation rooms; behind the reflex in rooms 70 and 73; far behind both planners.
+
+**Opus before every command with its real time charged (tag `opus_run50_fire_measured`), started 2:13 PM on CR's word in this chat, finished 2:19 PM.** Rooms 0 to 49, fire routes allowed, effort low, 5 processes.
+
+| agent, rooms 0 to 49 | score | gap to the reflex (0.598), 95 % interval | ahead / level / behind | calls per run | median seconds per call | dollars |
+|---|---|---|---|---|---|---|
+| Opus before every command, charged 0.15 s per call | 0.861 | +0.263 [+0.209, +0.317] | 46 / 4 / 0 | 15.6 | 1.60 | 5.33 |
+| Opus before every command, charged its real time | 0.376 | -0.221 [-0.314, -0.132] | 13 / 4 / 33 | 6.0 | 2.96 | 2.78 |
+| RRARA version 1, Opus checking, free | 0.628 | +0.031 [-0.023, +0.082] | 26 / 12 / 12 | 9.6 | 3.36 | 4.96 |
+
+- Real time minus declared time, same rooms: -0.485 [-0.582, -0.390]. The robot stood for 204 of about 320 ticks per run; 24 rooms scored 0; 20 deaths; the bag was lost in 25 rooms (Della's count).
+- A call took 2.96 s at the median in this run against 1.60 s in the declared run an hour earlier. Five processes ran side by side both times; the difference is not explained. The real-time result depends on how fast the service answered at that hour.
+- The rows are a typed copy, checked against Della's summary on score, calls (299), charged ticks, deaths, zeros and dollars.
+- Money: 2.78 dollars. Opus runs today 23.30 dollars; Liane's loop 0.96 dollars more.
+
+Not run: Liane's method live or with more rounds; a second compile; the program on rooms 0 to 49; Opus real time with the checker (RRARA) or with strict accounting; anything at 10 items.
