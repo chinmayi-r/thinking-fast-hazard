@@ -6,7 +6,7 @@
   commit True,  moving True    as commit, but the reflex acts while the plan is being made ("moving", the
                                reflex-while-planning agent).
 None of the three is RRARA (Zheng et al. 2025): RRARA version 1 is a rule that acts plus a language model that
-checks the rule's action in the background; its spec for this task is PLAN.md section 7 (CR, Nov 24).
+checks the rule's action in the background; its spec for this task is PLAN.md section 7 (CR, Nov 23).
 Each thought is costed by a Clock (firelab/clock.py) and recorded with what the agent saw, for the saved games.
 """
 
@@ -33,7 +33,7 @@ def seen(world: gate.World, state: gate.State) -> dict:
 
 
 def thinker(body, clock: Clock, commit: bool = False, moving: bool = False, log: list | None = None,
-            thoughts: list | None = None, allow_fire: bool = True) -> list:
+            thoughts: list | None = None, allow_fire: bool = True, max_bag: int | None = None, caution: float = 1.0) -> list:
     """Run one episode. Commands go to `log` as in firelab.agents; one dict per thought goes to `thoughts`."""
     log = [] if log is None else log
     thoughts = [] if thoughts is None else thoughts
@@ -41,10 +41,10 @@ def thinker(body, clock: Clock, commit: bool = False, moving: bool = False, log:
     clock.start()
     while not body.over:
         before, began = body.ticks, time.perf_counter()
-        believed, state = body.believe()
+        believed, state = body.believe(caution)
         record = {"seen": seen(believed, state), "estimate": clock.estimate(len(gate.live(believed, state)))}
         predict(believed, state, before + record["estimate"])  # where the robot should be when the thought ends
-        value, actions, steps = plan(believed, state, cross_fire=allow_fire)
+        value, actions, steps = plan(believed, state, cross_fire=allow_fire, max_bag=max_bag)
         record.update(clock.cost(time.perf_counter() - began, steps), plan=[list(a) for a in actions], plan_value=value)
         thoughts.append(record)
         if not actions and not body.carrying():

@@ -4,10 +4,10 @@ Two models stand behind it:
   Jev     TypeSafe's "System One" choice model. A port of scripts/jev/client.py (A37): one request carries the
           text as `state` and one `choice` question whose criteria are the lettered options.
   Claude  through the official `anthropic` package, written from the claude-api skill's Python reference
-          (read Nov 24). claude-opus-5-5 cannot have thinking switched off, so the request leaves the thinking
+          (read Nov 23). claude-opus-5-5 cannot have thinking switched off, so the request leaves the thinking
           setting out and sets only output_config.effort; no temperature. The stop reason is checked BEFORE the
           answer is read: only "end_turn" is read as an answer. A refusal, a cut-off (max_tokens) or an API error
-          is recorded as no answer, and no second model is asked in its place (CR, Nov 24).
+          is recorded as no answer, and no second model is asked in its place (CR, Nov 23).
 A key is given as a file path only; its first line is read, handed to the client, and never printed or stored.
 """
 

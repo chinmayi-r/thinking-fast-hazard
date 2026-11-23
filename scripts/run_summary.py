@@ -1,4 +1,4 @@
-"""Summary of a planner run against the reflex and the clock-off planner, room by room (rooms 0-49, Nov 24).
+"""Summary of a planner run against the reflex and the clock-off planner, room by room (rooms 0-49, Nov 23).
 
 Reads results/firelab_sim/<tag>/rows_*.csv, the first run (reflex, random) and run1_off. Plays nothing.
 Run: venv_kinder\\Scripts\\python.exe scripts\\run_summary.py run2_declared   (PYTHONPATH = repo root)

@@ -1,4 +1,4 @@
-"""Seconds per search step on Della, from CR's timing of Nov 24 (della-r3c3n13, Xeon Gold 6242 at 2.80 GHz).
+"""Seconds per search step on Della, from CR's timing of Nov 23 (della-r3c3n13, Xeon Gold 6242 at 2.80 GHz).
 
 CR's results/slides_nov23/time_planner.py printed the seconds of the first plan in rooms 0-9 (6 and 8 items) and
 rooms 0-2 (10 items). The number of search steps of each of those plans does not depend on the machine, so it is

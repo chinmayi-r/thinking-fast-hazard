@@ -32,7 +32,7 @@ class Session:
 
     def __init__(self, skills: Skills, allow_fire: bool = True) -> None:
         self.skills = skills
-        # False: no command may walk through fire, which is what the reflex is held to (A93 a, CR Nov 24). The menu
+        # False: no command may walk through fire, which is what the reflex is held to (A93 a, CR Nov 23). The menu
         # then lists only what a fire-free route reaches, and a "through fire" command is illegal.
         self.allow_fire = allow_fire
         self.history: list = []  # (command, Result), oldest first

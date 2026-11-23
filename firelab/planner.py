@@ -2,7 +2,7 @@
 
 Two pieces (PLAN.md section 6, chunk 6a):
   plan(world, state)   a copy of gate.plan that also counts its search steps (one step = one state expanded).
-                       gate.py itself is not touched (CR, Nov 24, decision 1); test_planner.py holds the copy
+                       gate.py itself is not touched (CR, Nov 23, decision 1); test_planner.py holds the copy
                        to the original.
   board_from(skills)   the rule check's board (gate.World, gate.State) built from the simulator's present state:
                        which cells burn now, each item's value now and at reset, the robot's cell, health, bag
@@ -20,10 +20,13 @@ from firelab.fire import BLOCKED, BURNING
 from firelab.items import BAG, FLOOR, SAVED
 
 
-def plan(w: gate.World, start: gate.State, foresight: bool = True, cross_fire: bool = True) -> tuple:
+def plan(w: gate.World, start: gate.State, foresight: bool = True, cross_fire: bool = True, max_bag: int | None = None) -> tuple:
     """Exhaustive search from `start` in world w. Returns (most value banked, the actions in order, search steps).
 
     cross_fire=False: no action of the plan may walk through fire, which is what the reflex is held to (A94).
+    max_bag: the most items the plan may carry before it must bank. None = any number (the rule check's planner).
+             1 = bank after every pick, which is the reflex's own caution: the guarded planner (A97). The reflex's
+             sequence is then one of the plans searched, so on the forecast the plan is never worth less than it.
     """
     best, first, fronts, steps = start.saved, (), {}, 0
 
@@ -39,7 +42,8 @@ def plan(w: gate.World, start: gate.State, foresight: bool = True, cross_fire: b
         if any(t <= s.t and hp >= s.hp and held >= s.held and saved >= s.saved for t, hp, held, saved in labels):
             return  # same items taken, same place, and an earlier visit was at least as good in every way
         labels.append((s.t, s.hp, s.held, s.saved))
-        options = [("get", k) for k in sorted(todo, key=lambda k: -gate.value(w, k, s.t))] if w.task.bag or not s.carrying else []
+        room_in_bag = (w.task.bag or not s.carrying) and (max_bag is None or s.carrying < max_bag)
+        options = [("get", k) for k in sorted(todo, key=lambda k: -gate.value(w, k, s.t))] if room_in_bag else []
         for kind, k in options + ([("home", None)] if s.carrying else []):
             seen = set()
             for cross in ((False, True) if cross_fire else (False,)):
@@ -52,14 +56,18 @@ def plan(w: gate.World, start: gate.State, foresight: bool = True, cross_fire: b
     return best, first, steps
 
 
-def board_from(skills) -> tuple:
-    """(gate.World, gate.State): the forecast board as seen from the simulator right now."""
+def board_from(skills, caution: float = 1.0) -> tuple:
+    """(gate.World, gate.State): the forecast board as seen from the simulator right now.
+
+    caution: how much faster than its average the fire is assumed to spread in the forecast (1.0 = the rule check's
+    forecast, one cell per 30 ticks; 1.5 = one cell per 20 ticks). A cautious planner banks and secures items earlier (A97).
+    """
     fire, items, fl = skills.fire, skills.items, skills.inner.fl
     rules, now = items.rules, skills.ticks
     task = gate.Task(
         items=rules.count, layout="one_wide", clearance=True, hp_loss=fl.health_loss_per_tick, values=rules.values,
         pick_ticks=rules.pick_ticks, drain=rules.drain, end_coverage=fl.end_coverage, bag=True, reach=rules.reach,
-        p_spread=fire.config.p_spread, max_ticks=fl.max_ticks,
+        p_spread=fire.config.p_spread * caution, max_ticks=fl.max_ticks,
     )
     nx, ny = fire.config.shape
     burn = {(i, j): (now if fire.state[i, j] == BURNING else math.inf)

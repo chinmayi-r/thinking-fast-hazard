@@ -1217,7 +1217,9 @@ Across all four rule sets (6-item rows are in the 00:35 entry):
 - moving is above commit at 20 ticks in 3 of 4 (not 6 items, two-level: 0.78 against 0.81).
 - Scores do not always fall as the cost rises (commit 0.76 -> 0.80 from 5 to 10 ticks, 8 items two-level). Not investigated; a later thought sees more of the fire, and 50 rooms leave about +-0.05 of noise.
 
-## Nov 23 (afternoon): chunk 3e, the level-2 room in kinder
+**Correction, Nov 23 11:05 (CR pointed it out).** Today is Monday Nov 23. From the 06:05 entry onward these notes said "Nov 24"; that was wrong and is corrected here and in ASSUMPTIONS, DESIGN, PLAN and the code comments. The entries between 02:05 and 06:05 carried words like "afternoon" and "evening", which were guesses and not clock times; they now give the real window. Log and result files made earlier keep "nov24" in their names (for example `logs/run1_off_nov24.log`); they were not renamed.
+
+## Nov 23 (between 02:05 and 06:00): chunk 3e, the level-2 room in kinder
 
 CR's decisions (A65 and A70 closed, A71): start the build; main rule set 6 items, values (1, 2, 3, 5, 8), bag, 10-tick picks, 2 % per tick, p = 0.015; one partition with one 0.8 m doorway; base collisions on.
 
@@ -1229,13 +1231,13 @@ Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"
 
 No episodes were run. Next: A71 (g), then chunk 3f (items, bag, score).
 
-## Nov 23 (later): chunk 3f-1, the item rules (no simulator)
+## Nov 23 (between 02:05 and 06:00): chunk 3f-1, the item rules (no simulator)
 
 CR: the base passes over items (A71 g closed, kept as a setting). Readings for the items chunk: A72.
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_items.py` : 19 passed in 4 s.
 - Whole suite (`-q firelab`): 62 passed in 28 s. No episodes were run. Next, after CR's go: chunk 3f-2, the items in the env.
 
-## Nov 23 (evening): chunk 3f-2, level 2 is a whole task in kinder
+## Nov 23 (between 02:05 and 06:00): chunk 3f-2, level 2 is a whole task in kinder
 
 Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_level2.py` : 9 passed in 34 s.
@@ -1245,7 +1247,7 @@ Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"
 
 No agent episodes were run. Readings: A72, A73. Next, after CR's go: the skills chunk (walking), then random and the reflex on a few rooms, announced first.
 
-## Nov 23 (night): chunk 4, skills
+## Nov 23 (between 02:05 and 06:00): chunk 4, skills
 
 Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe scripts\kinder_probe_clear_cells.py` : one room, about 15 s. Free cells 209; the rule check allows the base on 161; the simulator allows 161; the two sets are identical.
@@ -1254,7 +1256,7 @@ Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"
 
 No agent episodes were run. Readings: A74. Next, after CR's go: random and the reflex as agents on the skills, a small runner, then the first run (announced first).
 
-## Nov 23 (late): 8 items, and chunk 5a (the two agents)
+## Nov 23 (between 02:05 and 06:00): 8 items, and chunk 5a (the two agents)
 
 CR: main rule set is 8 items (A75); first run and the real-clock planner ordered (A76).
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 91 passed in 55 s.
@@ -1263,14 +1265,14 @@ CR: main rule set is 8 items (A75); first run and the real-clock planner ordered
 
 No run on moving fire yet. Next, after CR's go: chunk 5b, the runner; then the first run, announced first.
 
-## Nov 23 (late): chunk 5b, the runner; timing before the first run
+## Nov 23 (shortly before 06:00): chunk 5b, the runner; timing before the first run
 
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_run_rooms.py` : 2 passed in 20 s (one room built, room 3 played once by each agent).
 - Timing, room 3, laptop on mains, 80 % battery: random 272 ticks in 5.6 s; reflex 226 ticks in 4.7 s; of that 0.26 s and 0.21 s is the agent's own time, the rest is inside env.step.
 - Step cost is now 16 to 19 ms; this afternoon it was 4.1 ms (same script, 300 steps). The processor is shared with another program (FortniteClient was the top CPU user when I looked), so the estimate for the first run is given for both cases.
 - First run not started; it waits for CR's yes.
 
-## Nov 24 (06:05): the first run in the simulator, random and the reflex, 8 items, rooms 0 to 49
+## Nov 23 (06:05): the first run in the simulator, random and the reflex, 8 items, rooms 0 to 49
 
 Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m firelab.run_rooms --rooms 50` : 100 simulator episodes plus the same on the rule check's board, 3 min 36 s (06:01:47 to 06:05:23), laptop on mains. Rows in `results/firelab_sim/first_run.csv`, report in `logs/first_run_nov23.log`; `--report-only` reprints it.
@@ -1291,7 +1293,7 @@ Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`
 - Random dies in 7 of 50 rooms in the simulator; the reflex in none.
 - Thinking time (the agent's own, measured, not charged): reflex 68 ms per episode over 9.4 commands on average; random 106 ms over 50 commands; the largest in any episode 0.39 s. Per command this is well under one tick (100 ms).
 
-## Nov 24 (morning): plan approved; chunk 6a (planner), Della setup written, first sync into the clone
+## Nov 23 (between 06:05 and 07:20): plan approved; chunk 6a (planner), Della setup written, first sync into the clone
 
 CR approved PLAN.md section 6 with all five decisions as proposed, and added: saved games, the RRARA naming, Della setup now (A80).
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_planner.py` : 14 passed (70 s with the laptop busy).
@@ -1300,7 +1302,7 @@ CR approved PLAN.md section 6 with all five decisions as proposed, and added: sa
 - `scripts/della_firelab_setup.sh`: second environment `pyk310` on Della, kindergarden at 86c55a4, the laptop's package versions, then the test suite through `srun`. Not yet run on Della.
 - `scripts/sync_to_clone.sh`: copies firelab, the four documents, the new scripts and the small result files into `thinking-fast-hazard/` and stages them. It does not commit or push.
 
-## Nov 24 (midday): chunks 6b and 6c; the third agent; timings for runs 1 and 2
+## Nov 23 (between 06:05 and 07:20): chunks 6b and 6c; the third agent; timings for runs 1 and 2
 
 Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_thinkers.py` : 11 passed in 27 s.
@@ -1312,11 +1314,11 @@ First-plan search steps, 8 items, rooms 0 to 9: 586, 6102, 1976, 1070, 20738, 98
 
 Timing of one episode, room 3 (an easy room, 1070 first-plan steps), laptop: always/off 4.6 s without the board and 5.1 s with it (10 thoughts, 2342 steps, 0.6 s of thinking); always/declared 4.7 s (19 ticks charged); commit/declared 4.3 s (3 thoughts, 8 ticks); moving/declared 4.3 s (2 thoughts, 6 ticks). The simulator is most of it; hard rooms add several seconds of planning.
 
-**WITHDRAWN (Nov 24, afternoon).** A table stood here that called the third agent "the RRARA equivalent" and mapped RRARA's pieces onto ours. It was written from the vault note, not from the paper, and it was wrong: CR read version 2 of the paper in full the same day. The third agent is not RRARA. It is now called the reflex-while-planning agent (`moving` in code and result files). The correction and the RRARA spec for this task are in the entry "RRARA corrected" below and in PLAN.md section 7.
+**WITHDRAWN (Nov 23, afternoon).** A table stood here that called the third agent "the RRARA equivalent" and mapped RRARA's pieces onto ours. It was written from the vault note, not from the paper, and it was wrong: CR read version 2 of the paper in full the same day. The third agent is not RRARA. It is now called the reflex-while-planning agent (`moving` in code and result files). The correction and the RRARA spec for this task are in the entry "RRARA corrected" below and in PLAN.md section 7.
 
 - Whole suite at the 6c state: 118 passed in 2 min 19 s. Committed into the clone `thinking-fast-hazard/` (not pushed; CR pushes).
 
-## Nov 24 (07:22): run 1, the planner with the clock off, 8 items, rooms 0 to 49
+## Nov 23 (07:22): run 1, the planner with the clock off, 8 items, rooms 0 to 49
 
 Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag run1_off --agents always --clock off --rooms 50` : 50 simulator episodes plus the same on the rule check's board, 2 min 54 s (07:19:08 to 07:22:02), laptop on mains. Rows in `results/firelab_sim/run1_off/rows_000.csv`, 50 saved games in `results/firelab_sim/run1_off/games/`, report in `logs/run1_off_nov24.log`. Reference plan on this machine at that moment: 586 steps in 0.083 s, 0.14 ms per step.
@@ -1332,7 +1334,7 @@ Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`
 - Simulator against the rule check's board for the same agent: 0.816 against 0.854, mean difference -0.038, all of it from rooms 17 and 36 (0.000 against 0.967 in each); two more rooms differ by 0.013. In both rooms the board's robot, a couple of ticks ahead, gets the single drop in before the end. The rule check's planner scores 0 in rooms 29, 31, 41 and 45 as well.
 - Thinking, measured and not charged: 9.3 thoughts per episode, 6561 search steps on average (median 2713, most 32 054), 1.02 s of thinking per episode on average, 5.14 s at most. At the placeholder 0.25 ms per step the declared cost averages 1.64 s per episode.
 
-## Nov 24: Della timing of one plan (CR ran it), and the cost per search step
+## Nov 23: Della timing of one plan (CR ran it), and the cost per search step
 
 CR, on della9: `cd /home/cr7998/iw-thinking-fast/della_planner_timing && bash time_on_della.sh` (srun job 18197402, node della-r3c3n13, Xeon Gold 6242 at 2.80 GHz).
 
@@ -1345,9 +1347,9 @@ CR, on della9: `cd /home/cr7998/iw-thinking-fast/della_planner_timing && bash ti
 - The Della node is not much faster than the laptop when the laptop is free: 8 items 1.0 s against 1.8 s, 10 items the same range. The 6 against 8 against 10 line does not move with the machine.
 - `venv_kinder\Scripts\python.exe scripts\seconds_per_step.py` (about a minute): recounts the search steps of the plans CR timed and divides. Frozen in `firelab/clock.py`: 0.000175 s per search step (8 items: 14.314 s / 81 633 steps). A83 has the detail and the open point for 10 items.
 - Correction to the run 1 entry: the planner scores exactly 0 in 7 rooms (17, 25, 29, 31, 36, 41, 45); it is behind the reflex in 6 of them, and in room 25 both score 0.
-- Known weakness of the stand-in (CR, Nov 24: leave the planner as it is): it banks once at the end and loses everything when the forecast is wrong.
+- Known weakness of the stand-in (CR, Nov 23: leave the planner as it is): it banks once at the end and loses everything when the forecast is wrong.
 
-## Nov 24 (07:40): run 2, the three thinking agents under the declared clock, 8 items, rooms 0 to 49
+## Nov 23 (07:40): run 2, the three thinking agents under the declared clock, 8 items, rooms 0 to 49
 
 Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag run2_declared --agents always commit moving --clock declared --rooms 50` : 150 simulator episodes plus the same on the rule check's board, 11 min 13 s (07:28:51 to 07:40:04), laptop on mains. Declared cost 0.000175 s per search step (A83). Rows in `results/firelab_sim/run2_declared/rows_000.csv`, 150 saved games in its `games/` folder, report in `logs/run2_declared_nov24.log`.
@@ -1368,7 +1370,7 @@ Simulator, rooms 0 to 49. Gap = against the reflex's 0.598, with the paired 95 %
 - Simulator against the rule check's board, same agent and clock: always 0.822 against 0.790, commit 0.806 against 0.823, moving 0.744 against 0.795; 5 or 6 rooms differ by more than 0.01 for each. These are the all-or-nothing rooms flipping on a few ticks (A82).
 - Measured seconds on the laptop for the same thoughts: 1.39 s, 0.93 s and 0.66 s per episode against 1.04, 0.73 and 0.53 declared.
 
-## Nov 24: why the reflex-while-planning agent dies more often (from the saved games of run 2; no new runs)
+## Nov 23: why the reflex-while-planning agent dies more often (from the saved games of run 2; no new runs)
 
 `venv_kinder\Scripts\python.exe scripts\show_game.py run2_declared <room> commit moving` prints a saved game decision by decision. Rooms where `moving` dies and `commit` does not: 3, 6, 17, 22, 25. In 3 and 17 `commit` also scores 0 (alive, out of time). Read in full: 6, 22, 25.
 
@@ -1395,7 +1397,7 @@ What this points at, for CR, nothing changed: RRARA's preplanner replans when a 
 
 Counts over all 50 rooms of run 2, from the rows file: the reflex-while-planning agent never thought a second time in 9 rooms and scored 0 in all 9 (7 of its 8 deaths are among them); plan-once never thought a second time in 6 rooms, also all 0. Caution in reading this: banking is the last step of a plan, so "one thought only" already means the first plan was never finished. The count says how often each agent carried its first plan to a dead end (9 against 6), not why.
 
-## Nov 24 (afternoon): two corrections from CR; the RRARA spec; additions for the language-model chunks
+## Nov 23 (between 07:40 and 09:30): two corrections from CR; the RRARA spec; additions for the language-model chunks
 
 **Della layout (A86).** The repository on Della is `~/thinking-fast-hazard`; `~/iw-thinking-fast` is the HAZARD work folder and `git pull` fails there. Both Della scripts had the wrong folder written into them. They now find the clone themselves. The commands are:
 - setup, once, on a login node: `cd ~/thinking-fast-hazard && git pull && bash scripts/della_firelab_setup.sh 2>&1 | tee logs/della_firelab_setup.log`
@@ -1409,7 +1411,7 @@ What stays true of the run 2 analysis under the new name: the reflex-while-plann
 
 **The RRARA spec for this task** is version 1 with both accountings (the paper's free one, our stricter one): PLAN.md section 7. **CR's additions for the language-model chunks** (two toggles, Jev then `claude-opus-5-5` at low effort with a declared time per call, Opus on della-vis1 with the key by file path, 3 rooms and a dollar cost before any model run): PLAN.md section 8, A88. The claude-api skill was read today for the plan; its Python reference is to be read again when the call is written. No code was written for either section.
 
-## Nov 24 (09:33): chunks 7, 8a, 8b; the 3-room Jev trial on the laptop
+## Nov 23 (09:33): chunks 7, 8a, 8b; the 3-room Jev trial on the laptop
 
 Chunks 7a, 7b, 7c, 8a and 8b written on CR's go (DESIGN has a section for each; readings in A91). `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 148 passed in 4 min. Committed in the clone as f67685f.
 
@@ -1427,7 +1429,7 @@ The trial (CR: "run the 3-room Jev trial on the laptop and show me what the mode
 - RRARA version 1 (33 checks, none failed): 27 answers "valid". The 6 "invalid" answers all came when the rule's command was a get with no fire-free route, which fails at once; Jev's replacement was "wait 10 ticks" five times and another item once. None was used: three were late under strict accounting (the failed command took 0 ticks, the answer 2), and three were the last check of their episode. So in these rooms RRARA version 1 is the reflex exactly. Under free accounting the three late ones would have been taken; not run.
 - Cost: 0.0020 dollars for the three rooms of Jev before every command, 0.0019 for RRARA version 1 (Jev at 0.042 dollars per million input tokens, A37).
 
-## Nov 24 (09:55): Jev on rooms 0 to 49, 8 items (CR: "Run 50 rooms")
+## Nov 23 (09:55): Jev on rooms 0 to 49, 8 items (CR: "Run 50 rooms")
 
 Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag jev_run50 --agents model rrara1 --model jev --key-file .secrets\typesafe_key.txt --rooms 50 --call-time measured --accounting strict --no-board` : 100 episodes, 10 min 13 s (09:44:23 to 09:54:36), laptop on mains, 1126 calls, 0.061 dollars. Rows in `results/firelab_sim/jev_run50/rows_000.csv`, every call with its text and answer in its `games/` folder, report in `logs/jev_run50_nov24.log`.
@@ -1451,7 +1453,7 @@ Jev: every one of 1126 calls was answered; median 0.14 s, 90th percentile 0.17 s
 
 Not run: free accounting, a declared call time, the same agents with a fire-free-only menu, any Opus call.
 
-## Nov 24 (10:09): Jev again with a fire-free-only menu (CR: "Yes, rerun")
+## Nov 23 (10:09): Jev again with a fire-free-only menu (CR: "Yes, rerun")
 
 Change: `Session(skills, allow_fire=False)` and `run_rooms.py --fire-free-menu`: the menu lists only what a fire-free route reaches and a "through fire" command is illegal, so a model chooses from the commands the reflex has. Tests: 24 passed in the four files it touches.
 
@@ -1474,7 +1476,7 @@ Simulator, 8 items, rooms 0 to 49; gap against the reflex's 0.598 with the paire
 - RRARA version 1 is unchanged by the menu (48 of 50 rooms score as in the 09:55 run): 370 valid, 90 invalid; 25 replacements taken, 32 late, 5 no longer on the menu.
 - The exhaustive planner's plans may cross fire too, so its +0.218 over the reflex carries the same advantage as Jev's first number did; that comparison has not been redone with a fire-free planner.
 
-## Nov 24 (10:32): the clock-off planner without fire crossing; CR's second condition redone like for like
+## Nov 23 (10:32): the clock-off planner without fire crossing; CR's second condition redone like for like
 
 Change: `plan(..., cross_fire=False)` in `firelab/planner.py` (our planner, not the rule check) and `thinker(..., allow_fire=False)`; `run_rooms.py --fire-free-menu` now switches both the model menus and the planner's plans. Tests: 28 passed in the three files it touches.
 
@@ -1494,3 +1496,38 @@ Simulator, 8 items, rooms 0 to 49, clock off for the planner.
 - Taking fire away costs the planner 0.136 (interval [-0.243, -0.015]): better in 6 rooms, the same in 18, worse in 26.
 - For reference only, not an agent: the better of the no-fire planner and the reflex in each room averages 0.769; with fire 0.869. The planner's zeros are where the stand-in loses to the reflex, so a planner that kept the reflex's caution would sit well above 0.680.
 - The no-fire planner thinks 28.6 times per episode against 9.3: when it is trapped with a bag it has no plan, waits one tick and thinks again. That is the loop doing what it says, and it costs nothing with the clock off.
+
+## Nov 23 (11:00 to 11:30): CR's two lists, run without her: Opus on Della; the stand-in planner, free accounting and the board check on the laptop
+
+Two lists. (1) Typed here by CR at about 10:55: merge, setup, a 3-room Opus trial and rooms 0 to 49 on Della. (2) Relayed at about 11:02 by the chat "HAZARD/ThreeDWorld requirements audit", which says CR read it there and said "send": strengthen the stand-in planner and redo the gap table; RRARA version 1 with Jev under free accounting with both menus; the same check on the rule check's board; plus the date correction above. Every choice made without CR is in A97.
+
+**Della (session "Della availability check", on della-vis1).** `git fetch` + `git merge --no-edit origin/main`: clean, HEAD ad707db, local only. `scripts/della_firelab_setup.sh`: 150 tests passed on a compute node. `pip install anthropic` in pyk310 gave 2.12.0; the first real call to claude-opus-5-5 worked with no change to `firelab/models.py`. Trial `opus_trial3` (rooms 0 to 2): 0.46 dollars, from which rooms 0 to 49 were put at 7.73 dollars; under 20, so the run went ahead: `--tag opus_run50 --agents model rrara1 --model claude-opus-5-5 --call-time declared --seconds-per-call 0.15 --accounting free --fire-free-menu --no-board`, five processes of ten rooms. Spent in all: 10.24 dollars (RRARA made 9.8 calls a run against 5.0 in the trial rooms). Rows copied to `results/firelab_sim/opus_run50/rows_000.csv` here from the Della session's message (typed over, then checked: scores, calls and dollars reproduce Della's summary); the games and `REPORT.md` are on Della only, untracked. The times in Della's report ("9:35 to 11:20 AM") do not fit the laptop clock and are not to be relied on.
+
+| agent, fire-free menu, rooms 0 to 49 | score | reflex | gap, 95 % interval | calls per run | seconds per call (median) | dollars |
+|---|---|---|---|---|---|---|
+| Opus before every command (declared 0.15 s) | 0.676 | 0.598 | +0.079 [+0.004, +0.149] | 18.7 | 1.13 | 5.35 |
+| RRARA version 1, Opus checking, free accounting | 0.612 | 0.598 | +0.014 [-0.044, +0.065] | 9.8 | 2.72 | 4.42 |
+| Jev before every command (measured) | 0.587 | 0.598 | -0.011 [-0.056, +0.033] | 15.8 | 0.14 | 0.04 |
+| RRARA version 1, Jev checking, free accounting | 0.598 | 0.598 | -0.000 [-0.018, +0.016] | 10.2 | 0.12 | 0.03 |
+
+Opus before every command dies in 10 rooms and scores 0 in 9. As a checker Opus says "invalid" on 226 of 491 checks and 193 replacements are taken (Jev: 86 of 508, 70 taken).
+
+**Laptop, list (2).** New settings on our planner (`firelab/planner.py`, `thinkers.py`, `run_rooms.py`; `gate.py` untouched): `--max-bag N` (bank once N items are carried; 1 is the reflex's own rule) and `--caution F` (the forecast assumes the fire spreads F times faster than average). Tests: 41 passed in the files they touch. Runs, each 3 to 6 minutes, six at a time: `run5_guard{1,2}_{nofire,fire}`, `jev_free_{nofire,fire}`, `run6_c15_any_{nofire,fire}`, `run6_c{15,20}_bag2_{nofire,fire}`, and on rooms 50 to 99 `held_reflex`, `held_plain_{nofire,fire}`, `held_c15_{nofire,fire}`, `held_jev_fire`. Jev spent in this list: 0.095 dollars. `scripts/gap_table.py` prints the table from the rows files.
+
+Gap = planner (clock off) minus the reflex-like agent with the same commands: the reflex without fire; Jev before every command with the fire menu when fire is allowed.
+
+| planner, clock off | no fire: score, gap, rooms behind the reflex | with fire: score, gap, rooms behind the reflex |
+|---|---|---|
+| as before (any bag) | 0.680, +0.082 [-0.006, +0.165], 10 | 0.816, +0.134 [+0.033, +0.222], 6 |
+| bank after every pick | 0.627, +0.029 [-0.016, +0.071], 11 | 0.750, +0.069 [+0.042, +0.095], 2 |
+| bank after two | 0.685, +0.087 [+0.027, +0.141], 8 | 0.832, +0.151 [+0.117, +0.185], 0 |
+| cautious 1.5, any bag | 0.792, +0.194 [+0.134, +0.252], 2 | 0.938, +0.257 [+0.221, +0.296], 0 |
+| cautious 1.5, bank after two | 0.719, +0.121 [+0.086, +0.154], 2 | 0.814, +0.133 [+0.106, +0.162], 1 |
+| cautious 2.0, bank after two | 0.672, +0.074 [+0.033, +0.114], 9 | 0.752, +0.071 [+0.047, +0.097], 4 |
+
+- Banking like the reflex does not make the planner safe: without fire it is behind the reflex in 11 rooms. Assuming a faster fire does: the cautious planner is behind in 2 rooms without fire and in none with it.
+- The cautious setting was picked on rooms 0 to 49, so it was run once on rooms 50 to 99, which nothing had been tuned on. There: random 0.063, reflex 0.627, Jev with fire 0.676; plain planner 0.692 without fire (+0.065 [-0.037, +0.163]) and 0.888 with (+0.212 [+0.136, +0.284]); cautious planner 0.788 without fire (+0.161 [+0.099, +0.217], behind the reflex in 5 rooms) and 0.932 with (+0.256 [+0.215, +0.297], behind in none).
+- So, like for like and with the cautious stand-in, the gap is +0.19 on the first 50 rooms and +0.16 on the unseen 50 without fire, and +0.26 on both with fire; CR's threshold is 0.15.
+- RRARA version 1 with Jev under free accounting: 0.598 (fire-free menu; 70 replacements taken against 25 under strict) and 0.583 (fire menu); the reflex is 0.598.
+
+**The rule check's board** (`scripts/gate_nofire_check.py`, no simulator, new file `results/firelab_gate/nofire_check_nov23.csv`; old result files untouched): reflex 0.600; planner any bag 0.854 with fire (+0.255 [+0.173, +0.324]) and 0.652 without (+0.053 [-0.042, +0.142]); bank after every pick 0.763 and 0.631; bank after two 0.850 (+0.251, behind the reflex in no room) and 0.712 (+0.112 [+0.052, +0.168]). The board says the same as the simulator: without fire the plain planner's lead is small and its interval reaches zero.

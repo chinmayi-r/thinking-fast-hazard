@@ -7,7 +7,7 @@
                         valid, and if not, for a replacement. At the next decision an invalid answer's replacement
                         is taken in place of the rule's choice if it is still on the menu; otherwise the rule
                         stands. The command under way is never interrupted (A89). The rule's own decision costs
-                        0 ticks; a refusal, cut-off or error is no answer and the rule stands (CR, Nov 24).
+                        0 ticks; a refusal, cut-off or error is no answer and the rule stands (CR, Nov 23).
 Two toggles, both written into every record:
   accounting   "free": the checker's time is not counted and a finished answer always counts (the paper).
                "strict": the answer exists only `charged` ticks after the check began and counts only if that

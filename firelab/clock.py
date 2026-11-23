@@ -1,4 +1,4 @@
-"""The clock: what a thought costs in world time (PLAN.md section 6, chunk 6b; CR, Nov 24).
+"""The clock: what a thought costs in world time (PLAN.md section 6, chunk 6b; CR, Nov 23).
 
 Every thought is costed two ways and both are logged, whichever one is charged:
   measured  real seconds of the whole decision on this machine;
@@ -20,7 +20,7 @@ import math
 from dataclasses import dataclass, field
 
 TICKS_PER_SECOND = 10
-# Seconds one search step is declared to cost. FROZEN Nov 24 (decision 3, A83) from CR's timing on a Della compute
+# Seconds one search step is declared to cost. FROZEN Nov 23 (decision 3, A83) from CR's timing on a Della compute
 # node (della-r3c3n13, Xeon Gold 6242 at 2.80 GHz): the first plans of rooms 0 to 9 at 8 items took 14.314 s for
 # 81 633 search steps, which is 0.1753 ms per step (scripts/seconds_per_step.py). At 10 items the same node took
 # 0.2321 ms per step (42.350 s for 182 502 steps): a step tries more actions when more items are left.

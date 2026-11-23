@@ -10,6 +10,7 @@ each run leaves a log, one line per command: (command, item, tick when it ended,
 from __future__ import annotations
 
 import copy
+import dataclasses
 import math
 
 import numpy as np
@@ -109,8 +110,9 @@ class GateSkills:
     def score(self):
         return gate.score(self.w, self.s)
 
-    def believe(self):
-        return gate.forecast(self.w, self.s.t), copy.copy(self.s)
+    def believe(self, caution: float = 1.0):
+        task = dataclasses.replace(self.w.task, p_spread=self.w.task.p_spread * caution)  # a faster fire in the forecast only
+        return gate.forecast(dataclasses.replace(self.w, task=task), self.s.t), copy.copy(self.s)
 
     def near(self, k):
         return gate.within_reach(self.w, k)

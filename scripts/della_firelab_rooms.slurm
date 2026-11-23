@@ -1,5 +1,5 @@
 #!/bin/bash
-# firelab rooms on Della as a Slurm job array: one room per task, one core per task (CR, Nov 24). CPU only.
+# firelab rooms on Della as a Slurm job array: one room per task, one core per task (CR, Nov 23). CPU only.
 # Written on the laptop; NOT yet run on Della (A80, A86). Needs scripts/della_firelab_setup.sh to have been run once.
 #
 # Submit from a login node, from inside the git clone (on Della: ~/thinking-fast-hazard). The job uses the folder

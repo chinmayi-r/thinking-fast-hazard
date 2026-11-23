@@ -129,7 +129,7 @@ The bullets below are the original text.
 2. Chunks 2 and 3 (the env), smoke-tested on the laptop, then on Della.
 3. Chunks 4 to 6, the Della runs, the three-condition table, then chunk 7 and the ping to Liane.
 
-## 6. After the first run (written Nov 24 for CR's approval; no code yet)
+## 6. After the first run (written Nov 23 for CR's approval; no code yet)
 
 State: level 2 runs in kinder; random 0.041 and the reflex 0.598 over rooms 0 to 49 agree with the rule check (A78). Missing for CR's second condition: an unlimited-time agent in the simulator. Missing for the research question: thinking that costs time.
 
@@ -174,9 +174,9 @@ One file family, used by RRARA, the language-model agents and Liane's compiled p
 - **7c, programs** (about 80 lines). Liane's contract (a class `Policy` with `decide(self, obs)` returning a command), the loader with the import allow-list, and the reflex written as a program and tested to decide exactly as `agents.reflex`.
 - Before any of it is written, the preconditions table (CLAUDE.md rule 2) is extended for the three users. Known now: this room is fully observed (every item and every burning cell is in the state), where HAZARD gave the agent only what its camera had seen; RRARA and the honest text were built for the second case.
 
-## 7. RRARA version 1 on this task: the spec (Nov 24; plan only, no code)
+## 7. RRARA version 1 on this task: the spec (Nov 23; plan only, no code)
 
-Source: CR's full reading of the paper's second version on Nov 24 (A87), and our own HAZARD implementation in `scripts/rrara/` for the parts the paper leaves out. None of the three planning agents of chunk 6 is RRARA.
+Source: CR's full reading of the paper's second version on Nov 23 (A87), and our own HAZARD implementation in `scripts/rrara/` for the parts the paper leaves out. None of the three planning agents of chunk 6 is RRARA.
 
 **What the paper gives (CR).** Version 1 is a rule that picks the action, plus a language model that checks that action in the background and answers valid, or invalid with a replacement. The rule's action stands unless the answer is invalid. Its 0.00 s latency is because no model call stands in front of the action and the background model's time is not counted. Version 2 replaces the rule with a kept list of subgoals from a language model, rewritten only when a staleness score reaches 0.6; the weights are not published. Not in the paper: the reflex rule, the prompts, whether an invalid answer interrupts the action under way, how the background running is built, any code.
 
@@ -189,7 +189,7 @@ Source: CR's full reading of the paper's second version on Nov 24 (A87), and our
 | what an answer changes | at the next decision: if the answer about the previous command was invalid, its replacement is taken in place of the rule's next choice, provided it is still legal; otherwise the rule's choice stands. An answer is used only if it is about the immediately preceding decision | `scripts/rrara/reconcile.py` (paper eq. 9; our A31) |
 | the command under way | is not interrupted by an invalid answer | ours (the paper does not say); open point 1 |
 | accounting of the checker, a toggle | **free**: the checker's time is not counted and a finished answer always counts (the paper). **strict**: the answer exists only once its time has passed, ticks = ceil(seconds x 10) after the check began, and counts only if that is no later than the next decision | `scripts/rrara` modes "faithful" and "worldtime" (A30) |
-| time of a call, a toggle | **measured**: the real seconds of the call. **declared**: a fixed number of seconds per call, the same for every call and machine | CR, Nov 24 |
+| time of a call, a toggle | **measured**: the real seconds of the call. **declared**: a fixed number of seconds per call, the same for every call and machine | CR, Nov 23 |
 | how "in the background" is built | in order, with no threads: the command is carried out, the call is made and timed, and the tick at which its answer exists is worked out from the toggle above. The fire does not depend on the model and the model's input is fixed when the check begins, so this equals running them side by side and can be repeated | ours (as chunk 6b); the paper does not say. `scripts/rrara/background.py` used a real thread because HAZARD ran in real time |
 | what is saved | per decision: the room text, the rule's command, the raw answer, valid or invalid, the replacement, measured and declared seconds, tokens in and out, the stop reason, whether the answer was used, late or not legal, the command carried out | CR's saved-games rule (A80) |
 
@@ -201,7 +201,7 @@ Source: CR's full reading of the paper's second version on Nov 24 (A87), and our
 
 Version 2 (the kept list and the staleness score) is not specified here.
 
-## 8. The language-model chunks: CR's additions (Nov 24; plan only, no code)
+## 8. The language-model chunks: CR's additions (Nov 23; plan only, no code)
 
 These come after chunk 7 (the observation dictionary, the text, the command list).
 

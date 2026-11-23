@@ -46,6 +46,30 @@ def test_a_plan_without_fire_crossing_has_no_such_action_and_is_worth_no_more():
     assert crossed > 0  # the setting matters: some unrestricted plans do cross fire
 
 
+def test_a_guarded_plan_banks_after_every_pick_and_is_worth_no_less_than_the_reflex_on_the_forecast():
+    for room in range(10):
+        world, state = GateSkills(gate.make_world(SIX, room)).believe()
+        value, actions, _ = plan(world, state, cross_fire=False, max_bag=1)
+        kinds = [kind for kind, _, _ in actions]
+        assert all(a != b for a, b in zip(kinds, kinds[1:])) and (not kinds or kinds[0] == "get")  # get, home, get, home, ...
+        assert value <= plan(world, state, cross_fire=False)[0]
+        believed_reflex = gate.State(world.start)
+        gate.run_reflex(world, believed_reflex)
+        assert value >= believed_reflex.saved - 1e-9  # the reflex's own sequence is among the plans searched
+
+
+def test_a_cautious_forecast_has_the_fire_arriving_sooner(robot):
+    env, skills = robot
+    env.reset(seed=1)
+    skills.start()
+    (plain, _), (wary, _) = skills.believe(), skills.believe(1.5)
+    later = [c for c, lit in plain.burn.items() if lit > 0]
+    assert all(wary.burn[c] <= plain.burn[c] for c in later) and any(wary.burn[c] < plain.burn[c] for c in later)
+    assert wary.t_end <= plain.t_end
+    board = GateSkills(gate.make_world(SIX, 1))
+    assert board.believe(1.5)[0].burn == wary.burn and board.believe()[0].burn == plain.burn  # the two bodies agree
+
+
 def test_the_copy_also_holds_at_eight_items():
     world, state = GateSkills(gate.make_world(gate.Task(items=8, **RULES), 0)).believe()
     value, actions, steps = plan(world, state)

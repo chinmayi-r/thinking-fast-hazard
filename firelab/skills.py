@@ -154,9 +154,9 @@ class Skills:
     def score(self) -> float:
         return self.items.score()
 
-    def believe(self) -> tuple:
+    def believe(self, caution: float = 1.0) -> tuple:
         """(world, state): the rule check's board as the robot sees it now, with the forecast fire (firelab.planner)."""
-        return board_from(self)
+        return board_from(self, caution)
 
     # the two goals agents walk to
 

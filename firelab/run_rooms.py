@@ -6,7 +6,7 @@ Agents: random, reflex (firelab/agents.py); always, commit, moving (firelab/thin
 A run is a folder results/firelab_sim/<tag>/ holding
   rows_<first room>.csv   one row per room and agent: the scores, the ticks, the thinking in both costs;
   games/room_NNN_<agent>.jsonl   the game, decision by decision: what the agent saw, what it planned, how long
-                          it thought (measured and declared), every command and its result (CR, Nov 24).
+                          it thought (measured and declared), every command and its result (CR, Nov 23).
 Each invocation appends to its own rows file, so rooms can run in parallel, one process per room (Della).
 
 Run:    venv_kinder\\Scripts\\python.exe -m firelab.run_rooms --tag run1_off --agents always --clock off --rooms 50
@@ -46,12 +46,13 @@ COLUMNS = ["room", "agent", "clock", "sim", "rule", "sim_ticks", "rule_ticks", "
 RUNS = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
 
 
-def run_agent(name: str, body, room: int, clock: Clock, thoughts: list, allow_fire: bool = True) -> list:
+def run_agent(name: str, body, room: int, clock: Clock, thoughts: list, allow_fire: bool = True, max_bag: int | None = None,
+              caution: float = 1.0) -> list:
     if name == "random":
         return random_agent(body, 10_000 + room)  # the rule check's seed (gate.py:408)
     if name == "reflex":
         return reflex(body)
-    return thinker(body, clock, thoughts=thoughts, allow_fire=allow_fire, **THINKERS[name])
+    return thinker(body, clock, thoughts=thoughts, allow_fire=allow_fire, max_bag=max_bag, caution=caution, **THINKERS[name])
 
 
 def reference(task: gate.Task) -> dict:
@@ -101,7 +102,7 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
         board = False  # the interface the models use exists in the simulator only
     if board:
         rule_body = GateSkills(gate.make_world(task, room))
-        rule_log = run_agent(name, rule_body, room, clock, [], options.get("allow_fire", True))
+        rule_log = run_agent(name, rule_body, room, clock, [], options.get("allow_fire", True), options.get("max_bag"), options.get("caution", 1.0))
     env.reset(seed=room)
     skills.start()
     thoughts: list = []
@@ -109,7 +110,7 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
     if name in MODEL_AGENTS:  # thoughts holds one record per call: what the model saw, what it answered, both times
         sim_log = MODEL_AGENTS[name](Session(skills, allow_fire=options.get("allow_fire", True)), model, records=thoughts, **options)
     else:
-        sim_log = run_agent(name, skills, room, clock, thoughts, options.get("allow_fire", True))
+        sim_log = run_agent(name, skills, room, clock, thoughts, options.get("allow_fire", True), options.get("max_bag"), options.get("caution", 1.0))
     tokens = [sum(t.get(k, 0) for t in thoughts) for k in ("tokens_in", "tokens_out")]
     label = clock.mode if clock.mode != "fixed" else f"fixed{clock.fixed_ticks}"
     if name in MODEL_AGENTS:
@@ -175,6 +176,8 @@ def main() -> None:
     ap.add_argument("--accounting", default="free", choices=["free", "strict"], help="rrara1: is the checker's time counted")
     ap.add_argument("--call-time", default="measured", choices=["measured", "declared"], help="what a model call is charged")
     ap.add_argument("--seconds-per-call", type=float, default=0.3, help="the declared time of one model call")
+    ap.add_argument("--caution", type=float, default=1.0, help="planner agents: how much faster than average the forecast fire spreads")
+    ap.add_argument("--max-bag", type=int, default=None, help="planner agents: bank once this many items are carried (1 = as the reflex)")
     ap.add_argument("--fire-free-menu", action="store_true",
                     help="no agent may walk through fire, as the reflex never does: model menus and the planner's plans")
     ap.add_argument("--report-only", action="store_true")
@@ -190,8 +193,8 @@ def main() -> None:
         uses_model = any(a in MODEL_AGENTS for a in args.agents)
         model = make_model(args.model, args.key_file) if uses_model else None
         options = {"accounting": args.accounting, "call_time": args.call_time, "declared_seconds": args.seconds_per_call,
-                   "allow_fire": not args.fire_free_menu}
-        head["allow_fire"] = options["allow_fire"]
+                   "allow_fire": not args.fire_free_menu, "max_bag": args.max_bag, "caution": args.caution}
+        head.update(allow_fire=options["allow_fire"], max_bag=args.max_bag, caution=args.caution)
         if uses_model:
             head.update(model=args.model, **options)
         print("machine:", head, flush=True)

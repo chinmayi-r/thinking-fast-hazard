@@ -18,7 +18,7 @@ echo "== host $(hostname), $(lscpu | grep 'Model name' | sed 's/Model name: *//'
 
 echo "== [1/4] python 3.10 environment pyk310"
 export PS1="${PS1:-}"; module load anaconda3/2025.6   # PS1: 'module load' aborts under 'set -u' without it (Nov 8)
-# Reuse an environment that already exists (CR's first run, Nov 24, made one in ~/iw-thinking-fast; /home is short
+# Reuse an environment that already exists (CR's first run, Nov 23, made one in ~/iw-thinking-fast; /home is short
 # of space), else make one inside the clone. FIRELAB_ENV=/path/to/env overrides both.
 ENV="${FIRELAB_ENV:-}"
 for candidate in "$ROOT/pyk310" "$HOME/iw-thinking-fast/pyk310"; do
