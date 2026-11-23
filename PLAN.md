@@ -173,3 +173,51 @@ One file family, used by RRARA, the language-model agents and Liane's compiled p
 - **7b, the text** (about 100 lines). `describe(obs)`: the honest text of A32 and A41 for this room: every option with its predicted effect and cost in ticks, every item with value, loss per tick and distance, the last result in numbers with its reason, the full history, the room as a small character map.
 - **7c, programs** (about 80 lines). Liane's contract (a class `Policy` with `decide(self, obs)` returning a command), the loader with the import allow-list, and the reflex written as a program and tested to decide exactly as `agents.reflex`.
 - Before any of it is written, the preconditions table (CLAUDE.md rule 2) is extended for the three users. Known now: this room is fully observed (every item and every burning cell is in the state), where HAZARD gave the agent only what its camera had seen; RRARA and the honest text were built for the second case.
+
+## 7. RRARA version 1 on this task: the spec (Nov 24; plan only, no code)
+
+Source: CR's full reading of the paper's second version on Nov 24 (A87), and our own HAZARD implementation in `scripts/rrara/` for the parts the paper leaves out. None of the three planning agents of chunk 6 is RRARA.
+
+**What the paper gives (CR).** Version 1 is a rule that picks the action, plus a language model that checks that action in the background and answers valid, or invalid with a replacement. The rule's action stands unless the answer is invalid. Its 0.00 s latency is because no model call stands in front of the action and the background model's time is not counted. Version 2 replaces the rule with a kept list of subgoals from a language model, rewritten only when a staleness score reaches 0.6; the weights are not published. Not in the paper: the reflex rule, the prompts, whether an invalid answer interrupts the action under way, how the background running is built, any code.
+
+**The spec here, version 1.** Each piece says where it comes from.
+
+| piece | on this task | from |
+|---|---|---|
+| the rule | `agents.reflex`: most valuable item first, bank after every pick, never enter fire. One decision = one command (`get k` or `home`) | ours (CR's official reflex, Nov 22); the paper gives no rule |
+| the checker | after the rule picks a command at tick t, a language model is given the room as text (chunk 7b), the command picked and the legal commands, and answers VALID, or INVALID plus one legal command as replacement | paper (valid / invalid + replacement); prompt ours |
+| what an answer changes | at the next decision: if the answer about the previous command was invalid, its replacement is taken in place of the rule's next choice, provided it is still legal; otherwise the rule's choice stands. An answer is used only if it is about the immediately preceding decision | `scripts/rrara/reconcile.py` (paper eq. 9; our A31) |
+| the command under way | is not interrupted by an invalid answer | ours (the paper does not say); open point 1 |
+| accounting of the checker, a toggle | **free**: the checker's time is not counted and a finished answer always counts (the paper). **strict**: the answer exists only once its time has passed, ticks = ceil(seconds x 10) after the check began, and counts only if that is no later than the next decision | `scripts/rrara` modes "faithful" and "worldtime" (A30) |
+| time of a call, a toggle | **measured**: the real seconds of the call. **declared**: a fixed number of seconds per call, the same for every call and machine | CR, Nov 24 |
+| how "in the background" is built | in order, with no threads: the command is carried out, the call is made and timed, and the tick at which its answer exists is worked out from the toggle above. The fire does not depend on the model and the model's input is fixed when the check begins, so this equals running them side by side and can be repeated | ours (as chunk 6b); the paper does not say. `scripts/rrara/background.py` used a real thread because HAZARD ran in real time |
+| what is saved | per decision: the room text, the rule's command, the raw answer, valid or invalid, the replacement, measured and declared seconds, tokens in and out, the stop reason, whether the answer was used, late or not legal, the command carried out | CR's saved-games rule (A80) |
+
+**Open points for CR before it is built.**
+1. Interrupting. On HAZARD an action was short; here one command can last 20 to 80 ticks, so an invalid answer that waits for the next decision can come very late. A second variant could stop the walk at the tick the answer exists (the skills already take a deadline). Suggestion: build the non-interrupting one first, as the faithful version, and the interrupting one as a named variant.
+2. What the rule's own decision costs. It takes a few milliseconds. Suggestion: 0 ticks, which is what "0.00 s" means in the paper; under the measured clock ceil would make every decision 1 tick.
+3. A refusal or a cut-off answer from the model counts as no answer: the rule stands. No second model answers in its place, so a run is never a mix of two models. (The Anthropic guidance for new code is to switch on a fallback model; for a benchmark that would blur which model was measured.)
+4. A34 says our HAZARD reflex reimplements the paper's eq. (2); CR's reading today is that the reflex rule is not in the paper. To reconcile when the HAZARD notes are next touched; it does not affect this task, whose rule is ours.
+
+Version 2 (the kept list and the staleness score) is not specified here.
+
+## 8. The language-model chunks: CR's additions (Nov 24; plan only, no code)
+
+These come after chunk 7 (the observation dictionary, the text, the command list).
+
+**8a. One way to ask a model** (`firelab/models.py`, about 120 lines with tests). `ask(model, text, commands, key_file)` returns the command chosen (or none), the raw answer, measured seconds, tokens in and out, and the stop reason. Two back ends:
+- Jev: a port of `scripts/jev/client.py` (one choice question whose options are the lettered commands; A37).
+- Anthropic, through the official `anthropic` package, written from the claude-api skill's Python reference (read at that point, not from memory): model `claude-opus-5-5`, effort low. Thinking cannot be switched off on that model, so the request leaves the thinking setting out and controls depth with effort only; no temperature; the output limit is set with room for the thinking, since thinking counts against it. **The stop reason is checked before the answer is read**: only a normal end of turn is read as an answer; a refusal or a cut-off is recorded as no answer.
+- The key is passed as a file path only (`--key-file`); it is read once, goes only into the client, and is never printed, logged or saved in a game.
+
+**8b. The agents on a model** (about 150 lines with tests).
+- A model before every command, standing while it answers (the blocking baseline that RRARA's first table penalises).
+- RRARA version 1 as specified in section 7.
+- Two toggles on every run, both written into every result file: checker accounting **free** or **strict**; time per call **measured** or **declared**. The declared time lets a strong model be run as if it answered in a short fixed time, to see what a fast model as good as it could do.
+
+**8c. Runs, in this order.**
+1. Jev, on the laptop.
+2. `claude-opus-5-5`, effort low, declared time per call, on della-vis1: compute nodes have no internet and the working key is only on Della. Several rooms side by side as separate processes on that node (it has no job queue), each writing its own rows file, which the runner already supports.
+3. Before any model run: 3 rooms first; then what, where, how long, and the cost in dollars worked out from the token counts of those 3 rooms. Prices to use, to be checked on the day: Opus 5.5 at 4 dollars per million input tokens and 20 per million output tokens (thinking is billed as output); Jev at 0.042 dollars per million input tokens (A37).
+
+**Not verified, to check when 8 is built:** that the `pyk310` environment made on a login node works on della-vis1; that the `anthropic` package installs there; where the Jev key file is on the laptop and the Anthropic key file on Della (paths from CR, never contents).

@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 # One-time setup of the kinder simulator and firelab on Della. CPU only, no display, no GPU.
-# Written Nov 24 on the laptop; NOT yet run on Della (A80). Run on a login node (it needs the internet):
+# Written on the laptop; NOT yet run to the end on Della (A80, A86). Run on a login node (it needs the internet),
+# from the git clone, which on Della is ~/thinking-fast-hazard (NOT ~/iw-thinking-fast: that is the HAZARD work
+# folder and is not a repository; A86):
 #   ssh -m hmac-sha2-512 cr7998@della.princeton.edu
-#   cd /home/cr7998/iw-thinking-fast && git pull && bash scripts/della_firelab_setup.sh 2>&1 | tee logs/della_firelab_setup.log
-# It makes a second Python 3.10 environment (pyk310) next to the HAZARD one (py310), so neither disturbs the other,
-# installs the versions the laptop has (venv_kinder, Nov 22), and ends with the firelab test suite on a compute node.
+#   cd ~/thinking-fast-hazard && git pull && bash scripts/della_firelab_setup.sh 2>&1 | tee logs/della_firelab_setup.log
+# The script finds the repository from its own location, so no folder name is written into it. Inside the clone it
+# makes a Python 3.10 environment (pyk310) and a clone of kindergarden, both ignored by git, installs the versions
+# the laptop has (venv_kinder, Nov 22), and ends with the firelab test suite on a compute node.
 set -uo pipefail
-ROOT=/home/cr7998/iw-thinking-fast
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+[ -d "$ROOT/firelab" ] && [ -e "$ROOT/.git" ] || { echo "$ROOT is not the thinking-fast-hazard clone (no firelab/ or no .git)"; exit 1; }
 mkdir -p "$ROOT/.cache/pip" "$ROOT/.cache/tmp" "$ROOT/.conda_pkgs" "$ROOT/logs"
 cd "$ROOT" || exit 1
 export PIP_CACHE_DIR="$ROOT/.cache/pip" TMPDIR="$ROOT/.cache/tmp" CONDA_PKGS_DIRS="$ROOT/.conda_pkgs"
-echo "== host $(hostname), $(lscpu | grep 'Model name' | sed 's/Model name: *//')"
-[ -d firelab ] || { echo "no firelab/ here: run 'git pull' in $ROOT first"; exit 1; }
+echo "== host $(hostname), $(lscpu | grep 'Model name' | sed 's/Model name: *//'), repository $ROOT at $(git rev-parse --short HEAD)"
 
 echo "== [1/4] python 3.10 environment pyk310"
 export PS1="${PS1:-}"; module load anaconda3/2025.6   # PS1: 'module load' aborts under 'set -u' without it (Nov 8)

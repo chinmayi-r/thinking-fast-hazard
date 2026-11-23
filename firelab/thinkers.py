@@ -1,12 +1,12 @@
 """The three agents that plan: one loop, two switches. A port of gate.thinker onto a body (chunk 6b).
 
   commit False, moving False   plan before every action, standing still while it thinks ("always").
-                               RRARA's setting for its baselines: blocking inference under the Time Conversion Mechanism.
   commit True,  moving False   plan once and follow the plan; think again only when an action cannot be carried out
-                               or the plan has run out ("commit"). The counterpart of RRARA's LLM PrePlanner, which
-                               caches an ordered list of subgoals and replans on a trigger.
-  commit True,  moving True    as commit, but the reflex acts while the plan is being made ("moving").
-                               The RRARA equivalent: rapid reflex first, the slow thinker in the background.
+                               or the plan has run out ("commit").
+  commit True,  moving True    as commit, but the reflex acts while the plan is being made ("moving", the
+                               reflex-while-planning agent).
+None of the three is RRARA (Zheng et al. 2025): RRARA version 1 is a rule that acts plus a language model that
+checks the rule's action in the background; its spec for this task is PLAN.md section 7 (CR, Nov 24).
 Each thought is costed by a Clock (firelab/clock.py) and recorded with what the agent saw, for the saved games.
 """
 

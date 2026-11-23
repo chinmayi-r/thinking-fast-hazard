@@ -1300,7 +1300,7 @@ CR approved PLAN.md section 6 with all five decisions as proposed, and added: sa
 - `scripts/della_firelab_setup.sh`: second environment `pyk310` on Della, kindergarden at 86c55a4, the laptop's package versions, then the test suite through `srun`. Not yet run on Della.
 - `scripts/sync_to_clone.sh`: copies firelab, the four documents, the new scripts and the small result files into `thinking-fast-hazard/` and stages them. It does not commit or push.
 
-## Nov 24 (midday): chunks 6b and 6c; the RRARA equivalent; timings for runs 1 and 2
+## Nov 24 (midday): chunks 6b and 6c; the third agent; timings for runs 1 and 2
 
 Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
 - `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_thinkers.py` : 11 passed in 27 s.
@@ -1312,18 +1312,7 @@ First-plan search steps, 8 items, rooms 0 to 9: 586, 6102, 1976, 1070, 20738, 98
 
 Timing of one episode, room 3 (an easy room, 1070 first-plan steps), laptop: always/off 4.6 s without the board and 5.1 s with it (10 thoughts, 2342 steps, 0.6 s of thinking); always/declared 4.7 s (19 ticks charged); commit/declared 4.3 s (3 thoughts, 8 ticks); moving/declared 4.3 s (2 thoughts, 6 ticks). The simulator is most of it; hard rooms add several seconds of planning.
 
-**The third agent is the RRARA equivalent.** Which part of RRARA each piece stands for (RRARA as in the vault note `Papers/zhengReflexFirstReflect2025.md`, written Oct 16 from the arXiv v2 HTML and not re-read from the paper today, and as in our `scripts/rrara/`):
-
-| RRARA (Zheng et al. 2025) | Here |
-|---|---|
-| Time Conversion Mechanism: frames = ceil(seconds x 30); the agent stands still while it thinks (blocking inference) | `firelab/clock.py`: ticks = ceil(seconds x 10). The agent `always` is blocking inference: it is what RRARA's Table 1 penalises |
-| Rapid reflex: a deterministic rule over the observation and cached distances, near-constant latency | `agents.reflex`: most valuable item first, bank after every pick, never enter fire; a few ms per command |
-| Asynchronous reflect: an LLM runs while the reflex's action executes and returns valid or invalid plus a replacement | In `moving`, the planner's thought runs while the reflex acts; when it ends the robot switches from the reflex to the plan |
-| LLM PrePlanner: an ordered list of subgoals, the top one executed, the list cached; replanning when a staleness score crosses 0.6 (weights not published) | `commit`: the plan is the cached list; it is replanned when an action cannot be carried out or the list runs out (A70 b), a trigger that can be stated in place of the unpublished weights |
-| RRARA-v2 = reflex + reflector + preplanner | `moving` = the reflex during the thought, then the committed plan |
-| no counterpart | The estimate: the agent says in advance how long it will think and plans for that moment |
-
-Where the equivalent differs from RRARA: the slow thinker here is an exhaustive planner, not a language model; it hands back a whole plan, not a verdict on one action; and its thinking is charged to the world under both clocks, where the paper's Response Latency leaves out background planner and reflector compute (our "worldtime" reading, A30). RRARA's robot sees only what its camera has seen; this room is fully observed.
+**WITHDRAWN (Nov 24, afternoon).** A table stood here that called the third agent "the RRARA equivalent" and mapped RRARA's pieces onto ours. It was written from the vault note, not from the paper, and it was wrong: CR read version 2 of the paper in full the same day. The third agent is not RRARA. It is now called the reflex-while-planning agent (`moving` in code and result files). The correction and the RRARA spec for this task are in the entry "RRARA corrected" below and in PLAN.md section 7.
 
 - Whole suite at the 6c state: 118 passed in 2 min 19 s. Committed into the clone `thinking-fast-hazard/` (not pushed; CR pushes).
 
@@ -1371,10 +1360,51 @@ Simulator, rooms 0 to 49. Gap = against the reflex's 0.598, with the paired 95 %
 | planner before every action | off (run 1) | 0.816 | +0.218 [+0.123, +0.301] | 42 / 2 / 6 | 7 | 6 | 9.3 | 0 |
 | always (plan before every action) | declared | 0.822 | +0.224 [+0.125, +0.315] | 43 / 1 / 6 | 6 | 3 | 9.1 | 18.0 (most 48) |
 | commit (plan once, follow it) | declared | 0.806 | +0.208 [+0.121, +0.292] | 42 / 1 / 7 | 7 | 3 | 2.1 | 8.9 (most 42) |
-| moving (the RRARA equivalent) | declared | 0.744 | +0.146 [+0.058, +0.229] | 37 / 2 / 11 | 10 | 8 | 2.0 | 6.8 (most 38) |
+| moving (reflex while planning) | declared | 0.744 | +0.146 [+0.058, +0.229] | 37 / 2 / 11 | 10 | 8 | 2.0 | 6.8 (most 38) |
 
 - At 8 items thinking costs little: 7 to 18 ticks of an episode of about 270. Planning before every action does not lose to the clock (0.822 against 0.816 with the clock off); the rule check's result that it loses came from a fixed 20 ticks per thought, and a real thought here costs about 2 ticks after the first.
-- The RRARA equivalent is the lowest of the three (0.744), with the most rooms at zero (10) and the most deaths (8). Not traced yet why; the saved games are there to look.
+- The reflex-while-planning agent is the lowest of the three (0.744), with the most rooms at zero (10) and the most deaths (8). Not traced yet why; the saved games are there to look.
 - The estimate (how long the agent expects to think) is off by 1.9 ticks per thought for `always`, 6.5 for `commit`, 5.6 for `moving`.
 - Simulator against the rule check's board, same agent and clock: always 0.822 against 0.790, commit 0.806 against 0.823, moving 0.744 against 0.795; 5 or 6 rooms differ by more than 0.01 for each. These are the all-or-nothing rooms flipping on a few ticks (A82).
 - Measured seconds on the laptop for the same thoughts: 1.39 s, 0.93 s and 0.66 s per episode against 1.04, 0.73 and 0.53 declared.
+
+## Nov 24: why the reflex-while-planning agent dies more often (from the saved games of run 2; no new runs)
+
+`venv_kinder\Scripts\python.exe scripts\show_game.py run2_declared <room> commit moving` prints a saved game decision by decision. Rooms where `moving` dies and `commit` does not: 3, 6, 17, 22, 25. In 3 and 17 `commit` also scores 0 (alive, out of time). Read in full: 6, 22, 25.
+
+| room | agent | thoughts | what happened | score |
+|---|---|---|---|---|
+| 6 | commit | 3 | thinks 40 ticks standing; plan of 7 picks then home; after 3 picks, "get 3: no route" at tick 176; thinks again with 53 cells burning; new plan "get 5, home"; banks 24 at tick 224 | 0.727 |
+| 6 | moving | 1 | thinks 14 ticks while the reflex picks item 2 and turns for home; plan of 6 picks then home, two of them through fire; never fails an action, never thinks again; dies at tick 172 on the second crossing with 4 items in the bag | 0 |
+| 22 | commit | 3 | plan of 8 picks then home; after 4 picks (health 42), "get 7: no route" at tick 101; thinks again; new plan "get 3 through fire, get 0, home"; banks 14 at tick 195 with health 22 | 0.824 |
+| 22 | moving | 1 | plan of 8 picks then home, three through fire; never fails an action; dies at tick 133 on the second crossing with 3 items in the bag | 0 |
+| 25 | commit | 3 | plan of 7 picks then home; after 1 pick, "get 1: no route" at tick 51; thinks again; new plan of 4 picks then home; banks 23 at tick 225 with health 56 | 0.677 |
+| 25 | moving | 1 | the same plan as commit's first; it reaches item 0 at tick 36, not 51, so the way to item 1 is still open; never fails an action; health reaches 0 at tick 240 with 7 items in the bag | 0 |
+
+What the three rooms have in common:
+- Both agents start from one long plan made at tick 0, when one cell is burning: collect nearly everything, bank once at the end (the all-or-nothing weakness, A82). Its late steps, including the ones marked "through fire", are priced with the tick-0 forecast.
+- The only thing that makes either agent think again is an action that cannot be carried out (A70 b). A step that is allowed to cross fire can always be carried out, so it never does.
+- `commit` hit a "no route" in each of the three rooms (ticks 176, 101, 51). Its second plan, made with the real fire in view, was short: one to four more picks, then bank.
+- `moving` never hit one, thought once, and carried the tick-0 plan to its death.
+- Why it never hit one: it does not stand still while thinking, so it is ahead (room 6: 14 ticks of thinking against 40; room 25: at item 0 at tick 36 against 51) and routes that had closed for `commit` were still open for it; and because the reflex acted during the thought, it starts from another place, in room 6 with an item already in hand, so its plan has another order.
+- So in these rooms the reflex did nothing dangerous during the thought. Being faster took away the failure that made `commit` look at the fire again.
+
+Limits: three rooms read, of five; the saved games record health only at thoughts, so for `moving` (one thought) the game does not show where the health was lost, only that it ended at 0; nothing was replayed. Estimate against charge in these rooms: room 22 expected 10 ticks and was charged 2 (both agents: 10 against 3 and 2); room 6 commit expected 10 and was charged 40.
+
+What this points at, for CR, nothing changed: RRARA's preplanner replans when a staleness score crosses a threshold (time passed, hazard field changed). Our stand-in for that trigger is "an action cannot be carried out", and these games show the gap: a plan can go stale without any action failing.
+
+Counts over all 50 rooms of run 2, from the rows file: the reflex-while-planning agent never thought a second time in 9 rooms and scored 0 in all 9 (7 of its 8 deaths are among them); plan-once never thought a second time in 6 rooms, also all 0. Caution in reading this: banking is the last step of a plan, so "one thought only" already means the first plan was never finished. The count says how often each agent carried its first plan to a dead end (9 against 6), not why.
+
+## Nov 24 (afternoon): two corrections from CR; the RRARA spec; additions for the language-model chunks
+
+**Della layout (A86).** The repository on Della is `~/thinking-fast-hazard`; `~/iw-thinking-fast` is the HAZARD work folder and `git pull` fails there. Both Della scripts had the wrong folder written into them. They now find the clone themselves. The commands are:
+- setup, once, on a login node: `cd ~/thinking-fast-hazard && git pull && bash scripts/della_firelab_setup.sh 2>&1 | tee logs/della_firelab_setup.log`
+- the 10-item run: `cd ~/thinking-fast-hazard` then `sbatch --export=ALL,TAG=run4_items10_declared,AGENTS="random reflex always commit moving",CLOCK=declared,EXTRA="--items 10 --no-board" scripts/della_firelab_rooms.slurm`
+- the report: `PYTHONPATH=$PWD pyk310/bin/python -m firelab.run_rooms --tag run4_items10_declared --report-only`
+Checked on the laptop only: both scripts parse, and the setup script refuses a folder with no `firelab/`.
+
+**RRARA corrected (A87).** CR read version 2 of the paper in full. Version 1 is a rule that acts plus a language model that checks the rule's action in the background (valid, or invalid with a replacement; the rule's action stands unless invalid). Version 2 replaces the rule with a kept list of subgoals rewritten when a staleness score reaches 0.6. The paper gives no reflex rule, no prompts, no code, and does not say whether an invalid answer interrupts the action under way or how the background running is built. So none of our three planning agents is RRARA. The third one is renamed the reflex-while-planning agent in these notes and in `firelab/thinkers.py`; `moving` stays as its key in code and result files, so no result file changes. The table that mapped RRARA onto our agents is withdrawn where it stood.
+
+What stays true of the run 2 analysis under the new name: the reflex-while-planning agent is the lowest of the three at 8 items (0.744) and dies most often because it thinks a second time least often. That is a finding about our stand-in planner's trigger for thinking again. It says nothing about RRARA.
+
+**The RRARA spec for this task** is version 1 with both accountings (the paper's free one, our stricter one): PLAN.md section 7. **CR's additions for the language-model chunks** (two toggles, Jev then `claude-opus-5-5` at low effort with a declared time per call, Opus on della-vis1 with the key by file path, 3 rooms and a dollar cost before any model run): PLAN.md section 8, A88. The claude-api skill was read today for the plan; its Python reference is to be read again when the call is written. No code was written for either section.
