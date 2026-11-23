@@ -46,12 +46,12 @@ COLUMNS = ["room", "agent", "clock", "sim", "rule", "sim_ticks", "rule_ticks", "
 RUNS = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
 
 
-def run_agent(name: str, body, room: int, clock: Clock, thoughts: list) -> list:
+def run_agent(name: str, body, room: int, clock: Clock, thoughts: list, allow_fire: bool = True) -> list:
     if name == "random":
         return random_agent(body, 10_000 + room)  # the rule check's seed (gate.py:408)
     if name == "reflex":
         return reflex(body)
-    return thinker(body, clock, thoughts=thoughts, **THINKERS[name])
+    return thinker(body, clock, thoughts=thoughts, allow_fire=allow_fire, **THINKERS[name])
 
 
 def reference(task: gate.Task) -> dict:
@@ -101,7 +101,7 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
         board = False  # the interface the models use exists in the simulator only
     if board:
         rule_body = GateSkills(gate.make_world(task, room))
-        rule_log = run_agent(name, rule_body, room, clock, [])
+        rule_log = run_agent(name, rule_body, room, clock, [], options.get("allow_fire", True))
     env.reset(seed=room)
     skills.start()
     thoughts: list = []
@@ -109,7 +109,7 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
     if name in MODEL_AGENTS:  # thoughts holds one record per call: what the model saw, what it answered, both times
         sim_log = MODEL_AGENTS[name](Session(skills, allow_fire=options.get("allow_fire", True)), model, records=thoughts, **options)
     else:
-        sim_log = run_agent(name, skills, room, clock, thoughts)
+        sim_log = run_agent(name, skills, room, clock, thoughts, options.get("allow_fire", True))
     tokens = [sum(t.get(k, 0) for t in thoughts) for k in ("tokens_in", "tokens_out")]
     label = clock.mode if clock.mode != "fixed" else f"fixed{clock.fixed_ticks}"
     if name in MODEL_AGENTS:
@@ -175,7 +175,8 @@ def main() -> None:
     ap.add_argument("--accounting", default="free", choices=["free", "strict"], help="rrara1: is the checker's time counted")
     ap.add_argument("--call-time", default="measured", choices=["measured", "declared"], help="what a model call is charged")
     ap.add_argument("--seconds-per-call", type=float, default=0.3, help="the declared time of one model call")
-    ap.add_argument("--fire-free-menu", action="store_true", help="model agents: no command through fire, as for the reflex")
+    ap.add_argument("--fire-free-menu", action="store_true",
+                    help="no agent may walk through fire, as the reflex never does: model menus and the planner's plans")
     ap.add_argument("--report-only", action="store_true")
     args = ap.parse_args()
     folder = RUNS / args.tag
@@ -190,6 +191,7 @@ def main() -> None:
         model = make_model(args.model, args.key_file) if uses_model else None
         options = {"accounting": args.accounting, "call_time": args.call_time, "declared_seconds": args.seconds_per_call,
                    "allow_fire": not args.fire_free_menu}
+        head["allow_fire"] = options["allow_fire"]
         if uses_model:
             head.update(model=args.model, **options)
         print("machine:", head, flush=True)

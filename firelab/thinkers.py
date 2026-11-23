@@ -33,7 +33,7 @@ def seen(world: gate.World, state: gate.State) -> dict:
 
 
 def thinker(body, clock: Clock, commit: bool = False, moving: bool = False, log: list | None = None,
-            thoughts: list | None = None) -> list:
+            thoughts: list | None = None, allow_fire: bool = True) -> list:
     """Run one episode. Commands go to `log` as in firelab.agents; one dict per thought goes to `thoughts`."""
     log = [] if log is None else log
     thoughts = [] if thoughts is None else thoughts
@@ -44,7 +44,7 @@ def thinker(body, clock: Clock, commit: bool = False, moving: bool = False, log:
         believed, state = body.believe()
         record = {"seen": seen(believed, state), "estimate": clock.estimate(len(gate.live(believed, state)))}
         predict(believed, state, before + record["estimate"])  # where the robot should be when the thought ends
-        value, actions, steps = plan(believed, state)
+        value, actions, steps = plan(believed, state, cross_fire=allow_fire)
         record.update(clock.cost(time.perf_counter() - began, steps), plan=[list(a) for a in actions], plan_value=value)
         thoughts.append(record)
         if not actions and not body.carrying():
@@ -54,7 +54,7 @@ def thinker(body, clock: Clock, commit: bool = False, moving: bool = False, log:
             reflex(body, log, until=until)
         if not body.over:
             body.wait(max(0, until - body.ticks))
-        for kind, k, cross in (actions or (("home", None, True),))[: None if commit else 1]:
+        for kind, k, cross in (actions or (("home", None, allow_fire),))[: None if commit else 1]:
             if body.over:
                 break
             result = body.get(k, cross) if kind == "get" else body.home(cross)

@@ -1473,3 +1473,24 @@ Simulator, 8 items, rooms 0 to 49; gap against the reflex's 0.598 with the paire
 - It chose get 248 times (32 of them with something already in the bag), bank 190, wait ten ticks 354. It died in 12 rooms, every time while waiting: 7 with an empty bag (no effect on the score), 5 with a bag it could not bring home (rooms 7, 8, 13, 24, 49).
 - RRARA version 1 is unchanged by the menu (48 of 50 rooms score as in the 09:55 run): 370 valid, 90 invalid; 25 replacements taken, 32 late, 5 no longer on the menu.
 - The exhaustive planner's plans may cross fire too, so its +0.218 over the reflex carries the same advantage as Jev's first number did; that comparison has not been redone with a fire-free planner.
+
+## Nov 24 (10:32): the clock-off planner without fire crossing; CR's second condition redone like for like
+
+Change: `plan(..., cross_fire=False)` in `firelab/planner.py` (our planner, not the rule check) and `thinker(..., allow_fire=False)`; `run_rooms.py --fire-free-menu` now switches both the model menus and the planner's plans. Tests: 28 passed in the three files it touches.
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag run1_off_firefree --agents always --clock off --rooms 50 --fire-free-menu` : 50 episodes plus the same on the rule check's board, 5 min 20 s (10:26:46 to 10:32:06). Rows and games in `results/firelab_sim/run1_off_firefree/`, report in `logs/run1_off_firefree_nov24.log`.
+
+Simulator, 8 items, rooms 0 to 49, clock off for the planner.
+
+| | may not walk through fire | may walk through fire |
+|---|---|---|
+| reflex-like agent | 0.598 (the reflex) | 0.681 (Jev before every command, which plays the reflex's policy plus fire routes) |
+| planner before every command, clock off | 0.680 | 0.816 |
+| gap, paired, 95 % interval | +0.082 [-0.006, +0.165] | +0.134 [+0.033, +0.222] |
+
+- The +0.218 of run 1 (A82) compared a planner that may cross fire with a reflex that may not. Like for like the gap is +0.082 without fire and +0.134 with it. CR's threshold is 0.15 (A65): neither meets it on the mean, and the no-fire interval reaches zero.
+- Without fire the planner is ahead of the reflex in 35 rooms, level in 5, behind in 10; in 9 of the 10 it scores 0. It scores 0 in 10 rooms in all (0, 5, 10, 17, 25, 37, 40, 43, 45, 47), against 7 with fire: it still collects a bag and banks once, and without the fire crossing it has no way out when the route home closes. It dies in 7.
+- Taking fire away costs the planner 0.136 (interval [-0.243, -0.015]): better in 6 rooms, the same in 18, worse in 26.
+- For reference only, not an agent: the better of the no-fire planner and the reflex in each room averages 0.769; with fire 0.869. The planner's zeros are where the stand-in loses to the reflex, so a planner that kept the reflex's caution would sit well above 0.680.
+- The no-fire planner thinks 28.6 times per episode against 9.3: when it is trapped with a bag it has no plan, waits one tick and thinks again. That is the loop doing what it says, and it costs nothing with the clock off.

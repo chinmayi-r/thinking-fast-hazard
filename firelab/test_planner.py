@@ -35,6 +35,17 @@ def test_the_counted_search_gives_the_rule_checks_plan(room):
     assert steps > 0 and plan(world, state)[2] == steps  # the count is a property of the search, not of the machine
 
 
+def test_a_plan_without_fire_crossing_has_no_such_action_and_is_worth_no_more():
+    crossed = 0
+    for room in range(10):
+        world, state = GateSkills(gate.make_world(SIX, room)).believe()
+        free_value, free_actions, _ = plan(world, state)
+        value, actions, _ = plan(world, state, cross_fire=False)
+        assert all(cross is False for _, _, cross in actions) and value <= free_value
+        crossed += any(cross for _, _, cross in free_actions)
+    assert crossed > 0  # the setting matters: some unrestricted plans do cross fire
+
+
 def test_the_copy_also_holds_at_eight_items():
     world, state = GateSkills(gate.make_world(gate.Task(items=8, **RULES), 0)).believe()
     value, actions, steps = plan(world, state)
