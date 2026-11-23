@@ -1426,3 +1426,27 @@ The trial (CR: "run the 3-room Jev trial on the laptop and show me what the mode
 - Jev before every command (38 calls, none failed): it gets the most valuable item and then banks, every time, which is the reflex's own policy; the scores are the reflex's to four decimals. A call takes 0.11 to 0.21 s (median 0.15), 2 ticks; about 1300 tokens in and 60 out.
 - RRARA version 1 (33 checks, none failed): 27 answers "valid". The 6 "invalid" answers all came when the rule's command was a get with no fire-free route, which fails at once; Jev's replacement was "wait 10 ticks" five times and another item once. None was used: three were late under strict accounting (the failed command took 0 ticks, the answer 2), and three were the last check of their episode. So in these rooms RRARA version 1 is the reflex exactly. Under free accounting the three late ones would have been taken; not run.
 - Cost: 0.0020 dollars for the three rooms of Jev before every command, 0.0019 for RRARA version 1 (Jev at 0.042 dollars per million input tokens, A37).
+
+## Nov 24 (09:55): Jev on rooms 0 to 49, 8 items (CR: "Run 50 rooms")
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag jev_run50 --agents model rrara1 --model jev --key-file .secrets\typesafe_key.txt --rooms 50 --call-time measured --accounting strict --no-board` : 100 episodes, 10 min 13 s (09:44:23 to 09:54:36), laptop on mains, 1126 calls, 0.061 dollars. Rows in `results/firelab_sim/jev_run50/rows_000.csv`, every call with its text and answer in its `games/` folder, report in `logs/jev_run50_nov24.log`.
+- `venv_kinder\Scripts\python.exe scripts\model_run_summary.py jev_run50` : the summary below.
+
+Simulator, rooms 0 to 49. Gap = against the reflex's 0.598, paired 95 % interval.
+
+| agent | score | gap to the reflex | ahead / level / behind | deaths | calls per episode | ticks of call time per episode | dollars |
+|---|---|---|---|---|---|---|---|
+| reflex (first run) | 0.598 | | | 0 | 0 | 0 | 0 |
+| Jev before every command (measured) | 0.681 | +0.083 [+0.044, +0.126] | 25 / 17 / 8 | 17 | 13.4 | 27.3 | 0.035 |
+| RRARA version 1, Jev as checker (measured, strict) | 0.578 | -0.020 [-0.055, +0.006] | 4 / 42 / 4 | 0 | 9.1 | 18.5 | 0.026 |
+
+Jev: every one of 1126 calls was answered; median 0.14 s, 90th percentile 0.17 s, slowest 0.40 s; about 1240 tokens in and 55 out per call.
+
+**Jev before every command: the lead is partly an action the reflex does not have.** Its menu offers a route through fire wherever no fire-free route exists (A91 a); the reflex never enters fire. Jev chose: get by a fire-free route 242 times, bank 210, wait ten ticks 171, get through fire 22, bank through fire 26. In the 34 rooms where it went through fire at least once it is +0.107 on the reflex (18 ahead, 7 behind) and dies in 16; in the 16 rooms where it never did it is +0.033 (7 ahead, 1 behind) and dies in 1. So this number is not yet "a model that thinks beats the reflex": the two agents were not choosing from the same commands.
+
+**RRARA version 1: the checker changes little, and its overrides cut both ways.** 455 checks: 377 "valid", 78 "invalid" (46 when the rule's command had no fire-free route, 32 when it had one). At the next decision: 342 valid, 31 late, 26 taken, 6 no longer on the menu. All 26 replacements taken were "get another item" (21) or "go home" (5). 42 rooms are identical to the reflex. Where they differ: +0.06 to +0.12 in rooms 9, 17, 35, 47 (an extra item picked before banking); -0.19 to -0.56 in rooms 2, 14, 29, 37, where the robot picked a second and third item on the checker's word and then found no route home, losing the bag.
+- This comes from the non-interrupting rule (A89): the checker says "not that item, this one instead"; by the next decision the first item is already picked, so the replacement is done in addition, and it takes the place of the rule's "go home".
+- Jev is not repeatable: room 2 scored 0.708 for RRARA version 1 in the 3-room trial and 0.333 here.
+
+Not run: free accounting, a declared call time, the same agents with a fire-free-only menu, any Opus call.
