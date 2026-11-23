@@ -1585,3 +1585,13 @@ Run by the Della session on della-vis1 on CR's word (A98), not by me. Settings: 
 CR's reading of the RRARA row, relayed by the Della session, for the notes: RRARA version 1 pegs the result to the reflex; what passes through is the checker's rate of disagreement, applied one decision late, not the checker's quality. She keeps the fire-free planner row (0.680) in the main table and puts every fire-free LLM or Jev row under the heading "absolutely useless".
 
 Not run: Opus with the measured time charged; Opus with strict accounting; an interrupting RRARA; anything at 10 items; Opus on rooms 50 to 99.
+
+## Nov 23 (13:05 to 13:20): Liane's method on Della, status while it runs; summary script ready
+
+From the Della session's message of 1:06 PM (its words, not checked by me): the merge of `e859773` was clean (70f21e4 on Della); 157 tests passed in 135 s on a compute node; one real Haiku call worked (0.71 s, ended normally); `scripts/liane_offline.sh` started at 1:02 PM, detached.
+- Step 1 done: Haiku played rooms 100 to 109, asked before every command, fire routes on the menu, measured time charged: score 0.503, 6.6 calls per run, about 2.7 s per call, 178 ticks of standing per run, 0.0215 dollars.
+- Step 2, round 1 (Opus writes a program) in flight since 1:05 PM; the prompt is 80 890 bytes (smaller than the 131 080 of the laptop dry run, because Haiku made fewer decisions per game than Jev).
+
+On the laptop meanwhile, no model:
+- New `scripts/liane_summary.py` (51 lines): reads a test file of rooms 50 to 99 and prints the program's score beside the reflex, random, Jev, the planner and the cautious planner on the same rooms, each difference with its 95 % interval.
+- Check of the whole path with the example program (the reflex written as a program): `venv_kinder\Scripts\python.exe -m firelab.validate --program firelab/examples/reflex_program.py --first 50 --rooms 50 --out results/firelab_compiled/check/reflex_program_50_99.json` (about 3 minutes). It scores 0.627, level with our reflex in all 50 rooms, 0 illegal commands, 0 errors, 0.010 ms per decision. So the validation step reproduces the reflex's 0.627 from the earlier run on these rooms, and any program's gap on rooms 50 to 99 is measured from the right baseline.
