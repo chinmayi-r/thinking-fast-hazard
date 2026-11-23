@@ -1326,3 +1326,55 @@ Timing of one episode, room 3 (an easy room, 1070 first-plan steps), laptop: alw
 Where the equivalent differs from RRARA: the slow thinker here is an exhaustive planner, not a language model; it hands back a whole plan, not a verdict on one action; and its thinking is charged to the world under both clocks, where the paper's Response Latency leaves out background planner and reflector compute (our "worldtime" reading, A30). RRARA's robot sees only what its camera has seen; this room is fully observed.
 
 - Whole suite at the 6c state: 118 passed in 2 min 19 s. Committed into the clone `thinking-fast-hazard/` (not pushed; CR pushes).
+
+## Nov 24 (07:22): run 1, the planner with the clock off, 8 items, rooms 0 to 49
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag run1_off --agents always --clock off --rooms 50` : 50 simulator episodes plus the same on the rule check's board, 2 min 54 s (07:19:08 to 07:22:02), laptop on mains. Rows in `results/firelab_sim/run1_off/rows_000.csv`, 50 saved games in `results/firelab_sim/run1_off/games/`, report in `logs/run1_off_nov24.log`. Reference plan on this machine at that moment: 586 steps in 0.083 s, 0.14 ms per step.
+
+| agent, simulator, rooms 0 to 49 | score |
+|---|---|
+| random (first run) | 0.041 |
+| reflex (first run) | 0.598 |
+| planner before every action, clock off | 0.816 |
+
+- CR's conditions in the simulator (A65: random at most 0.25, gap at least 0.15): random 0.041; gap planner minus reflex +0.218, paired 95 % interval [+0.123, +0.301]. The mean passes; the lower end of the interval is under 0.15. The planner is ahead in 42 rooms, level in 2, behind in 6.
+- In those 6 rooms (17, 29, 31, 36, 41, 45) the planner scores 0. It scores 1.0 in 20 rooms. The cause is in the saved games: with a bag, the plan that is best under the forecast collects every item and banks once at the end. Room 17: all 8 items (30 of 30) in the bag at tick 274, the episode ends at tick 293 with the robot 19 ticks into the walk home. Room 36: the way closes at tick 64, the next plan crosses fire, health falls from 88 to 14, and it dies at tick 135 with 5 items in the bag. Health reaches 0 in all 6 rooms except 17.
+- Simulator against the rule check's board for the same agent: 0.816 against 0.854, mean difference -0.038, all of it from rooms 17 and 36 (0.000 against 0.967 in each); two more rooms differ by 0.013. In both rooms the board's robot, a couple of ticks ahead, gets the single drop in before the end. The rule check's planner scores 0 in rooms 29, 31, 41 and 45 as well.
+- Thinking, measured and not charged: 9.3 thoughts per episode, 6561 search steps on average (median 2713, most 32 054), 1.02 s of thinking per episode on average, 5.14 s at most. At the placeholder 0.25 ms per step the declared cost averages 1.64 s per episode.
+
+## Nov 24: Della timing of one plan (CR ran it), and the cost per search step
+
+CR, on della9: `cd /home/cr7998/iw-thinking-fast/della_planner_timing && bash time_on_della.sh` (srun job 18197402, node della-r3c3n13, Xeon Gold 6242 at 2.80 GHz).
+
+| items | Della median | Della slowest | laptop median (CR, Nov 23) | search steps, median | Della ms per step |
+|---|---|---|---|---|---|
+| 6 | 0.025 s | 0.275 s | 0.02 s | 214 | 0.183 |
+| 8 | 1.034 s | 3.971 s | 1.8 s | 5206 | 0.175 |
+| 10 (3 rooms) | 9.490 s | 26.185 s | 6 to 24 s | 40 990 | 0.232 |
+
+- The Della node is not much faster than the laptop when the laptop is free: 8 items 1.0 s against 1.8 s, 10 items the same range. The 6 against 8 against 10 line does not move with the machine.
+- `venv_kinder\Scripts\python.exe scripts\seconds_per_step.py` (about a minute): recounts the search steps of the plans CR timed and divides. Frozen in `firelab/clock.py`: 0.000175 s per search step (8 items: 14.314 s / 81 633 steps). A83 has the detail and the open point for 10 items.
+- Correction to the run 1 entry: the planner scores exactly 0 in 7 rooms (17, 25, 29, 31, 36, 41, 45); it is behind the reflex in 6 of them, and in room 25 both score 0.
+- Known weakness of the stand-in (CR, Nov 24: leave the planner as it is): it banks once at the end and loses everything when the forecast is wrong.
+
+## Nov 24 (07:40): run 2, the three thinking agents under the declared clock, 8 items, rooms 0 to 49
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag run2_declared --agents always commit moving --clock declared --rooms 50` : 150 simulator episodes plus the same on the rule check's board, 11 min 13 s (07:28:51 to 07:40:04), laptop on mains. Declared cost 0.000175 s per search step (A83). Rows in `results/firelab_sim/run2_declared/rows_000.csv`, 150 saved games in its `games/` folder, report in `logs/run2_declared_nov24.log`.
+- `venv_kinder\Scripts\python.exe scripts\run_summary.py run2_declared` : the table below (gaps, intervals, zeros).
+
+Simulator, rooms 0 to 49. Gap = against the reflex's 0.598, with the paired 95 % interval. Random is 0.041.
+
+| agent | clock | score | gap to the reflex | ahead / level / behind | rooms at zero | deaths | thoughts per episode | ticks charged per episode |
+|---|---|---|---|---|---|---|---|---|
+| planner before every action | off (run 1) | 0.816 | +0.218 [+0.123, +0.301] | 42 / 2 / 6 | 7 | 6 | 9.3 | 0 |
+| always (plan before every action) | declared | 0.822 | +0.224 [+0.125, +0.315] | 43 / 1 / 6 | 6 | 3 | 9.1 | 18.0 (most 48) |
+| commit (plan once, follow it) | declared | 0.806 | +0.208 [+0.121, +0.292] | 42 / 1 / 7 | 7 | 3 | 2.1 | 8.9 (most 42) |
+| moving (the RRARA equivalent) | declared | 0.744 | +0.146 [+0.058, +0.229] | 37 / 2 / 11 | 10 | 8 | 2.0 | 6.8 (most 38) |
+
+- At 8 items thinking costs little: 7 to 18 ticks of an episode of about 270. Planning before every action does not lose to the clock (0.822 against 0.816 with the clock off); the rule check's result that it loses came from a fixed 20 ticks per thought, and a real thought here costs about 2 ticks after the first.
+- The RRARA equivalent is the lowest of the three (0.744), with the most rooms at zero (10) and the most deaths (8). Not traced yet why; the saved games are there to look.
+- The estimate (how long the agent expects to think) is off by 1.9 ticks per thought for `always`, 6.5 for `commit`, 5.6 for `moving`.
+- Simulator against the rule check's board, same agent and clock: always 0.822 against 0.790, commit 0.806 against 0.823, moving 0.744 against 0.795; 5 or 6 rooms differ by more than 0.01 for each. These are the all-or-nothing rooms flipping on a few ticks (A82).
+- Measured seconds on the laptop for the same thoughts: 1.39 s, 0.93 s and 0.66 s per episode against 1.04, 0.73 and 0.53 declared.

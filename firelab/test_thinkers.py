@@ -31,11 +31,11 @@ def test_the_clock_gives_both_costs_and_charges_by_its_mode():
 def test_the_estimate_is_exact_when_known_and_otherwise_the_last_cost():
     assert Clock("off").estimate(8) == 0 and Clock("fixed", 20).estimate(8) == 20
     clock = Clock("declared", seconds_per_step=0.001)
-    assert clock.estimate(8) == 18 and clock.estimate(6) == 1  # first thought: the timing table, else 1 tick
+    assert clock.estimate(8) == 10 and clock.estimate(6) == 1  # first thought: the timing table, else 1 tick
     clock.cost(0.0, 700)
     assert clock.estimate(8) == 7  # afterwards: what the last thought was charged
     clock.start()
-    assert clock.estimate(8) == 18  # a new episode forgets it
+    assert clock.estimate(8) == 10  # a new episode forgets it
 
 
 @pytest.mark.parametrize("name", list(AGENTS))

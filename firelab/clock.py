@@ -20,12 +20,15 @@ import math
 from dataclasses import dataclass, field
 
 TICKS_PER_SECOND = 10
-# Seconds one search step is declared to cost. PLACEHOLDER from the laptop (0.16 to 0.35 ms per step, Nov 24);
-# to be measured once on the Della compute node and then frozen (decision 3, A80).
-SECONDS_PER_STEP = 0.00025
-# Ticks the first thought is expected to take, by items on the floor: CR's laptop timings of Nov 23
-# (median 0.02 s at 6 items, 1.8 s at 8, 6 to 24 s at 10). Anything not listed: 1 tick.
-FIRST_ESTIMATE = {8: 18, 10: 150}
+# Seconds one search step is declared to cost. FROZEN Nov 24 (decision 3, A83) from CR's timing on a Della compute
+# node (della-r3c3n13, Xeon Gold 6242 at 2.80 GHz): the first plans of rooms 0 to 9 at 8 items took 14.314 s for
+# 81 633 search steps, which is 0.1753 ms per step (scripts/seconds_per_step.py). At 10 items the same node took
+# 0.2321 ms per step (42.350 s for 182 502 steps): a step tries more actions when more items are left.
+SECONDS_PER_STEP = 0.000175
+SECONDS_PER_STEP_10_ITEMS = 0.000232
+# Ticks the first thought is expected to take, by items on the floor: the median first plan of that Della timing
+# under the declared cost (8 items: 5206 steps, 0.91 s; 10 items: 40 990 steps, 9.5 s). Anything not listed: 1 tick.
+FIRST_ESTIMATE = {8: 10, 10: 95}
 
 
 def ticks(seconds: float) -> int:

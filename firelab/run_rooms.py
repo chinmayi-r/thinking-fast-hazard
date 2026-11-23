@@ -28,7 +28,7 @@ import numpy as np
 import firelab  # noqa: F401
 from firelab import gate
 from firelab.agents import GateSkills, random_agent, reflex
-from firelab.clock import Clock
+from firelab.clock import SECONDS_PER_STEP, Clock
 from firelab.env import FireLab3DEnv
 from firelab.planner import plan
 from firelab.skills import Skills
@@ -148,6 +148,7 @@ def main() -> None:
     ap.add_argument("--agents", nargs="+", default=["random", "reflex"], choices=AGENTS)
     ap.add_argument("--clock", default="off", choices=["off", "declared", "measured", "fixed"])
     ap.add_argument("--fixed-ticks", type=int, default=0)
+    ap.add_argument("--seconds-per-step", type=float, default=SECONDS_PER_STEP, help="the declared cost of one search step")
     ap.add_argument("--first", type=int, default=0, help="first room")
     ap.add_argument("--rooms", type=int, default=50, help="number of rooms")
     ap.add_argument("--items", type=int, default=8)
@@ -162,7 +163,7 @@ def main() -> None:
     if todo and not args.report_only:
         values = tuple(args.values)
         task = gate.Task(items=args.items, values=values, layout="one_wide", clearance=True, reach=1, bag=True, hp_loss=2.0)
-        head = {"items": args.items, "values": values, **reference(task)}
+        head = {"items": args.items, "values": values, "seconds_per_step": args.seconds_per_step, **reference(task)}
         print("machine:", head, flush=True)
         env = FireLab3DEnv(level=2, num_items=args.items, values=values, realistic_bg=False)
         skills = Skills(env)
@@ -174,7 +175,7 @@ def main() -> None:
             if fresh:
                 writer.writeheader()
             for room, name in todo:
-                clock = Clock(args.clock, args.fixed_ticks)
+                clock = Clock(args.clock, args.fixed_ticks, args.seconds_per_step)
                 writer.writerow(play(env, skills, task, room, name, clock, not args.no_board, folder / "games", head))
                 f.flush()
         env.close()
