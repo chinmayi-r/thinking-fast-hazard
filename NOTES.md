@@ -1533,3 +1533,28 @@ Gap = planner (clock off) minus the reflex-like agent with the same commands: th
 **The rule check's board** (`scripts/gate_nofire_check.py`, no simulator, new file `results/firelab_gate/nofire_check_nov23.csv`; old result files untouched): reflex 0.600; planner any bag 0.854 with fire (+0.255 [+0.173, +0.324]) and 0.652 without (+0.053 [-0.042, +0.142]); bank after every pick 0.763 and 0.631; bank after two 0.850 (+0.251, behind the reflex in no room) and 0.712 (+0.112 [+0.052, +0.168]). The board says the same as the simulator: without fire the plain planner's lead is small and its interval reaches zero.
 
 Board check rerun with the cautious planner added (11:20 to 11:29, the same new file, now eight settings): on the rule check's board the cautious planner (forecast fire 1.5 times faster, any bag) scores 0.772 without fire, +0.172 over the reflex's 0.600 (interval [+0.108, +0.234], behind the reflex in 3 rooms), and 0.937 with fire (+0.337, behind in none). The board agrees with the simulator.
+
+## Nov 23 (about 12:00): CHANGE TO THE AGREED CONDITIONS, decided by CR: the fire-free menu is off for every model agent
+
+**CHANGE (CR, relayed by the Della session at about 12:00).** The reflex is a baseline that stays out of fire; smarter agents are allowed through it. Her words as relayed: "the reflex is supposed to be a simple rule to keep it out of trouble ... that doesn't make it unfair that when a smarter agent comes into play it should be able to go on the road ... remember the reflex is a baseline!" From now on no language-model or Jev run uses `--fire-free-menu`. She counts every model run made with it as useless; the fire-free planner row she keeps. She also asked that any change to the agreed conditions be flagged in red at the top of a report and never applied quietly.
+
+What this undoes. At 09:55 I told CR the comparison between Jev and the reflex was "not like for like" because Jev could walk through fire, and proposed the fire-free menu; she agreed to two reruns (10:09, 10:32), her Della list asked for it too, and my 11:30 report used "the gap to the agent with the same commands" as the gap that counts. That framing is withdrawn. The gap that counts is the gap to the reflex.
+
+Runs set aside as not counting (kept on disk, not deleted): `jev_run50_firefree` (both agents), `jev_free_nofire`, `opus_trial3`, `opus_run50` (10.24 dollars), `jev_trial3`. Kept: the fire-free planner rows.
+
+Rooms 0 to 49, 8 items, every gap against the reflex's 0.598 (`scripts/gap_table.py`, which now prints this gap first):
+
+| agent, may walk through fire | score | gap to the reflex, 95 % interval |
+|---|---|---|
+| Jev before every command (measured) | 0.681 | +0.083 [+0.044, +0.126] |
+| RRARA version 1, Jev checking, strict | 0.578 | -0.020 [-0.055, +0.006] |
+| RRARA version 1, Jev checking, free | 0.583 | -0.015 [-0.046, +0.010] |
+| planner before every command, clock off | 0.816 | +0.218 [+0.123, +0.301] |
+| planner before every command, declared clock | 0.822 | +0.224 [+0.125, +0.315] |
+| planner, plan once and follow, declared clock | 0.806 | +0.208 [+0.121, +0.292] |
+| planner, reflex acts while it plans, declared clock | 0.744 | +0.146 [+0.058, +0.229] |
+| cautious planner (forecast fire 1.5 times faster), clock off | 0.938 | +0.340 [+0.286, +0.397] |
+
+Kept for reference, planner without fire, clock off: 0.680 (+0.082 [-0.006, +0.165]); cautious 0.792 (+0.194 [+0.134, +0.252]). On the unseen rooms 50 to 99 the cautious planner with fire scores 0.932 against the reflex's 0.627 (+0.305 [+0.251, +0.362]).
+
+So CR's second condition, read her way, is met by the planner as it was (run 1: +0.218) and by more with the cautious one. Opus with the fire menu is running on Della (tag `opus_run50_fire`, started by the Della session at about 12:00 on CR's word, about 10 dollars and 2 hours expected).

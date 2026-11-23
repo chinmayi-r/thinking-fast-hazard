@@ -1,7 +1,9 @@
 """The gap table (Nov 23): every simulator run on rooms 0-49 against the reflex-like agent that has the same commands.
 
-Reads rows files only; plays nothing. Without walking through fire the baseline is the reflex (first run); with it,
-the baseline is Jev before every command with the fire menu (jev_run50), which plays the reflex's policy plus fire routes.
+Reads rows files only; plays nothing. Two gaps per row. "To the reflex" is the one that counts since CR's decision
+of Nov 23 about 12:00 (A98): the reflex is the baseline and stays out of fire; smarter agents may walk through it.
+"To the same-commands agent" is the earlier like-for-like reading, kept for the record: the reflex for a row without
+fire, Jev before every command with the fire menu (jev_run50) for a row with fire.
 Run: venv_kinder\\Scripts\\python.exe scripts\\gap_table.py   (PYTHONPATH = repo root)
 """
 import csv
@@ -49,5 +51,6 @@ for label, tag, agent, base in ROWS:
         continue
     a, b, r = (np.array([d[k] for k in rooms]) for d in (mine, base, reflex))
     lo, hi = paired_interval(a - b)
-    print(f"{label:42s} {a.mean():.3f}  gap {np.mean(a - b):+.3f} [{lo:+.3f}, {hi:+.3f}]  ahead/level/behind {int((a - b > 0.005).sum())}/"
+    rlo, rhi = paired_interval(a - r)
+    print(f"{label:42s} {a.mean():.3f}  to the reflex {np.mean(a - r):+.3f} [{rlo:+.3f}, {rhi:+.3f}]  |  to the same-commands agent {np.mean(a - b):+.3f} [{lo:+.3f}, {hi:+.3f}]  ahead/level/behind {int((a - b > 0.005).sum())}/"
           f"{int((abs(a - b) <= 0.005).sum())}/{int((a - b < -0.005).sum())}  zeros {int((a == 0).sum())}  behind the reflex in {int((a - r < -0.005).sum())}")
