@@ -1614,3 +1614,7 @@ A correction came through the chat "HAZARD/ThreeDWorld requirements audit": CR w
 A third message from the chat "HAZARD/ThreeDWorld requirements audit": CR's words there were "run it", and the hold was that chat's misreading. So within about 30 minutes the relay said run, hold, run.
 - I have not sent the run to Della. This session's permission check refused exactly this at 13:45 (a go-ahead to spend that CR did not type in this chat), and a second relayed message does not change who typed it. Nothing was spent.
 - The run starts when CR says so in this chat, or says so herself in the Della chat "Della availability check". The instruction is written and ready (13:45 entry).
+
+## Nov 23 (14:12): the Opus run with its real time charged sent to Della on CR's word in this chat
+
+CR typed "Yes, start it" here. The instruction of the 13:45 entry went to the Della chat "Della availability check" (tag `opus_run50_fire_measured`, agent `model`, `--call-time measured`, 5 processes of 10 rooms, guard at 9 dollars). This route gives no receipt; it has started only when the Della chat says so. Estimate 5.5 dollars or less; with it, Opus spending today would be about 26 dollars, inside the 20.52 plus 10 relayed as the new limit.
