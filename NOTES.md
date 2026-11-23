@@ -1609,8 +1609,8 @@ A correction came through the chat "HAZARD/ThreeDWorld requirements audit": CR w
 - The run had not started (13:45 entry above), so there is nothing to stop, no rows, and nothing spent on it.
 - The limit reached me through another chat, not from CR in this one. I record it as relayed. It changes nothing I do until CR names a run.
 
-## Nov 23 (about 14:00): "run it" relayed for the Opus run with real time charged; still NOT started
+## Nov 23 (13:55): "run it" relayed for the Opus run with real time charged; still NOT started
 
-A third message from the chat "HAZARD/ThreeDWorld requirements audit": CR's words there were "run it", and the hold was that chat's misreading. So within about 35 minutes the relay said run, hold, run.
+A third message from the chat "HAZARD/ThreeDWorld requirements audit": CR's words there were "run it", and the hold was that chat's misreading. So within about 30 minutes the relay said run, hold, run.
 - I have not sent the run to Della. This session's permission check refused exactly this at 13:45 (a go-ahead to spend that CR did not type in this chat), and a second relayed message does not change who typed it. Nothing was spent.
 - The run starts when CR says so in this chat, or says so herself in the Della chat "Della availability check". The instruction is written and ready (13:45 entry).
