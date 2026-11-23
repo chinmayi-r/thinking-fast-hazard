@@ -1408,3 +1408,21 @@ Checked on the laptop only: both scripts parse, and the setup script refuses a f
 What stays true of the run 2 analysis under the new name: the reflex-while-planning agent is the lowest of the three at 8 items (0.744) and dies most often because it thinks a second time least often. That is a finding about our stand-in planner's trigger for thinking again. It says nothing about RRARA.
 
 **The RRARA spec for this task** is version 1 with both accountings (the paper's free one, our stricter one): PLAN.md section 7. **CR's additions for the language-model chunks** (two toggles, Jev then `claude-opus-5-5` at low effort with a declared time per call, Opus on della-vis1 with the key by file path, 3 rooms and a dollar cost before any model run): PLAN.md section 8, A88. The claude-api skill was read today for the plan; its Python reference is to be read again when the call is written. No code was written for either section.
+
+## Nov 24 (09:33): chunks 7, 8a, 8b; the 3-room Jev trial on the laptop
+
+Chunks 7a, 7b, 7c, 8a and 8b written on CR's go (DESIGN has a section for each; readings in A91). `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 148 passed in 4 min. Committed in the clone as f67685f.
+
+The trial (CR: "run the 3-room Jev trial on the laptop and show me what the model saw and answered"), from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag jev_trial3 --agents reflex model rrara1 --model jev --key-file .secrets\typesafe_key.txt --rooms 3 --call-time measured --accounting strict --no-board` : rooms 0 to 2, 8 items, 9 episodes, 55 s (09:32:24 to 09:33:19). Rows in `results/firelab_sim/jev_trial3/rows_000.csv`; the games, with the full text of every call and its answer, in `results/firelab_sim/jev_trial3/games/`; report in `logs/jev_trial3_nov24.log`. One call was made before it to check the key (374 tokens).
+- `venv_kinder\Scripts\python.exe scripts\show_game.py` does not print model calls yet; the calls were read from the game files directly.
+
+| room | reflex | Jev before every command | RRARA version 1, Jev as checker (measured, strict) |
+|---|---|---|---|
+| 0 | 0.625 | 0.625 (9 calls, 19 ticks charged; dies at tick 345 after its last bank) | 0.625 (10 checks) |
+| 1 | 0.619 | 0.619 (18 calls, 37 ticks) | 0.619 (12 checks) |
+| 2 | 0.708 | 0.708 (11 calls, 23 ticks) | 0.708 (11 checks) |
+
+- Jev before every command (38 calls, none failed): it gets the most valuable item and then banks, every time, which is the reflex's own policy; the scores are the reflex's to four decimals. A call takes 0.11 to 0.21 s (median 0.15), 2 ticks; about 1300 tokens in and 60 out.
+- RRARA version 1 (33 checks, none failed): 27 answers "valid". The 6 "invalid" answers all came when the rule's command was a get with no fire-free route, which fails at once; Jev's replacement was "wait 10 ticks" five times and another item once. None was used: three were late under strict accounting (the failed command took 0 ticks, the answer 2), and three were the last check of their episode. So in these rooms RRARA version 1 is the reflex exactly. Under free accounting the three late ones would have been taken; not run.
+- Cost: 0.0020 dollars for the three rooms of Jev before every command, 0.0019 for RRARA version 1 (Jev at 0.042 dollars per million input tokens, A37).
