@@ -1656,7 +1656,7 @@ Both ran on Della, by the Della session. Laptop copies are typed from its messag
 
 Not run: Liane's method live or with more rounds; a second compile; the program on rooms 0 to 49; Opus real time with the checker (RRARA) or with strict accounting; anything at 10 items.
 
-## Nov 23 (14:35 to 14:50): every agent in one table, rooms 0 to 49; the kept program played these rooms too
+## Nov 23 (14:25 to 14:35): every agent in one table, rooms 0 to 49; the kept program played these rooms too
 
 CR asked why random, the reflex and the planners were not in the 2:25 PM table, and for everything side by side. To put Liane's program in the same rooms as the rest I played it on rooms 0 to 49 on the laptop (no model, 6 minutes): `venv_kinder\Scripts\python.exe -m firelab.validate --program results/firelab_compiled/v1/policy_round2.py --first 0 --rooms 50 --out results/firelab_compiled/v1/rooms_0_49_laptop.json`. Rooms 0 to 49 were not used to write or choose the program (training 100 to 109, validation 110 to 119). The table is `scripts/all_agents_table.py` (new, 62 lines; reads files only).
 
