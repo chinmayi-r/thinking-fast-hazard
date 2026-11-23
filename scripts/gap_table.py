@@ -41,6 +41,8 @@ ROWS = [  # label, tag, agent, baseline
     ("cautious 2.0, bank after two, fire", "run6_c20_bag2_fire", "always", jev_fire),
     ("RRARA v1 Jev, strict, fire", "jev_run50", "rrara1", jev_fire),
     ("RRARA v1 Jev, free, fire", "jev_free_fire", "rrara1", jev_fire),
+    ("Opus before every command, fire", "opus_run50_fire", "model", jev_fire),  # Della, declared 0.15 s per call (A100)
+    ("RRARA v1 Opus, free, fire", "opus_run50_fire", "rrara1", jev_fire),
 ]
 print(f"reflex (no fire) {np.mean(list(reflex.values())):.3f}; Jev before every command with fire routes {np.mean(list(jev_fire.values())):.3f}")
 for label, tag, agent, base in ROWS:

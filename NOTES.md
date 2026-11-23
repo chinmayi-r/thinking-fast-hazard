@@ -1566,3 +1566,22 @@ Asked for through the chat "HAZARD/ThreeDWorld requirements audit" (it says CR r
 - Dry run of the writing step, no model call: `venv_kinder\Scripts\python.exe -m firelab.compile --games <ten saved Jev games> --out results/firelab_compiled/dryrun --round 1 --dry-run` wrote `results/firelab_compiled/dryrun/prompt_round1.md`: 131 080 characters, about 33 000 tokens, about 13 cents of Opus input a round.
 - Expected cost of the whole list: Haiku games about 5 cents; three writing rounds at most about 1.45 dollars (output capped at 16 000 tokens, effort medium); the script writes no further round once spending passes 1.60.
 - On Della, after CR pushes: `cd ~/thinking-fast-hazard && git fetch && git merge --no-edit origin/main && bash scripts/liane_offline.sh ~/iw-thinking-fast/.secrets/anthropic_key.txt 2>&1 | tee logs/liane_offline.log` on della-vis1.
+
+## Nov 23 (12:00 to 13:00): Opus with routes through fire on the menu, rooms 0 to 49, on Della (tag `opus_run50_fire`)
+
+Run by the Della session on della-vis1 on CR's word (A98), not by me. Settings: claude-opus-5-5, effort low, declared 0.15 s per call (2 ticks), free accounting for RRARA version 1, 8 items, fire routes on the menu (no `--fire-free-menu`), rooms 0 to 49, one run per room. The rows on the laptop (`results/firelab_sim/opus_run50_fire/rows_000.csv`) are a typed copy of the Della session's message, checked against its summary on score, calls, dollars, deaths and zeros; the originals and the saved games are on Della, untracked.
+
+| agent | score | gap to the reflex (0.598), 95 % interval | ahead / level / behind | calls per run | median seconds per call | dollars |
+|---|---|---|---|---|---|---|
+| Opus before every command | 0.861 | +0.263 [+0.209, +0.317] | 46 / 4 / 0 | 15.6 | 1.60 | 5.33 |
+| RRARA version 1, Opus checking, free | 0.628 | +0.031 [-0.023, +0.082] | 26 / 12 / 12 | 9.6 | 3.36 | 4.96 |
+
+- Opus before every command is never behind the reflex in any of the 50 rooms. The robot dies in 16 rooms, each time after its last bank, so the deaths cost no score; health is not part of the score.
+- RRARA version 1 with Opus scores 0 in rooms 0, 16, 25 and 31 and is level with the reflex on the mean (the interval includes 0).
+- Against the other agents on the same rooms, computed on the laptop from the rows: Opus before every command minus Jev before every command +0.180 [+0.143, +0.217]; minus the planner with the clock off +0.045 [-0.033, +0.142] (level); minus the cautious planner with the clock off -0.077 [-0.110, -0.050] (behind).
+- The 0.15 s per call is declared, not what Opus took. Measured, a call took 1.60 s at the median (16 ticks) for the first agent and 3.36 s for the checker. With the measured time charged, the first agent would stand still about 16 ticks before each of its 15.6 commands, about half of the 500 ticks. That run has not been made.
+- Money: this run 10.29 dollars. All Opus runs today 20.52 dollars (3-room trial, the fire-free run that no longer counts, this run), which is over the 20 dollars CR gave for the first list. The second run was started on her word after she turned the fire-free menu off (A98).
+
+CR's reading of the RRARA row, relayed by the Della session, for the notes: RRARA version 1 pegs the result to the reflex; what passes through is the checker's rate of disagreement, applied one decision late, not the checker's quality. She keeps the fire-free planner row (0.680) in the main table and puts every fire-free LLM or Jev row under the heading "absolutely useless".
+
+Not run: Opus with the measured time charged; Opus with strict accounting; an interrupting RRARA; anything at 10 items; Opus on rooms 50 to 99.
