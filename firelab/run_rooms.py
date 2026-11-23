@@ -30,14 +30,18 @@ from firelab import gate
 from firelab.agents import GateSkills, random_agent, reflex
 from firelab.clock import SECONDS_PER_STEP, Clock
 from firelab.env import FireLab3DEnv
+from firelab.interface import Session
+from firelab.model_agents import AGENTS as MODEL_AGENTS
+from firelab.models import cost_usd, make_model
 from firelab.planner import plan
 from firelab.skills import Skills
 from firelab.thinkers import AGENTS as THINKERS
 from firelab.thinkers import thinker
 
-AGENTS = ["random", "reflex", *THINKERS]
+AGENTS = ["random", "reflex", *THINKERS, *MODEL_AGENTS]
 COLUMNS = ["room", "agent", "clock", "sim", "rule", "sim_ticks", "rule_ticks", "health", "commands", "thoughts",
            "charged_ticks", "measured_s", "declared_s", "steps", "estimate_error", "think_s", "think_ticks",
+           "tokens_in", "tokens_out", "cost_usd",
            "parted_at", "sim_line", "rule_line"]
 RUNS = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
 
@@ -89,10 +93,12 @@ def save_game(path: Path, head: dict, thoughts: list, log: list, end: dict) -> N
 
 
 def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Clock | None = None,
-         board: bool = True, games: Path | None = None, head: dict | None = None) -> dict:
+         board: bool = True, games: Path | None = None, head: dict | None = None, model=None, options: dict | None = None) -> dict:
     """One room, one agent: in the simulator, and (board=True) on the rule check's board under the same clock."""
     clock = clock or Clock()
-    rule_log, rule_body = [], None
+    rule_log, rule_body, options = [], None, options or {}
+    if name in MODEL_AGENTS:
+        board = False  # the interface the models use exists in the simulator only
     if board:
         rule_body = GateSkills(gate.make_world(task, room))
         rule_log = run_agent(name, rule_body, room, clock, [])
@@ -100,11 +106,18 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
     skills.start()
     thoughts: list = []
     began = time.perf_counter()
-    sim_log = run_agent(name, skills, room, clock, thoughts)
+    if name in MODEL_AGENTS:  # thoughts holds one record per call: what the model saw, what it answered, both times
+        sim_log = MODEL_AGENTS[name](Session(skills), model, records=thoughts, **options)
+    else:
+        sim_log = run_agent(name, skills, room, clock, thoughts)
+    tokens = [sum(t.get(k, 0) for t in thoughts) for k in ("tokens_in", "tokens_out")]
+    label = clock.mode if clock.mode != "fixed" else f"fixed{clock.fixed_ticks}"
+    if name in MODEL_AGENTS:
+        label = options.get("call_time", "measured") + ("-" + options.get("accounting", "free") if name == "rrara1" else "")
     think = max(0.0, time.perf_counter() - began - skills.sim_seconds)
     n = parted(sim_log, rule_log) if board else None
     row = {
-        "room": room, "agent": name, "clock": clock.mode if clock.mode != "fixed" else f"fixed{clock.fixed_ticks}",
+        "room": room, "agent": name, "clock": label,
         "sim": round(skills.score(), 4), "rule": round(rule_body.score(), 4) if board else "",
         "sim_ticks": skills.ticks, "rule_ticks": rule_body.ticks if board else "",
         "health": skills.info.get("health", 100.0), "commands": len(sim_log), "thoughts": len(thoughts),
@@ -112,6 +125,7 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
         "declared_s": round(sum(t["declared_s"] for t in thoughts), 4), "steps": sum(t["steps"] for t in thoughts),
         "estimate_error": round(float(np.mean([abs(t["estimate"] - t["charged"]) for t in thoughts])), 2) if thoughts else "",
         "think_s": round(think, 4), "think_ticks": math.ceil(think * 10),
+        "tokens_in": tokens[0], "tokens_out": tokens[1], "cost_usd": round(cost_usd(model.model, *tokens), 6) if model is not None and name in MODEL_AGENTS else 0.0,
         "parted_at": "" if n is None else n, "sim_line": _line(sim_log, n), "rule_line": _line(rule_log, n),
     }
     if games is not None:
@@ -139,6 +153,8 @@ def report(rows: list) -> None:
             f = lambda k: np.mean([float(r[k]) for r in rs])
             line += (f"; per episode: {f('thoughts'):.1f} thoughts, {f('steps'):.0f} search steps, measured {f('measured_s'):.2f} s, "
                      f"declared {f('declared_s'):.2f} s, charged {f('charged_ticks'):.1f} ticks")
+        if any(int(r["tokens_in"] or 0) for r in rs):
+            line += f"; tokens in {f('tokens_in'):.0f}, out {f('tokens_out'):.0f}, {sum(float(r['cost_usd']) for r in rs):.4f} dollars for these rooms"
         print(line)
 
 
@@ -154,6 +170,11 @@ def main() -> None:
     ap.add_argument("--items", type=int, default=8)
     ap.add_argument("--values", type=int, nargs="+", default=[1, 2, 3, 5, 8])
     ap.add_argument("--no-board", action="store_true", help="skip the rule check's board (halves the planning time)")
+    ap.add_argument("--model", default="fake", help="for the agents model and rrara1: jev, claude-opus-5-5 or fake")
+    ap.add_argument("--key-file", default=None, help="path of the file holding the model's key (the key is never printed)")
+    ap.add_argument("--accounting", default="free", choices=["free", "strict"], help="rrara1: is the checker's time counted")
+    ap.add_argument("--call-time", default="measured", choices=["measured", "declared"], help="what a model call is charged")
+    ap.add_argument("--seconds-per-call", type=float, default=0.3, help="the declared time of one model call")
     ap.add_argument("--report-only", action="store_true")
     args = ap.parse_args()
     folder = RUNS / args.tag
@@ -164,6 +185,11 @@ def main() -> None:
         values = tuple(args.values)
         task = gate.Task(items=args.items, values=values, layout="one_wide", clearance=True, reach=1, bag=True, hp_loss=2.0)
         head = {"items": args.items, "values": values, "seconds_per_step": args.seconds_per_step, **reference(task)}
+        uses_model = any(a in MODEL_AGENTS for a in args.agents)
+        model = make_model(args.model, args.key_file) if uses_model else None
+        options = {"accounting": args.accounting, "call_time": args.call_time, "declared_seconds": args.seconds_per_call}
+        if uses_model:
+            head.update(model=args.model, **options)
         print("machine:", head, flush=True)
         env = FireLab3DEnv(level=2, num_items=args.items, values=values, realistic_bg=False)
         skills = Skills(env)
@@ -176,7 +202,7 @@ def main() -> None:
                 writer.writeheader()
             for room, name in todo:
                 clock = Clock(args.clock, args.fixed_ticks, args.seconds_per_step)
-                writer.writerow(play(env, skills, task, room, name, clock, not args.no_board, folder / "games", head))
+                writer.writerow(play(env, skills, task, room, name, clock, not args.no_board, folder / "games", head, model, options))
                 f.flush()
         env.close()
     report(read())

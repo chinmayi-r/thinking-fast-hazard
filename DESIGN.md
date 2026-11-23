@@ -233,3 +233,55 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 - *A folder per run with a rows file per invocation.* Fifty Della tasks can write at once without sharing a file; the report reads every rows file in the folder. Alternative: one CSV with locking.
 - *One game file per episode*, JSON lines: the episode (rule set, machine, reference plan), every thought (seen, estimate, plan, both costs, ticks charged), every command with its result, the outcome. This is what CR asked to keep for Liane's method.
 - *The rule check's board stays optional* (`--no-board`). Under the clock off, fixed or declared the board run is exact and comparable; it doubles the planning time. Under the measured clock it is not comparable and should be off.
+
+## Chunk 7a: the observation dictionary and the commands (Nov 24)
+
+**What it is.** `firelab/interface.py`: `Session` wraps the robot in the simulator and is the only thing an outside agent touches. `observe()` gives the room as one plain dictionary; `legal()` gives the menu worth offering now; `check()` says whether a command is well-formed; `do()` carries one out through the skills and returns `Result(ticks, done, reason)`.
+
+**Where it lives.** `firelab/interface.py` (142 lines), `firelab/test_interface.py` (73 lines, 12 tests). 215 new lines.
+
+**Why this way, against the alternatives.**
+- *A dictionary of plain numbers, strings and lists.* It survives `json.dumps` unchanged (tested), so it can be saved in a game, sent to a model, or handed to a program. It is shaped after `scripts/compiled/API.md` where that fits (`last_command`, `last_result`, the items as a list of records). Alternative: the 800-number state vector, which no program author or model can read.
+- *Distances are in it.* Each item carries the cells and ticks of a fire-free route, or none; so does the safe strip. A program does not need its own route finder to be a sensible reflex. Alternative: leave routing to each agent, as HAZARD's API had to (`Paths`).
+- *An illegal command costs a tick and is recorded*, as in API.md; the episode goes on. A legal command that cannot be done costs what the skill says, often nothing.
+- *Fully observed.* Every item and every burning cell is in the dictionary. HAZARD gave only what the camera had seen; that is a property of this room, written at the top of the file.
+
+## Chunk 7b: the room as text (Nov 24)
+
+**What it is.** `firelab/text.py`: `describe(obs, options, history, note)` turns the dictionary into what a language model reads: time and the two ways the episode ends, the robot, the bag, the costs, every item with its worth, what it is losing and how far it is, the whole history with results and reasons, a character map, and lettered options. `say(command, obs)` words one command with its predicted cost.
+
+**Where it lives.** `firelab/text.py` (89 lines), `firelab/test_text.py` (60 lines, 3 tests). 149 new lines.
+
+**Why this way.** It is CR's honest text (A32, A41) for this room: nothing is in the text that is not in the dictionary, and every option carries its cost. The map is redundant with the item list on purpose: models read one or the other better. Alternative: the HAZARD prompt template, which hid costs and reasons.
+
+## Chunk 7c: programs (Nov 24)
+
+**What it is.** `firelab/programs.py`: Liane's contract. A program is a file with `class Policy` having `__init__(rules)` and `decide(obs)`; `load_program` refuses anything that imports outside a short list; `run_program` plays an episode and records every decision with the time `decide` took. `firelab/examples/reflex_program.py` is the official reflex in that shape.
+
+**Where it lives.** `firelab/programs.py` (81 lines), the example (36), `firelab/test_programs.py` (58 lines, 2 tests). 175 new lines.
+
+**Why this way.** It is a port of `scripts/compiled/api.py`'s loader, so Liane's compiler prompt and validator carry over with the observation swapped. The example is held to our reflex: in room 0 with the fire moving it gives the same commands with the same results at the same ticks, and the same score (tested). One difference from the first draft, found by that test: a legal command that cannot be done is free, as it is for our reflex; ten in a row cost a tick, so a program cannot loop forever.
+
+## Chunk 8a: one way to ask a model (Nov 24)
+
+**What it is.** `firelab/models.py`: `ask(text, options, instructions)` on a model object returns an `Answer`: the option chosen or none, the raw text, the seconds, the tokens in and out, the stop reason, and why there is no answer if there is none. `Jev` is a port of `scripts/jev/client.py`. `Claude` uses the official `anthropic` package. `Fake` answers a fixed option with no network.
+
+**Where it lives.** `firelab/models.py` (148 lines), `firelab/test_models.py` (99 lines, 7 tests). 247 new lines.
+
+**Why this way.**
+- *The Anthropic call follows the claude-api skill's Python reference*, read on Nov 24: `client.messages.create` with `output_config={"effort": "low"}`, no thinking setting (it cannot be disabled on claude-opus-5-5), no temperature, `max_tokens` 16000 because thinking counts against it. A test checks the request carries none of thinking, temperature, forced tool choice or a fallback model.
+- *The stop reason is checked before the answer is read.* A test uses a response whose content raises if touched, with stop reasons refusal and max_tokens.
+- *No answer is an Answer.* A refusal, a cut-off, an API error or text with no option letter all come back as "no answer" with a reason; nothing raises into the episode and no second model is asked (CR).
+- *The key is a file path.* Its first line goes to the client; it is never printed, logged or put in a game. The `anthropic` package is imported only when a Claude model is made, so the laptop and the tests do not need it.
+
+## Chunk 8b: the agents on a model (Nov 24)
+
+**What it is.** `firelab/model_agents.py`: `model_every_command` (ask before every command, stand while the model answers) and `rrara_v1` (PLAN.md section 7: our rule acts at once, the model checks the command in the background, an invalid answer replaces the rule's next choice). Two toggles: accounting free or strict, call time measured or declared. `agents.reflex_choice` is the rule as one decision. `run_rooms.py` runs both (`--agents model rrara1 --model ... --key-file ... --accounting ... --call-time ... --seconds-per-call ...`) and saves, per call, the text the model saw and what it answered.
+
+**Where it lives.** `firelab/model_agents.py` (119 lines), `firelab/test_model_agents.py` (101 lines, 6 tests), `firelab/agents.py` (+10), `firelab/run_rooms.py` (+27). 257 new lines, 7 over the limit.
+
+**Why this way.**
+- *The rule is our reflex, one decision at a time.* `reflex()` now calls `reflex_choice`, so RRARA's rule and the reflex baseline cannot drift apart. With a checker that always answers valid, or never answers, `rrara_v1` plays exactly as the reflex (tested): the wiring check.
+- *In order, no threads.* The call is made when the check begins and its answer is given a tick at which it exists; strict accounting compares that tick with the next decision. Same episode as running side by side, and repeatable.
+- *The toggles are arguments, recorded in every call.* The same slow stand-in model overrides the rule when its time is declared as 0.2 s and never does when it is measured as 100 s under strict accounting (tested): this is the "fast model as good as a strong one" experiment CR asked for.
+- *The checker's options.* Option A is "valid: keep the rule's command"; the others are the rest of the menu. An answer of A changes nothing; any other letter is "invalid, take this next".

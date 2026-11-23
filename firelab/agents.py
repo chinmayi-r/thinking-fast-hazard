@@ -27,23 +27,33 @@ def reflex(body, log: list | None = None, until: float = math.inf) -> list:
     log = [] if log is None else log
     skip: set[int] = set()
     while not body.over and body.ticks < until:
-        todo = [k for k in body.live() if k not in skip]
-        if body.carrying():
+        choice = reflex_choice(body, skip)
+        if choice is None:
+            break  # nothing carried and nothing left worth fetching
+        if choice[0] == "home":
             result = body.home(until=until)
             log.append(("home", None, body.ticks, result))
             if not result.done:
                 break  # trapped with the load, dead, or out of time
-        elif todo:
-            here = body.cell()
-            far = lambda k: abs(body.item_cell(k)[0] - here[0]) + abs(body.item_cell(k)[1] - here[1])
-            k = max(todo, key=lambda k: (body.value(k), -far(k)))  # most valuable; the nearer one on a tie
-            result = body.get(k, until=until)
-            log.append(("get", k, body.ticks, result))
-            if not result.done and not body.over and body.ticks < until:
-                skip.add(k)  # fire only grows, so the item stays out of reach
         else:
-            break  # nothing carried and nothing left worth fetching
+            result = body.get(choice[1], until=until)
+            log.append(("get", choice[1], body.ticks, result))
+            if not result.done and not body.over and body.ticks < until:
+                skip.add(choice[1])  # fire only grows, so the item stays out of reach
     return log
+
+
+def reflex_choice(body, skip: set) -> tuple | None:
+    """The rule as one decision: ("home",) with anything in the bag, else ("get", k) for the most valuable item
+    left (the nearer one on a tie), else None. `skip` holds the items a get could not reach."""
+    if body.carrying():
+        return ("home",)
+    todo = [k for k in body.live() if k not in skip]
+    if not todo:
+        return None
+    here = body.cell()
+    far = lambda k: abs(body.item_cell(k)[0] - here[0]) + abs(body.item_cell(k)[1] - here[1])
+    return ("get", max(todo, key=lambda k: (body.value(k), -far(k))))
 
 
 def random_agent(body, seed: int, log: list | None = None) -> list:
