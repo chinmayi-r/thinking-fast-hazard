@@ -1618,3 +1618,4 @@ A third message from the chat "HAZARD/ThreeDWorld requirements audit": CR's word
 ## Nov 23 (14:12): the Opus run with its real time charged sent to Della on CR's word in this chat
 
 CR typed "Yes, start it" here. The instruction of the 13:45 entry went to the Della chat "Della availability check" (tag `opus_run50_fire_measured`, agent `model`, `--call-time measured`, 5 processes of 10 rooms, guard at 9 dollars). This route gives no receipt; it has started only when the Della chat says so. Estimate 5.5 dollars or less; with it, Opus spending today would be about 26 dollars, inside the 20.52 plus 10 relayed as the new limit.
+- Della chat, in its words: the five processes started at 2:13 PM Della time, detached; the cost guard after the first 10 rooms is set; Liane's script is untouched and still running.
