@@ -107,7 +107,7 @@ def play(env, skills: Skills, task: gate.Task, room: int, name: str, clock: Cloc
     thoughts: list = []
     began = time.perf_counter()
     if name in MODEL_AGENTS:  # thoughts holds one record per call: what the model saw, what it answered, both times
-        sim_log = MODEL_AGENTS[name](Session(skills), model, records=thoughts, **options)
+        sim_log = MODEL_AGENTS[name](Session(skills, allow_fire=options.get("allow_fire", True)), model, records=thoughts, **options)
     else:
         sim_log = run_agent(name, skills, room, clock, thoughts)
     tokens = [sum(t.get(k, 0) for t in thoughts) for k in ("tokens_in", "tokens_out")]
@@ -175,6 +175,7 @@ def main() -> None:
     ap.add_argument("--accounting", default="free", choices=["free", "strict"], help="rrara1: is the checker's time counted")
     ap.add_argument("--call-time", default="measured", choices=["measured", "declared"], help="what a model call is charged")
     ap.add_argument("--seconds-per-call", type=float, default=0.3, help="the declared time of one model call")
+    ap.add_argument("--fire-free-menu", action="store_true", help="model agents: no command through fire, as for the reflex")
     ap.add_argument("--report-only", action="store_true")
     args = ap.parse_args()
     folder = RUNS / args.tag
@@ -187,7 +188,8 @@ def main() -> None:
         head = {"items": args.items, "values": values, "seconds_per_step": args.seconds_per_step, **reference(task)}
         uses_model = any(a in MODEL_AGENTS for a in args.agents)
         model = make_model(args.model, args.key_file) if uses_model else None
-        options = {"accounting": args.accounting, "call_time": args.call_time, "declared_seconds": args.seconds_per_call}
+        options = {"accounting": args.accounting, "call_time": args.call_time, "declared_seconds": args.seconds_per_call,
+                   "allow_fire": not args.fire_free_menu}
         if uses_model:
             head.update(model=args.model, **options)
         print("machine:", head, flush=True)

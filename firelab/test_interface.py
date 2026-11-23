@@ -64,6 +64,20 @@ def test_do_carries_commands_out_and_the_observation_follows(env):
     assert session.do(("pick",)) == Result(0, False, "refused")  # nothing in reach here
 
 
+def test_a_fire_free_session_offers_and_accepts_no_route_through_fire(env):
+    env.reset(seed=ROOM)
+    skills = Skills(env)
+    free, strict = Session(skills), Session(skills, allow_fire=False)
+    skills.fire.state[7, 5] = skills.fire.state[8, 5] = 1  # the doorway burns: nothing behind the partition has a fire-free route
+    try:
+        assert ("get", 3, True) in free.legal() and ("get", 3) not in free.legal()
+        assert strict.legal() == [("get", 5), ("get", 0), ("get", 1), ("wait", 10)] and strict.observe()["fire_routes_allowed"] is False
+        assert strict.check(("get", 3, True)) == "routes through fire are not allowed in this run" and free.check(("get", 3, True)) == ""
+        assert strict.check(("get", 3)) == "" and strict.check(("home", False)) == ""
+    finally:
+        skills.fire.state[7, 5] = skills.fire.state[8, 5] = 0
+
+
 @pytest.mark.parametrize("command", [("get", 99), ("get", "1"), ("fly",), ("wait", 0), ("wait", 500), ("go", (0, 5)), ("go", 3), None, ("home", 4)])
 def test_an_illegal_command_costs_one_tick_and_the_episode_goes_on(env, command):
     session = _session(env)

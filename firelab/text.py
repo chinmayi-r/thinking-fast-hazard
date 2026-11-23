@@ -59,7 +59,9 @@ def describe(obs: dict, options: list, history: list | None = None, note: str = 
     lines.append(f"Bag: {bag}. Banked so far: {obs['banked_value']:.1f} of {obs['total_value']:.1f}.")
     lines.append(f"Costs: walking {c['ticks_per_cell']} ticks per cell, a pick {c['pick_ticks']} ticks, banking {c['drop_ticks']} ticks. "
                  f"An item on a burning cell loses {100 * c['item_loss_per_tick']:.0f} % of its starting value per tick. "
-                 f"In fire you lose {c['health_loss_per_tick']:.0f} health per tick.")
+                 f"In fire you lose {c['health_loss_per_tick']:.0f} health per tick."
+                 + ("" if obs.get("fire_routes_allowed", True) else " The robot does not walk through fire: an item or the safe strip "
+                    "with no fire-free route cannot be reached now."))
     lines += ["", "Items on the floor:"]
     for item in obs["items"]:
         if item["where"] != "floor":

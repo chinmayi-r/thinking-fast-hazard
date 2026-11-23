@@ -1450,3 +1450,26 @@ Jev: every one of 1126 calls was answered; median 0.14 s, 90th percentile 0.17 s
 - Jev is not repeatable: room 2 scored 0.708 for RRARA version 1 in the 3-room trial and 0.333 here.
 
 Not run: free accounting, a declared call time, the same agents with a fire-free-only menu, any Opus call.
+
+## Nov 24 (10:09): Jev again with a fire-free-only menu (CR: "Yes, rerun")
+
+Change: `Session(skills, allow_fire=False)` and `run_rooms.py --fire-free-menu`: the menu lists only what a fire-free route reaches and a "through fire" command is illegal, so a model chooses from the commands the reflex has. Tests: 24 passed in the four files it touches.
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --tag jev_run50_firefree --agents model rrara1 --model jev --key-file .secrets\typesafe_key.txt --rooms 50 --call-time measured --accounting strict --fire-free-menu --no-board` : 100 episodes, 10 min 40 s (09:58:15 to 10:08:55), 1252 calls, 0.065 dollars. Rows and games in `results/firelab_sim/jev_run50_firefree/`, report in `logs/jev_run50_firefree_nov24.log`; `scripts\model_run_summary.py jev_run50_firefree` prints the summary.
+
+Simulator, 8 items, rooms 0 to 49; gap against the reflex's 0.598 with the paired 95 % interval.
+
+| agent | menu | score | gap to the reflex | ahead / level / behind |
+|---|---|---|---|---|
+| reflex | (never enters fire) | 0.598 | | |
+| Jev before every command | with routes through fire (09:55 run) | 0.681 | +0.083 [+0.044, +0.126] | 25 / 17 / 8 |
+| Jev before every command | fire-free only | 0.587 | -0.011 [-0.056, +0.033] | 14 / 22 / 14 |
+| RRARA version 1, Jev checking, strict | with routes through fire (09:55 run) | 0.578 | -0.020 [-0.055, +0.006] | 4 / 42 / 4 |
+| RRARA version 1, Jev checking, strict | fire-free only | 0.591 | -0.007 [-0.032, +0.011] | 5 / 42 / 3 |
+| planner before every command, clock off (run 1) | plans may cross fire | 0.816 | +0.218 [+0.123, +0.301] | 42 / 2 / 6 |
+
+- With the same commands as the reflex, Jev before every command is level with it: -0.011, the interval spans zero, 14 rooms ahead and 14 behind. The earlier +0.083 was the routes through fire.
+- It chose get 248 times (32 of them with something already in the bag), bank 190, wait ten ticks 354. It died in 12 rooms, every time while waiting: 7 with an empty bag (no effect on the score), 5 with a bag it could not bring home (rooms 7, 8, 13, 24, 49).
+- RRARA version 1 is unchanged by the menu (48 of 50 rooms score as in the 09:55 run): 370 valid, 90 invalid; 25 replacements taken, 32 late, 5 no longer on the menu.
+- The exhaustive planner's plans may cross fire too, so its +0.218 over the reflex carries the same advantage as Jev's first number did; that comparison has not been redone with a fire-free planner.

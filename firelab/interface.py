@@ -30,8 +30,11 @@ MAX_WAIT = 100
 class Session:
     """One episode, seen from outside. Make a new one after every env.reset (and call skills.start())."""
 
-    def __init__(self, skills: Skills) -> None:
+    def __init__(self, skills: Skills, allow_fire: bool = True) -> None:
         self.skills = skills
+        # False: no command may walk through fire, which is what the reflex is held to (A93 a, CR Nov 24). The menu
+        # then lists only what a fire-free route reaches, and a "through fire" command is illegal.
+        self.allow_fire = allow_fire
         self.history: list = []  # (command, Result), oldest first
 
     def observe(self) -> dict:
@@ -54,7 +57,7 @@ class Session:
             })
         last = self.history[-1] if self.history else None
         return {
-            "api_version": API_VERSION, "tick": s.ticks, "ticks_left": fl.max_ticks - s.ticks,
+            "api_version": API_VERSION, "tick": s.ticks, "ticks_left": fl.max_ticks - s.ticks, "fire_routes_allowed": self.allow_fire,
             "health": s.info.get("health", fl.health), "max_health": fl.health,
             "burning_share": round(fire.coverage(), 4), "end_share": fl.end_coverage,
             "robot": {"cell": list(cell), "x": round(float(pose.x), 3), "y": round(float(pose.y), 3),
@@ -82,6 +85,8 @@ class Session:
                 for i in sorted(live, key=lambda i: -i["value"])]
         if obs["bag"]:
             menu.append(("home",) if obs["home"]["cells_away"] is not None else ("home", True))
+        if not self.allow_fire:
+            menu = [c for c in menu if c[-1] is not True]
         return menu + [("wait", 10)]
 
     def check(self, command) -> str:
@@ -93,6 +98,8 @@ class Session:
 
     def _check(self, name, args: list) -> str:
         if args and isinstance(args[-1], bool):
+            if args[-1] and not self.allow_fire:
+                return "routes through fire are not allowed in this run"
             args = args[:-1]  # the "may cross fire" flag
         items = self.skills.items
         if name in ("home", "drop"):
