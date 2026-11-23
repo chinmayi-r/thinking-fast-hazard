@@ -1655,3 +1655,33 @@ Both ran on Della, by the Della session. Laptop copies are typed from its messag
 - Money: 2.78 dollars. Opus runs today 23.30 dollars; Liane's loop 0.96 dollars more.
 
 Not run: Liane's method live or with more rounds; a second compile; the program on rooms 0 to 49; Opus real time with the checker (RRARA) or with strict accounting; anything at 10 items.
+
+## Nov 23 (14:35 to 14:50): every agent in one table, rooms 0 to 49; the kept program played these rooms too
+
+CR asked why random, the reflex and the planners were not in the 2:25 PM table, and for everything side by side. To put Liane's program in the same rooms as the rest I played it on rooms 0 to 49 on the laptop (no model, 6 minutes): `venv_kinder\Scripts\python.exe -m firelab.validate --program results/firelab_compiled/v1/policy_round2.py --first 0 --rooms 50 --out results/firelab_compiled/v1/rooms_0_49_laptop.json`. Rooms 0 to 49 were not used to write or choose the program (training 100 to 109, validation 110 to 119). The table is `scripts/all_agents_table.py` (new, 62 lines; reads files only).
+
+| agent, rooms 0 to 49, 8 items | score | gap to the reflex, 95 % interval | ahead / level / behind | rooms at 0 | thinking ticks per run | robot waits while it thinks | deaths |
+|---|---|---|---|---|---|---|---|
+| random | 0.041 | -0.557 [-0.631, -0.472] | 2 / 2 / 46 | 40 | 0 | | 7 |
+| reflex | 0.598 | | | 2 | 0 | | 0 |
+| planner before every command, clock off | 0.816 | +0.218 [+0.123, +0.301] | 42 / 2 / 6 | 7 | not charged | | 6 |
+| planner before every command, declared clock | 0.822 | +0.224 [+0.125, +0.315] | 43 / 1 / 6 | 6 | 18 | yes | 3 |
+| planner, plan once and follow, declared clock | 0.806 | +0.208 [+0.121, +0.292] | 42 / 1 / 7 | 7 | 9 | yes | 3 |
+| reflex acts while the planner plans, declared clock | 0.744 | +0.146 [+0.058, +0.229] | 37 / 2 / 11 | 10 | 7 | no | 8 |
+| cautious planner, clock off | 0.938 | +0.340 [+0.286, +0.397] | 49 / 1 / 0 | 0 | not charged | | 0 |
+| Jev before every command, real time | 0.681 | +0.083 [+0.044, +0.126] | 25 / 17 / 8 | 0 | 27 | yes | 17 |
+| RRARA version 1, Jev checking, strict | 0.578 | -0.020 [-0.055, +0.006] | 4 / 42 / 4 | 4 | 19 | no | 0 |
+| RRARA version 1, Jev checking, free | 0.583 | -0.015 [-0.046, +0.010] | 6 / 39 / 5 | 4 | 20 | no | 0 |
+| Opus before every command, charged 0.15 s per call | 0.861 | +0.263 [+0.209, +0.317] | 46 / 4 / 0 | 0 | 31 | yes | 16 |
+| Opus before every command, real time | 0.376 | -0.221 [-0.314, -0.132] | 13 / 4 / 33 | 24 | 204 | yes | 20 |
+| RRARA version 1, Opus checking, free | 0.628 | +0.031 [-0.023, +0.082] | 26 / 12 / 12 | 4 | 19 | no | 0 |
+| Liane's method: the kept program (round 2) | 0.685 | +0.087 [+0.047, +0.130] | 26 / 19 / 5 | 0 | 0 | | 0 |
+
+Readings (mine):
+- The room has headroom: random 0.04, reflex 0.60, best thinker 0.94.
+- Thinking that costs little or nothing beats the reflex by 0.22 to 0.34 (planner, cautious planner, Opus at Jev's speed).
+- The same Opus with its real time charged is 0.22 below the reflex: Tom's weak baseline, measured.
+- The planner's clock costs almost nothing at 8 items (18 ticks a run), so the planner rows do not show the trade-off; the model rows do.
+- Acting while thinking, as built so far, does not keep the thinker's gain: reflex-while-planning is below the planner that simply waits, and RRARA version 1 sits at the reflex with either checker.
+- Liane's program has no thinking time in the game and is level with Jev and above Opus at real time; it is 0.18 below what Opus decides when its time is nearly free.
+Limits: one run per room; the model runs are not repeatable; the planner forecasts the fire from the rules while the models read a text; the cautious planner's setting was chosen on these rooms (on unseen rooms 50 to 99 it scores 0.932); the planner rows with the clock on use a declared cost per search step, not measured time.
