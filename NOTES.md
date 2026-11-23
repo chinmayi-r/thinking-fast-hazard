@@ -1063,3 +1063,266 @@ so the script uses taskkill).
 - Column 9 (Jev honest text, shipped body, 5a50c2d) partial, 21/25: 0.666 (sd 0.215), paired vs column 8 on the same 21 -0.033 (se 0.052, 6/12/3). The 3a-1 trial's 0.778 did not generalise: the honest text is level with HAZARD's own on the paper's snapshot, within noise. Four kitchens (3a-13, 14, 17, 18) crashed at embodied-strategy/challenge.py:357: 5a50c2d has no low_level actions (d35c71e added them, challenge.py:361-364), so the honest layer's "step forward" / "turn" entries are illegal there; Della reruns those four with --no_single_steps --no_turns (open assumption on Della: mixed column, 21 with the entries unused, 4 without). A clean 25-kitchen column without the entries would be a new run; not started.
 - (16:25, Della) Column 9 final, Jev honest text, shipped body, 5a50c2d, clock on, 25/25: 0.689 (sd 0.208); paired vs Jev shipped text 5a50c2d -0.029 (se 0.048, 10/13/2); vs column 8 -0.019; vs the same text on d35c71e (column 4, 0.088) +0.601 (25/0/0). 211 frames charged, 22 % walks capped (79 % on d35c71e). Four kitchens (3a-13/14/17/18) rerun with --no_single_steps --no_turns after the low_level crash (0.682, 0.917, 0.912, 0.733). Reading: on the paper's snapshot the honest text costs Jev nothing measurable and the 3a-1 trial (0.778) was one kitchen; on d35c71e it cost 0.275. Folder sweep_fire_jev_honest_5a50c2d_tcm30_test25, Della commit 1389a7a.
 - Nov 17 Della ladder complete (clock on, 25 kitchens; compiled rounds 20): 5a50c2d: Jev 0.718, Jev + A44 + A50 0.708, Jev honest 0.689, Haiku 0.410, rule 0.383, rule + A44 + A50 0.360. d35c71e: Jev + A44 + A50 0.363, rule + A44 + A50 0.279, rule + A44 0.230, compiled r2 0.207, Jev honest + A44 + A50 0.199, compiled r1 0.144, rule 0.131, rule + A50 0.113, Jev honest 0.088. Della idle at 16:20; the A53 set (four columns, --save_maps 60, walk log with contacts) starts when the hits patch (21fc027 and after) is on origin.
+
+## Nov 22 (17:15-17:40, laptop): chunk 0 of PLAN.md, kinder on G; the lab env hangs on Windows at construction (A63) and the kinematic3d requirements file is incomplete (A64)
+- Plan and decisions: `PLAN.md` (root). Repos cloned earlier today by the previous session: `kindergarden/` at 86c55a4 (the commit prpl-tidybot pins), `prpl-tidybot/` main b72db08.
+- Venv (uv 0.11.26, caches on G): `UV_CACHE_DIR=G:\iw-thinking-fast\.cache\uv UV_PYTHON_INSTALL_DIR=G:\iw-thinking-fast\.cache\uv-python uv venv --python 3.10 venv_kinder` -> CPython 3.10.20 (satisfies prpl-tidybot's >=3.10.14,<3.11). `uv pip install --python venv_kinder --no-deps -e ./kindergarden`; `uv pip install --python venv_kinder -r kindergarden/requirements/kinematic3d.txt pytest` (57 packages, 3 s). Log `logs/install_kinder.log`. Installed: gymnasium 1.4.0, numpy 1.26.4, pybullet-arm64 3.2.8, pybullet-helpers 0.1.2, relational-structs 0.0.1, prpl-utils 0.0.7, shapely 2.1.2, scipy 1.14.0, pytest 9.2.0.
+- A64: `import kinder` then failed with `No module named 'tomsgeoms2d'`: `kinder/core.py:18` imports `kinder.envs.utils`, whose line 15 imports tomsgeoms2d, and `requirements/kinematic3d.txt` omits it. Fixed with `uv pip install --python venv_kinder tomsgeoms2d` (0.0.1, pure Python).
+- A63: the first smoke test (`pytest tests/envs/kinematic3d/test_prpl3d.py::test_prpl_lab_3d_env`) and `scripts/kinder_step_rate.py` both ran past 300 s with about 7 s of CPU each (blocked, not computing), killed. `scripts/kinder_probe_hang.py` (timestamped stages, 150 s cap): as shipped, `ObjectCentricPrplLab3DEnv(num_cubes=1, realistic_bg=False)` never returns (exit 124); with `prpl3d._suppress_urdf_warnings` replaced by `contextlib.nullcontext` it constructs in 5.8 s and resets in 0.01 s (logs/kinder_probe_suppress.log, kinder_probe_nosuppress.log). The suppressor (prpl3d.py:69-97) dup2's fd 1 into a pipe during `p.loadURDF` and joins a drainer thread that reads until EOF; on Windows the join never returns. Shim: replace the function with nullcontext on win32 before constructing (the URDF warning lines then print, 115 "No inertial data" pairs). Linux (Della, the lab's CI) is unaffected as far as we know; to check on Della.
+- Smoke test with the shim (`logs/kinder_smoke_test.log`): `test_prpl_lab_3d_env` and `test_camera_rendering` pass, 11.7 s, pybullet build Mar 13 2026.
+- Step rate with the shim (`logs/kinder_step_rate.log`, `scripts/kinder_step_rate.py --steps 200`, `kinder/PrplLab3D-o1-v0`, realistic background on, DIRECT mode, laptop on battery/AC not recorded): obs_dim 38, action_dim 11; make 6.51 s; reset 0.004 s; random actions 127 steps/s; zero action 183 steps/s; one overview render (360x640) 0.86 s (TinyRenderer, CPU). Reading for the plan: at a 0.1 s tick a 500-tick episode simulates in 3-4 s without rendering; rendering every tick would cost 7 min per episode, so videos are strided (prpl-tidybot does the same, config.yaml record.max_frames).
+
+## Nov 22 (17:45, laptop): chunk 1, the fire grid without a simulator, 10 tests pass, p_spread table
+- Files: `firelab/__init__.py` (docstring only), `firelab/fire.py` (FireGridConfig, FireGrid: cell_of, center_of, block_box, reset, step, is_burning, coverage, burning_cells, features), `firelab/measure_spread.py`, `firelab/test_fire.py`.
+- Tests: `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_fire.py` -> 10 passed in 0.48 s. One test needed a 0.05 m slack on a block_box edge: cell centres are computed as x_min + (i + 0.5) x 0.2 and the centre meant to be 0.0 comes out 2e-16, so an edge at exactly 0.0 excluded it.
+- Table: `venv_kinder\Scripts\python.exe -m firelab.measure_spread --seeds 100 --p 0.005 0.01 0.015 0.02 0.03 0.05 0.1` (log `logs/measure_spread_nov22.log`). Ticks to 50 % coverage, median (p10-p90): p 0.005: 939 (718-1223); 0.01: 472 (365-618); 0.015: 310 (227-414); 0.02: 228 (173-314); 0.03: 159 (121-201); 0.05: 96 (73-131); 0.1: 50 (39-63). All 100 seeds reach 50 % under the 5000-tick cap for every p. Decision: p = 0.015 (A57 addendum).
+
+## Nov 22 (18:15, laptop): chunk 2, level 1 env on kinder, 7 env tests + 10 grid tests pass
+- Probe first: `scripts/kinder_probe_lab_links.py` prints the 61 links of `PRPL_lab_full_collision.urdf` with world AABBs (log `logs/kinder_probe_lab_links.log`). The URDF has no floor or wall link; everything standing on the floor (z0 < 0.3) is the cabinet run at y 1.2-2.0 and x -1.0-1.64, plus a stove and a second base at x > 1.88 (off our grid). Robot home (0.3, 0.0) is open floor.
+- Files: `firelab/types.py` (FireCellType x/y/state, FireLabStatus tick/health/coverage/level, a copy of kinder's type table with both added, `cell_name`), `firelab/env.py` (FireLabConfig; FireLabObjectCentricState with health/tick/coverage/burning_cells; ObjectCentricFireLab3DEnv: block furniture from link AABBs, seeded ignition, parent step then fire step then health, info dict; FireLab3DEnv gym wrapper with the 240 cell names + status as constant objects), `firelab/__init__.py` (A63 shim on win32, registers `firelab/FireLab3D-l1-v0`), `firelab/test_env.py`.
+- Tests: `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q -W ignore::DeprecationWarning firelab` -> 17 passed in 23.5 s (three env constructions at about 6 s each; log of the env file alone `logs/firelab_test_env.log`). Observation vector: 750 = robot 19 + lab 7 + 240 x 3 + status 4.
+- Furniture: 19 cells blocked (base x2 rows = 10, Cabinet1.003 = 4, two sink doors = 5), 221 burnable. Re-measured time to 50 % with those cells blocked, p = 0.015, 100 seeds: p10 / median / p90 = 228 / 296 / 408 ticks = 29.6 s median (open floor was 31.0 s). p stays 0.015.
+- Line count (ast, no blanks/comments/docstrings): chunk 2 = 370 raw / 251 code lines across the four files (env.py 142, tests 85, __init__ 15, types 9); one over the 250 code budget, 120 over if docstrings count. Chunk 1 was 308 raw / 205 code.
+- Known costs left in: the parent `step` builds an observation we discard (one extra pybullet query pass per tick); `max_action_mag` = 0.05 clips the arm's joint deltas too (radians per tick), irrelevant while picks are magic (A60).
+
+## Nov 22 (night): gate check on the bare grid (chunk 3a), laptop, pure numpy
+
+Command (about 2 minutes, CPU only, no simulator): `$env:PYTHONPATH = "G:\iw-thinking-fast"; venv_kinder\Scripts\python.exe -m firelab.gate` . Log `logs/gate_nov22.log`. Tests: `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_gate.py firelab/test_fire.py` gives 18 passed in 5.3 s.
+
+Seeds 0 to 24, clock off, score = value saved / value present. "planner" knows the future of the fire (upper bound). Thresholds are the A65 proposals (random <= 0.25, gap >= 0.15, interval above 0).
+
+| rule set | episode end (s) | random | reflex | planner | gap [95 %] | verdict |
+|---|---|---|---|---|---|---|
+| plan as written: 3 items, open room, 0.15 HP per tick | 28.0 | 0.17 | 0.89 | 0.96 | +0.07 [+0.03, +0.11] | fail |
+| 6 items | 28.4 | 0.02 | 0.71 | 0.78 | +0.07 [+0.04, +0.10] | fail |
+| 6 items, 2 HP | 28.4 | 0.02 | 0.71 | 0.78 | +0.06 [+0.04, +0.09] | fail |
+| 6 items, walls | 36.8 | 0.04 | 0.76 | 0.88 | +0.12 [+0.05, +0.20] | fail |
+| 6 items, walls, 2 HP | 36.8 | 0.04 | 0.76 | 0.87 | +0.10 [+0.05, +0.17] | fail |
+| 8 items, walls, 2 HP (ad hoc run, now in TASKS) | 36.3 | 0.01 | 0.61 | 0.80 | +0.19 [+0.14, +0.25] | pass on the bound only |
+| 8 items, walls, 2 HP, p 0.03 (ad hoc) | 18.9 | 0.01 | 0.39 | 0.51 | +0.11 [+0.06, +0.17] | fail |
+| 6 items, walls, 2 HP, p 0.03 (ad hoc) | 19.6 | 0.01 | 0.52 | 0.62 | +0.10 [+0.05, +0.17] | fail |
+| 6 items, open, 2 HP, p 0.03 (ad hoc) | 14.8 | 0.00 | 0.46 | 0.54 | +0.09 [+0.05, +0.14] | fail |
+| 6 items, walls, 2 HP, item drain 20 % per tick (ad hoc) | 36.8 | 0.04 | 0.76 | 0.86 | +0.10 [+0.05, +0.17] | fail |
+| 6 items, walls, 8 HP (ad hoc) | 36.8 | 0.04 | 0.76 | 0.85 | +0.09 [+0.04, +0.16] | fail |
+
+Reading: condition 1 holds everywhere once there are 6 items (random 0.00 to 0.04; with 3 items random reaches 0.17). Condition 2 does not: the reflex is within 0.06 to 0.12 of an agent that knows the future, in every rule set but one. The three levers proposed earlier today (more items than time, partitions, health as a budget) are not enough. The plan as first written has the reflex at 0.89, as the A59 addendum estimated. A faster fire lowers every score and does not widen the gap. Not tried, because they need new mechanics and CR's choice: carrying more than one item, an action that pays off later (fire door, extinguisher), slower or failing picks.
+
+Line count for the chunk: gate.py 288 raw / 218 code, test_gate.py 65 raw / 41 code; 259 code lines, 9 over the 250 budget.
+
+## Nov 22 (late): gate grid with bag and exit (chunk 3b), laptop, pure numpy
+
+Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.gate_grid --workers 6` : 96 rule sets x 25 seeds x 5 agents, 1918 s of compute summed over rule sets (about 32 CPU-minutes, a few minutes of wall time on 6 of 20 logical cores). Rows in `results/firelab_gate/grid.csv`, sorted report in `logs/gate_grid_nov22.log`. `--report-only` reprints the report.
+- `venv_kinder\Scripts\python.exe scripts\gate_exit_rules.py` : the reflex replayed with three other exit rules on the 48 bag-on rule sets, under a minute, `logs/gate_exit_rules_nov22.log`.
+- Tests: `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_gate.py firelab/test_fire.py` gives 21 passed.
+
+Grid: items 6 or 8; values (5, 1) or (1, 2, 3, 5, 8); pick 10, 50 or 100 ticks; drain 0.02 or 1.0; end coverage 0.5 or 0.8; bag off or on. Fixed: walls on, 2 HP per tick, p 0.015, 500-tick cap, seeds 0 to 24, clock off. gap_now = planner that sees only the current fire minus the official reflex.
+
+What the grid says:
+- Random is 0.00 to 0.09 everywhere.
+- Bag off (one item per trip): no rule set has a gap_now above +0.16; most are +0.01 to +0.11. The reflex is 0.29 to 0.59 and the all-knowing planner only 0.39 to 0.75.
+- Bag on: gap_now is +0.16 to +0.50 in all 48 rule sets, and the 39 largest gaps of the grid are all bag on.
+- Drain (0.02 or 1.0) and end coverage (0.5 or 0.8) move nothing by more than noise. Slow picks lower every agent.
+- The value-per-tick reflex removes little: gap against it is within 0.10 of gap_now in most rows, except 8 items with spread values and 50-tick picks (+0.49 becomes +0.29).
+
+What the exit-rule replay says (the important caveat): most of the large bag-on gaps come from the reflex exit rule I chose (A68a), not from the task.
+- With 50 or 100-tick picks the official reflex loses its load in 13 to 24 of 25 seeds (out when the clock ends, cut off by fire, or burnt while picking). "Bank after every pick" scores 0.29 to 0.59 there against the official 0.01 to 0.31, and the gap falls from +0.28..+0.50 to -0.04..+0.21.
+- The gaps that survive the best of the three simple exit rules are +0.14 to +0.24, and the largest are the fast-pick rule sets: 8 items, values (5, 1), pick 10, bag on, where the official reflex is 0.51 to 0.53, bank-every-pick 0.61 to 0.62, the value-per-tick reflex 0.56 to 0.61, the current-fire planner 0.78 to 0.87 and the all-knowing planner 0.95 to 0.97. In those the reflex is cut off by fire with its bag in 9 of 25 seeds and never loses to the clock: the walls and "never step into fire" are what cost it.
+- Intervals are wide at 25 seeds (gap_now +0.34 [+0.15, +0.54] and +0.25 [+0.02, +0.47] for two rule sets that differ only in drain), so the ranking among the top rows is not resolved.
+
+Not done: the exit-rule replay and the value-per-tick reflex were not combined; no interval was computed for the gap against the best exit rule; 100-seed runs of the finalists.
+
+## Nov 22 (23:30): buildable layouts, robot width and the clock (chunk 3c), laptop on mains, pure numpy
+
+Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.gate_clock --workers 10 --seeds 50 --drain 0.02 --end-coverage 0.5` : 4 rule sets (6 or 8 items, values (5, 1) or (1, 2, 3, 5, 8); bag on, 10-tick picks, 2 HP per tick) x 4 layout variants x 50 seeds, 11 minutes of wall time (23:30:35 to 23:41:37). One row per room in `results/firelab_gate/clock_seeds_fast.csv` (800 rows), report in `logs/gate_clock_nov22.log`.
+- `... -m firelab.gate_clock --workers 10 --seeds 25 --variants 3 --drain 0.02 --end-coverage 0.5 --p-spread 0.005 --max-ticks 1500 --tag slow` : the slow-fire check on one layout, about 5 minutes, `results/firelab_gate/clock_seeds_slow.csv`, `logs/gate_clock_slow_nov22.log`.
+- `--report-only` reprints either report; rerunning with `--seeds 100` computes only the missing seeds.
+- Tests: 24 passed (`firelab/test_gate.py`, `firelab/test_fire.py`).
+- CR's full request was 16 rule sets x 100 seeds; cut to 4 x 50 after CR asked whether that much was needed (drain and end coverage had shown no effect in the grid). Earlier the laptop was on battery (41 %) and ran about 5 times slower; a 4-seed probe then is superseded by these runs.
+
+Fast fire (p = 0.015, 500-tick cap), official reflex = bank every pick, 50 seeds, ranges over the 4 rule sets:
+
+| layout | robot width | random | reflex | best exit rule | planner, current fire | planner, all-knowing | gap [95 % at its narrowest and widest] | planner at 2 / 20 / 100 ticks per decision | unreachable items per room |
+|---|---|---|---|---|---|---|---|---|---|
+| two partitions, 0.4 m doorways (not buildable) | off | 0.01-0.04 | 0.61-0.69 | 0.62-0.69 | 0.75-0.90 | 0.95-0.97 | +0.14 to +0.23 | 0.73-0.88 / 0.30-0.52 / 0.04-0.07 | 0 |
+| two partitions, 0.8 m doorways | off | 0.01-0.05 | 0.61-0.71 | 0.63-0.75 | 0.81-0.92 | 0.96-0.99 | +0.20 to +0.23 | 0.77-0.90 / 0.29-0.60 / 0.04-0.07 | 0 |
+| two partitions, 0.8 m doorways | on | 0.02-0.09 | 0.50-0.61 | 0.52-0.63 | 0.65-0.73 | 0.75-0.81 | +0.12 to +0.17 | 0.63-0.74 / 0.26-0.49 / 0.05-0.08 | 1.1 (of 6), 1.7 (of 8) |
+| one partition, one 0.8 m doorway | on | 0.03-0.09 | 0.51-0.56 | 0.52-0.57 | 0.71-0.76 | 0.80-0.83 | +0.20 to +0.23 | 0.68-0.73 / 0.34-0.51 / 0.05-0.06 | 1.0 (of 6), 1.5 (of 8) |
+
+- Every interval is above zero (the lowest lower end is +0.03, on the not-buildable layout). The planner beats the reflex in 36 to 47 of 50 rooms and loses in 2 to 9; the reflex's score varies from room to room with a standard deviation of 0.18 to 0.25.
+- Wide doorways do not remove the gap. The robot-width rule lowers everyone (1 to 1.7 items per room sit against a wall and cannot be reached in this model, where a pick is made from the item's own cell) and trims the two-partition gap to +0.12..+0.17; with one partition it stays at +0.20..+0.23.
+- The best simple exit rule is "every two" in 15 of 16 rows and is 0.00 to 0.04 above the official reflex. The value-per-tick reflex is within 0.03 of the official one.
+- The clock: at 2 ticks (0.2 s) per decision the planner keeps its lead in every row; at 20 ticks (2 s) it is below the reflex in every row; at 100 ticks (10 s) it scores like random. The break-even is between 0.2 s and 2 s per decision, for a planner that re-thinks before every action and stands still while it thinks.
+
+Slow fire (p = 0.005, 1500-tick cap, episodes end after about 97 s), one partition with robot width, 25 seeds:
+
+| items, values | random | reflex | best exit rule | planner free | at 2 | at 20 | at 100 | gap [95 %] | gap vs best exit |
+|---|---|---|---|---|---|---|---|---|---|
+| 6, (5, 1) | 0.23 | 0.71 | 0.76 | 0.85 | 0.84 | 0.75 | 0.30 | +0.14 [+0.07, +0.22] | +0.08 |
+| 8, (5, 1) | 0.22 | 0.68 | 0.71 | 0.79 | 0.79 | 0.71 | 0.28 | +0.11 [+0.05, +0.19] | +0.08 |
+| 6, (1, 2, 3, 5, 8) | 0.15 | 0.70 | 0.71 | 0.81 | 0.81 | 0.76 | 0.52 | +0.10 [+0.04, +0.19] | +0.09 |
+| 8, (1, 2, 3, 5, 8) | 0.25 | 0.65 | 0.69 | 0.72 | 0.75 | 0.72 | 0.34 | +0.07 [-0.01, +0.15] | +0.03 |
+
+- 20-tick decisions now pay, but barely (+0.03 to +0.07 over the reflex), and the price is the gap itself: the reflex rises to 0.65..0.71, random to 0.15..0.25, and the free planner's lead falls to +0.07..+0.14. No setting tried has both a clear gap and a 2-second decision that pays. Not tried: speeds between these two, or a planner that thinks once for several actions or thinks while moving.
+
+## Nov 23 (00:35): three ways to spend thinking time (chunk 3d), laptop on battery, pure numpy
+
+CR's decisions (Nov 23): layout = one partition with one 0.8 m doorway, robot width counted; keep the fast fire (p = 0.015, 500-tick cap); official reflex = bank after every pick; items may be picked from a neighbouring cell.
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.gate_agents --workers 10 --items 6` : 2 rule sets (6 items, values (5, 1) or (1, 2, 3, 5, 8)) x 50 rooms, 5 min 43 s of wall time (00:35:02 to 00:40:45) with the laptop on battery. One row per room in `results/firelab_gate/agents_seeds.csv`; report in `logs/gate_agents_nov23.log`; `--report-only` reprints it.
+- Not run: the two 8-item rule sets. On battery they project to 30 to 60 minutes, over CR's 20-minute line; on mains about 6 to 12. `... -m firelab.gate_agents --workers 10` adds them to the same CSV.
+- Tests: 27 passed.
+
+Unreachable items per room after the reach fix: 0.00 in both rule sets (it was 1.0 to 1.7).
+
+Mean score over 50 rooms, by ticks charged per thought (10 ticks = 1 s). always = think before every action, standing; commit = think once and follow the plan, think again only when an action cannot be carried out or the plan runs out; moving = commit, with the reflex acting during every thought.
+
+| rule set | reflex | agent | 0 | 2 | 5 | 10 | 20 | 100 | beats the reflex up to | gap at 20 [95 %] |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 6 items, values (5, 1) | 0.70 | always | 0.94 | 0.94 | 0.83 | 0.63 | 0.43 | 0.03 | 5 ticks | -0.27 [-0.41, -0.13] |
+| | | commit | 0.82 | 0.83 | 0.83 | 0.84 | 0.81 | 0.58 | 20 ticks | +0.11 [+0.01, +0.20] |
+| | | moving | 0.82 | 0.83 | 0.81 | 0.80 | 0.78 | 0.73 | 100 ticks | +0.08 [-0.05, +0.19] |
+| 6 items, values (1, 2, 3, 5, 8) | 0.62 | always | 0.92 | 0.92 | 0.85 | 0.66 | 0.43 | 0.07 | 10 ticks | -0.19 [-0.31, -0.07] |
+| | | commit | 0.89 | 0.87 | 0.85 | 0.79 | 0.75 | 0.56 | 20 ticks | +0.14 [+0.03, +0.24] |
+| | | moving | 0.89 | 0.90 | 0.90 | 0.85 | 0.85 | 0.71 | 100 ticks | +0.24 [+0.14, +0.33] |
+
+- Always-deliberate loses as expected: ahead of the reflex only up to 5 or 10 ticks per thought, 0.19 to 0.27 behind at 20.
+- Plan-and-commit is still ahead at 20 ticks (+0.11, +0.14; both intervals just above zero) and behind at 100.
+- Think-while-moving is the only one still ahead at 100 ticks (0.73 against 0.70, 0.71 against 0.62; no interval computed at 100). At 20 ticks its interval is above zero for the spread values and includes zero for the two-level values.
+- Committing has a price when thinking is free: 0.82 against 0.94 on the two-level values (0.89 against 0.92 on the spread), because the plan is made from the first forecast, when one cell is burning.
+- With the reach fix the reflex is 0.62 to 0.70 on 6 items, above the 0.6 that the earlier filter asked for.
+
+## Nov 23 (02:05): the 8-item half of the three-agent check, laptop on mains
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.gate_agents --workers 10 --items 8` : 2 rule sets x 50 rooms, 6 min 54 s of wall time (01:57:27 to 02:04:21), laptop charging. Rows added to `results/firelab_gate/agents_seeds.csv` (now 200 rows, 4 rule sets x 50 rooms); log `logs/gate_agents_nov23_8items.log`.
+
+Unreachable items per room: 0.00 in all four rule sets.
+
+| rule set | reflex | agent | 0 | 2 | 5 | 10 | 20 | 100 | beats the reflex up to | gap at 20 [95 %] |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 8 items, values (5, 1) | 0.61 | always | 0.87 | 0.81 | 0.74 | 0.48 | 0.30 | 0.03 | 5 ticks | -0.32 [-0.43, -0.20] |
+| | | commit | 0.78 | 0.76 | 0.76 | 0.80 | 0.71 | 0.53 | 20 ticks | +0.10 [-0.00, +0.21] |
+| | | moving | 0.78 | 0.79 | 0.79 | 0.77 | 0.77 | 0.70 | 100 ticks | +0.15 [+0.05, +0.25] |
+| 8 items, values (1, 2, 3, 5, 8) | 0.60 | always | 0.85 | 0.77 | 0.74 | 0.61 | 0.34 | 0.05 | 10 ticks | -0.26 [-0.37, -0.14] |
+| | | commit | 0.78 | 0.74 | 0.81 | 0.78 | 0.72 | 0.54 | 20 ticks | +0.12 [+0.02, +0.22] |
+| | | moving | 0.78 | 0.84 | 0.81 | 0.81 | 0.76 | 0.64 | 100 ticks | +0.16 [+0.06, +0.26] |
+
+Across all four rule sets (6-item rows are in the 00:35 entry):
+- always: behind the reflex at 20 ticks in 4 of 4, every interval below zero (-0.19 to -0.32). In the 8-item spread row it is "ahead" at 10 ticks by 0.61 against 0.60 only.
+- commit: ahead at 20 ticks in 4 of 4 by +0.10 to +0.14; three intervals just above zero, one touching it (8 items, two-level: [-0.00, +0.21]). Behind at 100 in 4 of 4.
+- moving: ahead at 20 ticks in 4 of 4 by +0.08 to +0.24; interval above zero in 3 of 4 (not 6 items, two-level). Ahead at 100 in 4 of 4 on means (no interval computed at 100; margins +0.03 to +0.09).
+- moving is above commit at 20 ticks in 3 of 4 (not 6 items, two-level: 0.78 against 0.81).
+- Scores do not always fall as the cost rises (commit 0.76 -> 0.80 from 5 to 10 ticks, 8 items two-level). Not investigated; a later thought sees more of the fire, and 50 rooms leave about +-0.05 of noise.
+
+## Nov 23 (afternoon): chunk 3e, the level-2 room in kinder
+
+CR's decisions (A65 and A70 closed, A71): start the build; main rule set 6 items, values (1, 2, 3, 5, 8), bag, 10-tick picks, 2 % per tick, p = 0.015; one partition with one 0.8 m doorway; base collisions on.
+
+Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe scripts\kinder_probe_base_collisions.py` : one room, about 15 s. With `check_base_collisions` on: no collision at home; base box x 0.045 to 0.555, y -0.275 to 0.275, z to 0.366; +y stops at y = 1.05 (cabinets); -y, +x, -x are not stopped (y = -4.0, x = 1.9, x = -3.7 after 80 ticks). The room has no outer walls.
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 43 passed in 45 s (9 new in `firelab/test_room.py`, 21 s alone).
+- `venv_kinder\Scripts\python.exe scripts\firelab_room.py` : writes `results/firelab_show/level2_room.png`.
+- Do not call bare `python` from Git Bash here (the Microsoft Store stub hangs); it cost one stuck command today.
+
+No episodes were run. Next: A71 (g), then chunk 3f (items, bag, score).
+
+## Nov 23 (later): chunk 3f-1, the item rules (no simulator)
+
+CR: the base passes over items (A71 g closed, kept as a setting). Readings for the items chunk: A72.
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_items.py` : 19 passed in 4 s.
+- Whole suite (`-q firelab`): 62 passed in 28 s. No episodes were run. Next, after CR's go: chunk 3f-2, the items in the env.
+
+## Nov 23 (evening): chunk 3f-2, level 2 is a whole task in kinder
+
+Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_level2.py` : 9 passed in 34 s.
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 71 passed in 71 s.
+- `venv_kinder\Scripts\python.exe scripts\firelab_room.py` : `results/firelab_show/level2_room.png`, now with the items.
+- `gymnasium.make("firelab/FireLab3D-l2-v0")` is the main rule set; `num_items=8, values=(5, 1)` and the like give the other three.
+
+No agent episodes were run. Readings: A72, A73. Next, after CR's go: the skills chunk (walking), then random and the reflex on a few rooms, announced first.
+
+## Nov 23 (night): chunk 4, skills
+
+Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe scripts\kinder_probe_clear_cells.py` : one room, about 15 s. Free cells 209; the rule check allows the base on 161; the simulator allows 161; the two sets are identical.
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_skills.py` : 7 passed in 9 s.
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 78 passed in 42 s.
+
+No agent episodes were run. Readings: A74. Next, after CR's go: random and the reflex as agents on the skills, a small runner, then the first run (announced first).
+
+## Nov 23 (late): 8 items, and chunk 5a (the two agents)
+
+CR: main rule set is 8 items (A75); first run and the real-clock planner ordered (A76).
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 91 passed in 55 s.
+- Frozen fire, reflex, 8 items: room 2 scores 0.875 in both worlds, room 5 scores 0.774 in both; the simulator is 2 ticks ahead at every command.
+- Step rate at level 2: 4.1 ms per step, build 3 s (300 steps timed).
+
+No run on moving fire yet. Next, after CR's go: chunk 5b, the runner; then the first run, announced first.
+
+## Nov 23 (late): chunk 5b, the runner; timing before the first run
+
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_run_rooms.py` : 2 passed in 20 s (one room built, room 3 played once by each agent).
+- Timing, room 3, laptop on mains, 80 % battery: random 272 ticks in 5.6 s; reflex 226 ticks in 4.7 s; of that 0.26 s and 0.21 s is the agent's own time, the rest is inside env.step.
+- Step cost is now 16 to 19 ms; this afternoon it was 4.1 ms (same script, 300 steps). The processor is shared with another program (FortniteClient was the top CPU user when I looked), so the estimate for the first run is given for both cases.
+- First run not started; it waits for CR's yes.
+
+## Nov 24 (06:05): the first run in the simulator, random and the reflex, 8 items, rooms 0 to 49
+
+Command, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m firelab.run_rooms --rooms 50` : 100 simulator episodes plus the same on the rule check's board, 3 min 36 s (06:01:47 to 06:05:23), laptop on mains. Rows in `results/firelab_sim/first_run.csv`, report in `logs/first_run_nov23.log`; `--report-only` reprints it.
+- `venv_kinder\Scripts\python.exe scripts\first_run_trace.py 3 9 21` : both logs in full for the rooms where they part.
+
+| agent | simulator | rule check | mean difference | rooms with a different score | rooms where the commands differ |
+|---|---|---|---|---|---|
+| random | 0.041 | 0.041 | +0.000 | 1 of 50 (room 25, by 0.001) | many, late in the episode, with no effect on the score |
+| reflex | 0.598 | 0.600 | -0.002 | 7 of 50 (rooms 8, 9, 12, 18, 28, 29, 41) | 3 of 50 (rooms 3, 9, 21) |
+
+- The rule check column uses the pick-from-neighbour rule (reach 1), so 0.041 is the current number for random and 0.600 for the reflex at 8 items, values (1, 2, 3, 5, 8).
+- Only room 9 differs by more than 0.02: simulator 0.400, rule check 0.517. Room 18 differs by 0.012; the other five by under 0.01.
+- Every difference traces to one cause: the robot's home (0.3, 0.0) is on the edge between two cells, so its first step takes 2 ticks (left), 4 (forward) or 6 (right) where the rule check always takes 4. The simulator is then 2 ticks ahead, level, or 2 behind for the rest of the episode.
+  - Same commands, slightly different score (rooms 8, 12, 18, 28, 29, 41): an item that is burning when picked is picked 2 ticks earlier or later, worth 4 % of its value more or less.
+  - Room 3: at its tick 148 the simulator sees item 3 at full value in the tick its cell catches fire, ties it with item 7 and tries it first (no route, 0 ticks); the rule check decides at tick 150, when item 3 is worth 4.8, and goes straight to item 7. Both then fetch item 7 and both fail to get home. Same score, 0.371.
+  - Room 9: both go for item 3 behind the partition and both find the way closed, the rule check at tick 71 after 5 cells, the simulator at tick 73 after 6 cells. Three items are then tied at value 3 and the nearer one wins; from one cell further on, a different one is nearer (item 4, not item 6). The orders then differ: rule check banks items 6, 1, 4, 0; simulator banks 4 and 0. 0.400 against 0.517.
+  - Room 21: the simulator's first step is to the right (6 ticks), so it runs 2 ticks behind; its walk to item 5 takes 82 ticks against 66 (16 ticks = 4 cells longer; I have not traced which cell forced the detour). It is then 18 ticks behind, and at command 4 the way to item 6 closes on it (no route) where the rule check still gets through. The rule check then fails to get home with item 6, so the score is the same, 0.471.
+- Random dies in 7 of 50 rooms in the simulator; the reflex in none.
+- Thinking time (the agent's own, measured, not charged): reflex 68 ms per episode over 9.4 commands on average; random 106 ms over 50 commands; the largest in any episode 0.39 s. Per command this is well under one tick (100 ms).
+
+## Nov 24 (morning): plan approved; chunk 6a (planner), Della setup written, first sync into the clone
+
+CR approved PLAN.md section 6 with all five decisions as proposed, and added: saved games, the RRARA naming, Della setup now (A80).
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_planner.py` : 14 passed (70 s with the laptop busy).
+- Search steps and seconds for the first plan, laptop, rooms 0 to 5: 6 items 62 to 1115 steps, 0.01 to 0.29 s; 8 items 586 to 20 738 steps, 0.14 to 4.36 s; 0.16 to 0.35 ms per step.
+- `della_planner_timing/` (step 0): CR's `time_planner.py` with `fire.py` and `gate.py` and an empty `__init__.py`; `bash time_on_della.sh` on a Della login node. CR is running it.
+- `scripts/della_firelab_setup.sh`: second environment `pyk310` on Della, kindergarden at 86c55a4, the laptop's package versions, then the test suite through `srun`. Not yet run on Della.
+- `scripts/sync_to_clone.sh`: copies firelab, the four documents, the new scripts and the small result files into `thinking-fast-hazard/` and stages them. It does not commit or push.
+
+## Nov 24 (midday): chunks 6b and 6c; the RRARA equivalent; timings for runs 1 and 2
+
+Commands, from G:\iw-thinking-fast with `$env:PYTHONPATH = "G:\iw-thinking-fast"`:
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_thinkers.py` : 11 passed in 27 s.
+- `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab/test_run_rooms.py` : 2 passed in 24 s.
+- Whole suite at the 6a state: 107 passed in 4 min 40 s (laptop busy). Whole suite at the 6c state: see the next entry.
+- No run on moving fire with a planner yet beyond one timing room (room 3).
+
+First-plan search steps, 8 items, rooms 0 to 9: 586, 6102, 1976, 1070, 20738, 9873, 24778, 182, 4310, 12018 (median 5206; 24.8 s for all ten on the laptop, about 0.3 ms per step).
+
+Timing of one episode, room 3 (an easy room, 1070 first-plan steps), laptop: always/off 4.6 s without the board and 5.1 s with it (10 thoughts, 2342 steps, 0.6 s of thinking); always/declared 4.7 s (19 ticks charged); commit/declared 4.3 s (3 thoughts, 8 ticks); moving/declared 4.3 s (2 thoughts, 6 ticks). The simulator is most of it; hard rooms add several seconds of planning.
+
+**The third agent is the RRARA equivalent.** Which part of RRARA each piece stands for (RRARA as in the vault note `Papers/zhengReflexFirstReflect2025.md`, written Oct 16 from the arXiv v2 HTML and not re-read from the paper today, and as in our `scripts/rrara/`):
+
+| RRARA (Zheng et al. 2025) | Here |
+|---|---|
+| Time Conversion Mechanism: frames = ceil(seconds x 30); the agent stands still while it thinks (blocking inference) | `firelab/clock.py`: ticks = ceil(seconds x 10). The agent `always` is blocking inference: it is what RRARA's Table 1 penalises |
+| Rapid reflex: a deterministic rule over the observation and cached distances, near-constant latency | `agents.reflex`: most valuable item first, bank after every pick, never enter fire; a few ms per command |
+| Asynchronous reflect: an LLM runs while the reflex's action executes and returns valid or invalid plus a replacement | In `moving`, the planner's thought runs while the reflex acts; when it ends the robot switches from the reflex to the plan |
+| LLM PrePlanner: an ordered list of subgoals, the top one executed, the list cached; replanning when a staleness score crosses 0.6 (weights not published) | `commit`: the plan is the cached list; it is replanned when an action cannot be carried out or the list runs out (A70 b), a trigger that can be stated in place of the unpublished weights |
+| RRARA-v2 = reflex + reflector + preplanner | `moving` = the reflex during the thought, then the committed plan |
+| no counterpart | The estimate: the agent says in advance how long it will think and plans for that moment |
+
+Where the equivalent differs from RRARA: the slow thinker here is an exhaustive planner, not a language model; it hands back a whole plan, not a verdict on one action; and its thinking is charged to the world under both clocks, where the paper's Response Latency leaves out background planner and reflector compute (our "worldtime" reading, A30). RRARA's robot sees only what its camera has seen; this room is fully observed.
+
+- Whole suite at the 6c state: 118 passed in 2 min 19 s. Committed into the clone `thinking-fast-hazard/` (not pushed; CR pushes).
