@@ -1,6 +1,6 @@
 """Summary of a model run (agents `model` and `rrara1`) against the reflex, room by room. Reads files only.
 
-Reads results/firelab_sim/<tag>/rows_*.csv and its games, and the reflex rows of the first run (rooms 0-49).
+Reads firelab/results/firelab_sim/<tag>/rows_*.csv and its games, and the reflex rows of the first run (rooms 0-49).
 Run: venv_kinder\\Scripts\\python.exe scripts\\model_run_summary.py jev_run50   (PYTHONPATH = repo root)
 """
 import collections
@@ -14,7 +14,7 @@ import numpy as np
 
 from firelab.gate import paired_interval
 
-SIM = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
+SIM = Path(__file__).resolve().parents[1] / "firelab" / "results" / "firelab_sim"
 tag = sys.argv[1]
 rows = [r for p in sorted(glob.glob(str(SIM / tag / "rows_*.csv"))) for r in csv.DictReader(open(p, newline=""))]
 reflex = {int(r["room"]): float(r["sim"]) for r in csv.DictReader(open(SIM / "first_run.csv", newline="")) if r["agent"] == "reflex"}

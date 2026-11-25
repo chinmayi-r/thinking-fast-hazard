@@ -6,7 +6,7 @@
 # it was submitted from, so no folder name is written into it:
 #   cd ~/thinking-fast-hazard
 #   sbatch --export=ALL,TAG=run4_items10_declared,AGENTS="random reflex always commit moving",CLOCK=declared,EXTRA="--items 10 --no-board" scripts/della_firelab_rooms.slurm
-# Resubmit the same line to resume: rooms already in results/firelab_sim/$TAG/ are skipped.
+# Resubmit the same line to resume: rooms already in firelab/results/firelab_sim/$TAG/ are skipped.
 # When the array is done, on the login node, from the same folder:
 #   PYTHONPATH=$PWD pyk310/bin/python -m firelab.run_rooms --tag run4_items10_declared --report-only
 # The measured clock charges real seconds, so each task gets one core to itself and BLAS is held to one thread;

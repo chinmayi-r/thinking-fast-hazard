@@ -2,7 +2,7 @@
 
 Builds one room and steps it 150 ticks with the robot standing still (a few seconds after a 6 s build).
 Run: venv_kinder\\Scripts\\python.exe scripts\\firelab_room.py   (PYTHONPATH = repo root)
-Out: results/firelab_show/level2_room.png
+Out: firelab/results/firelab_show/level2_room.png
 """
 
 from pathlib import Path
@@ -17,7 +17,7 @@ from matplotlib.colors import ListedColormap
 import firelab  # noqa: F401
 from firelab.env import FireLab3DEnv
 
-OUT = Path(__file__).resolve().parents[1] / "results/firelab_show/level2_room.png"
+OUT = Path(__file__).resolve().parents[1] / "firelab/results/firelab_show/level2_room.png"
 env = FireLab3DEnv(level=2, render_mode="rgb_array")
 inner = env.unwrapped._object_centric_env  # pylint: disable=protected-access
 env.reset(seed=0)

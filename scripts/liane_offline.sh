@@ -15,11 +15,11 @@ cd "$ROOT" || exit 1
 export PYTHONPATH="$ROOT"
 PY=${PY:-$ROOT/pyk310/bin/python}
 RUN=${RUN-srun --ntasks=1 --cpus-per-task=1 --mem=4G --time=00:30:00 env PYTHONPATH=$ROOT}
-OUT=${OUT:-results/firelab_compiled/v1}; TRAIN=${TRAIN:-haiku_train}; LIMIT=${LIMIT:-1.60}
+OUT=${OUT:-firelab/results/firelab_compiled/v1}; TRAIN=${TRAIN:-haiku_train}; LIMIT=${LIMIT:-1.60}
 spent() { "$PY" - "$OUT" "$TRAIN" <<'EOF'
 import csv, glob, json, sys
 out, train = sys.argv[1], sys.argv[2]
-haiku = sum(float(r["cost_usd"]) for p in glob.glob(f"results/firelab_sim/{train}/rows_*.csv") for r in csv.DictReader(open(p)))
+haiku = sum(float(r["cost_usd"]) for p in glob.glob(f"firelab/results/firelab_sim/{train}/rows_*.csv") for r in csv.DictReader(open(p)))
 writer = sum(json.load(open(p)).get("usage", {}).get("dollars", 0.0) for p in glob.glob(f"{out}/compile_round*.json"))
 print(f"{haiku + writer:.4f}")
 EOF
@@ -33,7 +33,7 @@ prev=""; val=""
 for round in 1 2 3; do
   if "$PY" -c "import sys; sys.exit(0 if float('$(spent)') < float('$LIMIT') else 1)"; then :; else echo "== spending $(spent) dollars has passed $LIMIT: no more rounds"; break; fi
   echo "== [2] round $round: Opus writes a program"
-  if "$PY" -m firelab.compile --games "results/firelab_sim/$TRAIN/games" --out "$OUT" --round "$round" --key-file "$KEY" \
+  if "$PY" -m firelab.compile --games "firelab/results/firelab_sim/$TRAIN/games" --out "$OUT" --round "$round" --key-file "$KEY" \
         ${prev:+--previous "$prev"} ${val:+--validation "$val"} | tail -12; then
     echo "== [4] round $round: the program plays rooms 110-119"
     $RUN "$PY" -m firelab.validate --program "$OUT/policy_round$round.py" --first 110 --rooms 10 --out "$OUT/validation_round$round.json" 2>&1 \
@@ -55,7 +55,7 @@ echo "== [7] preparation cost"
 "$PY" - "$OUT" "$TRAIN" <<'EOF'
 import csv, glob, json, sys
 out, train = sys.argv[1], sys.argv[2]
-rows = [r for p in glob.glob(f"results/firelab_sim/{train}/rows_*.csv") for r in csv.DictReader(open(p))]
+rows = [r for p in glob.glob(f"firelab/results/firelab_sim/{train}/rows_*.csv") for r in csv.DictReader(open(p))]
 print(f"Haiku games: {len(rows)} rooms, mean score {sum(float(r['sim']) for r in rows) / max(1, len(rows)):.3f}, "
       f"{sum(float(r['measured_s']) for r in rows):.0f} s of model time, {sum(float(r['cost_usd']) for r in rows):.4f} dollars")
 for p in sorted(glob.glob(f"{out}/compile_round*.json")):

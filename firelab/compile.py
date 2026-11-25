@@ -6,9 +6,9 @@ in every validation room, a strong model is asked for a new program. The reply's
 policy_round<N>.py and must pass firelab.programs.audit_program before it may play. Offline: no simulator here;
 firelab/validate.py scores the file afterwards. `--dry-run` writes the prompt and stops, with no model call.
 
-Run:  python -m firelab.compile --games results/firelab_sim/haiku_train/games --out results/firelab_compiled/v1 \\
+Run:  python -m firelab.compile --games firelab/results/firelab_sim/haiku_train/games --out firelab/results/firelab_compiled/v1 \\
           --round 1 --key-file <path> [--dry-run]
-      ... --round 2 --previous results/firelab_compiled/v1/policy_round1.py --validation results/firelab_compiled/v1/validation_round1.json
+      ... --round 2 --previous firelab/results/firelab_compiled/v1/policy_round1.py --validation firelab/results/firelab_compiled/v1/validation_round1.json
 The key is given as a file path only; it is read once, handed to the client, and never printed or written anywhere.
 """
 

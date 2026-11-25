@@ -3,7 +3,7 @@
 Reads files only; plays nothing. The test file is what firelab/validate.py writes with --first 50 --rooms 50.
 For every other agent that has played rooms 50-99 (the held_* runs) it prints that agent's score and the program's
 score minus it, room by room, with a 95 % interval.
-Run: venv_kinder\\Scripts\\python.exe scripts\\liane_summary.py results\\firelab_compiled\\v1\\test_rooms_50_99.json
+Run: venv_kinder\\Scripts\\python.exe scripts\\liane_summary.py firelab\\results\\firelab_compiled\\v1\\test_rooms_50_99.json
      (PYTHONPATH = repo root)
 """
 import csv
@@ -16,7 +16,7 @@ import numpy as np
 
 from firelab.gate import paired_interval
 
-SIM = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
+SIM = Path(__file__).resolve().parents[1] / "firelab" / "results" / "firelab_sim"
 OTHERS = [  # label, run folder, agent
     ("reflex", "held_reflex", "reflex"),
     ("random", "held_reflex", "random"),

@@ -13,7 +13,7 @@ import numpy as np
 from firelab.gate import paired_interval
 
 ROOT = Path(__file__).resolve().parents[1]
-SIM, PROGRAM = ROOT / "results" / "firelab_sim", ROOT / "results" / "firelab_compiled" / "v1" / "rooms_0_49_laptop.json"
+SIM, PROGRAM = ROOT / "firelab" / "results" / "firelab_sim", ROOT / "firelab" / "results" / "firelab_compiled" / "v1" / "rooms_0_49_laptop.json"
 ROWS = [  # label, run, agent
     ("random", "first_run.csv", "random"),
     ("reflex", "first_run.csv", "reflex"),

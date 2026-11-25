@@ -31,7 +31,7 @@ GRID = {
 FIXED = {"layout": "two_narrow", "hp_loss": 2.0}  # the Nov 22 grid ran on the 0.4 m doorways (not buildable, A69)
 AGENTS = ("random", "reflex", "reflex_vpt", "planner_now", "planner_all")
 EXTRA = ("gap_now", "gap_now_lo", "gap_now_hi", "gap_all", "gap_now_vpt", "end_s", "seconds")
-OUT = Path(__file__).resolve().parents[1] / "results" / "firelab_gate" / "grid.csv"
+OUT = Path(__file__).resolve().parent / "results" / "firelab_gate" / "grid.csv"
 
 
 def run_one(job: tuple) -> dict:

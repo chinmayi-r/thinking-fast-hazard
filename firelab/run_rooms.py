@@ -3,7 +3,7 @@
 Agents: random, reflex (firelab/agents.py); always, commit, moving (firelab/thinkers.py), under a clock
 (firelab/clock.py: off, declared, measured, fixed).
 
-A run is a folder results/firelab_sim/<tag>/ holding
+A run is a folder firelab/results/firelab_sim/<tag>/ holding
   rows_<first room>.csv   one row per room and agent: the scores, the ticks, the thinking in both costs;
   games/room_NNN_<agent>.jsonl   the game, decision by decision: what the agent saw, what it planned, how long
                           it thought (measured and declared), every command and its result (CR, Nov 23).
@@ -43,7 +43,7 @@ COLUMNS = ["room", "agent", "clock", "sim", "rule", "sim_ticks", "rule_ticks", "
            "charged_ticks", "measured_s", "declared_s", "steps", "estimate_error", "think_s", "think_ticks",
            "tokens_in", "tokens_out", "cost_usd",
            "parted_at", "sim_line", "rule_line"]
-RUNS = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
+RUNS = Path(__file__).resolve().parent / "results" / "firelab_sim"
 
 
 def run_agent(name: str, body, room: int, clock: Clock, thoughts: list, allow_fire: bool = True, max_bag: int | None = None,
@@ -161,7 +161,7 @@ def report(rows: list) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tag", default="run", help="the run's folder under results/firelab_sim/")
+    ap.add_argument("--tag", default="run", help="the run's folder under firelab/results/firelab_sim/")
     ap.add_argument("--agents", nargs="+", default=["random", "reflex"], choices=AGENTS)
     ap.add_argument("--clock", default="off", choices=["off", "declared", "measured", "fixed"])
     ap.add_argument("--fixed-ticks", type=int, default=0)

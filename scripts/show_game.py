@@ -6,7 +6,7 @@ import json
 import sys
 from pathlib import Path
 
-RUNS = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
+RUNS = Path(__file__).resolve().parents[1] / "firelab" / "results" / "firelab_sim"
 tag, room, agents = sys.argv[1], int(sys.argv[2]), sys.argv[3:]
 for agent in agents:
     game = [json.loads(line) for line in (RUNS / tag / "games" / f"room_{room:03d}_{agent}.jsonl").open()]

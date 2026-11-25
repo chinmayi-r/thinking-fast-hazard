@@ -1685,3 +1685,14 @@ Readings (mine):
 - Acting while thinking, as built so far, does not keep the thinker's gain: reflex-while-planning is below the planner that simply waits, and RRARA version 1 sits at the reflex with either checker.
 - Liane's program has no thinking time in the game and is level with Jev and above Opus at real time; it is 0.18 below what Opus decides when its time is nearly free.
 Limits: one run per room; the model runs are not repeatable; the planner forecasts the fire from the rules while the models read a text; the cautious planner's setting was chosen on these rooms (on unseen rooms 50 to 99 it scores 0.932); the planner rows with the clock on use a declared cost per search step, not measured time.
+
+## Nov 25 (13:11): the fire-task results moved under firelab/results/
+
+On CR's yes in this chat ("Yes, move"), after the file tree was shown. Reason: one GitHub link under which everything is the new dataset work.
+- `results/firelab_sim`, `results/firelab_gate`, `results/firelab_compiled` and `results/firelab_show` are now `firelab/results/firelab_sim`, `firelab/results/firelab_gate`, `firelab/results/firelab_compiled` and `firelab/results/firelab_show`. Folder names are unchanged. Nothing was rerun.
+- **Entries above this one keep the old paths as they were written.** Read `results/firelab_...` in them as `firelab/results/firelab_...`.
+- Paths changed in: `firelab/run_rooms.py`, `gate_grid.py`, `gate_clock.py`, `gate_agents.py` (the folder they write to), the run lines in the header text of `compile.py` and `validate.py`, eleven scripts under `scripts/`, the two chart scripts in `results/slides_nov23/`, the "Where it lives" lines of DESIGN.md, the saved-games line of `.gitignore`, and `scripts/sync_to_clone.sh`.
+- Result files that record an old path as text (the `program` field of the test files) are left as recorded.
+- New: `firelab/README.md` (the task, how to run it, where the results are). The top `README.md` is now a map of links; the earlier front page is kept as `README_HAZARD.md`.
+- Not done yet: Della's copy holds saved games and training games that are not in git. They stay at the old paths until they are moved there by hand after the pull.
+- Check after the move: `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 157 passed in 2 min. `scripts/all_agents_table.py`, `scripts/gap_table.py` and `scripts/liane_summary.py` print the same numbers as before the move. The chart scripts and the other summary scripts were compiled, not run.

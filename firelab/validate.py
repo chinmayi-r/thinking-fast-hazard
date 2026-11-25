@@ -5,8 +5,8 @@ of its commands were illegal or raised, the number of decisions and the time `de
 same rooms, so each room shows both scores. The file written is what the next writing round reads, and with
 --first 50 --rooms 50 it is also the final test.
 
-Run:  python -m firelab.validate --program results/firelab_compiled/v1/policy_round1.py --first 110 --rooms 10 \\
-          --out results/firelab_compiled/v1/validation_round1.json
+Run:  python -m firelab.validate --program firelab/results/firelab_compiled/v1/policy_round1.py --first 110 --rooms 10 \\
+          --out firelab/results/firelab_compiled/v1/validation_round1.json
 """
 
 from __future__ import annotations

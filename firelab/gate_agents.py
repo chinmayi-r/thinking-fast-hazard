@@ -27,7 +27,7 @@ RULES = [(items, values) for items in (6, 8) for values in ((5, 1), (1, 2, 3, 5,
 COSTS = (0, 2, 5, 10, 20, 100)  # ticks per thought; 10 ticks = 1 s
 AGENTS = {"always": {}, "commit": {"commit": True}, "moving": {"commit": True, "moving": True}}
 COLUMNS = ["items", "values", "seed", "unreachable", "reflex"] + [f"{a}_{c}" for a in AGENTS for c in COSTS]
-OUT = Path(__file__).resolve().parents[1] / "results" / "firelab_gate" / "agents_seeds.csv"
+OUT = Path(__file__).resolve().parent / "results" / "firelab_gate" / "agents_seeds.csv"
 
 
 def run_chunk(job: tuple) -> list:

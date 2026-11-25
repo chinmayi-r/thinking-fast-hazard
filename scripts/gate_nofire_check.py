@@ -4,7 +4,7 @@ No simulator. For rooms 0-49 of the main rule set (8 items, values 1 2 3 5 8) it
 the reflex (gate.reflex), and our planner with the clock off (firelab.thinkers.thinker on GateSkills) in eight
 settings: any bag or a guarded bag (1 or 2 items), and any bag with a cautious forecast (fire 1.5 times faster),
 each with and without walking through fire.
-gate.py and the old result files are not touched; rows go to a NEW file, results/firelab_gate/nofire_check_nov23.csv.
+gate.py and the old result files are not touched; rows go to a NEW file, firelab/results/firelab_gate/nofire_check_nov23.csv.
 Run: venv_kinder\\Scripts\\python.exe scripts\\gate_nofire_check.py   (PYTHONPATH = repo root; a few minutes)
 """
 import csv
@@ -21,7 +21,7 @@ MAIN = gate.Task(items=8, values=(1, 2, 3, 5, 8), layout="one_wide", clearance=T
 SETTINGS = {f"planner_{bag or 'any'}bag_{'fire' if fire else 'nofire'}": {"max_bag": bag, "allow_fire": fire}
             for bag in (None, 1, 2) for fire in (True, False)}
 SETTINGS.update({f"cautious15_anybag_{'fire' if fire else 'nofire'}": {"caution": 1.5, "allow_fire": fire} for fire in (True, False)})
-OUT = Path(__file__).resolve().parents[1] / "results" / "firelab_gate" / "nofire_check_nov23.csv"
+OUT = Path(__file__).resolve().parents[1] / "firelab" / "results" / "firelab_gate" / "nofire_check_nov23.csv"
 
 rows = []
 for room in range(50):

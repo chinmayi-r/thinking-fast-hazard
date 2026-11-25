@@ -69,7 +69,7 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 
 **What changed.** `firelab/gate.py` gained five knobs on `Task` (values, pick_ticks, drain, end_coverage, bag), a bag (any number of items, banked when the robot drops in the safe strip alive and in time; with the bag off the old one-item-per-trip rule), one search `plan()` used by two planners, a `forecast()`, a diagnostic reflex, and `evaluate()`. `firelab/gate_grid.py` runs every combination of the knobs and writes one CSV row per rule set. `scripts/gate_exit_rules.py` is a diagnostic on the reflex exit rule.
 
-**Where it lives.** `firelab/gate.py` (343 lines, 254 of code), `firelab/gate_grid.py` (106, 87), `firelab/test_gate.py` (101, 67), `scripts/gate_exit_rules.py` (72). Results in `results/firelab_gate/grid.csv`.
+**Where it lives.** `firelab/gate.py` (343 lines, 254 of code), `firelab/gate_grid.py` (106, 87), `firelab/test_gate.py` (101, 67), `scripts/gate_exit_rules.py` (72). Results in `firelab/results/firelab_gate/grid.csv`.
 
 **Why this way, against the alternatives.**
 - *One fire per seed for every rule set.* `fire_history` is cached on (seed, walls, p, cap) and items come from their own random stream, so two rule sets differ only in the rules, and gaps are paired by seed. Alternative: a fresh world per rule set, which adds fire-to-fire noise to every comparison.
@@ -83,7 +83,7 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 
 **What changed.** `firelab/gate.py`: the `walls` switch became `layout` (four layouts in `LAYOUTS`) plus `clearance`; `World.open` holds the cells the robot may stand in and `route` uses it; `reflex` takes its exit rule as arguments and `EXIT_RULES` names four of them, with "bank after every pick" as the official one; `planner_now` takes a `charge` in ticks per decision; `unreachable` counts items no route can reach; `evaluate` returns every agent's score for every seed. New `firelab/gate_clock.py` runs layout variants x rule sets x seeds in chunks of 10 seeds and writes one CSV row per room.
 
-**Where it lives.** `firelab/gate.py` (388 lines, 287 of code), `firelab/gate_clock.py` (115, 96), `firelab/test_gate.py` (125, 84). Results: `results/firelab_gate/clock_seeds_fast.csv`, `clock_seeds_slow.csv`.
+**Where it lives.** `firelab/gate.py` (388 lines, 287 of code), `firelab/gate_clock.py` (115, 96), `firelab/test_gate.py` (125, 84). Results: `firelab/results/firelab_gate/clock_seeds_fast.csv`, `clock_seeds_slow.csv`.
 
 **Why this way, against the alternatives.**
 - *Robot width as a set of enterable cells, not a wider robot.* The base is 0.51 m x 0.55 m, so its centre cannot come within about a cell of an obstacle. Removing every free cell that touches a wall or furniture cell from `World.open` gives that with one set and no change to the search. The fire keeps using the real walls (`World.burn`). Alternative: a robot occupying 3 x 3 cells, which needs footprint checks in every move and in the health rule.
@@ -96,7 +96,7 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 
 **What changed.** In `firelab/gate.py`: a `reach` knob and `within_reach`, so an item can be picked from a neighbouring cell; `walk` and `act` take an `until` tick; the reflex loop moved into `run_reflex`, which can start from any state and stop at a tick; `plan` returns the whole list of actions; `stand`, `reflex_until` and `thinker` replace the body of `planner_now`. New `firelab/gate_agents.py` runs the three thinking agents at six costs on the chosen layout and writes one row per room.
 
-**Where it lives.** `firelab/gate.py` (changed functions only, about 60 new lines), `firelab/gate_agents.py` (new, 96 lines), `firelab/test_gate.py` (3 new tests, 35 lines). Results: `results/firelab_gate/agents_seeds.csv`.
+**Where it lives.** `firelab/gate.py` (changed functions only, about 60 new lines), `firelab/gate_agents.py` (new, 96 lines), `firelab/test_gate.py` (3 new tests, 35 lines). Results: `firelab/results/firelab_gate/agents_seeds.csv`.
 
 **Why this way, against the alternatives.**
 - *One loop for three agents.* `thinker` has two switches. `commit` decides how much of the plan is carried out before the next thought (one action or all of it). `moving` decides what the body does during a thought (`stand` or `reflex_until`). The same body function is run twice per thought: once on the forecast, to predict where the robot will be when the thought ends, and once on the real world. Alternative: three separate functions, which would repeat the forecast-plan-act loop three times and let the agents drift apart in small ways.
@@ -110,7 +110,7 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 
 **What it is.** The room the rule check settled on, built in the simulator: one partition across the room at y = -0.4 with one 0.8 m doorway, the base stopped by partition, furniture and the edge of the floor, a safe strip (y >= 0.7), and a fire that starts and spreads exactly as in room `seed` of the rule check. No items, bag or score yet (chunk 3f); the `l2` gymnasium id is registered there, when the task is whole.
 
-**Where it lives.** `firelab/env.py` (62 new lines): three settings on `FireLabConfig`, the constants `ONE_DOORWAY` and `LEVEL2`, and seven small methods on `ObjectCentricFireLab3DEnv`. `firelab/test_room.py` (93 lines, 9 tests). `scripts/kinder_probe_base_collisions.py` (40 lines, the measurement behind the fence). `scripts/firelab_room.py` (42 lines, the picture `results/firelab_show/level2_room.png`).
+**Where it lives.** `firelab/env.py` (62 new lines): three settings on `FireLabConfig`, the constants `ONE_DOORWAY` and `LEVEL2`, and seven small methods on `ObjectCentricFireLab3DEnv`. `firelab/test_room.py` (93 lines, 9 tests). `scripts/kinder_probe_base_collisions.py` (40 lines, the measurement behind the fence). `scripts/firelab_room.py` (42 lines, the picture `firelab/results/firelab_show/level2_room.png`).
 
 **Why this way, against the alternatives.**
 - *The partition is a list of boxes in the config, and each box does two jobs.* `_build_partitions` turns a box into a pybullet body (what the base hits) and into BLOCKED cells (what the fire cannot enter). One list, so the wall the robot meets and the wall the fire meets cannot drift apart. Alternative: a second URDF for the room, which is more to maintain and gives the fire grid nothing.
@@ -189,7 +189,7 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 
 **What it is.** `firelab/run_rooms.py`: plays each room with random and the reflex in the simulator, plays the same room with the same agent on the rule check's board, and writes one CSV row per room and agent. `--report-only` reprints the table from the CSV.
 
-**Where it lives.** `firelab/run_rooms.py` (122 lines): `AGENTS`, `parted`, `play`, `report`, `main`. `firelab/test_run_rooms.py` (34 lines, 2 tests). Output: `results/firelab_sim/first_run.csv`.
+**Where it lives.** `firelab/run_rooms.py` (122 lines): `AGENTS`, `parted`, `play`, `report`, `main`. `firelab/test_run_rooms.py` (34 lines, 2 tests). Output: `firelab/results/firelab_sim/first_run.csv`.
 
 **Why this way, against the alternatives.**
 - *Both worlds in one row.* The comparison CR asked for is per room, so the pair is made at the moment of the run and cannot be mismatched later. Alternative: read the rule check's old CSVs; those were made with 6 items or without the pick-from-neighbour rule, so they are not the current numbers.
@@ -225,7 +225,7 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 
 ## Chunk 6c: the runner for any agent and clock (Nov 23)
 
-**What it is.** `firelab/run_rooms.py` now plays any of random, reflex, always, commit, moving under any clock; writes each run into its own folder (`results/firelab_sim/<tag>/`), one rows file per invocation and one game file per episode; and times one fixed reference plan at the start so every result names the machine's speed. `scripts/della_firelab_rooms.slurm` runs one room per array task on one core.
+**What it is.** `firelab/run_rooms.py` now plays any of random, reflex, always, commit, moving under any clock; writes each run into its own folder (`firelab/results/firelab_sim/<tag>/`), one rows file per invocation and one game file per episode; and times one fixed reference plan at the start so every result names the machine's speed. `scripts/della_firelab_rooms.slurm` runs one room per array task on one core.
 
 **Where it lives.** `firelab/run_rooms.py` (185 lines, was 122), `firelab/test_run_rooms.py` (50, was 34), `scripts/della_firelab_rooms.slurm` (29). 108 new lines.
 

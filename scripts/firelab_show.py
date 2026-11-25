@@ -2,7 +2,7 @@
 
 Runs one 300-tick episode with the robot standing still (about 2 s after a 6 s build).
 Run: venv_kinder\Scripts\python.exe scripts\firelab_show.py
-Out: results/firelab_show/what_we_are_building.png
+Out: firelab/results/firelab_show/what_we_are_building.png
 """
 
 import argparse
@@ -30,7 +30,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--ticks", type=int, nargs="+", default=[0, 100, 200, 300])
-    ap.add_argument("--out", default=str(ROOT / "results/firelab_show/what_we_are_building.png"))
+    ap.add_argument("--out", default=str(ROOT / "firelab/results/firelab_show/what_we_are_building.png"))
     args = ap.parse_args()
 
     env = gymnasium.make("firelab/FireLab3D-l1-v0", render_mode="rgb_array")

@@ -1,6 +1,6 @@
 """Diagnostic for the gate grid: how much of each bag-on gap is the reflex's exit rule (A68a)?
 
-For every bag-on rule set in results/firelab_gate/grid.csv this replays the official reflex and records
+For every bag-on rule set in firelab/results/firelab_gate/grid.csv this replays the official reflex and records
 how its episodes end (load lost to the clock, trapped, dead), then tries three other simple exit rules
 on the same worlds: bank after every pick, bank after every two picks, and the official rule plus
 "head home when fewer than pick_ticks + 100 ticks remain before the tick cap". None of these is the

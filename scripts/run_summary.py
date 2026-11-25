@@ -1,6 +1,6 @@
 """Summary of a planner run against the reflex and the clock-off planner, room by room (rooms 0-49, Nov 23).
 
-Reads results/firelab_sim/<tag>/rows_*.csv, the first run (reflex, random) and run1_off. Plays nothing.
+Reads firelab/results/firelab_sim/<tag>/rows_*.csv, the first run (reflex, random) and run1_off. Plays nothing.
 Run: venv_kinder\\Scripts\\python.exe scripts\\run_summary.py run2_declared   (PYTHONPATH = repo root)
 """
 import csv
@@ -12,7 +12,7 @@ import numpy as np
 
 from firelab.gate import paired_interval
 
-SIM = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
+SIM = Path(__file__).resolve().parents[1] / "firelab" / "results" / "firelab_sim"
 read = lambda pattern: [r for p in sorted(glob.glob(str(SIM / pattern))) for r in csv.DictReader(open(p, newline=""))]
 by_room = lambda rows, agent: {int(r["room"]): r for r in rows if r["agent"] == agent}
 tag = sys.argv[1]

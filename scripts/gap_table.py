@@ -14,7 +14,7 @@ import numpy as np
 
 from firelab.gate import paired_interval
 
-SIM = Path(__file__).resolve().parents[1] / "results" / "firelab_sim"
+SIM = Path(__file__).resolve().parents[1] / "firelab" / "results" / "firelab_sim"
 
 
 def load(tag: str, agent: str, key: str = "sim") -> dict:

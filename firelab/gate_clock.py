@@ -31,7 +31,7 @@ NOW = ["planner_now" if c == 0 else f"planner_now_{c}" for c in CHARGES]
 KEYS = ["layout", "clearance"] + list(RULES) + ["seed"]
 SCORES = ["random"] + list(EXIT_RULES) + ["reflex_vpt"] + NOW + ["planner_all", "t_end", "unreachable"]
 CHUNK = 10  # seeds per job, so the slow rule sets spread over the workers
-OUT_DIR = Path(__file__).resolve().parents[1] / "results" / "firelab_gate"
+OUT_DIR = Path(__file__).resolve().parent / "results" / "firelab_gate"
 
 
 def run_chunk(job: tuple) -> list:
