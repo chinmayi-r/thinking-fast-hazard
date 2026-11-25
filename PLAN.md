@@ -232,11 +232,11 @@ Why: Liane should work in one repository that holds only the kinder work, and at
 |---|---|
 | `scripts/` for HAZARD (110 of the 131 files), `results/` (the HAZARD runs), `logs/`, `refs/` | the Python package `NAME/` with `tasks/fire`, `design`, `research/fire` |
 | `HAZARD_CHEATSHEET.md`, `BASELINE.md`, `RRARA_BASELINES.md`, `RRARA_V1_PLAN.md`, `README_HAZARD.md` | `README.md`: the task, how to run it, how to add an agent |
-| `NOTES.md` and `ASSUMPTIONS.md` as they stand on the split day, with a last line saying where they continue | `notes/`: `PLAN.md`, `DESIGN.md`, and the live `NOTES.md` and `ASSUMPTIONS.md`, whole |
+| `NOTES.md` and `ASSUMPTIONS.md` as they stand on the split day, with a last line saying where they continue | `llm_notes/`: `PLAN.md`, `DESIGN.md`, and the live `NOTES.md` and `ASSUMPTIONS.md`, whole |
 | `README.md`: a map, with a link to repository 2 | the 21 fire scripts, the fire results, the Della setup |
 
 Reason for the live logs in repository 2: the code cites 24 assumption numbers (A32 to A99), 631 of the 1 698 lines of NOTES.md are already kinder work, and every session writes code and notes together. Two repositories for one session means two commits and two pushes each time, and the two drift.
-At a release the dataset is repository 2 without `NAME/research/` and `notes/`.
+At a release the dataset is repository 2 without `NAME/research/` and `llm_notes/`.
 
 ### 9.2 The file map of repository 2 after step 1 (file names unchanged; only folders change)
 
@@ -244,7 +244,7 @@ At a release the dataset is repository 2 without `NAME/research/` and `notes/`.
 NAME-repo/
 ├── README.md                     from firelab/README.md, paths updated
 ├── pyproject.toml                NEW, about 15 lines, so that one install replaces the PYTHONPATH line
-├── notes/                        PLAN.md  DESIGN.md  NOTES.md  ASSUMPTIONS.md
+├── llm_notes/                    PLAN.md  DESIGN.md  NOTES.md  ASSUMPTIONS.md
 ├── scripts/                      della_firelab_setup.sh
 └── NAME/                         the one Python package
     ├── tasks/
@@ -303,7 +303,14 @@ Renaming files (`fire.py` to `world.py` and so on). A written task contract. A t
 ### 9.5 For CR to decide before step 1
 
 1. The name of repository 2 and of the package. One short word, the same for both.
-2. The live `NOTES.md` and `ASSUMPTIONS.md` in repository 2 as in 9.1, or kept in repository 1.
+2. **Decided by CR, Nov 25, 15:30:** the live notes go in repository 2, in a folder of their own named for what they are, the working notes of the Claude sessions. Folder name `llm_notes/`. PLAN.md and DESIGN.md go in the same folder, because they are written in the same sessions and cite the same numbers (my choice, decided without CR, to review).
 3. Whether the one import line of `gate.py` may be changed.
 
 Defaults I will use unless CR says otherwise: history by `git subtree split`; I work directly in the clone of repository 2 and the copy script is retired for kinder work; the old folder `G:\iw-thinking-fast\firelab` is left untouched until CR says it can go; `pyproject.toml` is added.
+
+### 9.6 Who can read repository 2 (asked by CR, Nov 25)
+
+- **The chats on the laptop.** A chat reads folders on this disk, not GitHub. This chat and the monitoring chat both work in `G:\iw-thinking-fast` (checked Nov 25). So the clone of repository 2 goes inside that folder, as `G:\iw-thinking-fast\NAME-repo`, and both chats can read and edit it with no new setting. New chats should keep being opened in `G:\iw-thinking-fast`, not inside the clone: the saved memory and `CLAUDE.md` belong to that folder.
+- **The chat in the vault folder** cannot read it unless CR adds the folder to that chat. It does not need to.
+- **The Della chat** reads only what is on Della. It needs its own clone there (step 2). Not known: whether the login that pulls today's repository on Della also works for a new private repository.
+- **Liane, and any Claude she uses,** see exactly what is pushed to GitHub and nothing else: no memory, no `CLAUDE.md` from this laptop. If her Claude should follow the same rules, a short `CLAUDE.md` has to be in repository 2 itself. Not in step 1; for CR to decide.
