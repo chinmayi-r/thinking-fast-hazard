@@ -221,3 +221,89 @@ These come after chunk 7 (the observation dictionary, the text, the command list
 3. Before any model run: 3 rooms first; then what, where, how long, and the cost in dollars worked out from the token counts of those 3 rooms. Prices to use, to be checked on the day: Opus 5.5 at 4 dollars per million input tokens and 20 per million output tokens (thinking is billed as output); Jev at 0.042 dollars per million input tokens (A37).
 
 **Not verified, to check when 8 is built:** that the `pyk310` environment made on a login node works on della-vis1; that the `anthropic` package installs there; where the Jev key file is on the laptop and the Anthropic key file on Della (paths from CR, never contents).
+
+## 9. Two repositories: the HAZARD archive and the benchmark (written Nov 25, 13:46, for CR's approval; nothing moved yet)
+
+Why: Liane should work in one repository that holds only the kinder work, and at a dataset release the research part should come out as one folder. This section is the plan and the file map. No file is moved until CR says go. `NAME` below stands for the name CR picks.
+
+### 9.1 What goes where
+
+| Repository 1, the HAZARD archive (today's repo, frozen after the split) | Repository 2, the benchmark (new, all live work) |
+|---|---|
+| `scripts/` for HAZARD (110 of the 131 files), `results/` (the HAZARD runs), `logs/`, `refs/` | the Python package `NAME/` with `tasks/fire`, `design`, `research/fire` |
+| `HAZARD_CHEATSHEET.md`, `BASELINE.md`, `RRARA_BASELINES.md`, `RRARA_V1_PLAN.md`, `README_HAZARD.md` | `README.md`: the task, how to run it, how to add an agent |
+| `NOTES.md` and `ASSUMPTIONS.md` as they stand on the split day, with a last line saying where they continue | `notes/`: `PLAN.md`, `DESIGN.md`, and the live `NOTES.md` and `ASSUMPTIONS.md`, whole |
+| `README.md`: a map, with a link to repository 2 | the 21 fire scripts, the fire results, the Della setup |
+
+Reason for the live logs in repository 2: the code cites 24 assumption numbers (A32 to A99), 631 of the 1 698 lines of NOTES.md are already kinder work, and every session writes code and notes together. Two repositories for one session means two commits and two pushes each time, and the two drift.
+At a release the dataset is repository 2 without `NAME/research/` and `notes/`.
+
+### 9.2 The file map of repository 2 after step 1 (file names unchanged; only folders change)
+
+```
+NAME-repo/
+├── README.md                     from firelab/README.md, paths updated
+├── pyproject.toml                NEW, about 15 lines, so that one install replaces the PYTHONPATH line
+├── notes/                        PLAN.md  DESIGN.md  NOTES.md  ASSUMPTIONS.md
+├── scripts/                      della_firelab_setup.sh
+└── NAME/                         the one Python package
+    ├── tasks/
+    │   └── fire/                 __init__.py (registers the room)  fire.py  items.py  types.py  env.py  skills.py
+    │       │                     interface.py  text.py  agents.py  planner.py  clock.py  gate.py  thinkers.py
+    │       │                     programs.py  validate.py  PROGRAM_API.md
+    │       ├── examples/         reflex_program.py
+    │       └── tests/            13 test files: fire, items, env, room, level2, skills, interface, text,
+    │                             agents, planner, gate, thinkers, programs
+    ├── design/                   gate_grid.py  measure_spread.py
+    ├── research/
+    │   └── fire/                 run_rooms.py  models.py  model_agents.py  compile.py  gate_clock.py  gate_agents.py
+    │       ├── tests/            4 test files: run_rooms, models, model_agents, compile
+    │       ├── scripts/          the other 20 fire scripts (tables, summaries, probes, slurm, Liane's loop)
+    │       ├── slides_nov23/     the chart scripts that read the fire results
+    │       └── results/          firelab_sim  firelab_gate  firelab_compiled  firelab_show
+    └── test_layers.py            NEW, about 20 lines: fails if tasks or design import from research
+```
+
+Where each file goes follows from what it imports today (checked Nov 25 with grep over `firelab/*.py`):
+- **tasks/fire** holds every file that imports nothing from the research files. `validate.py` is one of them: it plays a program and the reflex on any rooms and writes to the file named by `--out`. It is already a plain runner for programs.
+- **thinkers.py stays in tasks/fire.** The reference planner (the agent `always`, 0.82) is in it, in the same function as `commit` and `moving`. Sending it to research would leave the benchmark unable to run its own reference score.
+- **programs.py stays in tasks/fire**, not in a top-level `agents/` folder. It imports the fire task's observation, so it is a fire file today. A folder for agents that work on any task waits for a second task.
+- **research/fire** holds what imports models or runs the experiments. `run_rooms.py` goes there whole in step 1; it imports the thinkers, the model agents and the model clients.
+- **Known wart, left for later:** `gate_grid.py` (design) writes its table into the results folder under research. It needs its own output folder; that is a code change, so it is not in step 1.
+
+### 9.3 Steps
+
+**Step 0. CR decides** the three things in 9.5, and makes an empty GitHub repository.
+
+**Step 1. Move only.** No logic changes.
+1. In the clone: `git subtree split -P firelab` makes a branch that holds only `firelab/` with its 11 commits of history. Repository 2 starts from that branch. The fire scripts and the four logs are copied in with one commit that names the commit of repository 1 they came from; their earlier history stays in repository 1.
+2. `git mv` every file to its place in the map.
+3. Rewrite the 134 import lines in 34 files, the 4 result-folder constants, the paths in the 21 scripts, and these places that a search for import lines misses:
+   - `__init__.py` registers the room with the text `"firelab.env:FireLab3DEnv"`. That text is an import path and must change. The room ids themselves (`firelab/FireLab3D-l2-v0`) stay.
+   - `compile.py` finds `PROGRAM_API.md` and the example next to itself; after the move they are in another folder.
+   - `gate.py` line 25, `from firelab.fire import ...`. gate.py is closed since Nov 23; this one line needs CR's word (9.5).
+4. `PROGRAM_API.md` is not edited in step 1. The program-writer reads it word for word, so its text stays the text the kept program was written from. Its two mentions of old file paths are noted in NOTES.md and fixed when the next compile is planned.
+5. Add `pyproject.toml` and `test_layers.py`. These two files are the only new code, about 35 lines.
+
+**Checks for step 1, in this order.** Stop at the first that fails.
+- All 157 tests plus the new one.
+- `all_agents_table.py`, `gap_table.py`, `liane_summary.py` print the same numbers as on Nov 25 before the move.
+- One replay with no model: the kept program on rooms 0 to 49, on the laptop, 6 minutes (measured Nov 23). Every room's score must equal the stored file `rooms_0_49_laptop.json`. This needs CR's yes on the day, as any run does.
+
+**Step 2. Della, once.** A new clone of repository 2, the environment set up inside it by the setup script, the saved games and the Haiku training games copied from the old clone into the new results folder, and one short run with no model to see that it starts. The Della session does this; CR gives it the message. The Nov 25 message about moving folders inside the old clone is not needed if this step happens.
+
+**Step 3. The plain runner, a chunk of its own, with its own plan before any code.** One command that plays random, the reflex, the reference planner or a program on any rooms and writes one row per room into a folder the user names. It grows from `validate.py`. `run_rooms.py` is not cut in two; it stays the research runner. Under 250 new lines.
+
+**Step 4. Repository 1.** After repository 2 is pushed and step 2 has passed: one commit that removes `firelab/` and the fire scripts from repository 1 and points its README to repository 2. History keeps the old files. The Drive map's links change once, here.
+
+### 9.4 Not in this plan
+
+Renaming files (`fire.py` to `world.py` and so on). A written task contract. A top-level `agents/` folder. A `configs/` folder: the main rule set is constants in `env.py` and `items.py` today, and a settings file is a code change. Splitting `model_agents.py` into the weak baseline and RRARA. Splitting `thinkers.py`. Updating kinder to its newer commits.
+
+### 9.5 For CR to decide before step 1
+
+1. The name of repository 2 and of the package. One short word, the same for both.
+2. The live `NOTES.md` and `ASSUMPTIONS.md` in repository 2 as in 9.1, or kept in repository 1.
+3. Whether the one import line of `gate.py` may be changed.
+
+Defaults I will use unless CR says otherwise: history by `git subtree split`; I work directly in the clone of repository 2 and the copy script is retired for kinder work; the old folder `G:\iw-thinking-fast\firelab` is left untouched until CR says it can go; `pyproject.toml` is added.
