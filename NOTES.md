@@ -1696,3 +1696,25 @@ On CR's yes in this chat ("Yes, move"), after the file tree was shown. Reason: o
 - New: `firelab/README.md` (the task, how to run it, where the results are). The top `README.md` is now a map of links; the earlier front page is kept as `README_HAZARD.md`.
 - Not done yet: Della's copy holds saved games and training games that are not in git. They stay at the old paths until they are moved there by hand after the pull.
 - Check after the move: `venv_kinder\Scripts\python.exe -m pytest -p no:cacheprovider -q firelab` : 157 passed in 2 min. `scripts/all_agents_table.py`, `scripts/gap_table.py` and `scripts/liane_summary.py` print the same numbers as before the move. The chart scripts and the other summary scripts were compiled, not run.
+
+## Nov 25 (15:50 to 16:30): step 1 of PLAN section 9, the move into a new local repository `fastenough`
+
+CR gave the name ("fastenough") and had answered the other two choices of 9.5. I took the name as the go for the local move. **Decided without CR, to review** (A103). Nothing in the old folder `firelab/`, in `thinking-fast-hazard/` or on GitHub was changed by this step. The new clone is `G:\iw-thinking-fast\fastenough-repo`, with no remote. Nothing is pushed.
+
+What was done, in the new clone:
+- `git subtree split -P firelab` branch `firelab-only` (11 commits, 80 files) cloned as the start. Then four commits: `d6571ee` the move with `git mv` (79 files, names unchanged), `4d76a8e` names and paths, `66428f1` the scripts, `df86da2` the new files.
+- Layout as in PLAN 9.2: `fastenough/tasks/fire` (15 files, the API doc, the example, 13 test files), `fastenough/design` (2 files), `fastenough/research/fire` (6 files, 4 test files, 18 scripts, 5 chart scripts, the results), `scripts/della_firelab_setup.sh`.
+- Names: 134 import lines rewritten by a one-off script; by hand: the room registration text in `__init__.py`, the API and example paths in `compile.py`, the output folder of `gate_grid.py`, one path in `test_programs.py`, one line in `test_level2.py`.
+- `gate.py`: line 25 only (`git diff` against the moved file: 1 insertion, 1 deletion). The rewrite script had also changed a line of its header text; that was put back.
+- `PROGRAM_API.md` is unchanged, so the program-writer prompt is unchanged. It still names `firelab/interface.py` and `firelab/programs.py` in two places.
+- New code: `fastenough/test_layers.py` (33 lines), `pyproject.toml` (17 lines), five empty `__init__.py`, `.gitignore`, a new `README.md`.
+- `scripts/firelab_show.py` was NOT brought over: it draws on a HAZARD frame in `results/fire_human_ep1_...`, so it stays in the HAZARD repository. `sync_to_clone.sh` also stays there.
+- The three shell scripts (`della_firelab_setup.sh`, `della_firelab_rooms.slurm`, `liane_offline.sh`) have the new module names and no Della folder name. They were checked with `bash -n` only. Not run.
+
+Checks, with only the new clone on the path (so the old package `firelab` cannot be imported by mistake):
+- `python -m pytest -p no:cacheprovider -v fastenough` : 159 passed in 292 s (the 157 old tests and the 2 layer tests).
+- `all_agents_table.py`, `gap_table.py`, `liane_summary.py`, run from the new clone and from the old folder, compared with `diff`: 14, 21 and 6 lines, no line differs.
+- All 23 scripts and chart scripts compile.
+- Not run: the 6-minute replay of the kept program on rooms 0 to 49 (needs CR's yes); `pip install -e .`; anything on Della.
+
+One thing not explained. The first two full test runs in the new clone did not finish and I stopped them: one after 13 minutes with the process at full CPU, one after 3.5 minutes while it was on the third test. After that the same suite passed four times: one file alone (43 s, the same as the old folder's 42 s), the research tests alone (112 s), the whole suite (292 s), and one test with everything collected (30 s). The old folder's suite, run at 16:24 for comparison, took 250 s against 126 s at 13:10, and the battery was at 27 %. My reading: the laptop was slow in that half hour and the two runs were slow, not stuck. I could not show this. No file differed between the runs that did not finish and those that passed except one line of header text in `gate.py`.
