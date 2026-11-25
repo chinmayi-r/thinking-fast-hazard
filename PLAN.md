@@ -304,7 +304,7 @@ Renaming files (`fire.py` to `world.py` and so on). A written task contract. A t
 
 1. The name of repository 2 and of the package. One short word, the same for both.
 2. **Decided by CR, Nov 25, 15:30:** the live notes go in repository 2, in a folder of their own named for what they are, the working notes of the Claude sessions. Folder name `llm_notes/`. PLAN.md and DESIGN.md go in the same folder, because they are written in the same sessions and cite the same numbers (my choice, decided without CR, to review).
-3. Whether the one import line of `gate.py` may be changed.
+3. **Decided by CR, Nov 25, 15:35 ("Yes, that line"):** line 25 of `gate.py`, the import of the fire grid, may change for the move. Nothing else in gate.py changes; it stays closed.
 
 Defaults I will use unless CR says otherwise: history by `git subtree split`; I work directly in the clone of repository 2 and the copy script is retired for kinder work; the old folder `G:\iw-thinking-fast\firelab` is left untouched until CR says it can go; `pyproject.toml` is added.
 
