@@ -1714,7 +1714,7 @@ What was done, in the new clone:
 Checks, with only the new clone on the path (so the old package `firelab` cannot be imported by mistake):
 - `python -m pytest -p no:cacheprovider -v fastenough` : 159 passed in 292 s (the 157 old tests and the 2 layer tests).
 - `all_agents_table.py`, `gap_table.py`, `liane_summary.py`, run from the new clone and from the old folder, compared with `diff`: 14, 21 and 6 lines, no line differs.
-- All 23 scripts and chart scripts compile.
+- All 21 Python scripts and chart scripts compile. The saved games (34 MB, not in git) were not copied into the new clone, so `show_game.py` and `model_run_summary.py` have nothing to read there yet.
 - Not run: the 6-minute replay of the kept program on rooms 0 to 49 (needs CR's yes); `pip install -e .`; anything on Della.
 
 One thing not explained. The first two full test runs in the new clone did not finish and I stopped them: one after 13 minutes with the process at full CPU, one after 3.5 minutes while it was on the third test. After that the same suite passed four times: one file alone (43 s, the same as the old folder's 42 s), the research tests alone (112 s), the whole suite (292 s), and one test with everything collected (30 s). The old folder's suite, run at 16:24 for comparison, took 250 s against 126 s at 13:10, and the battery was at 27 %. My reading: the laptop was slow in that half hour and the two runs were slow, not stuck. I could not show this. No file differed between the runs that did not finish and those that passed except one line of header text in `gate.py`.
