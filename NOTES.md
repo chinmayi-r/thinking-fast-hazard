@@ -1722,3 +1722,10 @@ One thing not explained. The first two full test runs in the new clone did not f
 ## Nov 25 (19:58): the new repository pushed to GitHub
 
 CR made the empty public repository `chinmayi-r/fastenough` and asked in this chat for it to be pushed ("can you push it"). This is the one push I have run; the standing rule that CR pushes stays for everything else. Before pushing: the tracked files and all 17 commits were searched for keys and tokens (Anthropic, GitHub, AWS, Slack, private keys, bearer tokens, key files) and nothing was found. Pushed: branch `main` at `367ba5c`, 17 commits. GitHub and the local clone are level. The repository is public, as `thinking-fast-hazard` is; `llm_notes/` is therefore public too. Not pushed: `thinking-fast-hazard`, 9 commits ahead after this entry.
+
+## Nov 25 (21:59 to 22:06): the replay check of step 1, on CR's yes ("Yes, run replay")
+
+From the new clone, with only the new clone on the path, laptop, no model, 7 minutes:
+`python -m fastenough.tasks.fire.validate --program fastenough/research/fire/results/firelab_compiled/v1/policy_round2.py --first 0 --rooms 50 --out <scratch file>`
+Compared with the stored `rooms_0_49_laptop.json` (played from the old folder on Nov 23). In all 50 rooms these are equal: the program's score, the reflex's score, ticks, health, deaths, the number of decisions, illegal commands, errors, failed commands, and the list of commands (467 commands compared). The totals are equal: program 0.6852, reflex 0.5979, gap +0.0873 [+0.0467, +0.1304], ahead/level/behind 26/19/5. Only the timing of a decision differs, as it must (slowest 0.31 ms against 0.59 ms).
+What this shows: the simulator, the skills, the reflex, the observation and the program runner behave the same after the move. What it does not show: the planner, the thinkers, the model agents and the research runner were not replayed; they are covered by the 159 tests only. The stored file was not overwritten.
