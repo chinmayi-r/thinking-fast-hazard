@@ -300,3 +300,5 @@ One section per chunk of PLAN.md. Each says what the code does, where it lives a
 - *The call follows the claude-api skill's Python reference:* streamed with `messages.stream` and `get_final_message`, effort set through `output_config`, no thinking setting, stop reason checked before the text is read, dollars worked out from the usage.
 - *Haiku needed no change to the call, only a price.* `firelab/models.py` sends the same request to any Claude model; the cost table had no entry for `claude-haiku-5-5`, which would have stopped the run at the first row. It has never been called for real; the first real call is on Della.
 - *A spending guard in the script.* Before each writing round the script adds up Haiku's and the writer's dollars and writes no further round once they pass 1.60, so the list stays under the 2-dollar limit.
+
+**Frozen on Nov 26 2026, 07:40.** This file continues in the repository `fastenough`, as `llm_notes/DESIGN.md` (https://github.com/chinmayi-r/fastenough/blob/main/llm_notes/DESIGN.md). Nothing is added here after this line.

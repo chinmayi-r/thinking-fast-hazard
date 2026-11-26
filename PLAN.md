@@ -314,3 +314,5 @@ Defaults I will use unless CR says otherwise: history by `git subtree split`; I 
 - **The chat in the vault folder** cannot read it unless CR adds the folder to that chat. It does not need to.
 - **The Della chat** reads only what is on Della. It needs its own clone there (step 2). Not known: whether the login that pulls today's repository on Della also works for a new private repository.
 - **Liane, and any Claude she uses,** see exactly what is pushed to GitHub and nothing else: no memory, no `CLAUDE.md` from this laptop. If her Claude should follow the same rules, a short `CLAUDE.md` has to be in repository 2 itself. Not in step 1; for CR to decide.
+
+**Frozen on Nov 26 2026, 07:40.** This file continues in the repository `fastenough`, as `llm_notes/PLAN.md` (https://github.com/chinmayi-r/fastenough/blob/main/llm_notes/PLAN.md). Nothing is added here after this line.
